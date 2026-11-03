@@ -9,24 +9,26 @@
 
 ## 1. 데이터
 
-저장된 가격 파일 `data/processed/<종목>/1d/<종목>_with_tp.csv`(일봉, git 제외, capstone2에서 복사)를 씁니다. `--tp-path`로 지정합니다.
+저장된 가격 파일 `data/processed/<종목>/1d/<종목>_with_tp.csv`(일봉)를 씁니다. `--tp-path`로 지정합니다.
+
+| 폴더 | 내용 |
+|---|---|
+| `data/raw/` | 종목 목록(`sp500/sp400/kospi/kosdaq_constituents.csv`, `krx_delisted.csv`)과 일부 종목의 원본 가격 |
+| `data/processed/` | 종목별 일봉. `_clean.csv`(OHLCV), `_with_tp.csv`(OHLCV + CPM 열, 파이프라인 입력) |
+| `data/labels/` | 종목별 CPM 전환점 (`data/labels/cpm/`) |
+| `data/universe/` | 스크리닝 결과 (`*_screening_results.csv`) |
 
 ## 2. 입력
 
-| 선택지 | 내용 | 위치 |
-|---|---|---|
-| **raw** | ta 지표 20개 (모멘텀 7, 추세 6, 변동성 4, 거래량 3) 값 그대로 | [ta_features.py](legacy_v1/features/ta_features.py) |
-| z | 같은 지표를 종목 자신의 과거 252일로 z-score 변환, ±5에서 자름 (여러 종목 학습에서만) | [pooled.py](legacy_v1/experiments/pooled.py) |
-| window_scale | 모든 지표 기간을 한꺼번에 늘리거나 줄임. **1.0** (현재 어디서도 다른 값을 쓰지 않음. CLI 옵션 없음) | `build_ta_features(window_scale=)` |
+ta 지표 20개(모멘텀 7, 추세 6, 변동성 4, 거래량 3)를 씁니다 ([ta_features.py](legacy_v1/features/ta_features.py)).
 
 [ohlcv_features.py](legacy_v1/features/ohlcv_features.py)의 지표 8개는 모델 입력으로 쓰지 않고, 그중 20일 변동성만 리스크 오버레이에 씁니다.
 
 ### ta 지표 20개
 
-`ta` 라이브러리로 계산한 값입니다. 기간은 `window_scale=1.0` 기준입니다. 모든 지표는 가격 수준이 아니라 비율이나 정해진 범위의 값입니다(ATR도 종가로 나눔). ESN에 넣기 전에 학습 행의 min/max로 [−1, 1]에 맞춥니다.
+`ta` 라이브러리로 계산한 값입니다. 모든 지표는 가격 수준이 아니라 비율이나 정해진 범위의 값입니다(ATR도 종가로 나눔). ESN에 넣기 전에 학습 행의 min/max로 [−1, 1]에 맞춥니다.
 
 **모멘텀 (7)**  
-평활 = 계산한 값을 며칠 단순평균해 잔떨림을 줄이는 것.
 
 | 열 | 지표 | 기간 | 범위 | 의미 |
 |---|---|---|---|---|
@@ -100,7 +102,7 @@
 | **Rolling window** | 검증 직전 `--train-years`년(5년)만. 폴드마다 window 전체가 1년씩 뒤로 이동 | `--train-window rolling` (기본값) |
 | Expanding window | 데이터 시작부터 검증 직전까지. 시작점은 고정되고 window 끝만 1년씩 뒤로 감 (첫 폴드 5년). v1 원래 값 | `--train-window expanding` |
 
-**구간 나누기:** 검증 1년(`--val-years`), 테스트 1년씩 이동(`--step-years`). 단일 종목은 그 종목의 데이터 시작일을, 여러 종목은 달력 연도를 기준으로 경계를 잡습니다. 검증 연도는 그 폴드의 학습에 넣지 않습니다.
+
 
 **모델**
 
@@ -118,10 +120,7 @@
 | **검증 정확도 최대** | {0.1, …, 0.9} 중 선택. 점수 < −thr 매수, > thr 매도, 그 사이 보유 | [thresholds.py](legacy_v1/model/thresholds.py) |
 | 학습 점수 상위 20% | 학습 기간의 약 20%에서 신호가 켜지도록 고정 | [pooled_classifier.py](legacy_v1/experiments/pooled_classifier.py) |
 
-| 신호 해석 | 내용 |
-|---|---|
-| **v1** | 매수 신호에 사서 매도 신호까지 보유 |
-| 켜진 동안 보유 | 신호가 켜진 날만 보유, 꺼지면 현금 (pooled_classifier) |
+
 
 ## 6. 백테스트
 
@@ -148,5 +147,5 @@
 | [compare_execution.py](legacy_v1/experiments/compare_execution.py) | 6. 체결 | v1 |
 | [compare_labels.py](legacy_v1/experiments/compare_labels.py) | 3. 라벨 (triple_barrier / cpm_causal) | v1, 다음 날 시가 체결 |
 | [compare_train_window.py](legacy_v1/experiments/compare_train_window.py) | 4. Training window (expanding / rolling) | v1, 다음 날 시가 체결 |
-| [pooled.py](legacy_v1/experiments/pooled.py) | 4. 학습 단위, 2. 입력 (raw / z), 3. 라벨 | ridge, 검증 정확도 |
+| [pooled.py](legacy_v1/experiments/pooled.py) | 4. 학습 단위, 3. 라벨 | ridge, 검증 정확도 |
 | [pooled_classifier.py](legacy_v1/experiments/pooled_classifier.py) | 4. readout, 5. threshold와 신호 해석 | pooled 설정 |
