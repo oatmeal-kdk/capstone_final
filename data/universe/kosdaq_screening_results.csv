@@ -1,0 +1,1905 @@
+symbol,status,error,sharpe,mdd,annualized_return,num_trades
+386380.KQ,error,only 11 rows (<1500),,,,
+417030.KQ,error,only 20 rows (<1500),,,,
+282620.KQ,error,only 21 rows (<1500),,,,
+950260.KQ,error,only 22 rows (<1500),,,,
+487400.KQ,error,only 8 rows (<1500),,,,
+483350.KQ,error,only 23 rows (<1500),,,,
+387690.KQ,error,only 48 rows (<1500),,,,
+365660.KQ,error,only 53 rows (<1500),,,,
+475040.KQ,error,only 57 rows (<1500),,,,
+153890.KQ,error,only 58 rows (<1500),,,,
+477850.KQ,error,only 84 rows (<1500),,,,
+288180.KQ,error,only 85 rows (<1500),,,,
+487580.KQ,error,only 88 rows (<1500),,,,
+439960.KQ,error,only 90 rows (<1500),,,,
+394420.KQ,error,only 118 rows (<1500),,,,
+408470.KQ,error,only 122 rows (<1500),,,,
+493280.KQ,error,only 125 rows (<1500),,,,
+458350.KQ,error,only 135 rows (<1500),,,,
+493330.KQ,error,only 168 rows (<1500),,,,
+012210.KQ,error,only 809 rows (<1500),,,,
+490470.KQ,error,only 178 rows (<1500),,,,
+491000.KQ,error,only 180 rows (<1500),,,,
+476830.KQ,error,only 183 rows (<1500),,,,
+478340.KQ,error,only 185 rows (<1500),,,,
+464490.KQ,error,only 188 rows (<1500),,,,
+466690.KQ,error,only 187 rows (<1500),,,,
+261520.KQ,error,only 189 rows (<1500),,,,
+950250.KQ,error,only 191 rows (<1500),,,,
+488900.KQ,error,only 203 rows (<1500),,,,
+388210.KQ,error,only 204 rows (<1500),,,,
+403850.KQ,error,only 205 rows (<1500),,,,
+459550.KQ,error,only 204 rows (<1500),,,,
+061090.KQ,error,only 208 rows (<1500),,,,
+494120.KQ,error,only 209 rows (<1500),,,,
+469610.KQ,error,only 213 rows (<1500),,,,
+486990.KQ,error,only 216 rows (<1500),,,,
+014950.KQ,error,only 222 rows (<1500),,,,
+488280.KQ,error,only 242 rows (<1500),,,,
+342870.KQ,error,only 250 rows (<1500),,,,
+318060.KQ,error,only 261 rows (<1500),,,,
+397810.KQ,error,only 262 rows (<1500),,,,
+125490.KQ,error,only 264 rows (<1500),,,,
+484590.KQ,error,only 266 rows (<1500),,,,
+456160.KQ,error,only 267 rows (<1500),,,,
+309710.KQ,error,only 272 rows (<1500),,,,
+468530.KQ,error,only 279 rows (<1500),,,,
+475230.KQ,error,only 280 rows (<1500),,,,
+380550.KQ,error,only 281 rows (<1500),,,,
+484120.KQ,error,only 283 rows (<1500),,,,
+331740.KQ,error,only 289 rows (<1500),,,,
+462310.KQ,error,only 293 rows (<1500),,,,
+234030.KQ,error,only 295 rows (<1500),,,,
+463020.KQ,error,only 295 rows (<1500),,,,
+388610.KQ,error,only 910 rows (<1500),,,,
+455180.KQ,error,only 308 rows (<1500),,,,
+340450.KQ,error,only 312 rows (<1500),,,,
+474650.KQ,error,only 313 rows (<1500),,,,
+475430.KQ,error,only 317 rows (<1500),,,,
+496070.KQ,error,only 319 rows (<1500),,,,
+287840.KQ,error,only 323 rows (<1500),,,,
+489460.KQ,error,only 327 rows (<1500),,,,
+424870.KQ,error,only 327 rows (<1500),,,,
+188040.KQ,error,only 329 rows (<1500),,,,
+125020.KQ,error,only 330 rows (<1500),,,,
+376900.KQ,error,only 332 rows (<1500),,,,
+476040.KQ,error,only 333 rows (<1500),,,,
+136150.KQ,error,only 334 rows (<1500),,,,
+459510.KQ,error,only 334 rows (<1500),,,,
+364950.KQ,error,only 337 rows (<1500),,,,
+081180.KQ,error,only 338 rows (<1500),,,,
+448900.KQ,error,only 742 rows (<1500),,,,
+481070.KQ,error,only 357 rows (<1500),,,,
+101970.KQ,error,only 364 rows (<1500),,,,
+462860.KQ,error,only 363 rows (<1500),,,,
+444530.KQ,error,only 366 rows (<1500),,,,
+484810.KQ,error,only 367 rows (<1500),,,,
+098070.KQ,error,only 367 rows (<1500),,,,
+498390.KQ,error,only 366 rows (<1500),,,,
+460870.KQ,error,only 376 rows (<1500),,,,
+226590.KQ,error,only 375 rows (<1500),,,,
+393970.KQ,error,only 376 rows (<1500),,,,
+435570.KQ,error,only 379 rows (<1500),,,,
+489500.KQ,error,only 383 rows (<1500),,,,
+479960.KQ,error,only 383 rows (<1500),,,,
+463480.KQ,error,only 385 rows (<1500),,,,
+303810.KQ,error,only 388 rows (<1500),,,,
+475830.KQ,error,only 330 rows (<1500),,,,
+240550.KQ,error,only 391 rows (<1500),,,,
+212710.KQ,error,only 391 rows (<1500),,,,
+462980.KQ,error,only 397 rows (<1500),,,,
+452450.KQ,error,only 398 rows (<1500),,,,
+482630.KQ,error,only 398 rows (<1500),,,,
+373160.KQ,error,only 401 rows (<1500),,,,
+450950.KQ,error,only 401 rows (<1500),,,,
+096250.KQ,error,only 401 rows (<1500),,,,
+475460.KQ,error,only 402 rows (<1500),,,,
+493790.KQ,error,only 402 rows (<1500),,,,
+478560.KQ,error,only 404 rows (<1500),,,,
+432980.KQ,error,only 420 rows (<1500),,,,
+387570.KQ,error,only 420 rows (<1500),,,,
+177900.KQ,error,only 421 rows (<1500),,,,
+487360.KQ,error,only 421 rows (<1500),,,,
+176750.KQ,excluded,,0.0,0.0,0.0,0.0
+487720.KQ,error,only 423 rows (<1500),,,,
+398120.KQ,error,only 424 rows (<1500),,,,
+476060.KQ,error,only 424 rows (<1500),,,,
+382150.KQ,error,only 425 rows (<1500),,,,
+457600.KQ,error,only 427 rows (<1500),,,,
+471820.KQ,error,only 428 rows (<1500),,,,
+492220.KQ,error,only 429 rows (<1500),,,,
+489480.KQ,error,only 430 rows (<1500),,,,
+489730.KQ,error,only 438 rows (<1500),,,,
+489210.KQ,error,only 442 rows (<1500),,,,
+482690.KQ,error,only 445 rows (<1500),,,,
+459100.KQ,error,only 445 rows (<1500),,,,
+389680.KQ,error,only 419 rows (<1500),,,,
+474610.KQ,error,only 419 rows (<1500),,,,
+466410.KQ,error,only 446 rows (<1500),,,,
+484130.KQ,error,only 446 rows (<1500),,,,
+475660.KQ,error,only 446 rows (<1500),,,,
+413390.KQ,error,only 447 rows (<1500),,,,
+487830.KQ,error,only 448 rows (<1500),,,,
+394800.KQ,error,only 449 rows (<1500),,,,
+464580.KQ,error,only 450 rows (<1500),,,,
+473980.KQ,error,only 451 rows (<1500),,,,
+163280.KQ,error,only 453 rows (<1500),,,,
+475960.KQ,error,only 453 rows (<1500),,,,
+376270.KQ,error,only 456 rows (<1500),,,,
+475580.KQ,error,only 458 rows (<1500),,,,
+336680.KQ,error,only 458 rows (<1500),,,,
+458650.KQ,error,only 459 rows (<1500),,,,
+488060.KQ,error,only 458 rows (<1500),,,,
+466100.KQ,error,only 462 rows (<1500),,,,
+044990.KQ,excluded,,0.0,0.0,0.0,0.0
+289930.KQ,error,only 463 rows (<1500),,,,
+475400.KQ,error,only 464 rows (<1500),,,,
+457370.KQ,error,only 466 rows (<1500),,,,
+474170.KQ,error,only 467 rows (<1500),,,,
+209640.KQ,error,only 468 rows (<1500),,,,
+465480.KQ,error,only 468 rows (<1500),,,,
+308430.KQ,error,only 470 rows (<1500),,,,
+381620.KQ,error,only 479 rows (<1500),,,,
+351870.KQ,error,only 480 rows (<1500),,,,
+486630.KQ,error,only 482 rows (<1500),,,,
+464500.KQ,error,only 484 rows (<1500),,,,
+482680.KQ,error,only 489 rows (<1500),,,,
+469750.KQ,error,only 490 rows (<1500),,,,
+461300.KQ,error,only 497 rows (<1500),,,,
+456070.KQ,error,only 502 rows (<1500),,,,
+476080.KQ,error,only 503 rows (<1500),,,,
+464280.KQ,error,only 504 rows (<1500),,,,
+389650.KQ,error,only 505 rows (<1500),,,,
+431190.KQ,error,only 505 rows (<1500),,,,
+088340.KQ,error,only 507 rows (<1500),,,,
+482520.KQ,error,only 509 rows (<1500),,,,
+199480.KQ,error,only 510 rows (<1500),,,,
+460470.KQ,error,only 514 rows (<1500),,,,
+460940.KQ,error,only 518 rows (<1500),,,,
+481890.KQ,error,only 521 rows (<1500),,,,
+473950.KQ,error,only 522 rows (<1500),,,,
+373110.KQ,error,only 530 rows (<1500),,,,
+478110.KQ,error,only 531 rows (<1500),,,,
+450330.KQ,error,only 538 rows (<1500),,,,
+462350.KQ,error,only 539 rows (<1500),,,,
+295310.KQ,error,only 538 rows (<1500),,,,
+160190.KQ,error,only 542 rows (<1500),,,,
+479880.KQ,error,only 542 rows (<1500),,,,
+464080.KQ,error,only 544 rows (<1500),,,,
+478440.KQ,error,only 542 rows (<1500),,,,
+477340.KQ,error,only 545 rows (<1500),,,,
+107640.KQ,excluded,,0.0,0.0,0.0,0.0
+478390.KQ,error,only 546 rows (<1500),,,,
+477470.KQ,error,only 548 rows (<1500),,,,
+458870.KQ,error,only 548 rows (<1500),,,,
+477760.KQ,error,only 549 rows (<1500),,,,
+462510.KQ,error,only 550 rows (<1500),,,,
+453450.KQ,error,only 551 rows (<1500),,,,
+323350.KQ,excluded,,0.0,0.0,0.0,0.0
+477380.KQ,error,only 562 rows (<1500),,,,
+145170.KQ,error,only 566 rows (<1500),,,,
+456010.KQ,error,only 570 rows (<1500),,,,
+473000.KQ,error,only 577 rows (<1500),,,,
+126730.KQ,error,only 577 rows (<1500),,,,
+452200.KQ,error,only 578 rows (<1500),,,,
+140430.KQ,error,only 578 rows (<1500),,,,
+347850.KQ,error,only 579 rows (<1500),,,,
+474490.KQ,error,only 578 rows (<1500),,,,
+412540.KQ,error,only 580 rows (<1500),,,,
+451250.KQ,error,only 580 rows (<1500),,,,
+475250.KQ,error,only 584 rows (<1500),,,,
+474930.KQ,error,only 586 rows (<1500),,,,
+474660.KQ,error,only 590 rows (<1500),,,,
+461030.KQ,error,only 598 rows (<1500),,,,
+475240.KQ,error,only 603 rows (<1500),,,,
+455900.KQ,error,only 604 rows (<1500),,,,
+420570.KQ,error,only 605 rows (<1500),,,,
+437730.KQ,error,only 607 rows (<1500),,,,
+036220.KQ,error,only 613 rows (<1500),,,,
+199430.KQ,error,only 617 rows (<1500),,,,
+469900.KQ,error,only 619 rows (<1500),,,,
+472230.KQ,error,only 620 rows (<1500),,,,
+473050.KQ,error,only 621 rows (<1500),,,,
+468760.KQ,error,only 621 rows (<1500),,,,
+418620.KQ,error,only 625 rows (<1500),,,,
+360350.KQ,error,only 625 rows (<1500),,,,
+068100.KQ,error,only 626 rows (<1500),,,,
+452430.KQ,error,only 629 rows (<1500),,,,
+443670.KQ,error,only 631 rows (<1500),,,,
+415380.KQ,error,only 636 rows (<1500),,,,
+472850.KQ,error,only 638 rows (<1500),,,,
+469480.KQ,error,only 639 rows (<1500),,,,
+199550.KQ,error,only 639 rows (<1500),,,,
+452400.KQ,error,only 639 rows (<1500),,,,
+105760.KQ,error,only 642 rows (<1500),,,,
+460930.KQ,error,only 643 rows (<1500),,,,
+440290.KQ,error,only 644 rows (<1500),,,,
+362990.KQ,error,only 644 rows (<1500),,,,
+457550.KQ,error,only 645 rows (<1500),,,,
+452190.KQ,error,only 659 rows (<1500),,,,
+109670.KQ,error,only 666 rows (<1500),,,,
+439580.KQ,error,only 672 rows (<1500),,,,
+417200.KQ,error,only 673 rows (<1500),,,,
+432470.KQ,error,only 677 rows (<1500),,,,
+338840.KQ,error,only 678 rows (<1500),,,,
+355690.KQ,error,only 680 rows (<1500),,,,
+453860.KQ,error,only 683 rows (<1500),,,,
+402490.KQ,error,only 685 rows (<1500),,,,
+452160.KQ,error,only 681 rows (<1500),,,,
+452280.KQ,error,only 685 rows (<1500),,,,
+448280.KQ,error,only 688 rows (<1500),,,,
+352090.KQ,error,only 689 rows (<1500),,,,
+452300.KQ,error,only 692 rows (<1500),,,,
+365330.KQ,error,only 694 rows (<1500),,,,
+445090.KQ,error,only 694 rows (<1500),,,,
+446540.KQ,error,only 696 rows (<1500),,,,
+413640.KQ,error,only 696 rows (<1500),,,,
+451760.KQ,error,only 696 rows (<1500),,,,
+372320.KQ,error,only 695 rows (<1500),,,,
+088280.KQ,error,only 698 rows (<1500),,,,
+188260.KQ,error,only 699 rows (<1500),,,,
+290560.KQ,error,only 699 rows (<1500),,,,
+240600.KQ,error,only 701 rows (<1500),,,,
+221800.KQ,excluded,,0.0,0.0,0.0,0.0
+432720.KQ,error,only 705 rows (<1500),,,,
+396470.KQ,error,only 706 rows (<1500),,,,
+246250.KQ,weak,,0.3146509322138766,-0.6939457202505219,-0.01120921519084317,9.0
+416180.KQ,error,only 711 rows (<1500),,,,
+445180.KQ,error,only 712 rows (<1500),,,,
+451220.KQ,error,only 718 rows (<1500),,,,
+443250.KQ,error,only 719 rows (<1500),,,,
+430690.KQ,error,only 721 rows (<1500),,,,
+418470.KQ,error,only 722 rows (<1500),,,,
+450520.KQ,error,only 724 rows (<1500),,,,
+403490.KQ,error,only 728 rows (<1500),,,,
+384470.KQ,error,only 729 rows (<1500),,,,
+146060.KQ,error,only 735 rows (<1500),,,,
+355390.KQ,error,only 741 rows (<1500),,,,
+418250.KQ,error,only 746 rows (<1500),,,,
+424960.KQ,error,only 748 rows (<1500),,,,
+210120.KQ,excluded,,0.0,0.0,0.0,0.0
+448710.KQ,error,only 755 rows (<1500),,,,
+445680.KQ,error,only 755 rows (<1500),,,,
+440110.KQ,error,only 755 rows (<1500),,,,
+373170.KQ,error,only 757 rows (<1500),,,,
+429270.KQ,error,only 758 rows (<1500),,,,
+172670.KQ,error,only 762 rows (<1500),,,,
+388870.KQ,error,only 763 rows (<1500),,,,
+438700.KQ,error,only 762 rows (<1500),,,,
+406820.KQ,error,only 766 rows (<1500),,,,
+432430.KQ,error,only 767 rows (<1500),,,,
+321370.KQ,error,only 767 rows (<1500),,,,
+378340.KQ,error,only 772 rows (<1500),,,,
+274400.KQ,error,only 778 rows (<1500),,,,
+354320.KQ,error,only 781 rows (<1500),,,,
+440320.KQ,error,only 781 rows (<1500),,,,
+232830.KQ,excluded,,0.0,0.0,0.0,0.0
+303360.KQ,active,,0.7005974638245065,-0.3278618093278165,0.2468527251599375,5.0
+348080.KQ,error,only 792 rows (<1500),,,,
+439090.KQ,error,only 798 rows (<1500),,,,
+405920.KQ,error,only 801 rows (<1500),,,,
+285800.KQ,error,only 804 rows (<1500),,,,
+420770.KQ,error,only 807 rows (<1500),,,,
+271830.KQ,error,only 808 rows (<1500),,,,
+434480.KQ,error,only 809 rows (<1500),,,,
+340810.KQ,error,only 809 rows (<1500),,,,
+446840.KQ,error,only 814 rows (<1500),,,,
+417790.KQ,error,only 809 rows (<1500),,,,
+304360.KQ,error,only 822 rows (<1500),,,,
+298830.KQ,error,only 823 rows (<1500),,,,
+393210.KQ,error,only 1206 rows (<1500),,,,
+424980.KQ,error,only 824 rows (<1500),,,,
+318160.KQ,error,only 831 rows (<1500),,,,
+358570.KQ,error,only 846 rows (<1500),,,,
+309960.KQ,error,only 847 rows (<1500),,,,
+356680.KQ,error,only 856 rows (<1500),,,,
+282720.KQ,error,only 856 rows (<1500),,,,
+418420.KQ,error,only 861 rows (<1500),,,,
+389020.KQ,error,only 863 rows (<1500),,,,
+417010.KQ,error,only 865 rows (<1500),,,,
+199730.KQ,error,only 865 rows (<1500),,,,
+344860.KQ,excluded,,0.0,0.0,0.0,0.0
+127980.KQ,error,only 873 rows (<1500),,,,
+418550.KQ,error,only 875 rows (<1500),,,,
+411080.KQ,error,only 876 rows (<1500),,,,
+407400.KQ,error,only 880 rows (<1500),,,,
+408900.KQ,error,only 882 rows (<1500),,,,
+419050.KQ,error,only 884 rows (<1500),,,,
+417860.KQ,error,only 888 rows (<1500),,,,
+254490.KQ,error,only 889 rows (<1500),,,,
+425040.KQ,error,only 893 rows (<1500),,,,
+198940.KQ,error,only 893 rows (<1500),,,,
+380540.KQ,error,only 907 rows (<1500),,,,
+162300.KQ,error,only 911 rows (<1500),,,,
+417180.KQ,error,only 922 rows (<1500),,,,
+419530.KQ,error,only 924 rows (<1500),,,,
+168360.KQ,error,only 932 rows (<1500),,,,
+389470.KQ,error,only 934 rows (<1500),,,,
+419080.KQ,error,only 936 rows (<1500),,,,
+084440.KQ,excluded,,0.0,0.0,0.0,0.0
+204610.KQ,error,only 937 rows (<1500),,,,
+425420.KQ,error,only 937 rows (<1500),,,,
+372170.KQ,error,only 938 rows (<1500),,,,
+383930.KQ,error,only 941 rows (<1500),,,,
+348340.KQ,error,only 946 rows (<1500),,,,
+417500.KQ,error,only 946 rows (<1500),,,,
+405100.KQ,error,only 948 rows (<1500),,,,
+417840.KQ,error,only 951 rows (<1500),,,,
+419120.KQ,error,only 952 rows (<1500),,,,
+405000.KQ,error,only 955 rows (<1500),,,,
+291810.KQ,error,only 957 rows (<1500),,,,
+378800.KQ,error,only 958 rows (<1500),,,,
+419540.KQ,error,only 958 rows (<1500),,,,
+360070.KQ,error,only 959 rows (<1500),,,,
+389500.KQ,error,only 960 rows (<1500),,,,
+368970.KQ,error,only 961 rows (<1500),,,,
+417970.KQ,error,only 965 rows (<1500),,,,
+296640.KQ,error,only 965 rows (<1500),,,,
+441270.KQ,error,only 965 rows (<1500),,,,
+067370.KQ,excluded,,-0.3083855488313831,-0.7038122033485079,-0.19730981737523323,6.0
+393890.KQ,error,only 969 rows (<1500),,,,
+314140.KQ,error,only 970 rows (<1500),,,,
+394280.KQ,error,only 973 rows (<1500),,,,
+129920.KQ,error,only 996 rows (<1500),,,,
+148930.KQ,error,only 1004 rows (<1500),,,,
+107600.KQ,error,only 1007 rows (<1500),,,,
+368600.KQ,error,only 1010 rows (<1500),,,,
+365340.KQ,error,only 1011 rows (<1500),,,,
+397030.KQ,error,only 1011 rows (<1500),,,,
+424760.KQ,error,only 1016 rows (<1500),,,,
+328130.KQ,error,only 1017 rows (<1500),,,,
+403870.KQ,error,only 1021 rows (<1500),,,,
+112290.KQ,error,only 1022 rows (<1500),,,,
+402030.KQ,error,only 1026 rows (<1500),,,,
+396270.KQ,error,only 1031 rows (<1500),,,,
+412350.KQ,error,only 1035 rows (<1500),,,,
+310210.KQ,error,only 1035 rows (<1500),,,,
+377460.KQ,error,"download: No data downloaded for ticker=377460.KQ, interval=1d",,,,
+148780.KQ,excluded,,0.0,0.0,0.0,0.0
+382900.KQ,error,only 1041 rows (<1500),,,,
+362320.KQ,error,only 1050 rows (<1500),,,,
+399720.KQ,error,only 1059 rows (<1500),,,,
+389260.KQ,error,only 1063 rows (<1500),,,,
+389140.KQ,error,only 1073 rows (<1500),,,,
+388050.KQ,error,only 1092 rows (<1500),,,,
+413630.KQ,error,only 1093 rows (<1500),,,,
+396300.KQ,error,only 1098 rows (<1500),,,,
+366030.KQ,error,only 1099 rows (<1500),,,,
+388720.KQ,error,only 1102 rows (<1500),,,,
+288980.KQ,error,only 1107 rows (<1500),,,,
+408920.KQ,error,only 1110 rows (<1500),,,,
+376930.KQ,error,only 1112 rows (<1500),,,,
+146320.KQ,error,only 1112 rows (<1500),,,,
+371950.KQ,error,only 1113 rows (<1500),,,,
+330730.KQ,error,only 1115 rows (<1500),,,,
+365900.KQ,error,only 1116 rows (<1500),,,,
+370090.KQ,error,only 1117 rows (<1500),,,,
+251120.KQ,error,only 1116 rows (<1500),,,,
+211050.KQ,excluded,,0.0,0.0,0.0,0.0
+137080.KQ,error,only 1127 rows (<1500),,,,
+136410.KQ,error,only 1129 rows (<1500),,,,
+276040.KQ,error,only 1130 rows (<1500),,,,
+377330.KQ,error,only 1130 rows (<1500),,,,
+179530.KQ,excluded,,0.0,0.0,0.0,0.0
+102370.KQ,error,only 1136 rows (<1500),,,,
+353590.KQ,error,only 1138 rows (<1500),,,,
+200350.KQ,excluded,,0.0,0.0,0.0,0.0
+199800.KQ,weak,,0.2917704193044632,-0.721994870412244,0.014827315983324096,7.0
+377480.KQ,error,only 1178 rows (<1500),,,,
+361570.KQ,error,only 1179 rows (<1500),,,,
+290090.KQ,error,only 1182 rows (<1500),,,,
+372800.KQ,error,only 1186 rows (<1500),,,,
+311320.KQ,error,only 1186 rows (<1500),,,,
+357880.KQ,error,only 1187 rows (<1500),,,,
+376300.KQ,error,only 1187 rows (<1500),,,,
+389030.KQ,error,only 1187 rows (<1500),,,,
+376180.KQ,error,only 1192 rows (<1500),,,,
+348370.KQ,error,only 1194 rows (<1500),,,,
+377450.KQ,error,only 1195 rows (<1500),,,,
+382800.KQ,error,only 1195 rows (<1500),,,,
+114840.KQ,error,only 1196 rows (<1500),,,,
+261780.KQ,error,only 1200 rows (<1500),,,,
+382480.KQ,error,only 1201 rows (<1500),,,,
+391710.KQ,error,only 1205 rows (<1500),,,,
+376290.KQ,error,only 1209 rows (<1500),,,,
+159010.KQ,error,only 1210 rows (<1500),,,,
+382840.KQ,error,only 1210 rows (<1500),,,,
+257720.KQ,error,only 1213 rows (<1500),,,,
+260970.KQ,excluded,,0.0,0.0,0.0,0.0
+377220.KQ,error,only 1216 rows (<1500),,,,
+099430.KQ,error,only 1217 rows (<1500),,,,
+273640.KQ,error,only 1225 rows (<1500),,,,
+203400.KQ,excluded,,0.13326207363425185,-0.867318678772041,-0.09209029242185052,14.0
+388790.KQ,error,only 1230 rows (<1500),,,,
+308080.KQ,error,only 1237 rows (<1500),,,,
+099390.KQ,error,only 1240 rows (<1500),,,,
+315640.KQ,error,only 1243 rows (<1500),,,,
+058970.KQ,excluded,,0.0,0.0,0.0,0.0
+367000.KQ,error,only 1245 rows (<1500),,,,
+376980.KQ,error,only 1246 rows (<1500),,,,
+195940.KQ,error,only 1248 rows (<1500),,,,
+270660.KQ,excluded,,0.0,0.0,0.0,0.0
+377030.KQ,error,only 1257 rows (<1500),,,,
+365270.KQ,error,only 1260 rows (<1500),,,,
+352910.KQ,error,only 1267 rows (<1500),,,,
+357580.KQ,error,only 1279 rows (<1500),,,,
+303530.KQ,error,only 1284 rows (<1500),,,,
+232680.KQ,weak,,0.21683283847966608,-0.6772666752969903,-0.009676193708685221,6.0
+187660.KQ,error,only 1295 rows (<1500),,,,
+383310.KQ,error,only 1298 rows (<1500),,,,
+363250.KQ,error,only 1301 rows (<1500),,,,
+276730.KQ,error,only 1301 rows (<1500),,,,
+361670.KQ,error,only 1304 rows (<1500),,,,
+252990.KQ,error,only 1305 rows (<1500),,,,
+352480.KQ,error,only 1307 rows (<1500),,,,
+357230.KQ,error,only 1308 rows (<1500),,,,
+294570.KQ,error,only 1319 rows (<1500),,,,
+351330.KQ,error,only 1324 rows (<1500),,,,
+059270.KQ,error,only 1324 rows (<1500),,,,
+333620.KQ,error,only 1338 rows (<1500),,,,
+289220.KQ,error,only 1344 rows (<1500),,,,
+361390.KQ,error,only 1344 rows (<1500),,,,
+347700.KQ,error,only 1345 rows (<1500),,,,
+314930.KQ,error,only 1349 rows (<1500),,,,
+950220.KQ,error,only 1350 rows (<1500),,,,
+356890.KQ,error,only 1353 rows (<1500),,,,
+334970.KQ,error,only 1353 rows (<1500),,,,
+247660.KQ,error,only 1355 rows (<1500),,,,
+338220.KQ,error,only 1361 rows (<1500),,,,
+373200.KQ,error,only 1361 rows (<1500),,,,
+340930.KQ,error,only 1362 rows (<1500),,,,
+189330.KQ,excluded,,0.0,0.0,0.0,0.0
+322310.KQ,error,only 1363 rows (<1500),,,,
+239890.KQ,excluded,,0.0,0.0,0.0,0.0
+363260.KQ,error,only 1371 rows (<1500),,,,
+262840.KQ,error,only 1374 rows (<1500),,,,
+277810.KQ,error,only 1376 rows (<1500),,,,
+321820.KQ,error,only 1376 rows (<1500),,,,
+163730.KQ,error,only 1379 rows (<1500),,,,
+348030.KQ,error,only 1380 rows (<1500),,,,
+352700.KQ,error,only 1380 rows (<1500),,,,
+086710.KQ,error,only 1381 rows (<1500),,,,
+236810.KQ,error,only 1385 rows (<1500),,,,
+368770.KQ,error,only 1385 rows (<1500),,,,
+369370.KQ,error,only 1403 rows (<1500),,,,
+357550.KQ,error,only 1403 rows (<1500),,,,
+314130.KQ,excluded,,-0.3515614445818255,-0.6970618034447822,-0.31817800644270233,3.0
+335810.KQ,error,only 1404 rows (<1500),,,,
+347860.KQ,error,only 1405 rows (<1500),,,,
+365590.KQ,error,only 1405 rows (<1500),,,,
+064850.KQ,excluded,,0.0,0.0,0.0,0.0
+356860.KQ,error,only 1410 rows (<1500),,,,
+352940.KQ,error,only 1411 rows (<1500),,,,
+354200.KQ,error,only 1408 rows (<1500),,,,
+317690.KQ,error,only 1413 rows (<1500),,,,
+352770.KQ,error,only 1416 rows (<1500),,,,
+318020.KQ,error,only 1417 rows (<1500),,,,
+129890.KQ,error,only 1418 rows (<1500),,,,
+265740.KQ,error,only 1418 rows (<1500),,,,
+199820.KQ,error,only 1422 rows (<1500),,,,
+299030.KQ,error,only 1423 rows (<1500),,,,
+340570.KQ,error,only 1426 rows (<1500),,,,
+348150.KQ,error,only 1428 rows (<1500),,,,
+330860.KQ,error,only 1429 rows (<1500),,,,
+290690.KQ,error,only 1436 rows (<1500),,,,
+348350.KQ,error,only 1441 rows (<1500),,,,
+347000.KQ,error,only 1442 rows (<1500),,,,
+301300.KQ,error,only 1443 rows (<1500),,,,
+214610.KQ,excluded,,0.0,0.0,0.0,0.0
+304840.KQ,error,only 1450 rows (<1500),,,,
+348210.KQ,error,only 1456 rows (<1500),,,,
+053080.KQ,error,only 1463 rows (<1500),,,,
+126340.KQ,excluded,,0.0,0.0,0.0,0.0
+359090.KQ,error,only 1464 rows (<1500),,,,
+323990.KQ,error,only 1465 rows (<1500),,,,
+318410.KQ,error,only 1466 rows (<1500),,,,
+355150.KQ,error,only 839 rows (<1500),,,,
+347770.KQ,error,only 1467 rows (<1500),,,,
+291650.KQ,error,only 1469 rows (<1500),,,,
+294090.KQ,error,only 1471 rows (<1500),,,,
+293490.KQ,error,only 1473 rows (<1500),,,,
+347740.KQ,error,only 1474 rows (<1500),,,,
+332370.KQ,error,only 1486 rows (<1500),,,,
+331920.KQ,error,only 1487 rows (<1500),,,,
+950190.KQ,error,only 1490 rows (<1500),,,,
+337930.KQ,error,only 1492 rows (<1500),,,,
+060850.KQ,error,only 1493 rows (<1500),,,,
+032300.KQ,error,only 1495 rows (<1500),,,,
+357780.KQ,error,only 1497 rows (<1500),,,,
+332570.KQ,error,"re_index=True)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""C:\Users\82102\anaconda3\Lib\site-packages\pandas\core\reshape\concat.py"", line 407, in concat
+    objs, keys, ndims = _clean_keys_and_objs(objs, keys)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""C:\Users\82102\anaconda3\Lib\site-packages\pandas\core\reshape\concat.py"", line 808, in _clean_keys_and_objs
+    raise ValueError(""No objects to concatenate"")
+ValueError: No objects to concatenate
+",,,,
+101360.KQ,excluded,,0.0,0.0,0.0,0.0
+347890.KQ,error,"re_index=True)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""C:\Users\82102\anaconda3\Lib\site-packages\pandas\core\reshape\concat.py"", line 407, in concat
+    objs, keys, ndims = _clean_keys_and_objs(objs, keys)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""C:\Users\82102\anaconda3\Lib\site-packages\pandas\core\reshape\concat.py"", line 808, in _clean_keys_and_objs
+    raise ValueError(""No objects to concatenate"")
+ValueError: No objects to concatenate
+",,,,
+298540.KQ,error,"re_index=True)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""C:\Users\82102\anaconda3\Lib\site-packages\pandas\core\reshape\concat.py"", line 407, in concat
+    objs, keys, ndims = _clean_keys_and_objs(objs, keys)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""C:\Users\82102\anaconda3\Lib\site-packages\pandas\core\reshape\concat.py"", line 808, in _clean_keys_and_objs
+    raise ValueError(""No objects to concatenate"")
+ValueError: No objects to concatenate
+",,,,
+225220.KQ,excluded,,0.0,0.0,0.0,0.0
+304100.KQ,error,"re_index=True)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""C:\Users\82102\anaconda3\Lib\site-packages\pandas\core\reshape\concat.py"", line 407, in concat
+    objs, keys, ndims = _clean_keys_and_objs(objs, keys)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""C:\Users\82102\anaconda3\Lib\site-packages\pandas\core\reshape\concat.py"", line 808, in _clean_keys_and_objs
+    raise ValueError(""No objects to concatenate"")
+ValueError: No objects to concatenate
+",,,,
+277880.KQ,excluded,,0.0,0.0,0.0,0.0
+262260.KQ,excluded,,0.0,0.0,0.0,0.0
+950200.KQ,excluded,,0.0,0.0,0.0,0.0
+290520.KQ,excluded,,0.0,0.0,0.0,0.0
+330350.KQ,excluded,,0.0,0.0,0.0,0.0
+169330.KQ,excluded,,0.0,0.0,0.0,0.0
+229000.KQ,excluded,,0.0,0.0,0.0,0.0
+297890.KQ,excluded,,0.0,0.0,0.0,0.0
+351320.KQ,excluded,,0.0,0.0,0.0,0.0
+298060.KQ,excluded,,-0.20695416011514106,-0.02442997170331962,-0.032373716897488025,1.0
+353190.KQ,excluded,,0.0,0.0,0.0,0.0
+353810.KQ,excluded,,0.0,0.0,0.0,0.0
+223250.KQ,excluded,,-1.50533470318233,-0.11047345767575323,-0.3441802504624264,1.0
+198080.KQ,excluded,,0.0,0.0,0.0,0.0
+237820.KQ,excluded,,0.0,0.0,0.0,0.0
+092190.KQ,active,,2.155020839445374,-0.2619893428063944,2.644140401417542,1.0
+204270.KQ,active,,0.813430463081891,-0.5094091903719913,0.3920960979477732,1.0
+274090.KQ,excluded,,-0.5529159899542263,-0.778102189781022,-0.7117107353899046,1.0
+294140.KQ,active,,0.8803197875496417,-0.3494736842105264,0.43245513402069724,1.0
+294630.KQ,excluded,,0.0,0.0,0.0,0.0
+065370.KQ,excluded,,-0.0034301996681979845,-0.8213286713286714,-0.26159119121716246,1.0
+340440.KQ,excluded,,-0.26471934484415244,-0.7099601593625499,-0.5100827872882149,1.0
+311690.KQ,error,only 1443 rows (<1500),,,,
+062970.KQ,excluded,,-0.5349838348517542,-0.7746650426309379,-0.7551239814112404,1.0
+327260.KQ,excluded,,0.0,0.0,0.0,0.0
+339950.KQ,excluded,,0.0,0.0,0.0,0.0
+288330.KQ,excluded,,0.0,0.0,0.0,0.0
+340360.KQ,excluded,,-0.39639647698986197,-0.6264760720944687,-0.4793017989872501,1.0
+235980.KQ,weak,,0.2450489913193745,-0.3563218390804598,-0.05820335895481277,1.0
+336570.KQ,excluded,,-0.5810201890976607,-0.5325506937033085,-0.44701860011668204,2.0
+226330.KQ,excluded,,-0.5853210729420842,-0.46181445412608924,-0.6088533072764439,1.0
+322510.KQ,excluded,,0.0,0.0,0.0,0.0
+124560.KQ,excluded,,-1.3099537588994214,-0.430976430976431,-0.47082422344067687,1.0
+335870.KQ,excluded,,0.0,0.0,0.0,0.0
+302550.KQ,excluded,,-0.08772494517595217,-0.42343387470997695,-0.11250578655415666,1.0
+336060.KQ,excluded,,0.18042442747043402,-0.09735973597359726,0.016121589264324276,1.0
+278650.KQ,excluded,,0.0,0.0,0.0,0.0
+321550.KQ,excluded,,-0.062024318456770235,-0.7199391171993912,-0.3668701375215714,1.0
+297090.KQ,excluded,,0.15553981588300722,-0.5970874798402543,-0.1786243530197591,3.0
+103840.KQ,excluded,,-2.104274545456604,-0.5354074074074076,-0.6519800354044696,1.0
+190650.KQ,excluded,,-1.8096142772409813,-0.3473729541407744,-0.4022886930319809,3.0
+306040.KQ,excluded,,-2.248935757872994,-0.8860728744939272,-0.9526285181780317,1.0
+216080.KQ,excluded,,-0.3844676388542109,-0.6280991735537191,-0.4194444321030353,3.0
+214260.KQ,excluded,,0.0,0.0,0.0,0.0
+084850.KQ,active,,0.42191273515250294,-0.35922164759691055,0.09947079814171156,6.0
+333430.KQ,excluded,,-0.6468478802627676,-0.5438461538461541,-0.536737637294695,1.0
+279600.KQ,excluded,,0.0,0.0,0.0,0.0
+322180.KQ,excluded,,-1.3091792374386226,-0.6722113502935421,-0.7234627273097771,1.0
+333050.KQ,excluded,,0.0,0.0,0.0,0.0
+331520.KQ,excluded,,0.0,0.0,0.0,0.0
+317530.KQ,excluded,,-0.7939907500980977,-0.5992578849721707,-0.46249008181013107,1.0
+272110.KQ,active,,0.7832764695747614,-0.5348027842227379,0.3618455128550546,1.0
+317870.KQ,excluded,,-1.658285157915621,-0.6840490797546014,-0.6763082573122806,1.0
+318010.KQ,excluded,,0.0,0.0,0.0,0.0
+300120.KQ,excluded,,-0.6499589225070574,-0.7654178674351585,-0.6580275831593136,1.0
+158430.KQ,excluded,,0.06426513355008379,-0.6498486377396571,-0.2225383464262931,1.0
+234690.KQ,weak,,0.2933396807509464,-0.5198675496688743,0.004638372417107517,3.0
+332290.KQ,excluded,,-0.37461053139215394,-0.26439024390243904,-0.17380359936130696,1.0
+331380.KQ,active,,0.6326913692915818,-0.2696860524961401,0.17792569460670826,1.0
+244460.KQ,error,"re_index=True)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""C:\Users\82102\anaconda3\Lib\site-packages\pandas\core\reshape\concat.py"", line 407, in concat
+    objs, keys, ndims = _clean_keys_and_objs(objs, keys)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""C:\Users\82102\anaconda3\Lib\site-packages\pandas\core\reshape\concat.py"", line 808, in _clean_keys_and_objs
+    raise ValueError(""No objects to concatenate"")
+ValueError: No objects to concatenate
+",,,,
+317120.KQ,excluded,,-0.3274390261981809,-0.296345761836058,-0.14447699450952367,1.0
+320000.KQ,active,,0.6154700772950422,-0.6185344827586207,0.0627740794937175,1.0
+256150.KQ,excluded,,0.0,0.0,0.0,0.0
+311390.KQ,excluded,,0.0,0.0,0.0,0.0
+195500.KQ,excluded,,0.0,0.0,0.0,0.0
+328380.KQ,error,only 996 rows (<1500),,,,
+286750.KQ,excluded,,0.0,0.0,0.0,0.0
+317830.KQ,excluded,,-0.04240440838868794,-0.587112633257008,-0.286070818061379,3.0
+228670.KQ,excluded,,0.0276951149014807,-0.6382001836547291,-0.2533276235785601,3.0
+186230.KQ,excluded,,0.0,0.0,0.0,0.0
+282880.KQ,excluded,,0.0,0.0,0.0,0.0
+317330.KQ,excluded,,0.03245868808700332,-0.40557039024203956,-0.1059244237471344,1.0
+318000.KQ,excluded,,0.0,0.0,0.0,0.0
+317770.KQ,excluded,,-0.618475130334776,-0.47250000000000003,-0.30989909347271005,1.0
+148150.KQ,excluded,,-0.31220970283112787,-0.5000000000000001,-0.22659138495148,2.0
+313760.KQ,excluded,,-1.573723397530056,-0.781822006123281,-0.9513646985108316,1.0
+317850.KQ,weak,,0.2148662234090484,-0.5262135922330098,-0.07655793313974224,1.0
+241840.KQ,excluded,,-0.21057813749782828,-0.13320079522862827,-0.03718656915064478,1.0
+300080.KQ,excluded,,0.05856573697735789,-0.5445705024311184,-0.16472358190919245,1.0
+234340.KQ,excluded,,0.05731740998470704,-0.6250620347394541,-0.2949323526595128,3.0
+289010.KQ,excluded,,-0.5678700847651673,-0.5124167171411267,-0.2729833425172742,1.0
+251970.KQ,active,,1.2048587408915807,-0.1908517350157729,0.4364021303308159,1.0
+312610.KQ,excluded,,-1.350622298948003,-0.8717026378896883,-0.8453545094138002,1.0
+323280.KQ,active,,0.9161712309056118,-0.7318840579710145,0.5416573289215811,1.0
+293780.KQ,excluded,,-0.016963094246604155,-0.6161228406909789,-0.21315215629032502,1.0
+308100.KQ,excluded,,0.0,0.0,0.0,0.0
+305090.KQ,excluded,,-2.942868850185117,-0.9530950305143854,-0.9395239580434507,1.0
+322780.KQ,excluded,,-0.3032069545076996,-0.877530864197531,-0.6967767150205972,1.0
+321260.KQ,active,,0.7262908109930765,-0.06117647058823539,0.06709003244985845,1.0
+253840.KQ,excluded,,0.0,0.0,0.0,0.0
+307930.KQ,weak,,0.3610320414136558,-0.5075046904315197,0.007855584764424162,1.0
+319660.KQ,active,,0.6629348234808702,-0.8010433411537808,0.23713056717826264,21.0
+319400.KQ,active,,1.7297745748772666,-0.5997842502696873,2.65254429610776,3.0
+317240.KQ,weak,,0.2975621626113539,-0.7744537815126051,-0.08219337222592615,1.0
+125210.KQ,weak,,0.3667634779777355,-0.7074401008827238,0.049309113849805186,1.0
+228760.KQ,excluded,,0.0,0.0,0.0,0.0
+099750.KQ,active,,0.5113505538804958,-0.1191135734072023,0.07323211457192258,1.0
+100790.KQ,error,only 682 rows (<1500),,,,
+247540.KQ,excluded,,-0.17957076640473296,-0.21736489506151513,-0.08632262819674075,1.0
+299660.KQ,excluded,,0.0030973004208624424,-0.7028985507246377,-0.23279741535452403,1.0
+278280.KQ,excluded,,-0.5586953618279176,-0.5964285714285714,-0.36949952873415226,1.0
+246960.KQ,excluded,,0.1198565461744929,-0.4514285714285714,-0.03301853677516853,1.0
+104620.KQ,excluded,,0.0,0.0,0.0,0.0
+053580.KQ,active,,0.774765966235659,-0.10708898944193068,0.10309238341518867,1.0
+238200.KQ,excluded,,-0.5207924046173038,-0.47581220597043294,-0.20584973916159832,5.0
+263050.KQ,active,,0.4281633956694806,-0.22020855781861337,0.1021098184388094,1.0
+290550.KQ,active,,1.2021440404985666,-0.5636363636363636,0.9231522674685007,1.0
+307180.KQ,active,,0.9680552841159885,-0.5947643979057593,0.6059296124052189,1.0
+310200.KQ,excluded,,-1.5305383244883457,-0.6589380530973452,-0.4922865369909709,1.0
+310870.KQ,excluded,,0.04979208695263393,-0.4086956521739131,-0.06822903828214522,3.0
+309930.KQ,excluded,,0.0,0.0,0.0,0.0
+307750.KQ,excluded,,0.10043947947776524,-0.6750902527075813,-0.12232310521990408,1.0
+298380.KQ,excluded,,-0.17455498355050109,-0.7135549872122762,-0.2885461128389091,9.0
+100590.KQ,weak,,0.203565662605537,-0.5416666666666669,-0.006568181894730629,1.0
+110020.KQ,excluded,,-0.26580676916293705,-0.32329896907216493,-0.08390336602417092,2.0
+270870.KQ,excluded,,0.0,0.0,0.0,0.0
+307870.KQ,active,,0.7317643864415431,-0.6637744034707159,0.29907771865507415,4.0
+302430.KQ,weak,,0.20263214834037116,-0.6854622147283396,-0.08054678949876715,3.0
+290120.KQ,excluded,,-1.0728760272718227,-0.4644107605312565,-0.33198894088190334,3.0
+128540.KQ,excluded,,0.0,0.0,0.0,0.0
+307280.KQ,weak,,0.2498489756225348,-0.3733333333333334,0.025919437778704202,2.0
+900340.KQ,excluded,,-1.2471208709902657,-0.8590672074159907,-0.6388803419096714,1.0
+111710.KQ,excluded,,0.0,0.0,0.0,0.0
+179290.KQ,excluded,,-0.6557764613960294,-0.545995670995671,-0.28239790861907543,1.0
+117730.KQ,weak,,0.36330373233117913,-0.61875,0.0012660145162968206,1.0
+290660.KQ,excluded,,-0.07657737019220279,-0.6255882352941178,-0.37263681372157775,1.0
+246710.KQ,active,,0.4019977984651787,-0.6015435501653804,0.07208486492562427,1.0
+263690.KQ,excluded,,0.0,0.0,0.0,0.0
+217330.KQ,excluded,,0.13510204854533375,-0.7001061571125266,-0.2194921232517717,1.0
+027360.KQ,active,,0.48251471533969603,-0.8632478632478633,0.05608614075720064,1.0
+263020.KQ,excluded,,-0.07569831143758829,-0.1593323216995448,-0.022166337892566612,1.0
+194700.KQ,excluded,,-0.3810098990188661,-0.44950603732162453,-0.18098504998265286,3.0
+290670.KQ,excluded,,-0.5515400880268595,-0.8387570299912083,-0.44139646870379856,7.0
+285490.KQ,excluded,,-0.2428574758831662,-0.6684385382059802,-0.22271078111844378,1.0
+290650.KQ,active,,0.6885594807979972,-0.613693998309383,0.26835085625729493,3.0
+306620.KQ,excluded,,-0.022417593954093793,-0.6531578947368422,-0.21842645766450874,3.0
+108490.KQ,active,,1.7798159950369934,-0.6088888888888888,2.560613292556071,3.0
+153710.KQ,excluded,,-0.03379094715502187,-0.3129032258064516,-0.0527626455195882,1.0
+288620.KQ,excluded,,0.0,0.0,0.0,0.0
+293580.KQ,active,,0.7416557132502501,-0.5022935779816514,0.33915293737095054,3.0
+290720.KQ,excluded,,-0.08295694124060815,-0.35588235294117654,-0.06447385738170663,1.0
+110790.KQ,excluded,,0.15213420967882488,-0.048576214405360085,0.007366846155829387,1.0
+299170.KQ,weak,,0.2499849888427453,-0.7413875598086125,-0.05196009887909503,1.0
+219750.KQ,excluded,,0.0,0.0,0.0,0.0
+291230.KQ,excluded,,-0.6273097056225109,-0.793253536452666,-0.510780383534665,1.0
+257370.KQ,excluded,,-0.43198659180802657,-0.5387964148527529,-0.3084637308826903,3.0
+197140.KQ,excluded,,0.0,0.0,0.0,0.0
+303030.KQ,excluded,,-0.2099001258604147,-0.36923076923076925,-0.13983548209728325,4.0
+290740.KQ,active,,0.5503020402444558,-0.42329565671304126,0.14256267677927292,1.0
+173130.KQ,excluded,,0.14778077548771923,-0.5182570760098024,-0.07131687470028047,3.0
+089970.KQ,weak,,0.26639866155397507,-0.39140611531724256,0.0359385967016026,3.0
+086820.KQ,excluded,,-0.3271396233953227,-0.4588058774805417,-0.20792653090455038,5.0
+110990.KQ,weak,,0.2917613264407434,-0.5372050816696916,0.02426246337007054,6.0
+275630.KQ,active,,0.46577357781403333,-0.44091903719912473,0.11314633805854579,7.0
+290270.KQ,excluded,,0.1411432362686868,-0.4685777287761852,-0.0014352463183554542,3.0
+080720.KQ,excluded,,-2.4137583313325983,-0.11382113821138207,-0.7706288174656896,1.0
+204020.KQ,excluded,,-0.44904903427243986,-0.6160177975528365,-0.23007322583714063,1.0
+297570.KQ,excluded,,0.08780884747155987,-0.4605734767025089,-0.05126552850431998,2.0
+226950.KQ,excluded,,0.09956638041720556,-0.3338171262699565,-0.015062540240384448,1.0
+175250.KQ,error,"
+Traceback (most recent call last):
+  File ""<frozen runpy>"", line 198, in _run_module_as_main
+  File ""<frozen runpy>"", line 88, in _run_code
+  File ""C:\Users\82102\Desktop\capstone2\src\pipeline\run_esn_ta_walkforward.py"", line 329, in <module>
+    main()
+  File ""C:\Users\82102\Desktop\capstone2\src\pipeline\run_esn_ta_walkforward.py"", line 222, in main
+    raise ValueError(f""Fold {fold_idx}: no validation rows remain after purging."")
+ValueError: Fold 3: no validation rows remain after purging.
+",,,,
+289080.KQ,active,,0.6825603529410257,-0.6665934065934066,0.2763821858873525,1.0
+245620.KQ,error,"re_index=True)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""C:\Users\82102\anaconda3\Lib\site-packages\pandas\core\reshape\concat.py"", line 407, in concat
+    objs, keys, ndims = _clean_keys_and_objs(objs, keys)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""C:\Users\82102\anaconda3\Lib\site-packages\pandas\core\reshape\concat.py"", line 808, in _clean_keys_and_objs
+    raise ValueError(""No objects to concatenate"")
+ValueError: No objects to concatenate
+",,,,
+284620.KQ,excluded,,-0.9744379721727239,-0.7162721708541264,-0.6857741978827815,1.0
+037030.KQ,excluded,,-0.5945589499776376,-0.7021716649431231,-0.5945865471094944,1.0
+016790.KQ,error,"re_index=True)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""C:\Users\82102\anaconda3\Lib\site-packages\pandas\core\reshape\concat.py"", line 407, in concat
+    objs, keys, ndims = _clean_keys_and_objs(objs, keys)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""C:\Users\82102\anaconda3\Lib\site-packages\pandas\core\reshape\concat.py"", line 808, in _clean_keys_and_objs
+    raise ValueError(""No objects to concatenate"")
+ValueError: No objects to concatenate
+",,,,
+258830.KQ,error,"re_index=True)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""C:\Users\82102\anaconda3\Lib\site-packages\pandas\core\reshape\concat.py"", line 407, in concat
+    objs, keys, ndims = _clean_keys_and_objs(objs, keys)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""C:\Users\82102\anaconda3\Lib\site-packages\pandas\core\reshape\concat.py"", line 808, in _clean_keys_and_objs
+    raise ValueError(""No objects to concatenate"")
+ValueError: No objects to concatenate
+",,,,
+122310.KQ,excluded,,-0.45168196778305963,-0.3535353535353536,-0.12199317418659317,1.0
+950170.KQ,excluded,,-0.40725044007900807,-0.5271370420624153,-0.1956300295024156,1.0
+253590.KQ,active,,0.4254126870436283,-0.665859564164649,0.03814770827317626,1.0
+263700.KQ,excluded,,-0.13806891067378133,-0.7423322683706071,-0.23093404915073212,1.0
+277070.KQ,excluded,,-0.4178836129959568,-0.37032967032967035,-0.10442271885492005,1.0
+226400.KQ,active,,0.4317525980588235,-0.5536352800953517,0.09666425712566395,1.0
+183490.KQ,excluded,,0.0,0.0,0.0,0.0
+006620.KQ,excluded,,-0.5364193396847557,-0.5941176470588236,-0.2631385956500103,1.0
+154030.KQ,excluded,,-0.2591358175452073,-0.651112279578121,-0.13518827570773395,7.0
+260660.KQ,excluded,,-1.7555806663108298,-0.8366547112412964,-0.5115197959158133,5.0
+042000.KQ,excluded,,-0.39172573769742786,-0.2919998228228229,-0.08354143922904511,2.0
+219420.KQ,excluded,,0.0,0.0,0.0,0.0
+267790.KQ,excluded,,-0.4821136281810919,-0.2518963611897316,-0.08017305599661351,3.0
+255220.KQ,excluded,,-0.6265196181463716,-0.5331887201735359,-0.21140893848543674,1.0
+264660.KQ,weak,,0.2665657065705649,-0.591616766467066,-0.011249672819240497,1.0
+187870.KQ,weak,,0.3595781540470344,-0.6758007117437722,0.054953352839183234,1.0
+281740.KQ,excluded,,0.0,0.0,0.0,0.0
+260930.KQ,excluded,,0.0,0.0,0.0,0.0
+241770.KQ,excluded,,0.11207857130432258,-0.09466019417475735,0.005952437340796202,4.0
+234300.KQ,excluded,,-0.08290040566139843,-0.2666884049326854,-0.01939789504406597,4.0
+066360.KQ,excluded,,-0.747015259572268,-0.1359807460890493,-0.045167874525082086,2.0
+007680.KQ,excluded,,-0.1162688875788214,-0.4675540765391015,-0.11489372502883011,1.0
+253450.KQ,excluded,,-0.49949211065754406,-0.639904714977064,-0.17647556208222803,7.0
+950160.KQ,excluded,,-0.29989679123489155,-0.9159221902017292,-0.35446704083273706,5.0
+265560.KQ,excluded,,-0.16536800357037273,-0.4356164383561645,-0.1322456766643828,5.0
+234100.KQ,excluded,,0.0,0.0,0.0,0.0
+263810.KQ,active,,0.6381748501308048,-0.08777429467084641,0.1159399870183524,6.0
+255440.KQ,active,,0.5771330703846099,-0.23439340400471143,0.13707198465352688,3.0
+277410.KQ,excluded,,-1.3839809385527297,-0.7688228820608849,-0.4063734351287648,5.0
+263920.KQ,excluded,,-0.11689170402071666,-0.38780495343212884,-0.043971835368878276,6.0
+243840.KQ,excluded,,-0.06944048616514469,-0.6778761061946903,-0.16512657666294916,1.0
+179900.KQ,excluded,,-0.2992558295104868,-0.9011951624354284,-0.4224134062246936,23.0
+171090.KQ,weak,,0.37356465491409163,-0.6221374045801527,0.04269788443800415,7.0
+259630.KQ,excluded,,0.18802515250550272,-0.5922587486744433,-0.038455748312226645,3.0
+174900.KQ,active,,0.6672270879592764,-0.8112233445566779,0.25633892435325034,5.0
+263750.KQ,excluded,,0.15150794778433224,-0.575104311543811,-0.06593168908559455,5.0
+256940.KQ,excluded,,0.0,0.0,0.0,0.0
+263600.KQ,excluded,,-0.3428885649943614,-0.7403587443946189,-0.23799697151815402,3.0
+270520.KQ,excluded,,-0.3844896988891899,-0.9765069551777436,-0.5588418065388423,1.0
+258610.KQ,excluded,,-0.3083901711848233,-0.6462319926500688,-0.2829737961314639,3.0
+140670.KQ,excluded,,-0.1996780114178147,-0.6559465794351813,-0.16662129901495049,3.0
+900310.KQ,excluded,,-0.12437489372337382,-0.6405609492988134,-0.13622280448359358,5.0
+273060.KQ,weak,,0.3445734858194917,-0.3756567425569177,0.05959038049331955,3.0
+118990.KQ,excluded,,-0.3795678115904053,-0.7571428571428572,-0.23598009173236612,1.0
+263800.KQ,weak,,0.20170115618984955,-0.49803407601572747,-0.04766842576723296,1.0
+263860.KQ,active,,0.5603664440054273,-0.6003472222222224,0.17658698842581844,1.0
+263720.KQ,excluded,,-0.41511240841219027,-0.8323570432357044,-0.32510853493324154,1.0
+238490.KQ,excluded,,-0.48206623189576536,-0.4795539033457249,-0.1524200619809286,1.0
+251630.KQ,excluded,,-0.044046107882067545,-0.6712538226299695,-0.17547047830417772,5.0
+227610.KQ,excluded,,-0.5692463921453338,-0.7930569803845668,-0.3439449496137592,3.0
+272290.KQ,active,,0.8132227957195582,-0.34021068198859095,0.2313335416099782,11.0
+003380.KQ,weak,,0.29635501040310697,-0.5502294747577767,0.039337401216984036,3.0
+261200.KQ,excluded,,-0.46669197013154695,-0.7003896419375608,-0.22554823161279325,17.0
+267320.KQ,excluded,,-0.15926518748162138,-0.7027272727272729,-0.2458331586920831,1.0
+250000.KQ,excluded,,-0.8707882251361047,-0.587090129642225,-0.22813427847241097,4.0
+267980.KQ,excluded,,0.0,0.0,0.0,0.0
+225190.KQ,excluded,,-0.6082699478618828,-0.8195876288659796,-0.42600591205993465,2.0
+264850.KQ,weak,,0.20504746023674064,-0.5977777777777779,-0.07058069781507648,1.0
+161580.KQ,active,,0.6396228126928105,-0.5837816021500297,0.2309716815105909,5.0
+256630.KQ,excluded,,0.035024510681826916,-0.3386382232004037,-0.03131410042018801,18.0
+166090.KQ,weak,,0.2696050635474173,-0.6082325254242746,-0.009235148513431435,5.0
+258790.KQ,active,,0.9228373626607372,-0.23516237402015683,0.1713487935197009,1.0
+251370.KQ,excluded,,0.13282418868928156,-0.7086859688195992,-0.0843457378692174,5.0
+265520.KQ,excluded,,0.06894718050645264,-0.46953642384105965,-0.03357073782703901,1.0
+263770.KQ,excluded,,-0.029978974408256396,-0.4871323529411765,-0.04980928421314701,1.0
+063760.KQ,excluded,,0.0,0.0,0.0,0.0
+264450.KQ,excluded,,0.02163928101754651,-0.510938602681722,-0.07503913831057862,1.0
+178320.KQ,active,,0.4982113177511876,-0.6547029702970297,0.13228380492697345,1.0
+183300.KQ,active,,0.9269254776235328,-0.6634020618556702,0.48507279117720503,3.0
+246720.KQ,weak,,0.31763631342659476,-0.447176684881603,0.05018293852086808,1.0
+217480.KQ,error,"download: No data downloaded for ticker=217480.KQ, interval=1d",,,,
+002800.KQ,excluded,,0.16282543133855565,-0.48193548387096785,-0.04430140071491262,1.0
+083500.KQ,weak,,0.29217760344671867,-0.5775862068965517,0.011844694746510953,1.0
+087260.KQ,excluded,,-0.7355788996320801,-0.9045519581090823,-0.4825982961348547,11.0
+241820.KQ,excluded,,-0.8225798227976083,-0.9268765133171913,-0.6420589769064939,1.0
+140070.KQ,excluded,,-0.28629965877724906,-0.713163481953291,-0.19198541542847636,1.0
+206650.KQ,excluded,,-0.09552497080844054,-0.5705984892504359,-0.10948397460856851,1.0
+256840.KQ,excluded,,0.1915432075390166,-0.7612761276127613,-0.0452952383397488,1.0
+241520.KQ,active,,0.40555464495701515,-0.6616541353383459,0.0722264383117821,11.0
+246690.KQ,active,,0.6203212352975047,-0.6919431279620853,0.21028765548917328,3.0
+147760.KQ,excluded,,2.4030595465603386e-05,-0.7573068893528183,-0.22874152754620536,3.0
+196300.KQ,excluded,,-0.44077474906373737,-0.8155990458480207,-0.3468152031019084,4.0
+203450.KQ,excluded,,0.0,0.0,0.0,0.0
+215600.KQ,excluded,,-0.18219625321979574,-0.6660530096056514,-0.1962430927543275,15.0
+254120.KQ,excluded,,-0.04890437280456411,-0.8467878787878789,-0.169131551666175,3.0
+241790.KQ,excluded,,0.05738387182014724,-0.5324675324675325,-0.05081685766757871,1.0
+220100.KQ,weak,,0.2008465792974873,-0.7889769205442587,-0.053147193472453336,11.0
+144960.KQ,excluded,,-0.032713684464690286,-0.5088535459060564,-0.07633028983523338,3.0
+156100.KQ,excluded,,0.0,0.0,0.0,0.0
+220180.KQ,excluded,,0.0,0.0,0.0,0.0
+237880.KQ,excluded,,-0.3919145428149787,-0.41306306306306306,-0.0818289651573395,2.0
+900300.KQ,excluded,,-0.27378796470128763,-0.9503656597774245,-0.41286152267684784,1.0
+238120.KQ,weak,,0.23270971262777082,-0.4044444444444445,0.02012516456324498,3.0
+252500.KQ,excluded,,-0.4513713841168211,-0.6955017301038062,-0.24295592523486487,1.0
+216050.KQ,excluded,,-0.7246658357608797,-0.6581030987988177,-0.17897742799579242,6.0
+239610.KQ,excluded,,-0.602393952843195,-0.7348958333333335,-0.2759178558320312,3.0
+241710.KQ,active,,0.7283815496058267,-0.379611650485437,0.202234098770534,1.0
+900290.KQ,excluded,,0.09590843856405225,-0.6864459857513435,-0.08614991130571747,6.0
+189300.KQ,weak,,0.3809448702873299,-0.7143271461716938,0.05971568084882084,1.0
+072990.KQ,excluded,,-0.5532025313492515,-0.5554711246200608,-0.15753096469195904,1.0
+950140.KQ,active,,0.5605940348554478,-0.7541984732824427,0.16940846808580656,1.0
+238090.KQ,excluded,,-0.48379862899748255,-0.6647180957985022,-0.22740538149054434,9.0
+050960.KQ,excluded,,0.05070201917923983,-0.6842105263157896,-0.10120968666058638,8.0
+201490.KQ,weak,,0.31655772872892385,-0.5945546726151361,0.048709501573311886,11.0
+250930.KQ,excluded,,-0.2710583018382595,-0.7158549073800062,-0.2900782227077354,3.0
+241690.KQ,excluded,,-0.22813265793712367,-0.5552884613161057,-0.1347867287307466,3.0
+250060.KQ,active,,0.5781821547797756,-0.7046632124352332,0.15228251014089622,1.0
+242040.KQ,active,,0.49046346744676117,-0.6611617312072893,0.11344208684858215,1.0
+234920.KQ,excluded,,0.01586371423321943,-0.909550498171038,-0.3322797506894065,5.0
+900270.KQ,excluded,,-0.06930572703305687,-0.8746268656716418,-0.27283673117244145,3.0
+208860.KQ,error,"re_index=True)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""C:\Users\82102\anaconda3\Lib\site-packages\pandas\core\reshape\concat.py"", line 407, in concat
+    objs, keys, ndims = _clean_keys_and_objs(objs, keys)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""C:\Users\82102\anaconda3\Lib\site-packages\pandas\core\reshape\concat.py"", line 808, in _clean_keys_and_objs
+    raise ValueError(""No objects to concatenate"")
+ValueError: No objects to concatenate
+",,,,
+073560.KQ,excluded,,0.05238365918176475,-0.4276849642004773,-0.021870490359747197,1.0
+123010.KQ,excluded,,0.0,0.0,0.0,0.0
+142760.KQ,excluded,,-0.5812876815792936,-0.9526732673267326,-0.395129438527279,3.0
+237750.KQ,excluded,,-0.03794493243117427,-0.5180897250361796,-0.07544525246287614,1.0
+900260.KQ,active,,0.7012976679210807,-0.45216400911161736,0.23006803302279089,3.0
+237690.KQ,excluded,,0.06467846995256474,-0.5011791782275153,-0.04030594358123729,15.0
+144510.KQ,excluded,,-0.17200571036622633,-0.5378181818181818,-0.1110753026981055,1.0
+148250.KQ,excluded,,0.0,0.0,0.0,0.0
+239340.KQ,weak,,0.3585707131466465,-0.9240729457435533,-0.08832384313906583,3.0
+243070.KQ,excluded,,-0.27596641641967756,-0.6006806899431816,-0.15496122256233358,11.0
+240810.KQ,excluded,,0.04057532591527443,-0.42674938965392806,-0.013479266588853123,8.0
+228850.KQ,excluded,,-0.4089854334460583,-0.29064039408867004,-0.04649188846586094,2.0
+228340.KQ,excluded,,-0.11425121624669769,-0.7171231579867756,-0.1445970246799292,7.0
+222110.KQ,excluded,,-0.424861110599629,-0.5143034915099169,-0.12239514025879805,9.0
+211270.KQ,excluded,,0.15337030885770095,-0.7331657996109,-0.09482631093898852,7.0
+115180.KQ,active,,0.6802871146619589,-0.7730496439105348,0.26657969254741243,1.0
+065660.KQ,excluded,,0.14021437611062593,-0.7441379310344828,-0.08169034960591814,1.0
+236200.KQ,weak,,0.30837156199370963,-0.2651324961682884,0.04062048823626507,4.0
+142210.KQ,active,,0.6066908931045343,-0.30737298315955963,0.11226624356689108,7.0
+900250.KQ,excluded,,0.10296198492190439,-0.9180599955714409,-0.1300379156815462,5.0
+224060.KQ,active,,0.46819341128226055,-0.5977496483825598,0.1168672674852742,3.0
+109610.KQ,excluded,,-0.04945742620080509,-0.7332894131560579,-0.12710534266858697,5.0
+223310.KQ,error,"re_index=True)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""C:\Users\82102\anaconda3\Lib\site-packages\pandas\core\reshape\concat.py"", line 407, in concat
+    objs, keys, ndims = _clean_keys_and_objs(objs, keys)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""C:\Users\82102\anaconda3\Lib\site-packages\pandas\core\reshape\concat.py"", line 808, in _clean_keys_and_objs
+    raise ValueError(""No objects to concatenate"")
+ValueError: No objects to concatenate
+",,,,
+232140.KQ,weak,,0.37210146530888866,-0.7182978954915282,0.043931406313584276,26.0
+191410.KQ,excluded,,0.13651045090467046,-0.7829787234042553,-0.08938869250010106,1.0
+145020.KQ,excluded,,0.03193761495389469,-0.44845360824742275,-0.040853209539971846,5.0
+222980.KQ,excluded,,-0.2742516888012863,-0.6467505241090148,-0.13563623156445925,3.0
+206560.KQ,excluded,,-1.2311271275509077,-0.9207042175969162,-0.41172244219484166,7.0
+013310.KQ,excluded,,-0.5574778462453848,-0.48096885813148793,-0.1728521177911918,1.0
+047920.KQ,excluded,,0.08043491419708522,-0.8498783454987835,-0.1895991822200539,1.0
+217730.KQ,weak,,0.27552026457741663,-0.6813140310723763,-0.04604281153715517,1.0
+133750.KQ,excluded,,-0.26931886687963374,-0.5411368467670123,-0.11688300458961176,3.0
+225530.KQ,excluded,,-0.4196108289266952,-0.7272645730091807,-0.21290771077875847,3.0
+140860.KQ,active,,0.5417040453570564,-0.3313696612665685,0.15848498018254076,5.0
+230240.KQ,active,,0.4544055776935187,-0.7190207156308852,0.09868189594622034,15.0
+122640.KQ,active,,0.538234046267966,-0.5683814303638646,0.16248619550301258,1.0
+222040.KQ,weak,,0.30410402017749616,-0.5702399820905177,0.04533585670886042,5.0
+058110.KQ,excluded,,-0.14721284031203594,-0.7303312273553413,-0.19311051295824677,11.0
+217820.KQ,excluded,,-0.15259414436011312,-0.887555325828957,-0.25800049337260844,3.0
+221840.KQ,excluded,,-0.28206766930422766,-0.7727605118829983,-0.19380172728352385,1.0
+180400.KQ,weak,,0.2102875491938021,-0.17934782608695665,0.0222147316670529,1.0
+221980.KQ,active,,0.9462359675628809,-0.015397082658022865,0.019404795194672975,4.0
+212560.KQ,active,,0.5601203913872077,-0.4791265253693,0.17663403408878975,1.0
+227950.KQ,excluded,,-0.02490420911184893,-0.8908169014084508,-0.24443573970564303,1.0
+214370.KQ,weak,,0.24040357634818832,-0.6552626955695795,0.018338662279543616,5.0
+185490.KQ,excluded,,0.0,0.0,0.0,0.0
+190510.KQ,excluded,,-0.3688132310873598,-0.6997056873670983,-0.14842413494139317,13.0
+056090.KQ,excluded,,-0.737466297268812,-0.816547135091761,-0.7966646183133781,1.0
+226340.KQ,weak,,0.21506756935366705,-0.9461386138613862,-0.09244978319086594,1.0
+182400.KQ,excluded,,-0.6207832880371693,-0.8295561357702352,-0.49159215206015283,1.0
+092870.KQ,active,,0.7387019131179997,-0.4725974537455353,0.296708038787032,19.0
+225430.KQ,excluded,,-0.37701588283156784,-0.9349845201238391,-0.4108629671600914,1.0
+225590.KQ,excluded,,-0.35161505036216295,-0.760017817837468,-0.17620182714977206,3.0
+225570.KQ,weak,,0.221353081601036,-0.7304940374787052,-0.03702741336007065,3.0
+217190.KQ,weak,,0.3667012232728023,-0.6511764677497838,0.04661885560518919,1.0
+219130.KQ,active,,0.7069087392281858,-0.7686915887850468,0.25485925357240125,10.0
+175140.KQ,excluded,,0.027756536779550207,-0.7677304964539007,-0.13214506288427208,1.0
+222080.KQ,excluded,,0.09907608782498323,-0.6815013404825738,-0.1014854163482024,1.0
+224110.KQ,excluded,,-0.027827232531577577,-0.7238615664845174,-0.1731865315976049,1.0
+196700.KQ,excluded,,-0.08268606247309161,-0.8619252873563219,-0.21878783997172901,1.0
+131760.KQ,excluded,,0.19974757364321877,-0.4735042735042735,0.016992182908155407,9.0
+222800.KQ,active,,0.6768333122902096,-0.8266550522648085,0.26462766824756745,1.0
+189980.KQ,excluded,,-0.4059697912625678,-0.30528215929386227,-0.04348135093969796,4.0
+222420.KQ,excluded,,-0.050716298911079004,-0.7647058823529411,-0.14524729282898885,1.0
+094360.KQ,excluded,,0.0,0.0,0.0,0.0
+127710.KQ,excluded,,-0.015176939496845707,-0.6882870697791199,-0.0734841867166316,7.0
+214430.KQ,active,,0.43371752341843717,-0.45326716294458225,0.09481343696690092,8.0
+067730.KQ,excluded,,-0.431914267097323,-0.7305961754780654,-0.2051399167493937,6.0
+220260.KQ,excluded,,-0.19063229196004236,-0.8381088825214902,-0.2570079709954233,1.0
+214450.KQ,active,,0.7149000578038115,-0.6364521552577231,0.2520178037811791,5.0
+219550.KQ,excluded,,-0.13189601111623922,-0.9515151515151515,-0.4029559970093245,7.0
+087010.KQ,active,,0.8169005856372362,-0.7316062176165803,0.4037967063434498,3.0
+218410.KQ,active,,0.6117441402907199,-0.5772773134063891,0.1694396413373398,5.0
+094170.KQ,active,,0.6644871288294641,-0.6350505293253574,0.25536939247839685,9.0
+178780.KQ,error,"re_index=True)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""C:\Users\82102\anaconda3\Lib\site-packages\pandas\core\reshape\concat.py"", line 407, in concat
+    objs, keys, ndims = _clean_keys_and_objs(objs, keys)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""C:\Users\82102\anaconda3\Lib\site-packages\pandas\core\reshape\concat.py"", line 808, in _clean_keys_and_objs
+    raise ValueError(""No objects to concatenate"")
+ValueError: No objects to concatenate
+",,,,
+214180.KQ,weak,,0.2241023050794521,-0.49919354838709673,0.02348594687486405,1.0
+166480.KQ,excluded,,-0.3028827932307086,-0.9469009581078468,-0.34801288171512246,3.0
+177350.KQ,excluded,,0.0,0.0,0.0,0.0
+217270.KQ,excluded,,-0.29901603364165136,-0.8693726424626625,-0.2517391940343281,11.0
+218150.KQ,excluded,,0.0792450995132808,-0.8619574468085106,-0.1578686807745221,1.0
+160980.KQ,weak,,0.2874393201393761,-0.6739130434782611,0.003578489984518818,3.0
+217500.KQ,excluded,,-0.04741076440604631,-0.7499025341130604,-0.15040410850225316,11.0
+087600.KQ,excluded,,-0.10432025268949487,-0.742916378714582,-0.1301949470780036,1.0
+187420.KQ,excluded,,-0.23372160148008098,-0.755693950177936,-0.20271849589104796,1.0
+215380.KQ,excluded,,0.005719049264265653,-0.7860105880149044,-0.16127762367811882,1.0
+215480.KQ,excluded,,-0.361341588432598,-0.6919860627177701,-0.15899045415526492,3.0
+215790.KQ,excluded,,0.11132692540531589,-0.8916453399336992,-0.19557634839045923,3.0
+215360.KQ,excluded,,-0.013501342306425215,-0.45632653061224493,-0.024659381344335873,2.0
+215200.KQ,excluded,,-0.206704587598044,-0.6472440051233135,-0.12601151250098508,3.0
+215090.KQ,active,,0.9590683143601483,-0.6398104265402844,0.5680928185891765,1.0
+215100.KQ,excluded,,0.07076359572699997,-0.7612809315866085,-0.10797458727773124,3.0
+214680.KQ,excluded,,0.09831279624527516,-0.8991596638655462,-0.12441954812721989,1.0
+195990.KQ,excluded,,-0.5651106180193899,-0.8986183074265977,-0.33635201958992356,1.0
+215000.KQ,excluded,,0.0,0.0,0.0,0.0
+214150.KQ,excluded,,0.14840379118621813,-0.58994708994709,-0.06560372343195053,1.0
+214270.KQ,excluded,,-0.40834138992757707,-0.8977661305388747,-0.3160458550362589,5.0
+189690.KQ,excluded,,-0.13960599313347602,-0.6426065162907268,-0.12002973436215303,3.0
+213420.KQ,excluded,,0.07467215211451105,-0.6923611111111111,-0.09568327499871432,2.0
+060480.KQ,excluded,,0.10169453876154368,-0.7760606060606059,-0.024160301024177877,3.0
+193250.KQ,weak,,0.219623041233108,-0.7427041045733539,-0.07557678424078074,3.0
+206640.KQ,weak,,0.3205758936999186,-0.0723113696996468,0.015156177883892674,2.0
+208640.KQ,excluded,,0.02050175330403445,-0.9649444601769127,-0.26581323373288446,9.0
+200470.KQ,weak,,0.3820136333369415,-0.7890243902439026,0.010689117420491723,1.0
+200670.KQ,excluded,,-0.041519335399020814,-0.7018469656992085,-0.05497033292031983,1.0
+189860.KQ,excluded,,0.13501967303106796,-0.7868131868131869,-0.12518219091108773,1.0
+067390.KQ,excluded,,-0.4423979774871433,-0.9480225687000932,-0.37327916669072647,5.0
+080580.KQ,excluded,,0.17293446589818165,-0.8625516256010859,-0.11260999889188406,7.0
+208350.KQ,excluded,,-0.3013209086538828,-0.4857270880005121,-0.14000943561577228,3.0
+208710.KQ,excluded,,0.008888763930017689,-0.9442492012779553,-0.25534899702514113,1.0
+160550.KQ,excluded,,-0.7889308403714224,-0.9306128400206704,-0.3585934841650942,5.0
+124500.KQ,excluded,,0.0,0.0,0.0,0.0
+142280.KQ,excluded,,-0.41744041354917355,-0.8760671333469945,-0.2787590918010263,5.0
+187220.KQ,excluded,,-0.39119264977685914,-0.7308034429375383,-0.29998295733102964,7.0
+208370.KQ,excluded,,-0.08655030649722086,-0.8302253302253303,-0.1798985418552913,3.0
+208140.KQ,excluded,,0.06072618621889234,-0.5544869918635469,-0.03238719219480646,3.0
+149980.KQ,weak,,0.33545753267079986,-0.6544850436091783,0.04559053100732546,12.0
+084650.KQ,excluded,,-0.12669680194110525,-0.9516171439530879,-0.2939565271159643,3.0
+200710.KQ,weak,,0.3753463113875966,-0.7466386554621849,0.031650247288859124,5.0
+200780.KQ,excluded,,-0.7727497045573437,-0.3940634595701126,-0.07804322344159353,2.0
+207760.KQ,excluded,,-0.05586101200029209,-0.7989423504800115,-0.19696830028070034,5.0
+196170.KQ,active,,0.7259804933225942,-0.6700767508562615,0.30386819962724987,1.0
+206400.KQ,excluded,,-0.07822785910395019,-0.7489443378119002,-0.16138817278682405,7.0
+140520.KQ,excluded,,-0.1714020640639963,-0.5823463687150839,-0.0963219605306267,1.0
+173940.KQ,excluded,,-0.38370372853077256,-0.7467289719626169,-0.1610461365190824,2.0
+205470.KQ,excluded,,0.048048652978176544,-0.9406601941747574,-0.21465749911082643,5.0
+200230.KQ,excluded,,-0.405629036457656,-0.9286763500467722,-0.36265969787295704,4.0
+204840.KQ,excluded,,0.15831982388213522,-0.6147058823529412,-0.05853983495741355,1.0
+204620.KQ,active,,0.4664495205992571,-0.5366459263392857,0.1081876907889121,1.0
+196490.KQ,excluded,,-0.732861503757547,-0.9713440186198129,-0.6436900369852485,5.0
+205500.KQ,excluded,,-0.10768042704049006,-0.8859699521601114,-0.20582120331332976,7.0
+205100.KQ,excluded,,-0.05511478749515558,-0.6047021943573667,-0.11933484157000707,1.0
+191420.KQ,excluded,,-0.19320966795790134,-0.8095238095238096,-0.21664063561311775,1.0
+192440.KQ,excluded,,0.010051723525843633,-0.2116129032258065,-0.004102021986001958,4.0
+143540.KQ,excluded,,-0.47655522043165777,-0.8073954983922831,-0.2320334411880941,2.0
+203650.KQ,active,,0.46621148912013033,-0.6632719393282774,0.11951594609914662,9.0
+041920.KQ,excluded,,0.0,0.0,0.0,0.0
+194480.KQ,excluded,,-0.12711227794711907,-0.8262879788639367,-0.17192318896689374,1.0
+192410.KQ,excluded,,0.07630539032895339,-0.9765283842794761,-0.2831433027646836,1.0
+198440.KQ,excluded,,0.10068131434937948,-0.8106090373280943,-0.0975961494591866,7.0
+187270.KQ,excluded,,0.062135327518717,-0.6884422110552764,-0.06627904091943893,1.0
+177830.KQ,excluded,,-0.27825910871909276,-0.5853807757493068,-0.11628998377902044,3.0
+090410.KQ,excluded,,-0.1034973437246271,-0.8002284570739917,-0.12446104875226882,24.0
+004650.KQ,excluded,,0.043579839487307336,-0.099290780141844,0.0009522348776431766,2.0
+192390.KQ,excluded,,-0.10957320159230613,-0.7337099811676083,-0.14144310986698805,5.0
+059120.KQ,excluded,,0.0,0.0,0.0,0.0
+200130.KQ,excluded,,-0.31707200712314626,-0.37105281826474756,-0.06667453376002075,13.0
+105550.KQ,excluded,,-0.4605880153163833,-0.9355070460524294,-0.335818230780504,5.0
+196450.KQ,excluded,,0.12392445613963567,-0.7355608591885443,-0.07175699191441565,3.0
+071850.KQ,excluded,,-0.017921680530735777,-0.5872029250457038,-0.08989698891244557,17.0
+187790.KQ,active,,0.5383490413608272,-0.6070393374741202,0.1615784565587406,11.0
+192250.KQ,active,,0.41788770163925115,-0.6627329615017189,0.3562054003318942,7.0
+138080.KQ,excluded,,0.1375450735157122,-0.8848175182481752,-0.08231128110849562,1.0
+053300.KQ,weak,,0.3325048226927751,-0.6065411298315164,0.052709701445035506,3.0
+154040.KQ,excluded,,0.1397900344548391,-0.13261648745519705,0.008840353548251967,2.0
+090850.KQ,active,,0.5934622009096666,-0.4815677035601431,0.13340929107111443,12.0
+184230.KQ,excluded,,-0.023280129193024555,-0.820067738385565,-0.13285024056609052,1.0
+049080.KQ,active,,0.4371738284715275,-0.8775244299674267,0.04605213083203075,1.0
+085810.KQ,excluded,,-0.1685434839951799,-0.7821011673151752,-0.18133312323998174,2.0
+170030.KQ,excluded,,-0.16806932602787814,-0.6792062671231588,-0.13770018827604658,3.0
+067570.KQ,excluded,,-0.3296626178434424,-0.653124847490518,-0.1396143011165043,3.0
+134580.KQ,active,,0.4596159176720174,-0.9073613360488199,0.09413513174379418,5.0
+182360.KQ,excluded,,0.18969037081326198,-0.8534370960712131,-0.052033916693161486,5.0
+171120.KQ,excluded,,-0.18557616883235326,-0.23809523809523814,-0.017421376095195007,2.0
+171010.KQ,excluded,,0.081297606498362,-0.7659807640874203,-0.08176087545725064,5.0
+138360.KQ,error,"re_index=True)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""C:\Users\82102\anaconda3\Lib\site-packages\pandas\core\reshape\concat.py"", line 407, in concat
+    objs, keys, ndims = _clean_keys_and_objs(objs, keys)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""C:\Users\82102\anaconda3\Lib\site-packages\pandas\core\reshape\concat.py"", line 808, in _clean_keys_and_objs
+    raise ValueError(""No objects to concatenate"")
+ValueError: No objects to concatenate
+",,,,
+076610.KQ,excluded,,-0.09502215688453348,-0.9570775799595073,-0.2736412746620416,23.0
+168330.KQ,weak,,0.3933698362420166,-0.5774773002346933,0.20849609417584647,10.0
+131970.KQ,active,,0.48766875376921714,-0.7275118358758548,0.1260570810783932,17.0
+150900.KQ,excluded,,-0.12027775010834532,-0.8007196133996188,-0.1207432623098631,17.0
+170920.KQ,weak,,0.36211783400626724,-0.5848765432098766,0.06657797537727994,8.0
+119850.KQ,active,,0.7001680145644525,-0.607531070720604,0.2822898784140655,11.0
+092040.KQ,excluded,,-0.268660450758404,-0.9249268713170715,-0.2297524231501049,11.0
+130500.KQ,excluded,,0.045720910909854875,-0.8812385080968769,-0.12177321323354395,7.0
+170790.KQ,excluded,,-0.016044474706452223,-0.6574468085106384,-0.06272011069097894,1.0
+151860.KQ,excluded,,0.02119462008902352,-0.8464470073900242,-0.06983464370419568,7.0
+089600.KQ,excluded,,-0.2087105309022869,-0.771595513637798,-0.10936014458924292,1.0
+950130.KQ,active,,0.5565703736901607,-0.9149947565385311,0.16233851299637347,5.0
+141080.KQ,active,,0.6213004981942024,-0.6351288056206088,0.21814396636870326,3.0
+097800.KQ,excluded,,0.11927755463798717,-0.8497247466143789,-0.0949385802133964,13.0
+104540.KQ,excluded,,0.0,0.0,0.0,0.0
+159580.KQ,excluded,,0.023353729575137726,-0.8483897308828914,-0.09581932687900763,7.0
+114810.KQ,excluded,,0.1930959672958461,-0.7680055315898316,-0.020027180804164546,25.0
+153490.KQ,excluded,,-0.13250557763973045,-0.7586250326395346,-0.09596524935201844,9.0
+099190.KQ,weak,,0.3799689476151149,-0.5607321131447589,0.07717295476624964,19.0
+159910.KQ,error,"
+Traceback (most recent call last):
+  File ""<frozen runpy>"", line 198, in _run_module_as_main
+  File ""<frozen runpy>"", line 88, in _run_code
+  File ""C:\Users\82102\Desktop\capstone2\src\pipeline\run_esn_ta_walkforward.py"", line 329, in <module>
+    main()
+  File ""C:\Users\82102\Desktop\capstone2\src\pipeline\run_esn_ta_walkforward.py"", line 222, in main
+    raise ValueError(f""Fold {fold_idx}: no validation rows remain after purging."")
+ValueError: Fold 4: no validation rows remain after purging.
+",,,,
+046970.KQ,active,,0.6664858922161662,-0.7612676056338028,0.2696865911782895,3.0
+113810.KQ,excluded,,0.19012554490347708,-0.8476190476190476,-0.0799946397190251,1.0
+155650.KQ,excluded,,-0.43146925842943945,-0.7108009824076496,-0.1280374106571167,18.0
+149950.KQ,weak,,0.343376663855721,-0.7421052631578948,0.052038230103097716,5.0
+153460.KQ,active,,0.46413609278467277,-0.3954410307234887,0.1213845702073808,5.0
+137400.KQ,weak,,0.3644716030932903,-0.592233009708738,0.06678756389343432,15.0
+141000.KQ,weak,,0.2770401115962016,-0.45145631067961156,0.03927242606302617,16.0
+072950.KQ,active,,0.6599023579113779,-0.7484143763213531,0.2429438614461803,17.0
+143240.KQ,excluded,,0.06822031922544858,-0.7556991798886984,-0.02624537425164397,7.0
+147830.KQ,weak,,0.31179739940690837,-0.7892976588628763,0.01573201919416256,3.0
+091590.KQ,excluded,,0.18729496676895754,-0.8355242812702869,-0.045205017575949746,9.0
+140410.KQ,active,,0.4494425445245132,-0.8363277770434302,0.09058123017915398,5.0
+104830.KQ,active,,0.5128063698049637,-0.49570037076531626,0.12868828043986902,20.0
+127120.KQ,active,,1.0421704469784614,-0.5716980853005773,0.5977104012089438,11.0
+130580.KQ,excluded,,0.08679400650427274,-0.6564885496183206,-0.0069096277074460755,1.0
+131090.KQ,excluded,,0.02225979045401515,-0.6574659218463033,-0.07067591465031942,1.0
+100660.KQ,excluded,,0.05830142000626197,-0.8042169491075937,-0.08405215617357809,13.0
+115480.KQ,excluded,,-0.11792785682950739,-0.8979317022869326,-0.16964157982615957,18.0
+139670.KQ,weak,,0.37258977163700363,-0.9778068739770868,0.014770935798160467,1.0
+121800.KQ,error,"download: No data downloaded for ticker=121800.KQ, interval=1d",,,,
+138070.KQ,excluded,,-0.487802029764304,-0.6002755353895712,-0.10350016373748361,6.0
+123570.KQ,excluded,,0.055416838016703045,-0.8061151079136691,-0.04789228551262881,1.0
+122870.KQ,weak,,0.34287828309190727,-0.6437795325481181,0.05899836850900031,15.0
+089030.KQ,active,,0.7728380436691595,-0.6120815138282387,0.32381715076172846,19.0
+101240.KQ,excluded,,-0.08264653562943775,-0.7550033553903521,-0.09603297663316301,5.0
+007820.KQ,excluded,,-0.10246757709845272,-0.7839687687729453,-0.1175888886902754,24.0
+115530.KQ,excluded,,-0.02114173130164548,-0.3052846265301893,-0.08430996762388565,3.0
+090360.KQ,active,,0.5866958789887795,-0.8172168686615995,0.1945805431143557,3.0
+131220.KQ,weak,,0.28951060728869277,-0.8772755138943431,0.03310778320511876,9.0
+143160.KQ,active,,0.437330323275174,-0.7164556962025317,0.09877196615447592,10.0
+137950.KQ,excluded,,0.06798573453170773,-0.8397791736013077,-0.0685766517472175,3.0
+040910.KQ,excluded,,0.13418150846323348,-0.452914798206278,-0.0011045178684602197,9.0
+123330.KQ,active,,0.6479213266117106,-0.5397840215259295,0.21975224002811533,19.0
+089980.KQ,weak,,0.22916565663086724,-0.7950753576402461,0.014375241798224359,12.0
+138610.KQ,active,,0.5793319496803825,-0.7667304015296367,0.19097528926091822,13.0
+109080.KQ,weak,,0.3841066249183429,-0.6534313725490196,0.07330367878764155,3.0
+108380.KQ,weak,,0.2958701860086033,-0.5361904761904762,0.04304000823313836,7.0
+019770.KQ,weak,,0.3149733471914532,-0.7814285714285714,0.023336682075197013,11.0
+137940.KQ,excluded,,-0.15325819275138405,-0.9640487804878048,-0.29410884015111416,1.0
+131100.KQ,excluded,,-0.45197026532686474,-0.9746054857860074,-0.31100079141666526,5.0
+122450.KQ,weak,,0.29655618511728515,-0.7555611039971915,0.039581719296468254,14.0
+121440.KQ,active,,0.4824889425132428,-0.7023807270920225,0.10386801559874614,17.0
+136540.KQ,excluded,,-0.22947780017691488,-0.5903438805796954,-0.08193211771937747,13.0
+136480.KQ,excluded,,0.18773686751843968,-0.6526063237677834,0.0006108269940359179,11.0
+134060.KQ,active,,0.5164809027887043,-0.5857142857142856,0.14123703292741507,30.0
+104480.KQ,weak,,0.21010838811015753,-0.8209580838323354,0.005878897491834012,14.0
+008470.KQ,excluded,,-0.06112363181262896,-0.6520979020979021,-0.055751063542931245,1.0
+121600.KQ,active,,0.5355745543587652,-0.8087121212121212,0.15772152535699435,1.0
+093320.KQ,active,,0.4316505207574119,-0.5663157894736843,0.09656401552622129,1.0
+130740.KQ,excluded,,0.10350209711858611,-0.7618563804923971,-0.06254849435580712,7.0
+061970.KQ,weak,,0.2795315545234497,-0.8188679245283019,-0.009213685743740596,3.0
+131180.KQ,excluded,,-0.07086694553447662,-0.6587628865979382,-0.06144479299251149,16.0
+126880.KQ,weak,,0.30094514406464545,-0.6389554703086167,0.0454304096951359,8.0
+033560.KQ,excluded,,0.19555287744550368,-0.7529538131041891,0.0023394044751940957,5.0
+048530.KQ,excluded,,-0.132823808062945,-0.9510732574438697,-0.18718665945947022,15.0
+131370.KQ,excluded,,0.19348010836585025,-0.9191615695691687,-0.02286470246840877,7.0
+064290.KQ,active,,0.4138521197860443,-0.8628622331630147,0.09006297438811162,13.0
+131290.KQ,active,,0.8180637933215845,-0.6543859649122807,0.3664876182173116,5.0
+131400.KQ,excluded,,0.06770729566924827,-0.9566133720930233,-0.17138221897694117,19.0
+120240.KQ,excluded,,0.014159200838407191,-0.7353075170842825,-0.07412516891847631,11.0
+128660.KQ,weak,,0.297060798718458,-0.6190828402366864,0.03420591313651333,1.0
+131030.KQ,weak,,0.3198747651553864,-0.7615878512009238,0.04531921980122089,13.0
+096690.KQ,excluded,,-0.302710333875006,-0.9812749447231881,-0.3563950071542875,3.0
+033830.KQ,weak,,0.3255582211710478,-0.7643773584905661,0.055884914227112725,13.0
+033170.KQ,excluded,,0.09626696440065279,-0.8824372759856631,-0.10415005697840207,3.0
+041460.KQ,excluded,,0.12262423450088424,-0.8188679245283019,-0.06282666766802925,1.0
+126600.KQ,excluded,,-0.021237371076681204,-0.7620560760399755,-0.08556190153231913,13.0
+105740.KQ,weak,,0.28800004555319486,-0.6826714801444043,0.02300378293644667,7.0
+123420.KQ,excluded,,0.19311910533724186,-0.864857881136951,-0.05028949759223811,3.0
+123860.KQ,weak,,0.23076629945666136,-0.7059463590937405,0.009325737608293139,15.0
+058400.KQ,excluded,,0.032918848373029906,-0.7968539325842697,-0.07452848500878562,3.0
+069140.KQ,excluded,,0.09268372825732324,-0.8715332137128297,-0.11332871879829465,3.0
+119830.KQ,weak,,0.3315787352899967,-0.8404347826086956,0.023878946416211466,1.0
+101930.KQ,active,,0.651425784735542,-0.3980738362760834,0.17735655800298056,17.0
+068940.KQ,error,"download: No data downloaded for ticker=068940.KQ, interval=1d",,,,
+123840.KQ,excluded,,-0.3782841409421718,-0.9957326830573717,-0.38968734621918955,3.0
+117670.KQ,excluded,,-0.6150438799553163,-0.94636047112058,-0.41027164215285594,1.0
+119500.KQ,excluded,,0.14419003940677802,-0.7250000000000001,-0.05386276414841529,3.0
+068240.KQ,excluded,,-0.14789305915962936,-0.9378742108083342,-0.17234599573930187,3.0
+096530.KQ,excluded,,-0.032361781567123195,-0.82365988909427,-0.09727728328654228,9.0
+122990.KQ,excluded,,-0.07302568342979834,-0.4910875885369912,-0.029347695989527245,19.0
+126700.KQ,weak,,0.23527896387317648,-0.6887661141804788,-0.004448736347115179,9.0
+126640.KQ,active,,0.4034625365247779,-0.6492753623188406,0.085004826623988,7.0
+123410.KQ,active,,0.4659070214244423,-0.5276461295418642,0.11041498040153264,19.0
+123040.KQ,excluded,,0.08011856218501193,-0.8575979891320802,-0.08285504459254034,7.0
+067920.KQ,excluded,,0.15824499303775613,-0.4769403824521935,0.0009191839083595443,1.0
+119610.KQ,excluded,,-0.06783801133213747,-0.6964083458860382,-0.09767661254143734,7.0
+106190.KQ,excluded,,-0.08652053974549638,-0.6015999999999999,-0.049023173826182376,5.0
+121890.KQ,active,,0.4890075851048465,-0.6963249514739902,0.13090046724791105,6.0
+123750.KQ,excluded,,0.06184307178709443,-0.806837606837607,-0.09584795530595402,5.0
+089850.KQ,excluded,,0.04023018633396501,-0.7485562805373744,-0.045082150823716916,18.0
+046120.KQ,weak,,0.35603818081001143,-0.7441029306647606,0.041434957227944214,13.0
+070300.KQ,weak,,0.2963284946992033,-0.7612598734703465,0.01918957771281149,19.0
+079970.KQ,excluded,,-0.5140885470519619,-0.9961172413793103,-0.4523940109221033,1.0
+071200.KQ,weak,,0.36736152484152435,-0.6939814814814815,0.0680826534803518,1.0
+122690.KQ,excluded,,0.09367802146092771,-0.7722048066875654,-0.07652325762859746,5.0
+100030.KQ,excluded,,0.028644215776090783,-0.6220472440944883,-0.03405565939770683,3.0
+900110.KQ,excluded,,-0.40677747705178474,-0.6713039612970968,-0.268042685708501,7.0
+900100.KQ,excluded,,-0.3094235557002023,-0.8863708399366086,-0.3749255223501068,1.0
+115500.KQ,active,,0.4635563233017263,-0.7421965317919076,0.09611513612540223,1.0
+900120.KQ,excluded,,-0.3535599271700525,-0.9887971530249112,-0.3376815441823502,1.0
+115450.KQ,excluded,,0.03460665259121337,-0.8554589578153503,-0.11169432968131865,3.0
+122350.KQ,excluded,,-0.05124294799460075,-0.8908415178421987,-0.13704568260575656,3.0
+115610.KQ,excluded,,0.017804893900229057,-0.928110549896472,-0.1859562167873653,5.0
+115310.KQ,weak,,0.3414701281595845,-0.6531284302963777,0.06036922580887083,1.0
+106080.KQ,weak,,0.23897959815208364,-0.7559139984107377,-0.1680628479341313,2.0
+101330.KQ,weak,,0.3634428722780783,-0.6174540682414698,0.07028065525318072,27.0
+115570.KQ,excluded,,0.05341552512143878,-0.7759358288770054,-0.07614184524655754,3.0
+115440.KQ,weak,,0.3661761270861445,-0.7408637873754153,0.05375187058246356,3.0
+050860.KQ,weak,,0.32050852508942723,-0.5929465539632868,0.054664804173824244,9.0
+114630.KQ,excluded,,-0.06672684765444586,-0.849904761904762,-0.13104066562132566,1.0
+080530.KQ,excluded,,-0.2029208817433992,-0.8600767769398475,-0.3147329494635903,9.0
+900070.KQ,excluded,,-0.2518214020389555,-0.7443302896486408,-0.1167795256150701,13.0
+099520.KQ,error,"download: No data downloaded for ticker=099520.KQ, interval=1d",,,,
+114450.KQ,weak,,0.2578107167086964,-0.929471766848816,-0.06207374705805324,9.0
+104460.KQ,weak,,0.22644356584515118,-0.807936507936508,0.017534538206379846,5.0
+112040.KQ,excluded,,0.13733985381353805,-0.9303149606299214,-0.08997581184809123,11.0
+108860.KQ,active,,0.5357851022649877,-0.8168346344795065,0.16109339715511828,5.0
+088290.KQ,weak,,0.2358673175320224,-0.9835972483913682,-0.08087970717725135,5.0
+114190.KQ,excluded,,0.1620079688043411,-0.7183098591549296,-0.05269597152493355,1.0
+115160.KQ,excluded,,-0.44732670008019093,-0.9266836011553802,-0.21158395674800368,19.0
+109960.KQ,excluded,,-0.4518245933483655,-0.9959671302149178,-0.3967813297985564,1.0
+099410.KQ,weak,,0.25709014361934596,-0.7637167344931861,-0.022874392052268155,1.0
+101000.KQ,excluded,,-0.18261854272385267,-0.9948427785933198,-0.3921319903036171,14.0
+109820.KQ,weak,,0.20454448696971667,-0.9612389380530975,-0.07205669490727717,7.0
+082920.KQ,active,,0.6825826337134802,-0.49432404540763675,0.22047002621473744,13.0
+042520.KQ,weak,,0.3203152999458762,-0.7851602023608769,0.019702826330849188,7.0
+104200.KQ,excluded,,-0.042031779352969985,-0.8863861386138615,-0.14349567308574107,8.0
+052860.KQ,active,,0.4474459023276515,-0.7692422183654046,0.1064941315538479,7.0
+105330.KQ,excluded,,0.16500539670979478,-0.7984565165823574,-0.008006005131627525,15.0
+109740.KQ,excluded,,-0.12265365559510363,-0.8048179903517945,-0.1282182474732979,22.0
+095700.KQ,excluded,,-0.12779751660536529,-0.9827741121776232,-0.2012817012664413,11.0
+108230.KQ,excluded,,-0.029516039921329274,-0.8958471077974834,-0.12983692862526652,15.0
+100130.KQ,excluded,,-0.07346864723410537,-0.8775586854460093,-0.1394080002112852,3.0
+103230.KQ,excluded,,-0.22538123912835462,-0.756471347541739,-0.15412876933455932,1.0
+063080.KQ,excluded,,0.02019695255290613,-0.8711476133165069,-0.10570566861599029,15.0
+109860.KQ,active,,0.576843410847941,-0.4382022471910113,0.10067411613262234,5.0
+102120.KQ,excluded,,0.18249403567503908,-0.6275409836065574,-0.021882516479870828,25.0
+101730.KQ,weak,,0.2602972246554746,-0.8345136381230192,0.006829353565485752,20.0
+102710.KQ,weak,,0.304117203570711,-0.7243809523809523,0.029624031654956973,13.0
+099440.KQ,weak,,0.2652908971384046,-0.7580144777662876,0.001723983504386517,3.0
+099220.KQ,excluded,,-0.12597753850566867,-0.7980930641941535,-0.1165171272285368,7.0
+101680.KQ,excluded,,0.0,0.0,0.0,0.0
+010240.KQ,weak,,0.2132333855219875,-0.827777928067909,0.0015162797248848836,5.0
+101170.KQ,weak,,0.25088143921676803,-0.7783138022693494,0.005634861219212528,17.0
+081150.KQ,weak,,0.2921812192309983,-0.761520737327189,0.021384695520753727,11.0
+098660.KQ,weak,,0.25257062651048373,-0.5349044325260033,0.02543256740228239,16.0
+071670.KQ,excluded,,0.1420704655567563,-0.8002183406113537,-0.05068988138908881,5.0
+101490.KQ,active,,0.6890515737812263,-0.6760228353948621,0.2347290799727051,31.0
+100120.KQ,excluded,,0.09639725531967738,-0.7725381414701804,-0.04293021809450137,9.0
+102940.KQ,excluded,,-0.1855069851143613,-0.932499381948739,-0.22555416832110287,37.0
+101400.KQ,excluded,,0.052437442668784,-0.9025321356873027,-0.11731082766760725,9.0
+106240.KQ,weak,,0.3828349519144263,-0.8656209409284563,0.05770803473756403,11.0
+086890.KQ,excluded,,0.04834285339508486,-0.8467509757764031,-0.09411620520726616,13.0
+104040.KQ,excluded,,-0.015153500539864318,-0.9119277108433735,-0.14797963334137376,1.0
+078070.KQ,excluded,,0.018509886556229597,-0.833279519986787,-0.04197670993958402,9.0
+086900.KQ,excluded,,-0.16782368663579034,-0.9212848887934166,-0.21565270174772866,21.0
+058630.KQ,excluded,,0.1640101525826317,-0.7134056874645577,-0.040113908786709174,8.0
+059100.KQ,excluded,,-0.3489176593580863,-0.8815867838799116,-0.1764167739874467,32.0
+067630.KQ,active,,0.5212636122757098,-0.9325102880658436,0.1335849773075004,9.0
+092130.KQ,weak,,0.26194088967065926,-0.547876447876448,0.031067930718928993,1.0
+100700.KQ,active,,0.42065774798852384,-0.6310499409807279,0.09067115617413735,9.0
+098120.KQ,active,,0.5318084755168682,-0.7151451785655043,0.15831559226273217,21.0
+083470.KQ,excluded,,-1.0485826332395893,-0.9183368869936035,-0.5753725748661654,1.0
+076080.KQ,excluded,,0.09815922536962153,-0.8855072463768117,-0.0975690893413731,1.0
+101670.KQ,excluded,,0.1669254748157005,-0.9914711359404097,-0.14423492306964092,1.0
+094840.KQ,weak,,0.2828660257392727,-0.6107692307692307,0.04070487524170985,12.0
+063170.KQ,excluded,,0.09581906838395543,-0.9273404174817614,-0.07730675590803293,7.0
+047560.KQ,weak,,0.24621654099636373,-0.8328420972769464,-0.009501544065648626,25.0
+096240.KQ,excluded,,-0.48832767512577463,-0.5453762349488376,-0.06548286824247851,6.0
+101160.KQ,active,,0.5184900789509845,-0.36807580174927124,0.10963955858510022,29.0
+099320.KQ,active,,0.4411909155843688,-0.7455834725238378,0.10198079408905647,15.0
+064480.KQ,excluded,,0.10697950451389411,-0.8723300970873787,-0.07347671764392694,1.0
+098460.KQ,active,,0.4934410238111844,-0.730815952681018,0.13424962607317803,11.0
+067000.KQ,excluded,,-0.0353311680282967,-0.9057812528753281,-0.1698394546590638,3.0
+018620.KQ,excluded,,-0.06152658236827563,-0.9006615215663616,-0.1396260524204741,5.0
+095610.KQ,weak,,0.3879601974611797,-0.734771573604061,0.07531062209548245,13.0
+053280.KQ,excluded,,0.08294459081589167,-0.8324510981055582,-0.06222005527026475,11.0
+096870.KQ,excluded,,0.15213362269305655,-0.7035022025109084,-0.020512900205111206,7.0
+059210.KQ,weak,,0.2549821923358145,-0.789613394856391,0.007598626518213081,7.0
+097870.KQ,excluded,,0.16091466828168635,-0.8198830409356725,-0.06330717050777401,1.0
+091440.KQ,weak,,0.2817157127289283,-0.8833333333333334,-0.040026477800367166,1.0
+097780.KQ,excluded,,0.1407635399788926,-0.8509615324725561,-0.056429721342036054,11.0
+096630.KQ,excluded,,0.0007472691126799024,-0.92156368221942,-0.15857283312382553,2.0
+068330.KQ,excluded,,0.1277089047122932,-0.9189671361502347,-0.09831369542515966,5.0
+093920.KQ,excluded,,0.1878205383708406,-0.5075503397410668,0.017726577271447663,14.0
+067010.KQ,excluded,,0.05145491390325699,-0.61139896373057,-0.030274175900289246,3.0
+096350.KQ,weak,,0.2660902691217798,-0.8018867924528303,-0.02399698502799341,1.0
+069920.KQ,excluded,,0.03416651035937197,-0.9913138075313808,-0.2219698708215686,1.0
+092070.KQ,excluded,,0.19290010654112733,-0.7450000000000001,-0.02127494707693911,17.0
+094820.KQ,weak,,0.2993828096624601,-0.7423913043478261,0.03879470342507885,11.0
+086670.KQ,weak,,0.204049268177797,-0.6202739726027398,0.016947875565028525,7.0
+095190.KQ,excluded,,0.1500052848671796,-0.8481339712918661,-0.051170735312779825,3.0
+092300.KQ,weak,,0.23690883685491498,-0.6638655462184874,0.00929526574698536,9.0
+093640.KQ,weak,,0.2144240166770393,-0.7926090037453647,-0.03545883819375162,7.0
+095910.KQ,excluded,,-0.08510979373813231,-0.8915650613273505,-0.14748566288248233,5.0
+081580.KQ,excluded,,-0.055772837722449835,-0.702389923646517,-0.08696636309577455,18.0
+073110.KQ,excluded,,0.04258696360106764,-0.5630928295408528,-0.05452833109482613,21.0
+094970.KQ,weak,,0.2805118286804124,-0.8329129886506936,0.009999195468249678,1.0
+080520.KQ,excluded,,0.02640307590057302,-0.7494791666666667,-0.06128095336572903,13.0
+095340.KQ,active,,0.719719004861844,-0.7356973725953122,0.28320397624977045,25.0
+085910.KQ,active,,0.4231315446473394,-0.6201481481481481,0.0932450569575054,17.0
+095500.KQ,weak,,0.21391745402446657,-0.8158058316653057,-0.027313201321717884,19.0
+027580.KQ,excluded,,-0.09600649503196913,-0.9187926339908555,-0.16467667066350522,13.0
+086040.KQ,excluded,,0.1831079467379502,-0.9081166298530352,-0.04149821797036546,8.0
+057540.KQ,excluded,,0.002171288055380686,-0.7802642397259821,-0.08648464180983184,15.0
+094940.KQ,weak,,0.3401264363516718,-0.7941176433981221,0.005700216772787314,1.0
+095270.KQ,excluded,,0.14478117056762035,-0.8488655218733714,-0.07943194455171221,11.0
+093190.KQ,weak,,0.2596583564568899,-0.5330672748004561,0.034439982657840096,7.0
+091340.KQ,excluded,,0.15449925157678795,-0.8380855226977069,-0.009530752700449119,16.0
+072770.KQ,excluded,,0.11157254280037056,-0.9114544719548107,-0.07354602069661331,23.0
+094480.KQ,weak,,0.383818968032433,-0.7561881200252496,0.04592553684427503,3.0
+086520.KQ,active,,0.7604695602875957,-0.848735495549641,0.3302623104754532,6.0
+065150.KQ,excluded,,-0.7494658171757224,-0.5069124423963134,-0.2854997204660409,3.0
+078340.KQ,weak,,0.21217703347800212,-0.7241634301584895,0.00647413087276405,9.0
+095660.KQ,weak,,0.270071157132714,-0.6467499232197436,0.02143997742723469,21.0
+092600.KQ,excluded,,0.03299308546405257,-0.9725247596600429,-0.1910801686280399,19.0
+069410.KQ,excluded,,0.06696208789603912,-0.7887826458198943,-0.08517684818005777,5.0
+093380.KQ,excluded,,0.1431595844823229,-0.7150943396226417,-0.031131950765559302,8.0
+086450.KQ,excluded,,0.14636715855610183,-0.5620135241250869,-0.006053352705952975,5.0
+064820.KQ,active,,0.5152622983144353,-0.5840490797546012,0.14638512564720352,5.0
+091580.KQ,active,,0.42499595108019694,-0.7452934153368815,0.09492191577476183,9.0
+092460.KQ,active,,0.695837332415375,-0.5480225850768009,0.2159918008163737,9.0
+073540.KQ,excluded,,0.030889261833628827,-0.8727135433125515,-0.08003416258914742,12.0
+091120.KQ,excluded,,0.00669086967047641,-0.9473731445119018,-0.11711641062990352,5.0
+094850.KQ,excluded,,0.1855690480763119,-0.7741007194244605,-0.0016186592102194197,31.0
+094860.KQ,excluded,,-0.05383407160600145,-0.9213531353955924,-0.13611756600945968,5.0
+078020.KQ,weak,,0.23437609633212347,-0.6553016313409064,0.027686711335668468,8.0
+093520.KQ,active,,0.5246945007922957,-0.6906354515050167,0.14950034195569128,21.0
+091970.KQ,error,"
+Traceback (most recent call last):
+  File ""<frozen runpy>"", line 198, in _run_module_as_main
+  File ""<frozen runpy>"", line 88, in _run_code
+  File ""C:\Users\82102\Desktop\capstone2\src\pipeline\run_esn_ta_walkforward.py"", line 329, in <module>
+    main()
+  File ""C:\Users\82102\Desktop\capstone2\src\pipeline\run_esn_ta_walkforward.py"", line 222, in main
+    raise ValueError(f""Fold {fold_idx}: no validation rows remain after purging."")
+ValueError: Fold 8: no validation rows remain after purging.
+",,,,
+092730.KQ,excluded,,0.15719265429976897,-0.8540915460642147,-0.02858158373139308,5.0
+039200.KQ,active,,0.49611010482925166,-0.7568109864213194,0.12857365285236044,7.0
+089010.KQ,active,,0.43767258498038747,-0.6573943838250924,0.09951711998575408,30.0
+090470.KQ,excluded,,0.13375875963366324,-0.8453806043094669,-0.04565973310936067,21.0
+088130.KQ,excluded,,-0.012008428454286355,-0.8652073499065227,-0.10176779999872065,24.0
+084110.KQ,excluded,,0.11734148526254053,-0.774599996478125,-0.07692669570079191,1.0
+089150.KQ,weak,,0.20718050201970178,-0.8623214285714287,-0.04192290105722207,1.0
+091700.KQ,excluded,,-0.02280473967409137,-0.7200000000000002,-0.058742451509403715,1.0
+086390.KQ,weak,,0.2673700315812588,-0.8047116198041931,0.005935642408205988,10.0
+090710.KQ,active,,0.585313725862846,-0.8207668526748437,0.22007076176546203,3.0
+060540.KQ,excluded,,0.10503593536480053,-0.7689458418958905,-0.03928252445194391,11.0
+066310.KQ,weak,,0.39272501821344763,-0.7850287907869482,0.07070171027065841,19.0
+067280.KQ,excluded,,-0.013255869679105603,-0.6032315978456015,-0.026944510258989585,4.0
+089890.KQ,active,,0.6796382298474283,-0.7164619164619164,0.26477101414906623,27.0
+080470.KQ,excluded,,0.0679019462177578,-0.7636363636363637,-0.04094344354127277,15.0
+089140.KQ,excluded,,-0.11227980863368134,-0.9665147051120152,-0.23621356908720648,8.0
+089790.KQ,active,,0.4814771159338869,-0.6235131179517761,0.1150342383992895,16.0
+090150.KQ,excluded,,-0.017352210655843494,-0.9610518520772463,-0.15684825542659542,1.0
+088390.KQ,excluded,,-0.05411400626439133,-0.9324983771854903,-0.15512602358336192,11.0
+089230.KQ,weak,,0.33934970905421763,-0.8287282713616378,0.0565742479826965,32.0
+043150.KQ,excluded,,-0.027398061447513958,-0.6427025801264774,-0.08668003873240715,3.0
+086960.KQ,excluded,,0.07805423630569074,-0.8447048979878127,-0.09679631392747146,23.0
+038060.KQ,weak,,0.29369957799515334,-0.22844827586206895,0.033658283048705995,4.0
+083660.KQ,excluded,,-0.17550075596497575,-0.7536666691944445,-0.24522560577518338,5.0
+063570.KQ,excluded,,-0.0889989180170194,-0.8037542662116041,-0.10023064530076353,5.0
+086980.KQ,excluded,,-0.13742403962117644,-0.8429566191843687,-0.1477040640988696,19.0
+068050.KQ,weak,,0.23647594561815838,-0.7069925788558467,0.006814125778628055,37.0
+039290.KQ,excluded,,0.17987004562281314,-0.8973534971644612,-0.04115668664288974,10.0
+078860.KQ,excluded,,-0.3627186117722781,-0.9947956059585507,-0.3652671290290218,5.0
+088910.KQ,excluded,,0.008730762799678706,-0.502616970802382,-0.0380221439387175,7.0
+054950.KQ,excluded,,-0.0018938425068096175,-0.7995942195658419,-0.0668971302646989,13.0
+084730.KQ,excluded,,0.12882216191133955,-0.7665903670841707,-0.024999846853038132,15.0
+086060.KQ,excluded,,0.18895528814235865,-0.6081081081081081,-0.023165119123312206,1.0
+022220.KQ,excluded,,-0.06924406680482247,-0.8534482758620691,-0.09974560267779053,1.0
+088800.KQ,excluded,,0.08344177468942705,-0.9824748155197256,-0.1682326629952784,5.0
+068760.KQ,weak,,0.3150973231469257,-0.7577658423394658,0.03909615035285108,17.0
+083450.KQ,active,,0.535518041126323,-0.7681652119275315,0.147521688265547,9.0
+019990.KQ,weak,,0.37905677611283495,-0.6610959651508674,0.07195532698396723,15.0
+079370.KQ,active,,0.437293577558217,-0.6956742940422234,0.10042870636002843,13.0
+085670.KQ,weak,,0.21467246425497843,-0.8081487341772152,-0.047166422286123666,7.0
+084370.KQ,active,,0.5446203540186684,-0.6437391796273932,0.16224861080674602,9.0
+083790.KQ,excluded,,-0.060369564073075366,-0.9378999797804258,-0.1572688570862455,9.0
+064550.KQ,weak,,0.28535330700812855,-0.9378755364806867,-0.03323513941767753,7.0
+084990.KQ,excluded,,0.193590220501589,-0.8036905950033584,-0.02156111822126283,13.0
+083640.KQ,excluded,,-0.044925178981517676,-0.9869637701416225,-0.23993385558862135,11.0
+085660.KQ,excluded,,-0.07793399607938595,-0.7367174280879865,-0.1055323834707832,7.0
+078140.KQ,excluded,,0.07668334860107834,-0.7357255944633962,-0.07991732478829805,9.0
+067900.KQ,active,,0.5113697722738357,-0.686685552407932,0.12720873293460389,19.0
+083550.KQ,excluded,,0.147639902535692,-0.8637120684459166,-0.03955321646937193,1.0
+084180.KQ,excluded,,0.16169143045897114,-0.9936923356118832,-0.39484766521067416,7.0
+080420.KQ,excluded,,-0.08637640833587767,-0.7775,-0.10864168577901945,1.0
+083650.KQ,weak,,0.37030183371402403,-0.8570744477850398,0.05860151822420856,25.0
+079190.KQ,excluded,,0.17120839941140117,-0.5819548872180451,-0.05527402015954275,1.0
+082800.KQ,excluded,,0.1705178574019983,-0.873939393939394,-0.09834618639865289,5.0
+043910.KQ,weak,,0.21621909504142275,-0.8412546754761542,-0.05663128572518672,11.0
+079000.KQ,weak,,0.2024223324727332,-0.6823770491803279,0.011462969425200198,9.0
+041020.KQ,active,,0.5580342323432643,-0.6830015313935682,0.18078254971705854,27.0
+078590.KQ,active,,0.7949901046771949,-0.5816326530612246,0.36814488829155345,11.0
+038070.KQ,excluded,,0.10488465049652214,-0.8918786495405717,-0.05797235242943333,3.0
+079940.KQ,active,,0.6327955415611264,-0.5248730964467005,0.20615289861787955,1.0
+077360.KQ,active,,0.4570985362910178,-0.6477794793261868,0.11314431994703211,7.0
+083930.KQ,weak,,0.37858187565403395,-0.6295677135869993,0.07340573165918096,15.0
+067310.KQ,excluded,,0.1927608096810219,-0.8071943597624598,-0.012303687063093482,29.0
+083310.KQ,excluded,,0.07857212412077413,-0.8299755210880849,-0.07714726058632282,13.0
+082660.KQ,excluded,,0.041417422428765734,-0.9239770593176153,-0.18799398890383667,11.0
+080010.KQ,excluded,,0.10039966916635458,-0.46390503283696494,-0.003099632327611568,26.0
+078160.KQ,excluded,,0.06564080339150354,-0.8593720986132297,-0.10136726211492797,11.0
+082850.KQ,weak,,0.2704927053242655,-0.9023983485741922,-0.008264947847745785,15.0
+080160.KQ,excluded,,0.1558153552156013,-0.562303707392559,0.008924317894973166,43.0
+078890.KQ,excluded,,-0.003453705020691241,-0.8185628957330553,-0.08387053237331465,9.0
+050890.KQ,active,,0.4181296985460939,-0.6291485333448139,0.0853377880859092,21.0
+082210.KQ,excluded,,-0.08283799816151081,-0.9234794308653406,-0.13963238582632254,11.0
+082270.KQ,excluded,,0.19172233752507253,-0.8683381088825215,-0.06337349897415356,3.0
+075130.KQ,excluded,,0.009875990100344312,-0.7484679143261284,-0.05119888085648583,11.0
+073490.KQ,active,,0.49317426449860075,-0.6536189322599055,0.1287807896514186,19.0
+079950.KQ,excluded,,0.07866029748794481,-0.8585365853658536,-0.04316130162338405,5.0
+079960.KQ,weak,,0.30246179380555027,-0.5468113975576663,0.04502886059061462,5.0
+080220.KQ,active,,0.6885288534750508,-0.7366101694915255,0.2445933791592576,15.0
+079170.KQ,weak,,0.21525227487367285,-0.7054626683953626,0.0031630290968256425,9.0
+079810.KQ,weak,,0.32568888139808844,-0.8232673313279103,0.034105902281604594,19.0
+052220.KQ,excluded,,0.07778884732892703,-0.7751461988304094,-0.08434485402159708,1.0
+079650.KQ,active,,0.4394016159914705,-0.8522429369805401,0.0959436957166464,3.0
+052900.KQ,excluded,,0.06234055793436116,-0.7191092694769913,-0.07496312483498269,11.0
+066910.KQ,excluded,,-0.1462944274623548,-0.9254880478868288,-0.20019835590134416,9.0
+049950.KQ,excluded,,0.10038523281409756,-0.9172894093375109,-0.08533470104002017,25.0
+052460.KQ,weak,,0.3596617087033785,-0.8049395161290324,0.03623782127999742,1.0
+072870.KQ,excluded,,-0.01173131650802801,-0.3511551155115512,-0.008410622956073643,8.0
+073010.KQ,weak,,0.23404420292547468,-0.1836492487457263,0.026020432746287625,1.0
+046440.KQ,excluded,,0.08717536255277931,-0.7421828170539084,-0.04201347589055848,6.0
+078600.KQ,active,,0.8162783302866343,-0.7229583975346687,0.3764925590197721,9.0
+054450.KQ,weak,,0.2399253592046258,-0.7903271692745378,-0.00823648117325626,13.0
+078150.KQ,excluded,,-0.04853466984018409,-0.8736114536547316,-0.11220666454650274,25.0
+067990.KQ,weak,,0.36713778341618347,-0.7065843621399177,0.0686754226034414,16.0
+051360.KQ,excluded,,0.026219312702424637,-0.49593593242292566,-0.03266852546323462,23.0
+078130.KQ,active,,0.4137274837031545,-0.9025578542623411,0.060019879811032295,3.0
+068790.KQ,active,,0.6855073886870254,-0.34461873967158674,0.140097161700806,23.0
+048870.KQ,excluded,,0.08464625486109748,-0.8931612659503779,-0.1003438007258638,14.0
+065350.KQ,active,,0.4868927318495815,-0.8379380053908356,0.13043134132064482,9.0
+039340.KQ,excluded,,0.005370978592016833,-0.46308653413576717,-0.023388842357770945,8.0
+064260.KQ,weak,,0.34197559672820915,-0.8561046511627907,0.04533244212122023,3.0
+011080.KQ,excluded,,-0.10557814502800607,-0.9928244121338787,-0.33075014704251515,1.0
+050090.KQ,weak,,0.22458463896990075,-0.9165137614678899,-0.058429555134704936,11.0
+057030.KQ,weak,,0.34818185165942583,-0.6261343012704175,0.0452108054998126,19.0
+065770.KQ,excluded,,0.04846855174411089,-0.9423772609819121,-0.11908003305869985,5.0
+074430.KQ,excluded,,0.03996955074979115,-0.8184826115976767,-0.09315226923650399,8.0
+066700.KQ,excluded,,-0.18143056100945149,-0.8641877653747334,-0.1513083292335603,5.0
+066900.KQ,weak,,0.2881578341442847,-0.47211895910780677,0.04282138465969254,23.0
+078350.KQ,active,,0.7545030786109477,-0.656235294117647,0.29005375151273816,11.0
+075970.KQ,excluded,,0.14320384182685075,-0.7901385482213235,-0.05374171302523301,5.0
+069540.KQ,active,,0.4353205524149478,-0.5260355091493414,0.10298181970150111,4.0
+073190.KQ,weak,,0.36983894584768384,-0.8371669862098987,0.05809835055713153,7.0
+054090.KQ,excluded,,0.08518013917228005,-0.8762589928057554,-0.07888363130781328,15.0
+041910.KQ,excluded,,0.014294431746236215,-0.8291356819857489,-0.1280295449978629,11.0
+067770.KQ,excluded,,0.15515436839326688,-0.8061518324607331,-0.029350773981223766,1.0
+070590.KQ,excluded,,0.19227520282666014,-0.7973719771167094,0.0012225787446853431,4.0
+073570.KQ,excluded,,-0.04145012374671455,-0.9910944527736132,-0.262114074011897,9.0
+073640.KQ,excluded,,0.11067022786639678,-0.9208485190595581,-0.2524766210464767,5.0
+065680.KQ,weak,,0.220950822060267,-0.6891613927223841,0.01069336542880639,15.0
+067160.KQ,excluded,,0.06215899769494621,-0.885837166460784,-0.058216257329971155,13.0
+060570.KQ,excluded,,0.024273156647788875,-0.9155384892891488,-0.12225193394949496,3.0
+066410.KQ,error,"download: No data downloaded for ticker=066410.KQ, interval=1d",,,,
+074600.KQ,active,,0.5298674963010067,-0.6234432234432234,0.1502766638666737,20.0
+071280.KQ,excluded,,0.16293730443507942,-0.7779426241173222,-0.043380559280339015,13.0
+069510.KQ,weak,,0.21392657524264996,-0.5312799058667943,0.021104718461554706,13.0
+067170.KQ,excluded,,-0.05248214620112718,-0.9125194805194805,-0.13028337967721138,5.0
+054780.KQ,excluded,,-0.19680355896598067,-0.9543746391635376,-0.22202526863126215,3.0
+041440.KQ,weak,,0.21543701100944335,-0.8347800147190031,-0.007930809991126608,11.0
+072020.KQ,excluded,,0.1035814732919229,-0.7262630290190322,-0.03168566458609201,1.0
+065510.KQ,excluded,,-0.020425168040974485,-0.7451292246520874,-0.07533385169481466,3.0
+072470.KQ,excluded,,-0.1465326707655556,-0.872487657250389,-0.16014400148143626,29.0
+068930.KQ,weak,,0.37304097047459195,-0.5193898503960106,0.0675559969560604,1.0
+069330.KQ,excluded,,-0.2418772842798538,-0.47764251412792236,-0.10232142007625888,8.0
+064760.KQ,weak,,0.3426383370443632,-0.7575133139306726,0.05576236334440976,11.0
+052710.KQ,excluded,,0.16907246614699625,-0.9264914729068924,-0.06563235108586984,5.0
+065950.KQ,excluded,,-0.11298702988616173,-0.8968582403170485,-0.14751869058824374,7.0
+047310.KQ,weak,,0.23254410034545964,-0.6949855430622706,0.012728051880911195,7.0
+041520.KQ,excluded,,0.13194442933095468,-0.8480280278869089,-0.029962600461656996,21.0
+064240.KQ,excluded,,0.12193281791599526,-0.9499235457949892,-0.12318442878756097,7.0
+066790.KQ,excluded,,-0.8650735204030291,-0.8588442626985908,-0.5707433671860158,1.0
+069080.KQ,active,,0.41928002431765754,-0.43819638277529416,0.08274157660246595,26.0
+067080.KQ,excluded,,0.014386415110936971,-0.8847954707888412,-0.13531482281255858,19.0
+066590.KQ,weak,,0.20278424981583895,-0.8911266198102664,-0.032197552273684926,17.0
+067290.KQ,excluded,,0.17547936721810325,-0.7749007116983475,-0.02156579251583679,17.0
+066130.KQ,excluded,,-0.12555787061675633,-0.889424073686233,-0.12775015454069127,7.0
+065450.KQ,weak,,0.2496689101716158,-0.6905660377358491,-0.013950913754490535,3.0
+065130.KQ,active,,0.4626516871059165,-0.5490566037735849,0.10319310372647439,19.0
+065440.KQ,excluded,,0.13546649388959728,-0.757567568578614,-0.07557599670026771,5.0
+049630.KQ,excluded,,0.05144628503258001,-0.8388144849897381,-0.06543045864644736,23.0
+021650.KQ,excluded,,0.07009052368110887,-0.7595559858374303,-0.038927819842618616,10.0
+051370.KQ,excluded,,0.1429584204854309,-0.8915788514324221,-0.06436880203988038,5.0
+065570.KQ,excluded,,-0.17526852540963564,-0.912884834663626,-0.18950199026877423,11.0
+065650.KQ,excluded,,-0.21893557332937325,-0.9849707357859533,-0.3268476131103698,1.0
+066980.KQ,excluded,,0.043381289097271944,-0.8644864411608202,-0.11805296549460131,3.0
+016100.KQ,excluded,,-0.22808781846161574,-0.9740804219723458,-0.2530757864462285,7.0
+042040.KQ,excluded,,0.1606675092080517,-0.9975392264917642,-0.3084718244633402,5.0
+066670.KQ,excluded,,0.1322115929945704,-0.3434903047091413,0.007651901510754122,3.0
+066430.KQ,weak,,0.2350980362421212,-0.9508875529532971,-0.08309363002473746,10.0
+047820.KQ,excluded,,-0.1865470949121316,-0.8615384615384617,-0.21432367251458395,1.0
+064090.KQ,excluded,,0.10260290087746858,-0.9054194143050345,-0.12287961058962749,11.0
+049960.KQ,excluded,,-0.11082700287046794,-0.8456221198156684,-0.09781146030808652,11.0
+053290.KQ,excluded,,0.1896804324576314,-0.9574774774774775,-0.0887799996122709,5.0
+064520.KQ,excluded,,-0.953414194148306,-0.8247188660422997,-0.4521267391641406,13.0
+035600.KQ,weak,,0.21037081808289787,-0.5476644803278615,0.007205039720358242,7.0
+065170.KQ,excluded,,0.1096774958823848,-0.9510055243365421,-0.113205837025671,4.0
+041590.KQ,excluded,,-0.05289702192513489,-0.906488549065124,-0.20198494145783574,3.0
+042600.KQ,weak,,0.3362073379731378,-0.9006033182503772,0.04035780285471846,13.0
+065500.KQ,excluded,,0.14227525763955887,-0.9376966645689113,-0.13708876710619322,5.0
+060900.KQ,error,"re_index=True)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""C:\Users\82102\anaconda3\Lib\site-packages\pandas\core\reshape\concat.py"", line 407, in concat
+    objs, keys, ndims = _clean_keys_and_objs(objs, keys)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""C:\Users\82102\anaconda3\Lib\site-packages\pandas\core\reshape\concat.py"", line 808, in _clean_keys_and_objs
+    raise ValueError(""No objects to concatenate"")
+ValueError: No objects to concatenate
+",,,,
+066620.KQ,weak,,0.23274347274420953,-0.6549565217391305,0.021219340477622417,3.0
+052770.KQ,excluded,,-0.301723295023674,-0.8054853822277186,-0.2988928790699361,8.0
+065420.KQ,excluded,,-0.3229166469334747,-0.767857142857143,-0.3105496178274053,1.0
+064800.KQ,excluded,,-0.13703067016514758,-0.9072511666412368,-0.18193008847272574,11.0
+039980.KQ,excluded,,-0.10643529273714322,-0.9038271300123506,-0.13904734919447803,11.0
+048410.KQ,active,,0.5197480580771281,-0.7364999999999999,0.15197814837117662,7.0
+058610.KQ,active,,0.7884897068740759,-0.6446144949436107,0.34218341603487445,25.0
+045340.KQ,active,,0.4525440638286114,-0.8517716535433071,0.09761616028028142,7.0
+065710.KQ,active,,0.7641364441787128,-0.42190669371196765,0.21742584324795278,5.0
+065690.KQ,weak,,0.20640336683102745,-0.46697714358515485,0.021645953425616593,10.0
+060560.KQ,excluded,,0.013601150440955225,-0.856659793814433,-0.08181340249238334,5.0
+043710.KQ,excluded,,-0.011391509399774418,-0.9184764991896273,-0.18111978803166273,1.0
+036010.KQ,weak,,0.35021742942705936,-0.7437500000000001,0.06179303328795549,10.0
+060280.KQ,excluded,,0.1899415782550661,-0.7058412865322741,0.003521317940401003,13.0
+060230.KQ,excluded,,-0.18070888107012323,-0.9933040293040294,-0.31289777085986525,5.0
+046940.KQ,weak,,0.224804015460242,-0.7829293993677556,-0.03357934412584607,1.0
+057680.KQ,excluded,,-0.00981333923563783,-0.9402124419521644,-0.13618656863521927,17.0
+060150.KQ,excluded,,-0.12567212864760144,-0.8115646258503402,-0.08589322044639569,13.0
+065530.KQ,excluded,,0.15018276540762243,-0.8548121029427727,-0.03533941138727581,9.0
+063440.KQ,weak,,0.295540895596643,-0.791866527632951,0.023442955388100817,5.0
+051160.KQ,weak,,0.34878521018479913,-0.7228953007865637,0.061358598501723316,14.0
+065060.KQ,excluded,,-0.07115948560178505,-0.9817344946275686,-0.2119838936271795,9.0
+049180.KQ,excluded,,0.0018348264629481019,-0.8158671586715869,-0.30234283231230774,1.0
+060720.KQ,weak,,0.2874924790172043,-0.6097859327217126,0.03602991332541072,12.0
+061040.KQ,weak,,0.3498478832037653,-0.730351468328827,0.06163259415401612,35.0
+050760.KQ,excluded,,0.19352817681460657,-0.8267546061432764,0.003983728873621972,19.0
+054210.KQ,weak,,0.33666464174220845,-0.83582995951417,0.04473263280098472,7.0
+050120.KQ,excluded,,0.11537030393086058,-0.7606254472195025,-0.03119355538778379,5.0
+054410.KQ,excluded,,-0.01899631455825142,-0.8265060240963857,-0.10810277750468478,1.0
+060310.KQ,excluded,,-0.061564805261618935,-0.7664194674265122,-0.06417117839100728,11.0
+061250.KQ,excluded,,0.12200852352439223,-0.8312099592619833,-0.06739997053788249,5.0
+053980.KQ,excluded,,0.026177138932247896,-0.8408616423914215,-0.10678405227397592,9.0
+054050.KQ,excluded,,-0.3214717214458226,-0.795971317399897,-0.12839042999222483,5.0
+039420.KQ,weak,,0.24544295747602493,-0.7641509433962266,0.021441870875119173,9.0
+039440.KQ,weak,,0.29974266790163023,-0.7330744441878185,0.009875099076581906,15.0
+049550.KQ,active,,0.5277835500052634,-0.40685714285714303,0.09355696206601927,4.0
+054670.KQ,excluded,,-0.002755509202564543,-0.7654377880184333,-0.09578574107099569,1.0
+060590.KQ,excluded,,0.007746155512306192,-0.8604618725457636,-0.1081541381361204,11.0
+049070.KQ,active,,0.4308777484114582,-0.6969974362839446,0.09926126481850384,14.0
+060370.KQ,active,,0.5991799400933056,-0.6693377377209557,0.1990239300077874,3.0
+051380.KQ,weak,,0.26530764120942857,-0.918611111111111,0.0022161589400377935,5.0
+053270.KQ,weak,,0.3162787750719274,-0.655625,0.04359714988907171,3.0
+034950.KQ,weak,,0.32839462628292215,-0.4497890295358651,0.03354453616785791,10.0
+060260.KQ,excluded,,0.04071173849955889,-0.9631676439048248,-0.17946044463779653,3.0
+060380.KQ,excluded,,0.15494980509568013,-0.7539785476853818,-0.009127039009923954,9.0
+046310.KQ,excluded,,0.05291169461430665,-0.8035825845337428,-0.06738430140231877,11.0
+049720.KQ,active,,0.47843823910364497,-0.3423357664233576,0.08878101783365233,7.0
+046890.KQ,excluded,,-0.23105703741014683,-0.841690326286974,-0.1062459839729386,21.0
+013990.KQ,excluded,,0.13504474207556574,-0.8192555484163768,-0.06122675868515337,3.0
+058450.KQ,excluded,,-0.23222987944052761,-0.748599726124652,-0.2528508491199728,3.0
+059090.KQ,active,,0.43451924531941755,-0.6918781725888326,0.10332518230052568,14.0
+054930.KQ,excluded,,0.014005424949447082,-0.6639368348584902,-0.026968795668430245,7.0
+035200.KQ,excluded,,0.1639708047976467,-0.7552238805970151,-0.03750350607126285,1.0
+054040.KQ,weak,,0.28427573757923985,-0.7492138364779874,0.03402211288535795,9.0
+048470.KQ,weak,,0.33892123204679253,-0.8378378378378378,0.027856613873624037,5.0
+042500.KQ,weak,,0.3079358515648559,-0.6350515455821887,0.034015019709814354,1.0
+040350.KQ,excluded,,0.1477333736240726,-0.9465235399900906,-0.11626763306432031,9.0
+054300.KQ,excluded,,0.107523105827062,-0.7952679875166289,-0.10127989970963125,1.0
+047080.KQ,excluded,,0.031129648953760847,-0.8202289829288367,-0.05721348165251772,21.0
+060250.KQ,active,,0.5659032409510629,-0.6978260115264685,0.1737513965485029,15.0
+056730.KQ,weak,,0.33771042316240263,-0.6157894671944253,-0.029743273469665543,1.0
+053260.KQ,active,,0.4090272375051373,-0.7202247191011236,0.08851092019932394,5.0
+041930.KQ,weak,,0.21236942053658445,-0.7613636363636365,-0.009668057384627282,1.0
+054220.KQ,excluded,,-0.2434624168469331,-0.8373702462167707,-0.32062049802493975,1.0
+014940.KQ,weak,,0.23855838247257705,-0.4445636796141209,0.028966532888338836,18.0
+043590.KQ,excluded,,-0.37525733087302676,-0.7331104004188902,-0.28946537859030463,9.0
+056190.KQ,excluded,,0.14904649990566793,-0.6458867926339029,-0.00910648565337624,3.0
+058470.KQ,active,,0.7991638847639777,-0.49597315436241607,0.2767065465192291,3.0
+045300.KQ,weak,,0.26471793270230826,-0.7365261728178303,0.022104583354660035,1.0
+056700.KQ,excluded,,0.058346427104329114,-0.7722703682409112,-0.06101675049261146,17.0
+054940.KQ,excluded,,0.1421340143736546,-0.7674074074074075,-0.055206206640385336,7.0
+043370.KQ,weak,,0.22029320233431793,-0.6154185022026432,0.020702485724312547,13.0
+054620.KQ,excluded,,0.13240597105703195,-0.6268657431860662,-0.028963296852811404,13.0
+056360.KQ,weak,,0.24836512140463948,-0.6790983606557378,0.006096313857218982,1.0
+043260.KQ,active,,0.7922406695958661,-0.7772556390977443,0.3576012372282229,11.0
+051390.KQ,excluded,,0.1906271781257769,-0.4633123689727463,0.013803773412440545,6.0
+054540.KQ,weak,,0.3698561058860232,-0.7381188118811881,0.07054038787458472,1.0
+053350.KQ,excluded,,0.17829181352592677,-0.807002561912895,-0.0032827301898721295,17.0
+056080.KQ,active,,0.4459037823676026,-0.797788309636651,0.09531278270625099,1.0
+044490.KQ,weak,,0.22055587178600314,-0.8284112321865809,-0.030010609086569162,23.0
+053950.KQ,error,"
+Traceback (most recent call last):
+  File ""<frozen runpy>"", line 198, in _run_module_as_main
+  File ""<frozen runpy>"", line 88, in _run_code
+  File ""C:\Users\82102\Desktop\capstone2\src\pipeline\run_esn_ta_walkforward.py"", line 329, in <module>
+    main()
+  File ""C:\Users\82102\Desktop\capstone2\src\pipeline\run_esn_ta_walkforward.py"", line 222, in main
+    raise ValueError(f""Fold {fold_idx}: no validation rows remain after purging."")
+ValueError: Fold 4: no validation rows remain after purging.
+",,,,
+053700.KQ,excluded,,0.16626972256042616,-0.8161943319838058,-0.04024405739443149,5.0
+054920.KQ,weak,,0.2948544747987411,-0.8561712111612042,0.010883862686055013,5.0
+041960.KQ,excluded,,0.08027679549946708,-0.8916519615796279,-0.07595744933515136,5.0
+053160.KQ,weak,,0.3548722527861256,-0.8139020537124803,0.024074371216986412,1.0
+052400.KQ,weak,,0.38383750456955174,-0.7217935349322211,0.05749604247483164,1.0
+054180.KQ,excluded,,-0.22205680190840155,-0.9960476925580768,-0.4189422187944609,5.0
+049470.KQ,excluded,,-0.010018745046603097,-0.9366847826086957,-0.1760008763272498,1.0
+053050.KQ,active,,0.4345361564554045,-0.6738188976377952,0.10701375062217378,7.0
+054800.KQ,active,,0.40551772513133433,-0.47197452229299364,0.07568759840134365,5.0
+047770.KQ,weak,,0.2730587420580405,-0.6666666666666667,0.02712347460495157,1.0
+053800.KQ,excluded,,0.18292920871281437,-0.763866044146979,-0.03205162050363097,3.0
+040300.KQ,weak,,0.3251689862930813,-0.8187317073170731,0.04716135040901137,5.0
+058820.KQ,excluded,,-0.18930972577210356,-0.9355664408859333,-0.18876227906465215,1.0
+035900.KQ,active,,0.7426727592846416,-0.7271438695960313,0.2604365628534384,11.0
+021320.KQ,excluded,,0.1191114518508998,-0.5526680313644279,-0.0054339552229217825,19.0
+053060.KQ,excluded,,0.19999154485405155,-0.7036630476005534,-0.015231784915952229,1.0
+053610.KQ,active,,0.6815551748026139,-0.5942164179104478,0.2338255446207551,17.0
+052790.KQ,excluded,,0.18088709404098982,-0.7566563467492261,-0.03371858622737889,6.0
+053450.KQ,excluded,,-0.2493712970374619,-0.75816353936778,-0.11638376966323638,11.0
+053030.KQ,excluded,,0.13993710776708063,-0.8354570637119114,-0.09100268709620196,1.0
+052420.KQ,excluded,,0.1170301022639396,-0.6292584632531193,-0.026106104271179653,15.0
+053620.KQ,excluded,,-0.04905070283774328,-0.5738461538461538,-0.048751122337281294,4.0
+052300.KQ,excluded,,-0.39337164456424845,-0.9324931506849317,-0.19290600480627607,1.0
+049520.KQ,weak,,0.26328645827202407,-0.5904017832510327,0.033679562494702386,1.0
+048910.KQ,excluded,,0.19144583472392435,-0.9240213909107461,-0.023277606103967785,17.0
+051980.KQ,weak,,0.2488599794568918,-0.9235582078471077,-0.1284233165183738,17.0
+051500.KQ,excluded,,0.006511288482844729,-0.783547407079736,-0.05042895371198153,34.0
+049120.KQ,excluded,,0.014823291420182934,-0.9489444912847923,-0.14649843551876318,3.0
+043360.KQ,excluded,,0.10864148181637519,-0.689158878504673,-0.023524747405362367,3.0
+052330.KQ,excluded,,0.1365387031505814,-0.6633879781420765,-0.0022468142561701265,3.0
+052600.KQ,weak,,0.20650433828856338,-0.7810276679841897,-0.016034848644142508,1.0
+052020.KQ,active,,0.41385143517732226,-0.8217235118385263,0.03262648096117937,9.0
+043220.KQ,error,"download: No data downloaded for ticker=043220.KQ, interval=1d",,,,
+051780.KQ,excluded,,-0.2337297132851144,-0.9802356283680498,-0.2801383746423275,1.0
+033790.KQ,excluded,,-0.3032144134274673,-0.8998550724637683,-0.3669172696517228,1.0
+051490.KQ,excluded,,-0.023724482357808843,-0.8372042309294554,-0.09362322842484327,19.0
+038870.KQ,excluded,,-0.0024161500000920654,-0.895671501800171,-0.151474655160732,9.0
+045660.KQ,weak,,0.26924829669018485,-0.8257611241217799,-0.027548234250091008,1.0
+045390.KQ,active,,0.4122776323679235,-0.8048672566371682,0.07739961654800331,1.0
+050110.KQ,excluded,,-0.30919570606436003,-0.9668795200591742,-0.25583929038854314,7.0
+052260.KQ,excluded,,-0.10944383356108542,-0.9267045454545455,-0.1566714668354675,1.0
+036540.KQ,active,,0.6484922923854628,-0.6557486631016043,0.20695119663392414,7.0
+038500.KQ,weak,,0.3432081719972741,-0.6876237623762376,0.05923507332981215,18.0
+024850.KQ,active,,0.5217565863683319,-0.7753030303030303,0.17076938255051455,1.0
+048550.KQ,excluded,,0.10935843233865795,-0.8660147211942932,-0.08122481528558889,5.0
+049830.KQ,weak,,0.23757914005373978,-0.6741007194244604,0.0028923607544211194,11.0
+048770.KQ,weak,,0.25214355469973904,-0.8224649921445509,-0.026272477108834402,5.0
+049430.KQ,active,,0.41742123755378163,-0.6095238095238096,0.08958362574451062,3.0
+044480.KQ,excluded,,-0.23563975434931267,-0.9917551497398288,-0.3382783637533747,1.0
+046390.KQ,excluded,,0.16976625059717498,-0.8955394312766747,-0.04278584626191784,7.0
+014620.KQ,weak,,0.36531875839466466,-0.6118483412322275,0.06973612350490521,7.0
+048430.KQ,weak,,0.2516641626318541,-0.6994186046511628,0.00706156388854029,1.0
+017480.KQ,excluded,,-0.1161000406222068,-0.4608472400513479,-0.032192580326618314,5.0
+049480.KQ,excluded,,0.127243365180018,-0.7871523178807948,-0.07184789693075488,1.0
+042510.KQ,excluded,,0.1171538388044267,-0.7871930192493714,-0.061174437978188556,11.0
+036670.KQ,excluded,,0.020917929647042987,-0.6149031071748037,-0.03610384676480971,7.0
+039830.KQ,excluded,,0.18718936112436887,-0.6367588932806325,-0.01563762403564095,19.0
+036190.KQ,excluded,,0.030379509034765786,-0.5570469798657719,-0.011553524204524601,7.0
+046070.KQ,excluded,,-0.41725436460174076,-0.9328159083293098,-0.3120571487838957,11.0
+041830.KQ,weak,,0.2002743346187651,-0.7332015810276681,-0.0008373033628596982,13.0
+014570.KQ,excluded,,0.1946026120304534,-0.7613972233468875,-0.011506678120100644,13.0
+045520.KQ,excluded,,0.1080533499746062,-0.9468788249694002,-0.05747908634574339,1.0
+044180.KQ,excluded,,-0.01951937625611077,-0.964507484683182,-0.28044186364289414,5.0
+044960.KQ,excluded,,0.11407427742415366,-0.7742857142857144,-0.05209535688722844,1.0
+032080.KQ,excluded,,-0.060380015552493685,-0.8786683684747616,-0.12264678010162378,9.0
+010470.KQ,weak,,0.2240347323201275,-0.7717223650385604,-0.012283108938742515,1.0
+044340.KQ,excluded,,0.11537757434449544,-0.7366555010670072,-0.02670679560217848,36.0
+042940.KQ,weak,,0.27481658444204765,-0.8947777978245621,-0.04710102972115604,11.0
+048830.KQ,excluded,,0.023583709212803554,-0.7017869216003852,-0.05191780131617274,15.0
+000250.KQ,active,,0.5870679618070174,-0.8931587837837838,0.1897564763636932,1.0
+044780.KQ,excluded,,0.11231944587721321,-0.6669421487603306,-0.025657641648389795,1.0
+045510.KQ,excluded,,0.16215956240464993,-0.7494135217088185,-0.047088996404660244,11.0
+045100.KQ,active,,0.45131862705058234,-0.4129417876482586,0.09677372174850474,12.0
+040160.KQ,excluded,,0.13878340545134116,-0.8065049614112458,-0.048352140397749266,9.0
+043340.KQ,excluded,,-0.0319587606265421,-0.8402569593147753,-0.11064647567970187,1.0
+043650.KQ,excluded,,-0.09999645228348958,-0.575349641751104,-0.05668596989452335,13.0
+037950.KQ,excluded,,-0.06717336360576298,-0.833167495854063,-0.1409491143482542,3.0
+039030.KQ,active,,0.536155185778579,-0.6546700942587833,0.15630441161168984,23.0
+038540.KQ,excluded,,0.11248100313404828,-0.937829287680276,-0.07769930420665871,9.0
+018680.KQ,excluded,,-0.11653960488665166,-0.8932596685082874,-0.18389802384948772,1.0
+046210.KQ,weak,,0.38919860161486486,-0.661301798475916,0.0804752648921665,21.0
+039860.KQ,weak,,0.2536236518843701,-0.743855739274226,-0.017743273681514626,6.0
+045060.KQ,excluded,,-0.004118367207401038,-0.8391056910569107,-0.08001284196410752,1.0
+043100.KQ,excluded,,-0.7367255547515961,-0.9101818565101818,-0.4361958004985522,1.0
+042370.KQ,active,,0.4176129444750016,-0.6799459595874215,0.08562418590639065,7.0
+045970.KQ,excluded,,0.007607343473273863,-0.8198081964552875,-0.09395213042303252,13.0
+040420.KQ,excluded,,-0.06995870719190292,-0.3216957605985038,-0.014872011114981376,9.0
+007370.KQ,excluded,,0.13469432467178338,-0.6634452251266587,-0.023115817937567895,9.0
+043610.KQ,excluded,,0.11138339092670074,-0.7646243857015336,-0.03193952212537787,32.0
+036890.KQ,active,,0.5237479357041818,-0.7187739463601532,0.14331647108531542,27.0
+039010.KQ,weak,,0.20991596839404036,-0.5712575468723018,0.015472348677220138,39.0
+009300.KQ,excluded,,0.08922189251781908,-0.6644536652835409,-0.02590574565523507,9.0
+043200.KQ,excluded,,-0.09366815891740506,-0.9198730860364424,-0.16955021809149395,9.0
+042110.KQ,excluded,,0.09239769850356283,-0.7091324200913243,-0.04241023805153643,9.0
+039740.KQ,excluded,,0.03092893076917268,-0.7953416269927713,-0.09208387127876705,3.0
+039840.KQ,excluded,,-0.10711841347034523,-0.7289573846741724,-0.08308228844186605,7.0
+042420.KQ,weak,,0.3913379231788473,-0.7986660103285493,0.07562526748250109,9.0
+039560.KQ,excluded,,0.11850559483552241,-0.7781796469897094,-0.037554579643790276,17.0
+038460.KQ,weak,,0.21080138541920737,-0.8460264900662251,-0.0301488372973181,11.0
+032820.KQ,active,,0.5728302635393683,-0.7910005517023417,0.18876377231728436,11.0
+001540.KQ,excluded,,0.005116528088419411,-0.8005891735965023,-0.07188187476633434,12.0
+039310.KQ,excluded,,0.0798773662648066,-0.8018722508171903,-0.0287706753566479,25.0
+041190.KQ,active,,0.5760279665308718,-0.8095194970265364,0.1862661988539669,7.0
+038530.KQ,weak,,0.28198209004207986,-0.9724750461936973,-0.08874343461841805,1.0
+036640.KQ,excluded,,-0.09673111358344332,-0.6665166906240814,-0.05952003701454611,5.0
+031330.KQ,active,,0.5752626823499183,-0.543278084714549,0.15699255261248668,5.0
+038620.KQ,excluded,,0.006603172059966996,-0.9389029920164905,-0.12031136174516033,13.0
+039020.KQ,excluded,,0.11835680727718807,-0.7059471365638768,-0.02225680832827237,20.0
+038950.KQ,excluded,,-0.02602667442737687,-0.6936748550230143,-0.06725730862216384,18.0
+036800.KQ,excluded,,0.0978414696520003,-0.6869966565825437,-0.013884346119271584,7.0
+040610.KQ,weak,,0.3552249796610235,-0.7947656662768272,0.06547642736709469,13.0
+038880.KQ,weak,,0.23116401714602408,-0.9188589564869808,-0.0284973356760152,11.0
+038680.KQ,excluded,,0.15107032431220374,-0.6828318155563045,-0.029680604823934198,9.0
+041510.KQ,active,,0.41794676504598033,-0.7023172905525847,0.09096532704272553,15.0
+010280.KQ,excluded,,0.11214887462192807,-0.7711267602877517,-0.06452146805490389,1.0
+037760.KQ,weak,,0.2376847407463955,-0.6721311475409837,0.015546775875752372,7.0
+036480.KQ,excluded,,-0.06107061869789533,-0.7361452184841228,-0.10192175664296743,3.0
+038110.KQ,weak,,0.26359672854692917,-0.772696517902928,0.005740553061391207,11.0
+032500.KQ,weak,,0.35386433442951415,-0.8246886699846974,0.056534309145981565,17.0
+039610.KQ,weak,,0.36420025371143516,-0.7927797833935017,0.05317301562021348,7.0
+039240.KQ,active,,0.6418218328839633,-0.6535836177474403,0.209240370929328,7.0
+038290.KQ,weak,,0.2350690874481115,-0.45053582143426274,0.020348450903877158,18.0
+037440.KQ,excluded,,0.10954919935989497,-0.7186180215472762,-0.025376344732171874,11.0
+038390.KQ,weak,,0.35665534051440556,-0.42914730079450125,0.0481680596418812,6.0
+036830.KQ,weak,,0.21684160244216208,-0.6608040201005025,0.02124643158562911,15.0
+036810.KQ,active,,0.6671157707292296,-0.6894586939867955,0.24107399968207277,13.0
+036690.KQ,weak,,0.21467533901293043,-0.7498305295446339,-0.007832032817537082,11.0
+037370.KQ,excluded,,0.144748544162839,-0.8541543045032023,-0.0474194171230109,13.0
+036620.KQ,active,,0.49299483308098513,-0.8230605767153442,0.12648257546383612,5.0
+037350.KQ,excluded,,0.11522502292452982,-0.7217438564551673,-0.020778081547202287,20.0
+038010.KQ,active,,0.4408428084615269,-0.5968280467445743,0.10680347693046688,7.0
+001810.KQ,excluded,,-0.08717323767259223,-0.7699885452462772,-0.09767292763351121,3.0
+036630.KQ,excluded,,-0.033141454881437,-0.922540655318298,-0.17480713514514723,5.0
+036710.KQ,weak,,0.25680432500469275,-0.7721105527638191,0.026364200481062472,5.0
+037070.KQ,active,,0.40251989738321786,-0.783060081234136,0.08605608453180724,8.0
+036560.KQ,weak,,0.396232440070361,-0.4716666666666667,0.08106144500321277,13.0
+016250.KQ,excluded,,-0.14324990245599437,-0.901568903570963,-0.1652839675156662,25.0
+035890.KQ,weak,,0.29817742489036764,-0.7158578227787379,0.04682661344183514,5.0
+036930.KQ,active,,0.70830685762534,-0.7977202423259293,0.290302236381361,11.0
+036030.KQ,excluded,,0.1650690803503937,-0.7398190227902098,-0.026813665632884676,10.0
+032190.KQ,active,,0.5111859952743958,-0.7058823529411766,0.13729246763941227,11.0
+005290.KQ,active,,0.4851702512026717,-0.7360323886639677,0.12634195853763197,3.0
+003100.KQ,weak,,0.38108863702741597,-0.6272278798898767,0.06729253076737884,5.0
+036170.KQ,active,,0.4030434110258322,-0.7531356898517675,0.07313591700966349,3.0
+026040.KQ,excluded,,0.040960615532901354,-0.913125,-0.11838524114429283,5.0
+037230.KQ,excluded,,0.12211412951070438,-0.8323298429319372,-0.07272349186257276,1.0
+037460.KQ,weak,,0.2824783828323735,-0.5967861404869725,0.04035728789285464,6.0
+037400.KQ,weak,,0.26174494591560993,-0.628429514162493,0.024127664175481955,19.0
+033640.KQ,active,,0.552942536791666,-0.692426187419769,0.15451638266101098,11.0
+037330.KQ,excluded,,0.1142660642817171,-0.6925989898757454,-0.03219153782852002,14.0
+036090.KQ,excluded,,0.10711240179198703,-0.8521576086272835,-0.08536763279513004,10.0
+036200.KQ,weak,,0.36191775025912715,-0.7304545454545455,0.058626755012429976,2.0
+024800.KQ,weak,,0.26675046708710043,-0.7280248190279215,0.03154850139605703,5.0
+027050.KQ,excluded,,-0.1290973796231163,-0.8447921620774315,-0.15297967053694972,21.0
+035290.KQ,excluded,,-0.761551162362205,-0.8193135601918158,-0.3752183748243778,7.0
+036120.KQ,weak,,0.36109427792271687,-0.8282758620689655,0.03512164273659324,1.0
+027040.KQ,excluded,,-0.006525922073892509,-0.9214835210735492,-0.117277542806004,3.0
+027830.KQ,excluded,,0.12956926986677744,-0.8386995730715374,-0.10124530807931809,11.0
+036000.KQ,excluded,,0.0060847668660500495,-0.8294505712289877,-0.07134246198432503,13.0
+035760.KQ,excluded,,-0.230220351634108,-0.8992667597765364,-0.1518206007398588,1.0
+035810.KQ,weak,,0.20379973502307605,-0.7270502013051108,-0.005966063195326776,7.0
+035460.KQ,active,,0.5083417902703473,-0.6764522398181312,0.14497641419316176,15.0
+035620.KQ,excluded,,-0.22683022121626614,-0.9698789101917257,-0.24590491065333797,1.0
+035610.KQ,excluded,,0.15763738824988463,-0.710344827586207,-0.018465915659790277,1.0
+020710.KQ,excluded,,0.09973684185761618,-0.7028536556770577,-0.06148049246618126,5.0
+012790.KQ,active,,0.4686570388648727,-0.6752577243434805,0.1183691410787282,2.0
+034940.KQ,excluded,,-0.22454993007738397,-0.9239457831325302,-0.20294554660750663,5.0
+033230.KQ,excluded,,0.06409977587712548,-0.8477718360071302,-0.13047449921148713,1.0
+035080.KQ,excluded,,0.05439979755467213,-0.8293654685084922,-0.08379351464697493,10.0
+005160.KQ,excluded,,0.18498198026577323,-0.6641303092296128,0.0044437288128718055,27.0
+005990.KQ,excluded,,-0.33735256626782156,-0.9455853358613846,-0.20373490250209303,9.0
+034810.KQ,excluded,,-0.10774816276064793,-0.6585485289078212,-0.07232204702812384,23.0
+025770.KQ,excluded,,0.12109509246174464,-0.5695284159613061,-0.03578516104470153,3.0
+033540.KQ,excluded,,-0.12260104707354422,-0.9674556213017752,-0.19161343140685494,1.0
+033500.KQ,active,,0.561267453737698,-0.5462962962962963,0.1414030410090492,23.0
+030350.KQ,excluded,,0.16614515562567386,-0.9506254810060666,-0.15323944664644984,15.0
+033160.KQ,weak,,0.3748396320106726,-0.6850028951939781,0.06819005151020274,7.0
+033310.KQ,weak,,0.22663859861742983,-0.95438906013738,-0.03470837004783589,17.0
+033320.KQ,excluded,,0.14237470255629417,-0.8550185873605949,-0.078951832267527,9.0
+009520.KQ,weak,,0.27467237307504666,-0.8189651051628809,-0.0016939974568255245,9.0
+013810.KQ,excluded,,0.11720085803911294,-0.8793650793650793,-0.11603151741222384,1.0
+033340.KQ,excluded,,0.18665356472583017,-0.8440209215338959,-0.10290108081209226,1.0
+033290.KQ,excluded,,-0.10404342765970843,-0.9238025196615532,-0.1447362099701347,1.0
+033200.KQ,weak,,0.204460555277866,-0.8089593264130152,-0.015887832356723752,3.0
+015710.KQ,excluded,,-0.08687170289931145,-0.8219945714505119,-0.1279619597924453,3.0
+033100.KQ,active,,0.7077020388104496,-0.7867818639176032,0.2807365166559035,24.0
+033050.KQ,weak,,0.24012309384636366,-0.6587588452152775,0.0028021022242281646,5.0
+033130.KQ,excluded,,-0.02067279052842765,-0.6996791715474895,-0.08162355862172699,15.0
+019210.KQ,excluded,,-0.04492171349708428,-0.8242424242424242,-0.08863325031481883,11.0
+026150.KQ,weak,,0.3789869946698816,-0.7538735566156332,0.06273909509717113,5.0
+031310.KQ,excluded,,0.07535571877463496,-0.8295520126171843,-0.07840767758312539,9.0
+032960.KQ,weak,,0.2835266964107511,-0.471008632845181,0.03895528910764856,5.0
+032680.KQ,excluded,,-0.036371306314238294,-0.8932178932178934,-0.14166605133327115,1.0
+032940.KQ,active,,0.4438868227212892,-0.7453657452384282,0.10707525610452762,5.0
+008290.KQ,excluded,,-0.3688177685335382,-0.9985530018446673,-0.4471293890747817,3.0
+032750.KQ,excluded,,0.08085693211623841,-0.7365760094832636,-0.04950535919743393,5.0
+032860.KQ,excluded,,-0.547098623558215,-0.1925886609349553,-0.040558815264268966,2.0
+032850.KQ,excluded,,-0.10783081074494015,-0.800802137883998,-0.11032360064917468,3.0
+032790.KQ,excluded,,-0.2823506708246579,-0.8331950223363694,-0.3945287968198887,1.0
+032800.KQ,excluded,,-0.3409665460078601,-0.9898309460299739,-0.3333617429076773,1.0
+032620.KQ,weak,,0.2693042425779271,-0.6718243718162269,0.02694094494469579,13.0
+032580.KQ,active,,0.41587253888036746,-0.8022055874492452,0.07785688668919044,11.0
+032540.KQ,weak,,0.27616179628952914,-0.5285493827160495,0.0387967151137667,6.0
+028080.KQ,excluded,,0.016259800492625993,-0.9077363779030417,-0.13353943820134084,3.0
+032280.KQ,excluded,,0.1759058151221199,-0.7031339031339031,-0.016879651459048794,5.0
+012340.KQ,excluded,,-0.2571955356025386,-0.979564635088296,-0.2860855404603134,19.0
+031510.KQ,excluded,,0.023927726275070983,-0.8817948717948718,-0.09383095912639783,1.0
+031860.KQ,excluded,,-0.19473916249099832,-0.992566289642455,-0.30095437914149725,7.0
+031980.KQ,active,,0.5675571397889058,-0.5363363363363364,0.1650698055510771,1.0
+011560.KQ,active,,0.5697117160914233,-0.7507176481861482,0.1591917270943961,19.0
+024740.KQ,weak,,0.3012457592001963,-0.7374325752565878,0.02003071961080427,15.0
+030960.KQ,weak,,0.22249805012122312,-0.9288034188034189,-0.03757213351117239,5.0
+030530.KQ,active,,0.5158940093382379,-0.7619574227856251,0.1495582017328232,51.0
+030520.KQ,weak,,0.2190593322475293,-0.6473604826546003,-0.002535431977178426,7.0
+021880.KQ,excluded,,-0.018502109129704344,-0.8865865865865866,-0.17190988399796514,1.0
+029480.KQ,weak,,0.2847793630326716,-0.8608139534883721,-0.03553840006883624,5.0
+021040.KQ,excluded,,-0.14925387162029297,-0.9639183673469388,-0.2073646254616407,3.0
+028300.KQ,active,,0.5633659121527365,-0.8016597457469605,0.15649818878687305,5.0
+027710.KQ,excluded,,0.1505799377181414,-0.8233082706766918,-0.041668739954539014,5.0
+023600.KQ,excluded,,0.15208645040576757,-0.6022388059701492,0.004147661626830335,4.0
+018310.KQ,excluded,,0.09061961215657885,-0.7872727272727273,-0.04168055926725622,15.0
+003800.KQ,excluded,,0.18569605488525942,-0.6244239631336406,0.014046196726087645,5.0
+014190.KQ,excluded,,0.09220891870736618,-0.8486363636363636,-0.07983799154942184,3.0
+012700.KQ,excluded,,-0.01007760923497705,-0.6874989412468937,-0.04395079331616458,9.0
+018000.KQ,weak,,0.21814965434892117,-0.9223540452675395,-0.022419466197721505,34.0
+025980.KQ,weak,,0.2816184906820336,-0.8767255216693419,0.005042247076469497,15.0
+026910.KQ,weak,,0.21702571456475053,-0.8430903155603918,-0.031271909196601166,1.0
+017250.KQ,excluded,,0.03319067767089848,-0.8714074074074074,-0.0845688310864815,1.0
+015750.KQ,excluded,,0.0886070374499368,-0.654277252245405,-0.03657519437783219,21.0
+020180.KQ,weak,,0.26000514373558076,-0.7844884488448846,-0.013510921030728928,3.0
+006730.KQ,weak,,0.21596871614904,-0.4973333071900313,0.020077559133161893,11.0
+025950.KQ,active,,0.4146567486959379,-0.8664201183431952,0.05719614446692045,3.0
+025900.KQ,excluded,,0.10901924929495947,-0.9535259724758618,-0.0838777224295294,13.0
+025870.KQ,excluded,,-0.04750888956666082,-0.9632860040567952,-0.1941440740110405,3.0
+025880.KQ,excluded,,0.19363457851901555,-0.6622418879056047,-0.012714039124162357,1.0
+002680.KQ,excluded,,0.08471070221112126,-0.9315904139433551,-0.11663545455938895,3.0
+025550.KQ,excluded,,0.15197528493176402,-0.8633093525179856,-0.06102980475238551,7.0
+025440.KQ,excluded,,-0.12547815556908612,-0.9075100408442459,-0.19535932356294916,3.0
+025320.KQ,active,,0.46124402843901025,-0.7405817900983462,0.10834773498385442,11.0
+024940.KQ,weak,,0.2436382670425628,-0.8392825112107622,-0.03734797751092356,3.0
+024950.KQ,excluded,,0.1313974120689899,-0.7463638598720841,-0.02266647646596598,15.0
+014100.KQ,excluded,,-0.23347653449474073,-0.9194879544116662,-0.2505277350210028,5.0
+024840.KQ,excluded,,0.0,0.0,0.0,0.0
+024910.KQ,excluded,,0.05087883649203057,-0.7839285546522021,-0.04697400556909248,9.0
+004780.KQ,weak,,0.2142714394488132,-0.5078947368421052,0.023546391151103352,4.0
+013120.KQ,excluded,,-0.013567181403671339,-0.581254509223732,-0.03904023587872385,7.0
+024830.KQ,excluded,,-0.10460995901111818,-0.6138461538461538,-0.10360191326824175,1.0
+024880.KQ,excluded,,-0.028009992900320857,-0.6140897479944083,-0.028162531348628006,14.0
+024120.KQ,excluded,,0.05324627993294196,-0.6247654184101181,-0.004282798525816145,13.0
+017000.KQ,excluded,,0.10677427260599331,-0.8898862353396645,-0.09944273390966285,17.0
+024060.KQ,active,,0.5508770686157402,-0.7489678808155322,0.16810065621557557,9.0
+023910.KQ,excluded,,0.05645827369140184,-0.5409504550050556,-0.015811329714209954,1.0
+001840.KQ,excluded,,0.1891044766544143,-0.8709419844251043,-0.07681872415122593,5.0
+023900.KQ,excluded,,0.14455851606643907,-0.7542533081285443,-0.01668495473902054,5.0
+017650.KQ,weak,,0.39909582432775614,-0.6153846153846154,0.07133419494541204,7.0
+010170.KQ,active,,0.5069026872681989,-0.9238898771428388,0.13486066255116302,9.0
+023790.KQ,excluded,,0.07761009177114324,-0.8690012970168612,-0.08502290968759252,1.0
+023770.KQ,excluded,,-0.07167419238738791,-0.8859875260441681,-0.14516074947796753,3.0
+023760.KQ,excluded,,-0.316991714272559,-0.5278599808885662,-0.061093432128191405,11.0
+005860.KQ,weak,,0.30640615442054037,-0.8430711610486892,0.006914284439229146,1.0
+012860.KQ,excluded,,0.13815446238435167,-0.6718076285240464,-0.03998380984078487,19.0
+006050.KQ,excluded,,0.029441925978108095,-0.8981818181818183,-0.14133114449038198,1.0
+023410.KQ,excluded,,0.04947131061713866,-0.7614450496771907,-0.050120741711386696,15.0
+023440.KQ,excluded,,0.14294871962430925,-0.8984405458089669,-0.10709140146360996,3.0
+006910.KQ,active,,0.41082296477328967,-0.9230619669992375,0.056432403522715724,3.0
+018290.KQ,excluded,,0.1600795483232398,-0.7585585585585587,-0.028139271937531296,13.0
+023160.KQ,weak,,0.23421451550082373,-0.4638944986278143,0.02791155740483764,7.0
+007530.KQ,excluded,,0.1628826152818121,-0.7478057857342507,-0.021796717217712036,1.0
+001000.KQ,excluded,,-0.09299043635642545,-0.9152774498229044,-0.2025653380693836,1.0
+012620.KQ,excluded,,0.020036746727490805,-0.6750425727638498,-0.036833268961733445,3.0
+011370.KQ,excluded,,-0.10362028906130212,-0.7651159988661528,-0.09174553077134762,12.0
+018700.KQ,excluded,,-0.18088271418407478,-0.9775379144453676,-0.27181609129536644,1.0
+014470.KQ,excluded,,-0.07476502914315364,-0.8698477594971807,-0.15893936797306019,5.0
+007720.KQ,excluded,,-0.16248088043390402,-0.9394666666666667,-0.18147746627694594,1.0
+011320.KQ,excluded,,0.054897400721952955,-0.703500233979246,-0.04125991640402671,10.0
+018120.KQ,excluded,,-0.47852316835645053,-0.6786596494864847,-0.07880045781432221,7.0
+013720.KQ,excluded,,0.10380378375784038,-0.9801445783132531,-0.14729092597468685,1.0
+009620.KQ,excluded,,0.018594548385460947,-0.9619912624906718,-0.2238992883549118,3.0
+005670.KQ,weak,,0.2973476350288353,-0.5874439461883407,0.04228569566086282,3.0
+007330.KQ,weak,,0.24818234248777263,-0.6721991701244814,0.02646330439654032,3.0
+006140.KQ,excluded,,0.069471909725981,-0.7226704438412069,-0.05772336988456439,3.0
+019010.KQ,active,,0.42178720327029035,-0.5473684210526317,0.0897855764943869,3.0
+009780.KQ,weak,,0.27727619406188186,-0.6417112299465242,0.022577900686611363,1.0
+020400.KQ,weak,,0.22026677430981578,-0.7092592592592594,-0.012989028304489114,11.0
+005710.KQ,excluded,,0.11836528924134365,-0.6474558977190342,-0.010180787520625456,11.0
+016600.KQ,excluded,,0.11800328890224858,-0.9077751681844637,-0.08050057642296848,5.0
+004590.KQ,excluded,,0.16943194923275692,-0.580952380952381,0.00420154795801575,1.0
+016670.KQ,excluded,,-0.1310660698367427,-0.7767988059638742,-0.19174471112666192,5.0
+000440.KQ,active,,0.5099729647974918,-0.6836734693877551,0.13637225067259573,7.0
+014970.KQ,weak,,0.28739209105354746,-0.7918032786885247,-0.004679115146696389,5.0
+011040.KQ,excluded,,-0.0548853559727634,-0.7552082497083284,-0.0670266593104667,9.0
+008370.KQ,weak,,0.2610437485970205,-0.46973865199449794,0.03381080736703179,5.0
+007390.KQ,active,,0.5838529619109187,-0.920578780933339,0.14564217125217294,1.0
+002290.KQ,excluded,,0.10706395866770209,-0.6925192519251926,-0.0445820685410212,3.0
+019540.KQ,excluded,,0.046065984519738805,-0.7935578330893119,-0.0617330671238151,11.0
+007770.KQ,excluded,,-0.06359408406811318,-0.8423004475651092,-0.11537459903276626,3.0
+017890.KQ,weak,,0.343069465916286,-0.6025402400175575,0.06160259059341744,5.0
+003310.KQ,weak,,0.24803472534455429,-0.8425,-0.027098001287652274,1.0
+019660.KQ,excluded,,0.06851107738121016,-0.9141671170275815,-0.130993139525152,7.0
+017510.KQ,active,,0.5685647511906436,-0.85828025477707,0.1823087375065242,16.0
+021080.KQ,weak,,0.3203648015030271,-0.8583450210378681,0.023441500742860777,3.0
+008830.KQ,active,,0.5739870810863184,-0.6438046163128612,0.19027481662895585,17.0
+002230.KQ,weak,,0.2743622540299887,-0.7430939226519337,0.037914052075820326,25.0
+009730.KQ,excluded,,-0.28657987264196205,-0.9442357975582429,-0.4066371714362095,7.0
+016920.KQ,weak,,0.24260138225592712,-0.8607416849776779,0.0008153806630779581,5.0
+013030.KQ,active,,0.5107657695577702,-0.726964766654844,0.12351939235406628,27.0
+019550.KQ,weak,,0.21713644179889213,-0.8292372881355933,-0.029912103183982297,3.0
+019570.KQ,excluded,,-0.07448490405706405,-0.9719066917886662,-0.26023063192522233,3.0
+006920.KQ,weak,,0.2815505614583698,-0.754115715015071,0.001956805850081178,27.0

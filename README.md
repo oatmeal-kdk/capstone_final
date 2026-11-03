@@ -8,7 +8,8 @@ Phase 12 v1 레시피(ta 지표 20종 → ATR 트리플배리어 → ESN → 변
 |---|---|---|
 | `legacy_v1/` | 파이프라인 패키지 (data, features, labels, model, backtest, pipeline, experiments) | 포함 |
 | `legacy_v1/universe/` | pooled 실험의 시장별 종목 목록 (capstone2 `pipeline_v2` 패널의 열 순서 그대로) | 포함 |
-| `data/` | 가격·라벨 데이터 (`processed/`, `labels/cpm/`, `universe/`, 약 1GB). 2026-11-03에 capstone2의 `data/`에서 복사 | 제외 |
+| `data/universe/` | 스크리닝 결과 종목 목록 (`production_config.py`가 읽음) | 포함 |
+| `data/processed/`, `data/labels/cpm/` | 가격 파일과 CPM 전환점 (약 1GB). 2026-11-03에 capstone2의 `data/`에서 복사 | 제외 |
 | `results/` | 실험 결과 | 제외 |
 
 ## 준비
@@ -17,7 +18,11 @@ Phase 12 v1 레시피(ta 지표 20종 → ATR 트리플배리어 → ESN → 변
 python -m pip install -r requirements.txt
 ```
 
-`data/`는 git에 들어 있지 않습니다. 새로 받은 경우 capstone2의 `data/processed`, `data/labels/cpm`, `data/universe`를 같은 경로로 복사합니다. capstone2 쪽 데이터가 이후에 갱신되어도 이 저장소에는 반영되지 않습니다.
+`data/processed`와 `data/labels/cpm`은 git에 들어 있지 않습니다. 새로 받은 경우 capstone2에서 같은 경로로 복사합니다. capstone2 쪽 데이터가 이후에 갱신되어도 이 저장소에는 반영되지 않습니다.
+
+가격 파일(`<종목>_with_tp.csv`)에 대해:
+- `screen_universe.py`는 파일이 없는 종목을 yfinance로 받아 OHLCV만 있는 파일을 만듭니다. 확정 레시피(`triple_barrier`)와 `cpm_causal`은 이것으로 충분합니다.
+- `cpm_point_type` 열은 capstone2의 `prepare_ticker_data.py`가 만든 것이고 이 저장소에서는 만들지 않습니다. 이 열을 쓰는 것은 `--target-method cpm`(미래 정보 포함, 사용 금지)뿐입니다. CPM 전환점은 `experiments/mark_cpm.py`가 `data/labels/cpm/`에 따로 만듭니다.
 
 ## 실행
 

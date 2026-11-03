@@ -1,7 +1,8 @@
-# data (copied from capstone2/data) and results are not tracked
-data
-data/
-results/
+# data (copied from capstone2/data) and results are not tracked; anchored to the repo root so the
+# legacy_v1/data/ code package is not caught. data/universe (screening lists read by production_config) is tracked.
+/data/*
+!/data/universe/
+/results/
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
