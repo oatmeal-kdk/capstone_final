@@ -96,14 +96,14 @@
 | 선택지 | 내용 | 위치 |
 |---|---|---|
 | **단일 종목** | 한 종목의 시계열 전체를 ESN에 끊김 없이 넣음. 종목마다 모델 하나 | [run_walkforward.py](legacy_v1/pipeline/run_walkforward.py) |
-| 여러 종목 | 종목별 "직전 20일" 창을 0 상태에서 읽어 행으로 쌓음. 학습 행은 5일 간격. 시장(US/KOSPI/KOSDAQ)마다 모델 하나 | [pooled.py](legacy_v1/experiments/pooled.py) |
+| 여러 종목 | 종목별 "직전 20일" window를 0 상태에서 읽어 행으로 쌓음. 학습 행은 5일 간격. 시장(US/KOSPI/KOSDAQ)마다 모델 하나 | [pooled.py](legacy_v1/experiments/pooled.py) |
 
-**학습 창**
+**Training window**
 
 | 선택지 | 내용 | 지정 방법 |
 |---|---|---|
-| **고정 길이 창 (rolling)** | 검증 직전 `--train-years`년(5년)만. 폴드마다 창 전체가 1년씩 뒤로 이동 | `--train-window rolling` (기본값) |
-| 누적 창 (expanding) | 데이터 시작부터 검증 직전까지. 시작점은 고정되고 끝만 1년씩 늘어남 (첫 폴드 5년). v1 원래 값 | `--train-window expanding` |
+| **Rolling window** | 검증 직전 `--train-years`년(5년)만. 폴드마다 window 전체가 1년씩 뒤로 이동 | `--train-window rolling` (기본값) |
+| Expanding window | 데이터 시작부터 검증 직전까지. 시작점은 고정되고 window 끝만 1년씩 뒤로 감 (첫 폴드 5년). v1 원래 값 | `--train-window expanding` |
 
 **구간 나누기:** 검증 1년(`--val-years`), 테스트 1년씩 이동(`--step-years`). 단일 종목은 그 종목의 데이터 시작일을, 여러 종목은 달력 연도를 기준으로 경계를 잡습니다. 검증 연도는 그 폴드의 학습에 넣지 않습니다.
 
@@ -152,6 +152,6 @@
 |---|---|---|
 | [compare_execution.py](legacy_v1/experiments/compare_execution.py) | 6. 체결 | v1 |
 | [compare_labels.py](legacy_v1/experiments/compare_labels.py) | 3. 라벨 (triple_barrier / cpm_causal) | v1, 다음 날 시가 체결 |
-| [compare_train_window.py](legacy_v1/experiments/compare_train_window.py) | 4. 학습 창 (누적 / 고정 길이) | v1, 다음 날 시가 체결 |
+| [compare_train_window.py](legacy_v1/experiments/compare_train_window.py) | 4. Training window (expanding / rolling) | v1, 다음 날 시가 체결 |
 | [pooled.py](legacy_v1/experiments/pooled.py) | 4. 학습 단위, 2. 입력 (raw / z), 3. 라벨 | ridge, 검증 정확도 |
 | [pooled_classifier.py](legacy_v1/experiments/pooled_classifier.py) | 4. readout, 5. threshold와 신호 해석 | pooled 설정 |
