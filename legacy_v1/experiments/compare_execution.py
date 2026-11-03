@@ -34,7 +34,8 @@ def run(symbol: str, execution: str, overlay: bool) -> dict:
     out = OUT / f"{symbol}_{execution}{'_overlay' if overlay else ''}"
     cmd = [sys.executable, "-W", "ignore", "-m", "legacy_v1.pipeline.run_walkforward", "--tp-path", str(path), "--target-method", "triple_barrier",
            "--train-years", str(cfg.TRAIN_YEARS), "--fee-rate", str(cfg.FEE_RATE), "--slippage-rate", str(cfg.SLIPPAGE_RATE), "--execution", execution,
-           "--output-dir", str(out)]
+           "--output-dir", str(out),
+           "--train-window", "expanding"]                 # run with the v1 window; the CLI default became rolling on 2026-11-04
     if overlay:
         cmd += ["--risk-overlay", "--target-vol", str(cfg.RISK_OVERLAY_TARGET_VOL), "--rebalance-band", str(cfg.RISK_OVERLAY_REBALANCE_BAND)]
     result = subprocess.run(cmd, capture_output=True, text=True, timeout=900)

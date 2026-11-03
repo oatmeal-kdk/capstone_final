@@ -167,11 +167,12 @@ def main() -> None:
     parser.add_argument("--rebalance-band", type=float, default=0.1, help="Only rebalance when weight drift exceeds this.")
     parser.add_argument("--allow-lookahead", action="store_true",
                         help="needed for --target-method cpm / cpm_global, whose CPM settings and labels use the whole series (reproduction only)")
-    parser.add_argument("--execution", choices=["same_close", "next_open"], default="same_close",
-                        help="same_close = the original v1 fill at the signal day's close; next_open = fill at the next day's open (added 2026-10-15).")
-    parser.add_argument("--rolling-train", action="store_true",
-                        help="train on only the last --train-years before validation (rolling window) instead of every row since the start "
-                             "(expanding window, the v1 default). Added 2026-11-03.")
+    parser.add_argument("--execution", choices=["same_close", "next_open"], default="next_open",
+                        help="next_open = fill at the next day's open (added 2026-10-15; the default since 2026-11-04); same_close = the original v1 "
+                             "fill at the signal day's close, needed to reproduce the v1 numbers.")
+    parser.add_argument("--train-window", choices=["rolling", "expanding"], default="rolling",
+                        help="rolling = train on only the last --train-years before validation (the default since 2026-11-04); "
+                             "expanding = every row since the start of the data (the original v1 window, needed to reproduce the v1 numbers).")
     args = parser.parse_args()
 
     if args.target_method in ("cpm", "cpm_global") and not args.allow_lookahead:
@@ -237,8 +238,8 @@ def main() -> None:
         fold_test_end = min(idx_for(fold_test_end_date), n_rows)
         fold_val_start = idx_for(fold_val_start_date)
         train_fit_end = fold_val_start
-        # expanding (v1): every row from the start; rolling: only the last train_years before validation
-        train_start = idx_for(fold_val_start_date - pd.DateOffset(years=args.train_years)) if args.rolling_train else 0
+        # rolling (default): only the last train_years before validation; expanding (v1): every row from the start
+        train_start = idx_for(fold_val_start_date - pd.DateOffset(years=args.train_years)) if args.train_window == "rolling" else 0
         if fold_test_end <= fold_test_start:
             break
 
@@ -282,7 +283,7 @@ def main() -> None:
                 max_holding=args.tb_max_holding,
             ).iloc[fold_test_start:fold_test_end].to_numpy(dtype=float)
         elif args.target_method == "cpm_causal":
-            # P, T chosen on the training rows only; every CPM run starts at train_start (0 unless --rolling-train)
+            # P, T chosen on the training rows only; every CPM run starts at train_start (0 with --train-window expanding)
             p_value, t_value = _pareto_knee_params(close_series.iloc[train_start:train_fit_end])
             train_target = _known_triangle(close_series.iloc[train_start:train_fit_end], p_value, t_value)
             val_slice = _known_triangle(close_series.iloc[train_start:fold_test_start], p_value, t_value)[fold_val_start - train_start:]
@@ -385,7 +386,7 @@ def main() -> None:
         "test_period": [str(predictions_df["date"].iloc[0]), str(predictions_df["date"].iloc[-1])],
         "test_rows": int(len(predictions_df)),
         "execution": args.execution,
-        "train_window": "rolling" if args.rolling_train else "expanding",
+        "train_window": args.train_window,
         "cpm": global_cpm,
         "strategy": summary,
     }

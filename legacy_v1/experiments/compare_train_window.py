@@ -5,7 +5,7 @@
 Declared before running (2026-11-03); nothing below was changed after seeing results.
   Compared    expanding  every row from the start of the data up to the validation year (the v1 default: 5 years in the first
                          fold, one more year in every later fold)
-              rolling    only the last 5 years before the validation year (--rolling-train)
+              rolling    only the last 5 years before the validation year (--train-window rolling)
   Fixed       triple barrier label, ta 20 indicators, ESN (single seed), threshold on validation accuracy, 1y validation, 1y test
               steps, costs 0.05% + 0.05%, fills at the next day's open. Test dates are the same for both windows.
   Stocks      the 64 of compare_labels.py: SPY, QQQ, AAPL, GLD and 30 random US + 30 random KR stocks (seed 0).
@@ -36,8 +36,7 @@ def run(symbol: str, window: str, overlay: bool) -> dict:
     cmd = [sys.executable, "-W", "ignore", "-m", "legacy_v1.pipeline.run_walkforward", "--tp-path", f"data/processed/{symbol}/1d/{symbol}_with_tp.csv",
            "--target-method", "triple_barrier", "--train-years", str(cfg.TRAIN_YEARS), "--fee-rate", str(cfg.FEE_RATE),
            "--slippage-rate", str(cfg.SLIPPAGE_RATE), "--execution", "next_open", "--output-dir", str(out)]
-    if window == "rolling":
-        cmd.append("--rolling-train")
+    cmd += ["--train-window", window]                              # explicit: the CLI default changed to rolling on 2026-11-04
     if overlay:
         cmd += ["--risk-overlay", "--target-vol", str(cfg.RISK_OVERLAY_TARGET_VOL), "--rebalance-band", str(cfg.RISK_OVERLAY_REBALANCE_BAND)]
     result = subprocess.run(cmd, capture_output=True, text=True, timeout=3600)

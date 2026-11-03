@@ -1,4 +1,4 @@
-# capstone2-legacy-v1: 파이프라인 단계별 선택지
+# capstone
 
 파이프라인 흐름:
 
@@ -6,14 +6,10 @@
 데이터 → 입력(ta 지표) → [폴드마다: 라벨 → 스케일링 → ESN 학습 → threshold 선택 → 테스트 신호] → 백테스트 → 평가
 ```
 
-각 단계에서 고를 수 있는 선택지입니다. **굵은 글씨**가 확정 레시피(v1)의 값입니다. 명령은 모두 저장소 루트에서 실행합니다.
 
 ## 1. 데이터
 
-| 선택지 | 내용 | 지정 방법 |
-|---|---|---|
-| **저장된 가격 파일** | `data/processed/<종목>/1d/<종목>_with_tp.csv` 일봉 (git 제외, capstone2에서 복사) | `--tp-path` |
-| 새로 다운로드 | 파일이 없는 종목을 yfinance로 받아 OHLCV 파일 생성 | [screen_universe.py](legacy_v1/pipeline/screen_universe.py) |
+저장된 가격 파일 `data/processed/<종목>/1d/<종목>_with_tp.csv`(일봉, git 제외, capstone2에서 복사)를 씁니다. `--tp-path`로 지정합니다.
 
 ## 2. 입력
 
@@ -21,7 +17,7 @@
 |---|---|---|
 | **raw** | ta 지표 20개 (모멘텀 7, 추세 6, 변동성 4, 거래량 3) 값 그대로 | [ta_features.py](legacy_v1/features/ta_features.py) |
 | z | 같은 지표를 종목 자신의 과거 252일로 z-score 변환, ±5에서 자름 (여러 종목 학습에서만) | [pooled.py](legacy_v1/experiments/pooled.py) |
-| window_scale | 모든 지표 기간을 한꺼번에 늘리거나 줄임. **1.0** | `build_ta_features(window_scale=)` |
+| window_scale | 모든 지표 기간을 한꺼번에 늘리거나 줄임. **1.0** (현재 어디서도 다른 값을 쓰지 않음. CLI 옵션 없음) | `build_ta_features(window_scale=)` |
 
 [ohlcv_features.py](legacy_v1/features/ohlcv_features.py)의 지표 8개는 모델 입력으로 쓰지 않고, 그중 20일 변동성만 리스크 오버레이에 씁니다.
 
@@ -29,15 +25,16 @@
 
 `ta` 라이브러리로 계산한 값입니다. 기간은 `window_scale=1.0` 기준입니다. 모든 지표는 가격 수준이 아니라 비율이나 정해진 범위의 값입니다(ATR도 종가로 나눔). ESN에 넣기 전에 학습 행의 min/max로 [−1, 1]에 맞춥니다.
 
-**모멘텀 (7)**
+**모멘텀 (7)**  
+평활 = 계산한 값을 며칠 단순평균해 잔떨림을 줄이는 것.
 
 | 열 | 지표 | 기간 | 범위 | 의미 |
 |---|---|---|---|---|
 | `ta_rsi` | RSI | 14 | 0~100 | 최근 상승폭과 하락폭의 비율 |
-| `ta_stoch_k` | 스토캐스틱 %K | 14, 평활 3 | 0~100 | 최근 14일 고저 범위 안에서 종가의 위치 |
-| `ta_stoch_d` | 스토캐스틱 %D | 14, 평활 3 | 0~100 | %K의 3일 평균 |
-| `ta_stochrsi_k` | 스토캐스틱 RSI %K | 14, 평활 3·3 | 0~1 | RSI에 스토캐스틱을 적용한 값 |
-| `ta_williams_r` | Williams %R | 14 | −100~0 | %K를 뒤집은 값 |
+| `ta_stoch_k` | 스토캐스틱 %K | 14 | 0~100 | 최근 14일 고저 범위 안에서 종가의 위치 |
+| `ta_stoch_d` | 스토캐스틱 %D | 14, 평활 3 | 0~100 | %K의 3일 단순평균 |
+| `ta_stochrsi_k` | 스토캐스틱 RSI %K | 14, 평활 3 | 0~1 | RSI에 스토캐스틱을 적용한 값의 3일 단순평균 |
+| `ta_williams_r` | Williams %R | 14 | −100~0 | %K − 100 (%K와 같은 정보) |
 | `ta_roc` | 변화율 | 12 | % | 12일 전 대비 종가 변화율 |
 | `ta_ultimate_osc` | Ultimate Oscillator | 7·14·28 | 0~100 | 세 기간 매수 압력의 가중 평균 |
 
@@ -70,7 +67,7 @@
 | `ta_pvo` | PVO | 12·26, 신호선 9 | % | 거래량 단기·장기 지수이동평균의 차이 비율 |
 
 참고:
-- 스토캐스틱 %K, %D, Williams %R, 볼린저 %B, 켈트너 %B는 모두 "최근 범위 안에서 종가의 위치"를 잽니다. 특히 %K와 Williams %R은 스케일링 뒤에 정확히 반대 부호가 됩니다.
+- 스토캐스틱 %K, %D, Williams %R, 볼린저 %B, 켈트너 %B는 모두 "최근 범위 안에서 종가의 위치"를 잽니다. 특히 Williams %R은 정확히 %K − 100이라, 스케일링 뒤에는 %K와 똑같은 값이 됩니다(입력 20개 중 1개는 중복).
 - `window_scale`을 바꾸면 볼린저 밴드의 σ 배수도 함께 반올림되어 바뀝니다(0.5배 → 1σ, 1.5배 → 3σ).
 
 ## 3. 라벨
@@ -105,8 +102,8 @@
 
 | 선택지 | 내용 | 지정 방법 |
 |---|---|---|
-| **늘어나는 창** | 데이터 시작부터 검증 직전까지 (첫 폴드 5년, 이후 1년씩 늘어남) | 기본값 |
-| rolling | 검증 직전 `--train-years`년만 | `--rolling-train` |
+| **고정 길이 창 (rolling)** | 검증 직전 `--train-years`년(5년)만. 폴드마다 창 전체가 1년씩 뒤로 이동 | `--train-window rolling` (기본값) |
+| 누적 창 (expanding) | 데이터 시작부터 검증 직전까지. 시작점은 고정되고 끝만 1년씩 늘어남 (첫 폴드 5년). v1 원래 값 | `--train-window expanding` |
 
 **구간 나누기:** 검증 1년(`--val-years`), 테스트 1년씩 이동(`--step-years`). 단일 종목은 그 종목의 데이터 시작일을, 여러 종목은 달력 연도를 기준으로 경계를 잡습니다. 검증 연도는 그 폴드의 학습에 넣지 않습니다.
 
@@ -137,7 +134,7 @@
 
 | 항목 | 선택지 | 지정 방법 |
 |---|---|---|
-| 체결 | **신호 당일 종가** / 다음 날 시가 | `--execution same_close / next_open` |
+| 체결 | **다음 날 시가** (기본값) / 신호 당일 종가 (v1 원래 값. 신호를 만든 종가에 바로 체결하므로 실제로는 불가능. v1 숫자를 재현할 때만 사용) | `--execution next_open / same_close` |
 | 비중 | **전부 사거나 전부 팔기** / 리스크 오버레이: 비중 = min(1, 목표 변동성 ÷ 20일 변동성), 차이가 밴드를 넘을 때만 조정. **목표 10%, 밴드 10%p** | `--risk-overlay`, `--target-vol`, `--rebalance-band` |
 | 비용 | **수수료 0.05%, 슬리피지 0.05%** (CLI 기본값은 0이라 직접 지정) | `--fee-rate`, `--slippage-rate` |
 
@@ -155,6 +152,6 @@
 |---|---|---|
 | [compare_execution.py](legacy_v1/experiments/compare_execution.py) | 6. 체결 | v1 |
 | [compare_labels.py](legacy_v1/experiments/compare_labels.py) | 3. 라벨 (triple_barrier / cpm_causal) | v1, 다음 날 시가 체결 |
-| [compare_train_window.py](legacy_v1/experiments/compare_train_window.py) | 4. 학습 창 (늘어나는 창 / rolling) | v1, 다음 날 시가 체결 |
+| [compare_train_window.py](legacy_v1/experiments/compare_train_window.py) | 4. 학습 창 (누적 / 고정 길이) | v1, 다음 날 시가 체결 |
 | [pooled.py](legacy_v1/experiments/pooled.py) | 4. 학습 단위, 2. 입력 (raw / z), 3. 라벨 | ridge, 검증 정확도 |
 | [pooled_classifier.py](legacy_v1/experiments/pooled_classifier.py) | 4. readout, 5. threshold와 신호 해석 | pooled 설정 |

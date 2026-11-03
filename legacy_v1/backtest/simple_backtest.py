@@ -65,13 +65,14 @@ def run_long_only_backtest(
     sell_tax_rate: float = 0.0,
     capital_gains_tax_rate: float = 0.0,
     allow_fractional: bool = True,
-    execution: str = "same_close",
+    execution: str = "next_open",
     open_col: str = "open",
 ) -> tuple[pd.DataFrame, pd.DataFrame, dict[str, Any]]:
     """Run a long-only all-in/all-out backtest from ESN signals.
 
     ``execution``: "same_close" (the original v1 behaviour) trades at the close of the very day whose close produced the signal;
-    "next_open" (added 2026-10-15) trades a signal of day t at the open of day t+1, which is when it could really be acted on.
+    "next_open" (added 2026-10-15, the default since 2026-11-04) trades a signal of day t at the open of day t+1, which is when it
+    could really be acted on.
     The portfolio is marked at each close in both cases.
 
     Cost model:
@@ -237,7 +238,7 @@ def run_long_only_backtest_vol_target(
     slippage_rate: float = 0.0,
     sell_tax_rate: float = 0.0,
     capital_gains_tax_rate: float = 0.0,
-    execution: str = "same_close",
+    execution: str = "next_open",
     open_col: str = "open",
 ) -> tuple[pd.DataFrame, pd.DataFrame, dict[str, Any]]:
     """Long-only backtest with volatility-targeted fractional position sizing.
