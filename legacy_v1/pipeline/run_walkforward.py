@@ -169,6 +169,9 @@ def main() -> None:
                         help="needed for --target-method cpm / cpm_global, whose CPM settings and labels use the whole series (reproduction only)")
     parser.add_argument("--execution", choices=["same_close", "next_open"], default="same_close",
                         help="same_close = the original v1 fill at the signal day's close; next_open = fill at the next day's open (added 2026-10-15).")
+    parser.add_argument("--rolling-train", action="store_true",
+                        help="train on only the last --train-years before validation (rolling window) instead of every row since the start "
+                             "(expanding window, the v1 default). Added 2026-11-03.")
     args = parser.parse_args()
 
     if args.target_method in ("cpm", "cpm_global") and not args.allow_lookahead:
@@ -234,16 +237,18 @@ def main() -> None:
         fold_test_end = min(idx_for(fold_test_end_date), n_rows)
         fold_val_start = idx_for(fold_val_start_date)
         train_fit_end = fold_val_start
+        # expanding (v1): every row from the start; rolling: only the last train_years before validation
+        train_start = idx_for(fold_val_start_date - pd.DateOffset(years=args.train_years)) if args.rolling_train else 0
         if fold_test_end <= fold_test_start:
             break
 
         scaler = MinMaxUnitScaler()
         if args.target_method == "triple_barrier":
-            train_target = label_triple_barrier(
+            train_target = label_triple_barrier(       # labelled on every row up to the training end (ATR needs no warm-up), then cut
                 df.iloc[:train_fit_end],
                 k=args.tb_atr_mult,
                 max_holding=args.tb_max_holding,
-            )
+            ).iloc[train_start:]
             val_target = label_triple_barrier(
                 df.iloc[:fold_test_start],
                 k=args.tb_atr_mult,
@@ -267,7 +272,7 @@ def main() -> None:
             if int(val_mask.sum()) == 0:
                 raise ValueError(f"Fold {fold_idx}: no validation rows remain after purging.")
 
-            X_train = scaler.fit_transform(X_full[:train_fit_end][train_mask])
+            X_train = scaler.fit_transform(X_full[train_start:train_fit_end][train_mask])
             y_train = train_target.to_numpy(dtype=float)[train_mask]
             X_val = scaler.transform(X_full[fold_val_start:fold_test_start][val_mask])
             y_val = val_target_slice.to_numpy(dtype=float)[val_mask]
@@ -277,20 +282,21 @@ def main() -> None:
                 max_holding=args.tb_max_holding,
             ).iloc[fold_test_start:fold_test_end].to_numpy(dtype=float)
         elif args.target_method == "cpm_causal":
-            p_value, t_value = _pareto_knee_params(close_series.iloc[:train_fit_end])      # chosen on the training rows only
-            train_target = _known_triangle(close_series.iloc[:train_fit_end], p_value, t_value)
-            val_slice = _known_triangle(close_series.iloc[:fold_test_start], p_value, t_value)[fold_val_start:fold_test_start]
+            # P, T chosen on the training rows only; every CPM run starts at train_start (0 unless --rolling-train)
+            p_value, t_value = _pareto_knee_params(close_series.iloc[train_start:train_fit_end])
+            train_target = _known_triangle(close_series.iloc[train_start:train_fit_end], p_value, t_value)
+            val_slice = _known_triangle(close_series.iloc[train_start:fold_test_start], p_value, t_value)[fold_val_start - train_start:]
             train_mask, val_mask = ~np.isnan(train_target), ~np.isnan(val_slice)
             if int(train_mask.sum()) <= washout:
                 raise ValueError(f"Fold {fold_idx}: only {int(train_mask.sum())} training rows have a determined CPM target.")
-            X_train = scaler.fit_transform(X_full[:train_fit_end][train_mask])
+            X_train = scaler.fit_transform(X_full[train_start:train_fit_end][train_mask])
             y_train = train_target[train_mask]
             X_val = scaler.transform(X_full[fold_val_start:fold_test_start][val_mask]) if val_mask.any() else None   # None: no turning
             y_val = val_slice[val_mask]                                                                              # point is settled yet
-            target_for_output = _known_triangle(close_series.iloc[:fold_test_end], p_value, t_value)[fold_test_start:fold_test_end]
+            target_for_output = _known_triangle(close_series.iloc[train_start:fold_test_end], p_value, t_value)[fold_test_start - train_start:]
         else:
-            X_train = scaler.fit_transform(X_full[:train_fit_end])
-            y_train = y_full[:train_fit_end]
+            X_train = scaler.fit_transform(X_full[train_start:train_fit_end])
+            y_train = y_full[train_start:train_fit_end]
             X_val = scaler.transform(X_full[fold_val_start:fold_test_start])
             y_val = y_full[fold_val_start:fold_test_start]
             target_for_output = y_full[fold_test_start:fold_test_end]
@@ -327,7 +333,8 @@ def main() -> None:
 
         fold_summary = {
             "fold": fold_idx,
-            "train_rows": train_fit_end,
+            "train_rows": train_fit_end - train_start,
+            "train_start_date": str(date_full[train_start]),
             "val_rows": fold_test_start - fold_val_start,
             "test_rows": fold_test_end - fold_test_start,
             "test_start_date": str(date_full[fold_test_start]),
@@ -378,6 +385,7 @@ def main() -> None:
         "test_period": [str(predictions_df["date"].iloc[0]), str(predictions_df["date"].iloc[-1])],
         "test_rows": int(len(predictions_df)),
         "execution": args.execution,
+        "train_window": "rolling" if args.rolling_train else "expanding",
         "cpm": global_cpm,
         "strategy": summary,
     }

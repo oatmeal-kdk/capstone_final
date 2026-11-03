@@ -1,40 +1,106 @@
-# capstone2-legacy-v1
+# capstone2-legacy-v1: 파이프라인 단계별 선택지
 
-Phase 12 v1 레시피(ta 지표 20종 → ATR 트리플배리어 → ESN → 변동성 타깃 오버레이)와 그 재검토 실험을 capstone2 저장소에서 떼어 따로 관리하는 저장소입니다. 레시피와 실험 내용은 [legacy_v1/README.md](legacy_v1/README.md)에 있습니다.
+파이프라인 흐름:
 
-## 폴더
+```
+데이터 → 입력(ta 지표) → [폴드마다: 라벨 → 스케일링 → ESN 학습 → threshold 선택 → 테스트 신호] → 백테스트 → 평가
+```
 
-| 경로 | 내용 | git |
+각 단계에서 고를 수 있는 선택지입니다. **굵은 글씨**가 확정 레시피(v1)의 값입니다. 명령은 모두 저장소 루트에서 실행합니다.
+
+## 1. 데이터
+
+| 선택지 | 내용 | 지정 방법 |
 |---|---|---|
-| `legacy_v1/` | 파이프라인 패키지 (data, features, labels, model, backtest, pipeline, experiments) | 포함 |
-| `legacy_v1/universe/` | pooled 실험의 시장별 종목 목록 (capstone2 `pipeline_v2` 패널의 열 순서 그대로) | 포함 |
-| `data/universe/` | 스크리닝 결과 종목 목록 (`production_config.py`가 읽음) | 포함 |
-| `data/processed/`, `data/labels/cpm/` | 가격 파일과 CPM 전환점 (약 1GB). 2026-11-03에 capstone2의 `data/`에서 복사 | 제외 |
-| `results/` | 실험 결과 | 제외 |
+| **저장된 가격 파일** | `data/processed/<종목>/1d/<종목>_with_tp.csv` 일봉 (git 제외, capstone2에서 복사) | `--tp-path` |
+| 새로 다운로드 | 파일이 없는 종목을 yfinance로 받아 OHLCV 파일 생성 | [screen_universe.py](legacy_v1/pipeline/screen_universe.py) |
 
-## 준비
+## 2. 입력
 
-```bash
-python -m pip install -r requirements.txt
-```
+| 선택지 | 내용 | 위치 |
+|---|---|---|
+| **raw** | ta 지표 20개 (모멘텀 7, 추세 6, 변동성 4, 거래량 3) 값 그대로 | [ta_features.py](legacy_v1/features/ta_features.py) |
+| z | 같은 지표를 종목 자신의 과거 252일로 z-score 변환, ±5에서 자름 (여러 종목 학습에서만) | [pooled.py](legacy_v1/experiments/pooled.py) |
+| window_scale | 모든 지표 기간을 한꺼번에 늘리거나 줄임. **1.0** | `build_ta_features(window_scale=)` |
 
-`data/processed`와 `data/labels/cpm`은 git에 들어 있지 않습니다. 새로 받은 경우 capstone2에서 같은 경로로 복사합니다. capstone2 쪽 데이터가 이후에 갱신되어도 이 저장소에는 반영되지 않습니다.
+[ohlcv_features.py](legacy_v1/features/ohlcv_features.py)의 지표 8개는 모델 입력으로 쓰지 않고, 그중 20일 변동성만 리스크 오버레이에 씁니다.
 
-가격 파일(`<종목>_with_tp.csv`)에 대해:
-- `screen_universe.py`는 파일이 없는 종목을 yfinance로 받아 OHLCV만 있는 파일을 만듭니다. 확정 레시피(`triple_barrier`)와 `cpm_causal`은 이것으로 충분합니다.
-- `cpm_point_type` 열은 capstone2의 `prepare_ticker_data.py`가 만든 것이고 이 저장소에서는 만들지 않습니다. 이 열을 쓰는 것은 `--target-method cpm`(미래 정보 포함, 사용 금지)뿐입니다. CPM 전환점은 `experiments/mark_cpm.py`가 `data/labels/cpm/`에 따로 만듭니다.
+## 3. 라벨
 
-## 실행
+`--target-method`로 고릅니다.
 
-모든 명령은 이 저장소 루트에서 실행합니다 (코드의 `data/...`, `results/...` 경로가 현재 폴더 기준입니다).
+| 선택지 | 내용 | 미래 정보 |
+|---|---|---|
+| **triple_barrier** | 종가 ± k×ATR(14) 배리어 중 max_holding일 안에 먼저 닿는 쪽: 위 −1(매수), 아래 +1(매도), 둘 다 아니면 0. **k = 2.0, 10일** (`--tb-atr-mult`, `--tb-max-holding`) | 없음. 학습·검증 끝 10일은 라벨을 버림 |
+| cpm_causal | 폴드마다 학습 구간 가격만으로 CPM의 P·T를 파레토 무릎으로 고르고, 전환점 사이를 −1~+1 삼각파로 이은 연속값. 확정되지 않은 마지막 전환점 이후는 버림 | 없음 |
+| cpm | 가격 파일의 `cpm_point_type` 열 (전체 기간으로 만든 전환점) | **있음.** `--allow-lookahead` 없이는 실행 거부 |
+| cpm_global | P·T를 전체 기간으로 고른 CPM | **있음.** 위와 같음 |
 
-```bash
-# 한 종목 walk-forward (확정 레시피)
-python -m legacy_v1.pipeline.run_walkforward --tp-path data/processed/SPY/1d/SPY_with_tp.csv \
-    --target-method triple_barrier --train-years 5 --fee-rate 0.0005 --slippage-rate 0.0005 \
-    --output-dir results/legacy_v1/SPY
+[triple_barrier.py](legacy_v1/labels/triple_barrier.py)의 `label_vol_adjusted_horizon`, `label_trend_regime`, `cusum_event_mask`는 파이프라인에 연결되어 있지 않습니다.
 
-# 라벨 비교 (한 종목씩) / 여러 종목을 묶은 실험
-python -m legacy_v1.experiments.compare_labels --per-market 30 --jobs 6
-python -m legacy_v1.experiments.pooled --markets US KOSPI KOSDAQ --jobs 6
-```
+## 4. 학습
+
+**학습 단위**
+
+| 선택지 | 내용 | 위치 |
+|---|---|---|
+| **단일 종목** | 한 종목의 시계열 전체를 ESN에 끊김 없이 넣음. 종목마다 모델 하나 | [run_walkforward.py](legacy_v1/pipeline/run_walkforward.py) |
+| 여러 종목 | 종목별 "직전 20일" 창을 0 상태에서 읽어 행으로 쌓음. 학습 행은 5일 간격. 시장(US/KOSPI/KOSDAQ)마다 모델 하나 | [pooled.py](legacy_v1/experiments/pooled.py) |
+
+**학습 창**
+
+| 선택지 | 내용 | 지정 방법 |
+|---|---|---|
+| **늘어나는 창** | 데이터 시작부터 검증 직전까지 (첫 폴드 5년, 이후 1년씩 늘어남) | 기본값 |
+| rolling | 검증 직전 `--train-years`년만 | `--rolling-train` |
+
+**구간 나누기:** 검증 1년(`--val-years`), 테스트 1년씩 이동(`--step-years`). 단일 종목은 그 종목의 데이터 시작일을, 여러 종목은 달력 연도를 기준으로 경계를 잡습니다. 검증 연도는 그 폴드의 학습에 넣지 않습니다.
+
+**모델**
+
+| 항목 | 선택지 |
+|---|---|
+| 스케일링 | **학습 행의 min/max로 [−1, 1]** ([scaling.py](legacy_v1/model/scaling.py)) |
+| reservoir | **100개, spectral radius 0.9, sparsity 0.15, input scale 0.3, leak 0.3, washout 30** ([run_walkforward.py](legacy_v1/pipeline/run_walkforward.py)의 `ESN_CONFIG`) |
+| readout | **ridge 회귀, alpha 200** (`[1, 입력, 상태]` → 점수) / 로지스틱 분류 ([pooled_classifier.py](legacy_v1/experiments/pooled_classifier.py)에서만) |
+| 앙상블 | **1개** (실험) / 10개 (서비스 설정, [production_config.py](legacy_v1/pipeline/production_config.py)). `--ensemble-size`, `--random-state` |
+
+## 5. threshold와 신호
+
+| 선택지 | 내용 | 위치 |
+|---|---|---|
+| **검증 정확도 최대** | {0.1, …, 0.9} 중 선택. 점수 < −thr 매수, > thr 매도, 그 사이 보유 | [thresholds.py](legacy_v1/model/thresholds.py) |
+| 학습 점수 상위 20% | 학습 기간의 약 20%에서 신호가 켜지도록 고정 | [pooled_classifier.py](legacy_v1/experiments/pooled_classifier.py) |
+
+| 신호 해석 | 내용 |
+|---|---|
+| **v1** | 매수 신호에 사서 매도 신호까지 보유 |
+| 켜진 동안 보유 | 신호가 켜진 날만 보유, 꺼지면 현금 (pooled_classifier) |
+
+## 6. 백테스트
+
+모든 폴드의 테스트 구간 신호를 이어 붙여 한 번에 실행합니다 ([simple_backtest.py](legacy_v1/backtest/simple_backtest.py)).
+
+| 항목 | 선택지 | 지정 방법 |
+|---|---|---|
+| 체결 | **신호 당일 종가** / 다음 날 시가 | `--execution same_close / next_open` |
+| 비중 | **전부 사거나 전부 팔기** / 리스크 오버레이: 비중 = min(1, 목표 변동성 ÷ 20일 변동성), 차이가 밴드를 넘을 때만 조정. **목표 10%, 밴드 10%p** | `--risk-overlay`, `--target-vol`, `--rebalance-band` |
+| 비용 | **수수료 0.05%, 슬리피지 0.05%** (CLI 기본값은 0이라 직접 지정) | `--fee-rate`, `--slippage-rate` |
+
+## 7. 평가
+
+| 선택지 | 내용 | 위치 |
+|---|---|---|
+| 단일 종목 요약 | Sharpe, 연수익, 최대 낙폭, 같은 기간 보유 성과 | 출력 폴더의 `summary.json` |
+| 스크리닝 | Sharpe ≥ 0.40 active, 0.20~0.40 weak, 그 아래 excluded | [screen_universe.py](legacy_v1/pipeline/screen_universe.py) |
+| 여러 종목 비교 | 종목별 Sharpe 차이의 중앙값 + 월 단위 블록 부트스트랩 95% 구간 → 이김 / 짐 / 구분 안 됨 | [judge.py](legacy_v1/experiments/judge.py) |
+
+## 실험별로 바꾼 단계
+
+| 실험 | 바꾼 단계 | 나머지 |
+|---|---|---|
+| [compare_execution.py](legacy_v1/experiments/compare_execution.py) | 6. 체결 | v1 |
+| [compare_labels.py](legacy_v1/experiments/compare_labels.py) | 3. 라벨 (triple_barrier / cpm_causal) | v1, 다음 날 시가 체결 |
+| [compare_train_window.py](legacy_v1/experiments/compare_train_window.py) | 4. 학습 창 (늘어나는 창 / rolling) | v1, 다음 날 시가 체결 |
+| [pooled.py](legacy_v1/experiments/pooled.py) | 4. 학습 단위, 2. 입력 (raw / z), 3. 라벨 | ridge, 검증 정확도 |
+| [pooled_classifier.py](legacy_v1/experiments/pooled_classifier.py) | 4. readout, 5. threshold와 신호 해석 | pooled 설정 |
