@@ -1,0 +1,9 @@
+# data and results live outside git (data/ is a junction to capstone2/data)
+data
+data/
+results/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.vscode/
+.idea/
