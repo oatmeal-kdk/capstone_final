@@ -1,4 +1,4 @@
-# data and results live outside git (data/ is a junction to capstone2/data)
+# data (copied from capstone2/data) and results are not tracked
 data
 data/
 results/

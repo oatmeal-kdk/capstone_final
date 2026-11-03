@@ -8,7 +8,7 @@ Phase 12 v1 레시피(ta 지표 20종 → ATR 트리플배리어 → ESN → 변
 |---|---|---|
 | `legacy_v1/` | 파이프라인 패키지 (data, features, labels, model, backtest, pipeline, experiments) | 포함 |
 | `legacy_v1/universe/` | pooled 실험의 시장별 종목 목록 (capstone2 `pipeline_v2` 패널의 열 순서 그대로) | 포함 |
-| `data/` | 가격·라벨 데이터. capstone2의 `data/`를 가리키는 디렉터리 정션 | 제외 |
+| `data/` | 가격·라벨 데이터 (`processed/`, `labels/cpm/`, `universe/`, 약 1GB). 2026-11-03에 capstone2의 `data/`에서 복사 | 제외 |
 | `results/` | 실험 결과 | 제외 |
 
 ## 준비
@@ -17,11 +17,7 @@ Phase 12 v1 레시피(ta 지표 20종 → ATR 트리플배리어 → ESN → 변
 python -m pip install -r requirements.txt
 ```
 
-`data/`가 없으면 capstone2의 데이터를 가리키는 정션을 만듭니다 (PowerShell, 관리자 권한 필요 없음):
-
-```powershell
-New-Item -ItemType Junction -Path data -Target C:\Users\82102\Desktop\capstone2\data
-```
+`data/`는 git에 들어 있지 않습니다. 새로 받은 경우 capstone2의 `data/processed`, `data/labels/cpm`, `data/universe`를 같은 경로로 복사합니다. capstone2 쪽 데이터가 이후에 갱신되어도 이 저장소에는 반영되지 않습니다.
 
 ## 실행
 
