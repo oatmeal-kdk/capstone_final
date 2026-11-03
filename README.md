@@ -66,9 +66,6 @@
 | `ta_cmf` | Chaikin Money Flow | 20 | −1~1 | 종가가 하루 범위 위쪽에서 마감한 날의 거래량 비중 |
 | `ta_pvo` | PVO | 12·26, 신호선 9 | % | 거래량 단기·장기 지수이동평균의 차이 비율 |
 
-참고:
-- 스토캐스틱 %K, %D, Williams %R, 볼린저 %B, 켈트너 %B는 모두 "최근 범위 안에서 종가의 위치"를 잽니다. 특히 Williams %R은 정확히 %K − 100이라, 스케일링 뒤에는 %K와 똑같은 값이 됩니다(입력 20개 중 1개는 중복).
-- `window_scale`을 바꾸면 볼린저 밴드의 σ 배수도 함께 반올림되어 바뀝니다(0.5배 → 1σ, 1.5배 → 3σ).
 
 ## 3. 라벨
 
@@ -81,10 +78,8 @@
 | cpm | 가격 파일의 `cpm_point_type` 열 (전체 기간으로 만든 전환점) | **있음.** `--allow-lookahead` 없이는 실행 거부 |
 | cpm_global | P·T를 전체 기간으로 고른 CPM | **있음.** 위와 같음 |
 
-[triple_barrier.py](legacy_v1/labels/triple_barrier.py)의 `label_vol_adjusted_horizon`, `label_trend_regime`, `cusum_event_mask`는 파이프라인에 연결되어 있지 않습니다.
 
-두 라벨이 SPY 2020년에 찍히는 위치입니다. 위는 CPM 전환점(cpm_causal 방식으로 P·T 선택), 아래는 트리플배리어 라벨입니다. CPM은 1년에 전환점 10여 개만 찍지만, 트리플배리어는 매일 라벨이 하나씩 붙고 며칠 간격으로 바뀝니다.
-
+두 라벨이 SPY 2020년에 찍히는 위치
 ![SPY 2020년 CPM 전환점과 트리플배리어 라벨](docs/figures/SPY_cpm_vs_tb_2020_marks.png)
 
 `python -m legacy_v1.experiments.plot_labels --ticker SPY --years 2020 --no-targets --out-dir docs/figures`로 다시 그릴 수 있습니다. `--no-targets`를 빼면 ESN 목표값 패널이 붙은 그림이 `results/legacy_v1/figures/`에 저장됩니다.
