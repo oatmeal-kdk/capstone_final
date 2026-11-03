@@ -6,7 +6,8 @@ For each year: CPM's P and T are chosen by the Pareto knee on every price before
 on all earlier rows and keeps the last year for validation), and
 CPM is run on prices up to the end of the year; its last reported point is not final and is not drawn as a label. The triple
 barrier (ATR x 2, 10 days) is computed on the same prices. Bottom panel: the two training targets the ESN would regress on
-(sign convention of the code: -1 = buy, +1 = sell). Output: results/legacy_v1/figures/<ticker>_cpm_vs_tb_<year>.png
+(sign convention of the code: -1 = buy, +1 = sell); --no-targets leaves it out. Output: results/legacy_v1/figures/
+<ticker>_cpm_vs_tb_<year>[_marks].png (--out-dir to change the folder)
 """
 
 from __future__ import annotations
@@ -31,7 +32,7 @@ plt.rcParams.update({"font.family": ["Malgun Gothic", "sans-serif"], "axes.unico
                      "axes.spines.right": False, "axes.grid": True, "grid.color": "#e4e7eb", "grid.linewidth": 0.6, "legend.frameon": False, "figure.dpi": 130})
 
 
-def plot_year(ticker: str, year: int) -> Path:
+def plot_year(ticker: str, year: int, targets: bool = True, out: Path = OUT) -> Path:
     data = pd.read_csv(f"data/processed/{ticker}/1d/{ticker}_with_tp.csv", parse_dates=["Date"]).sort_values("Date").reset_index(drop=True)
     end = data.index[data["Date"] <= f"{year}-12-31"][-1]
     start = data.index[data["Date"] >= f"{year}-01-01"][0]
@@ -47,7 +48,10 @@ def plot_year(ticker: str, year: int) -> Path:
 
     window = slice(start, end + 1)
     dates, price = upto["Date"].iloc[window], close.iloc[window]
-    fig, axes = plt.subplots(3, 1, figsize=(11, 8.6), sharex=True, gridspec_kw={"height_ratios": [3, 3, 2]})
+    if targets:
+        fig, axes = plt.subplots(3, 1, figsize=(11, 8.6), sharex=True, gridspec_kw={"height_ratios": [3, 3, 2]})
+    else:                                                          # --no-targets: only the two price panels
+        fig, axes = plt.subplots(2, 1, figsize=(11, 6.6), sharex=True)
 
     ax = axes[0]
     ax.plot(dates, price, color=INK, linewidth=1.2)
@@ -78,32 +82,38 @@ def plot_year(ticker: str, year: int) -> Path:
     ax.legend(loc="upper left", ncol=3, fontsize=8.5)
     ax.set_title("트리플배리어 라벨 — 매일 하나씩 (ATR×2, 10일)", loc="left", fontsize=10.5)
 
-    ax = axes[2]
-    ax.plot(dates, triangle[window], color="#2b6ea8", linewidth=1.6, label="CPM 삼각파 목표")
+    if targets:
+        _plot_targets(axes[2], dates, triangle[window], labels)
+    agree = np.sign(triangle[window]) == np.sign(labels)
+    usable = ~np.isnan(triangle[window]) & (labels != 0) & ~np.isnan(labels)
+    fig.suptitle(f"{ticker} {year}년: CPM과 트리플배리어가 찍는 위치   (둘 다 0이 아닌 날 중 부호 일치 {agree[usable].mean():.0%})", x=0.01, ha="left", fontsize=12)
+    fig.tight_layout()
+    out.mkdir(parents=True, exist_ok=True)
+    path = out / f"{ticker}_cpm_vs_tb_{year}{'' if targets else '_marks'}.png"
+    fig.savefig(path)
+    plt.close(fig)
+    return path
+
+
+def _plot_targets(ax, dates, triangle, labels) -> None:
+    ax.plot(dates, triangle, color="#2b6ea8", linewidth=1.6, label="CPM 삼각파 목표")
     ax.step(dates, labels, where="mid", color="#c27c00", linewidth=1.0, alpha=0.9, label="트리플배리어 라벨")
     ax.axhline(0, color="#8a94a3", linewidth=0.8)
     ax.set_ylim(-1.15, 1.15)
     ax.set_yticks([-1, 0, 1], ["−1 (매수)", "0", "+1 (매도)"])
     ax.legend(loc="upper left", ncol=2, fontsize=9)
     ax.set_title("ESN이 맞히려는 목표값 (확정되지 않은 끝부분은 비워 둠)", loc="left", fontsize=10.5)
-    agree = np.sign(triangle[window]) == np.sign(labels)
-    usable = ~np.isnan(triangle[window]) & (labels != 0) & ~np.isnan(labels)
-    fig.suptitle(f"{ticker} {year}년: CPM과 트리플배리어가 찍는 위치   (둘 다 0이 아닌 날 중 부호 일치 {agree[usable].mean():.0%})", x=0.01, ha="left", fontsize=12)
-    fig.tight_layout()
-    OUT.mkdir(parents=True, exist_ok=True)
-    path = OUT / f"{ticker}_cpm_vs_tb_{year}.png"
-    fig.savefig(path)
-    plt.close(fig)
-    return path
 
 
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--ticker", default="SPY")
     parser.add_argument("--years", type=int, nargs="+", default=[2018, 2020])
+    parser.add_argument("--no-targets", action="store_true", help="leave out the bottom panel (the ESN targets); file name gets _marks")
+    parser.add_argument("--out-dir", type=Path, default=OUT)
     args = parser.parse_args()
     for year in args.years:
-        print(plot_year(args.ticker, year))
+        print(plot_year(args.ticker, year, targets=not args.no_targets, out=args.out_dir))
 
 
 if __name__ == "__main__":

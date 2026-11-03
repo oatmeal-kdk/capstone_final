@@ -25,6 +25,54 @@
 
 [ohlcv_features.py](legacy_v1/features/ohlcv_features.py)의 지표 8개는 모델 입력으로 쓰지 않고, 그중 20일 변동성만 리스크 오버레이에 씁니다.
 
+### ta 지표 20개
+
+`ta` 라이브러리로 계산한 값입니다. 기간은 `window_scale=1.0` 기준입니다. 모든 지표는 가격 수준이 아니라 비율이나 정해진 범위의 값입니다(ATR도 종가로 나눔). ESN에 넣기 전에 학습 행의 min/max로 [−1, 1]에 맞춥니다.
+
+**모멘텀 (7)**
+
+| 열 | 지표 | 기간 | 범위 | 의미 |
+|---|---|---|---|---|
+| `ta_rsi` | RSI | 14 | 0~100 | 최근 상승폭과 하락폭의 비율 |
+| `ta_stoch_k` | 스토캐스틱 %K | 14, 평활 3 | 0~100 | 최근 14일 고저 범위 안에서 종가의 위치 |
+| `ta_stoch_d` | 스토캐스틱 %D | 14, 평활 3 | 0~100 | %K의 3일 평균 |
+| `ta_stochrsi_k` | 스토캐스틱 RSI %K | 14, 평활 3·3 | 0~1 | RSI에 스토캐스틱을 적용한 값 |
+| `ta_williams_r` | Williams %R | 14 | −100~0 | %K를 뒤집은 값 |
+| `ta_roc` | 변화율 | 12 | % | 12일 전 대비 종가 변화율 |
+| `ta_ultimate_osc` | Ultimate Oscillator | 7·14·28 | 0~100 | 세 기간 매수 압력의 가중 평균 |
+
+**추세 (6)**
+
+| 열 | 지표 | 기간 | 범위 | 의미 |
+|---|---|---|---|---|
+| `ta_adx` | ADX | 14 | 0~100 | 추세의 강도 (방향 없음) |
+| `ta_adx_pos` | +DI | 14 | 0~100 | 상승 방향 움직임의 강도 |
+| `ta_adx_neg` | −DI | 14 | 0~100 | 하락 방향 움직임의 강도 |
+| `ta_cci` | CCI | 20 | 상한 없음 | 평균 가격에서 벗어난 정도 |
+| `ta_trix` | TRIX | 15 | % | 3중 지수이동평균의 변화율 |
+| `ta_aroon_osc` | Aroon 오실레이터 | 25 | −100~100 | Aroon Up − Aroon Down |
+
+**변동성 (4)**
+
+| 열 | 지표 | 기간 | 범위 | 의미 |
+|---|---|---|---|---|
+| `ta_bb_pband` | 볼린저 %B | 20, 2σ | 보통 0~1 | 볼린저 밴드 안에서 종가의 위치 |
+| `ta_bb_wband` | 볼린저 밴드 폭 | 20, 2σ | % | 밴드 폭 ÷ 중심선 |
+| `ta_atr_pct` | ATR ÷ 종가 | 14 | % | 하루 평균 변동폭의 가격 대비 비율 |
+| `ta_keltner_pband` | 켈트너 %B | 20, ATR 10 | 보통 0~1 | 켈트너 채널 안에서 종가의 위치 |
+
+**거래량 (3)**
+
+| 열 | 지표 | 기간 | 범위 | 의미 |
+|---|---|---|---|---|
+| `ta_mfi` | MFI | 14 | 0~100 | 거래량을 반영한 RSI |
+| `ta_cmf` | Chaikin Money Flow | 20 | −1~1 | 종가가 하루 범위 위쪽에서 마감한 날의 거래량 비중 |
+| `ta_pvo` | PVO | 12·26, 신호선 9 | % | 거래량 단기·장기 지수이동평균의 차이 비율 |
+
+참고:
+- 스토캐스틱 %K, %D, Williams %R, 볼린저 %B, 켈트너 %B는 모두 "최근 범위 안에서 종가의 위치"를 잽니다. 특히 %K와 Williams %R은 스케일링 뒤에 정확히 반대 부호가 됩니다.
+- `window_scale`을 바꾸면 볼린저 밴드의 σ 배수도 함께 반올림되어 바뀝니다(0.5배 → 1σ, 1.5배 → 3σ).
+
 ## 3. 라벨
 
 `--target-method`로 고릅니다.
@@ -37,6 +85,12 @@
 | cpm_global | P·T를 전체 기간으로 고른 CPM | **있음.** 위와 같음 |
 
 [triple_barrier.py](legacy_v1/labels/triple_barrier.py)의 `label_vol_adjusted_horizon`, `label_trend_regime`, `cusum_event_mask`는 파이프라인에 연결되어 있지 않습니다.
+
+두 라벨이 SPY 2020년에 찍히는 위치입니다. 위는 CPM 전환점(cpm_causal 방식으로 P·T 선택), 아래는 트리플배리어 라벨입니다. CPM은 1년에 전환점 10여 개만 찍지만, 트리플배리어는 매일 라벨이 하나씩 붙고 며칠 간격으로 바뀝니다.
+
+![SPY 2020년 CPM 전환점과 트리플배리어 라벨](docs/figures/SPY_cpm_vs_tb_2020_marks.png)
+
+`python -m legacy_v1.experiments.plot_labels --ticker SPY --years 2020 --no-targets --out-dir docs/figures`로 다시 그릴 수 있습니다. `--no-targets`를 빼면 ESN 목표값 패널이 붙은 그림이 `results/legacy_v1/figures/`에 저장됩니다.
 
 ## 4. 학습
 
