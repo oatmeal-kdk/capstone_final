@@ -83,7 +83,7 @@ class EnsembleESN:
 
 def _fit_esn(
     X_train: np.ndarray, y_train: np.ndarray, washout: int,
-    random_state: int | None = None, ensemble_size: int = 1,
+    random_state: int | None = None, ensemble_size: int = 1, readout_inputs: bool = True,
 ) -> EnsembleESN:
     base_seed = int(ESN_CONFIG["random_state"]) if random_state is None else int(random_state)
     models = []
@@ -98,6 +98,7 @@ def _fit_esn(
             ridge_alpha=float(ESN_CONFIG["ridge_alpha"]),
             washout=washout,
             random_state=base_seed + i,
+            readout_inputs=readout_inputs,
         )
         model.fit(X_train, y_train)
         models.append(model)
@@ -173,6 +174,14 @@ def main() -> None:
     parser.add_argument("--train-window", choices=["rolling", "expanding"], default="rolling",
                         help="rolling = train on only the last --train-years before validation (the default since 2026-11-04); "
                              "expanding = every row since the start of the data (the original v1 window, needed to reproduce the v1 numbers).")
+    parser.add_argument("--readout", choices=["input_state", "state"], default="input_state",
+                        help="input_state = ridge on [1, 20 inputs, 100 states] (the v1 readout, default); state = ridge on [1, 100 states] only. "
+                             "Added 2026-11-07.")
+    parser.add_argument("--threshold-rule", choices=["accuracy", "quantile", "zero"], default="accuracy",
+                        help="accuracy = the grid value with the best 3-class validation accuracy (v1, default); quantile = the "
+                             "(1 - --signal-share) quantile of |training score|, so a buy or sell signal is on for about that share of "
+                             "training days; zero = threshold 0 (the sign of the score). Added 2026-11-07.")
+    parser.add_argument("--signal-share", type=float, default=0.2, help="Share of training days with a signal for --threshold-rule quantile.")
     args = parser.parse_args()
 
     if args.target_method in ("cpm", "cpm_global") and not args.allow_lookahead:
@@ -305,10 +314,15 @@ def main() -> None:
 
         model = _fit_esn(
             X_train, y_train, washout,
-            random_state=args.random_state, ensemble_size=args.ensemble_size,
+            random_state=args.random_state, ensemble_size=args.ensemble_size, readout_inputs=args.readout == "input_state",
         )
 
-        if X_val is None:                          # cpm_causal only: keep the previous fold's threshold (0.1 for the first fold)
+        if args.threshold_rule == "quantile":      # from the training scores only; no labels used
+            train_scores = np.asarray(model.predict(X_train), dtype=float)[washout:]
+            selected = {"threshold": float(np.quantile(np.abs(train_scores), 1 - args.signal_share)), "validation_accuracy": None}
+        elif args.threshold_rule == "zero":
+            selected = {"threshold": 0.0, "validation_accuracy": None}
+        elif X_val is None:                        # cpm_causal only: keep the previous fold's threshold (0.1 for the first fold)
             selected = {"threshold": fold_summaries[-1]["selected_threshold"] if fold_summaries else 0.1, "validation_accuracy": None}
         else:
             val_pred = np.asarray(model.predict(X_val), dtype=float)
@@ -349,7 +363,8 @@ def main() -> None:
         if args.target_method == "cpm_causal":
             fold_summary["cpm"] = {"P": p_value, "T": t_value}
         fold_summaries.append(fold_summary)
-        accuracy = "n/a (no settled validation target)" if selected["validation_accuracy"] is None else f"{selected['validation_accuracy']:.4f}"
+        accuracy = (f"n/a (--threshold-rule {args.threshold_rule})" if args.threshold_rule != "accuracy"
+                    else "n/a (no settled validation target)" if selected["validation_accuracy"] is None else f"{selected['validation_accuracy']:.4f}")
         print(f"fold {fold_idx}: {fold_summary['test_start_date']} ~ {fold_summary['test_end_date']} "
               f"threshold={selected['threshold']} val_acc={accuracy}" + (f" CPM P={p_value} T={t_value}" if args.target_method == "cpm_causal" else ""))
 
@@ -387,6 +402,9 @@ def main() -> None:
         "test_rows": int(len(predictions_df)),
         "execution": args.execution,
         "train_window": args.train_window,
+        "readout": args.readout,
+        "threshold_rule": args.threshold_rule,
+        "signal_share": args.signal_share if args.threshold_rule == "quantile" else None,
         "cpm": global_cpm,
         "strategy": summary,
     }

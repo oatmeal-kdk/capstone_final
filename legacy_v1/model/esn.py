@@ -35,6 +35,7 @@ class EchoStateNetwork:
         ridge_alpha: float = 1.0,
         washout: int = 30,
         random_state: int = 42,
+        readout_inputs: bool = True,
     ) -> None:
         if input_dim <= 0:
             raise ValueError("input_dim must be positive.")
@@ -58,6 +59,8 @@ class EchoStateNetwork:
         self.ridge_alpha = float(ridge_alpha)
         self.washout = int(washout)
         self.random_state = int(random_state)
+        # readout on [1, inputs, state] (True, the v1 readout) or on [1, state] only (False). Added 2026-11-07.
+        self.readout_inputs = bool(readout_inputs)
 
         # Win and W (reservoir) use independent RNG streams, and Win is drawn
         # one input-column at a time, so that adding/removing an input
@@ -196,6 +199,7 @@ class EchoStateNetwork:
             y = y.to_numpy()
         return np.asarray(y, dtype=float).reshape(-1)
 
-    @staticmethod
-    def _extended_state(X: np.ndarray, states: np.ndarray) -> np.ndarray:
+    def _extended_state(self, X: np.ndarray, states: np.ndarray) -> np.ndarray:
+        if not self.readout_inputs:
+            return np.column_stack([np.ones(len(states), dtype=float), states])
         return np.column_stack([np.ones(len(states), dtype=float), X, states])
