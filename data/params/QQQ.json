@@ -1,0 +1,2163 @@
+{
+ "ticker": "QQQ",
+ "saved": "2026-11-08",
+ "source": "copied from results/legacy_v1/esn_backtest_ga",
+ "ga": {
+  "population": 30,
+  "generations": 20,
+  "seed": 0
+ },
+ "fitness": "legacy_v1/ga/fitness.py normalized turning-point fitness on the training window's CPM turning points",
+ "folds": {
+  "2016-03-08": {
+   "train": [
+    "2010-03-08",
+    "2015-03-06"
+   ],
+   "test_end": "2017-03-07",
+   "P": 0.05,
+   "T": 10,
+   "rules": {
+    "rsi": {
+     "params": {
+      "window": 29,
+      "lower": 44.1777,
+      "upper": 66.9127
+     },
+     "train_fitness": 0.3935911025938461,
+     "default_fitness": 0.9249320667479566
+    },
+    "stoch": {
+     "params": {
+      "window": 20,
+      "smooth": 9,
+      "lower": 15.3159,
+      "upper": 94.3896
+     },
+     "train_fitness": 0.6562812881493452,
+     "default_fitness": 1.3718683969707886
+    },
+    "stochrsi": {
+     "params": {
+      "window": 28,
+      "smooth1": 10,
+      "smooth2": 2,
+      "lower": 0.2265,
+      "upper": 0.9925
+     },
+     "train_fitness": 0.7111450777177512,
+     "default_fitness": 1.450693859393346
+    },
+    "williams_r": {
+     "params": {
+      "window": 29,
+      "lower": -94.147,
+      "upper": -13.2163
+     },
+     "train_fitness": 0.654427856629947,
+     "default_fitness": 1.385815923809821
+    },
+    "roc": {
+     "params": {
+      "window": 23,
+      "lower": -6.0803,
+      "upper": 10.1553
+     },
+     "train_fitness": 0.5575855653404682,
+     "default_fitness": 0.8322438671213758
+    },
+    "ultimate": {
+     "params": {
+      "window1": 8,
+      "window2": 30,
+      "window3": 31,
+      "lower": 41.0398,
+      "upper": 71.4045
+     },
+     "train_fitness": 0.4134827270025658,
+     "default_fitness": 1.023695941569651
+    },
+    "adx": {
+     "params": {
+      "window": 10,
+      "adx_min": 30.9589
+     },
+     "train_fitness": 0.8000009243730296,
+     "default_fitness": 1.305800493713542
+    },
+    "cci": {
+     "params": {
+      "window": 35,
+      "lower": -186.7942,
+      "upper": 250.0
+     },
+     "train_fitness": 0.6364862209208135,
+     "default_fitness": 1.1598109563781571
+    },
+    "trix": {
+     "params": {
+      "window": 8,
+      "lower": -0.222,
+      "upper": 0.2233
+     },
+     "train_fitness": 0.4240888064834222,
+     "default_fitness": 0.8709445320557923
+    },
+    "aroon": {
+     "params": {
+      "window": 25,
+      "lower": -48.0751,
+      "upper": 88.354
+     },
+     "train_fitness": 0.6318574215458089,
+     "default_fitness": 1.047343046566258
+    },
+    "bollinger": {
+     "params": {
+      "window": 36,
+      "dev": 2.9042,
+      "lower": 0.1173,
+      "upper": 0.7228
+     },
+     "train_fitness": 0.6281898564550162,
+     "default_fitness": 0.980888758328928
+    },
+    "keltner": {
+     "params": {
+      "window": 33,
+      "lower": -0.2992,
+      "upper": 1.2713
+     },
+     "train_fitness": 0.7615666273476688,
+     "default_fitness": 1.3124005834581274
+    },
+    "mfi": {
+     "params": {
+      "window": 19,
+      "lower": 27.5456,
+      "upper": 64.6907
+     },
+     "train_fitness": 0.5643950110386329,
+     "default_fitness": 1.113759757041765
+    },
+    "cmf": {
+     "params": {
+      "window": 24,
+      "lower": -0.1128,
+      "upper": 0.2678
+     },
+     "train_fitness": 0.3979060122696659,
+     "default_fitness": 1.105086774739515
+    },
+    "candle_hammer": {
+     "params": {
+      "a": 5.0
+     },
+     "train_fitness": 1.483759464765387,
+     "default_fitness": 1.7537740868061826
+    },
+    "candle_dark_cloud": {
+     "params": {
+      "b": 0.9128
+     },
+     "train_fitness": 0.9324057744305764,
+     "default_fitness": 1.1881973302871651
+    },
+    "candle_piercing": {
+     "params": {
+      "c": 0.8133
+     },
+     "train_fitness": 0.9523830403384688,
+     "default_fitness": 1.1635744061898834
+    },
+    "candle_bullish_engulfing": {
+     "params": {
+      "d": 0.1681,
+      "e": 0.0751
+     },
+     "train_fitness": 1.0873120620656926,
+     "default_fitness": 1.2118452154654225
+    },
+    "candle_bearish_engulfing": {
+     "params": {
+      "f": 0.4066,
+      "g": 0.4564
+     },
+     "train_fitness": 1.1175441217083586,
+     "default_fitness": 1.375405809524323
+    }
+   }
+  },
+  "2017-03-08": {
+   "train": [
+    "2011-03-08",
+    "2016-03-07"
+   ],
+   "test_end": "2018-03-07",
+   "P": 0.05,
+   "T": 4,
+   "rules": {
+    "rsi": {
+     "params": {
+      "window": 15,
+      "lower": 35.9165,
+      "upper": 72.5224
+     },
+     "train_fitness": 0.4671131558384277,
+     "default_fitness": 0.8673969815001777
+    },
+    "stoch": {
+     "params": {
+      "window": 30,
+      "smooth": 5,
+      "lower": 25.9511,
+      "upper": 95.0
+     },
+     "train_fitness": 0.6971335268324752,
+     "default_fitness": 1.0786191862640084
+    },
+    "stochrsi": {
+     "params": {
+      "window": 30,
+      "smooth1": 7,
+      "smooth2": 6,
+      "lower": 0.0336,
+      "upper": 0.942
+     },
+     "train_fitness": 0.711128789616312,
+     "default_fitness": 1.238014126249394
+    },
+    "williams_r": {
+     "params": {
+      "window": 29,
+      "lower": -93.8245,
+      "upper": -13.1553
+     },
+     "train_fitness": 0.6237440189358798,
+     "default_fitness": 1.0868509085831437
+    },
+    "roc": {
+     "params": {
+      "window": 20,
+      "lower": -5.0047,
+      "upper": 6.8507
+     },
+     "train_fitness": 0.5028859851511198,
+     "default_fitness": 0.8499769185606901
+    },
+    "ultimate": {
+     "params": {
+      "window1": 8,
+      "window2": 30,
+      "window3": 43,
+      "lower": 41.4726,
+      "upper": 69.9958
+     },
+     "train_fitness": 0.4713881664331642,
+     "default_fitness": 1.0089351325815152
+    },
+    "adx": {
+     "params": {
+      "window": 10,
+      "adx_min": 31.6447
+     },
+     "train_fitness": 0.8423434052964744,
+     "default_fitness": 1.292429160213514
+    },
+    "cci": {
+     "params": {
+      "window": 36,
+      "lower": -195.0335,
+      "upper": 114.698
+     },
+     "train_fitness": 0.6090732305067346,
+     "default_fitness": 1.1214262315658694
+    },
+    "trix": {
+     "params": {
+      "window": 13,
+      "lower": -0.05,
+      "upper": 0.2567
+     },
+     "train_fitness": 0.6608435364328178,
+     "default_fitness": 1.0612447324157088
+    },
+    "aroon": {
+     "params": {
+      "window": 20,
+      "lower": -87.7755,
+      "upper": 85.8423
+     },
+     "train_fitness": 0.6876933429123068,
+     "default_fitness": 1.097692527606147
+    },
+    "bollinger": {
+     "params": {
+      "window": 40,
+      "dev": 1.9906,
+      "lower": -0.0643,
+      "upper": 1.1843
+     },
+     "train_fitness": 0.6548615193825928,
+     "default_fitness": 0.9640188322503332
+    },
+    "keltner": {
+     "params": {
+      "window": 40,
+      "lower": -0.2901,
+      "upper": 1.2512
+     },
+     "train_fitness": 0.8146370116895498,
+     "default_fitness": 1.1829529627110025
+    },
+    "mfi": {
+     "params": {
+      "window": 16,
+      "lower": 30.4978,
+      "upper": 82.2837
+     },
+     "train_fitness": 0.5925493737304264,
+     "default_fitness": 1.0210553086540364
+    },
+    "cmf": {
+     "params": {
+      "window": 25,
+      "lower": -0.1135,
+      "upper": 0.2861
+     },
+     "train_fitness": 0.5316652084750529,
+     "default_fitness": 1.0383620797637745
+    },
+    "candle_hammer": {
+     "params": {
+      "a": 5.0
+     },
+     "train_fitness": 1.5040015952334862,
+     "default_fitness": 1.6202701434666087
+    },
+    "candle_dark_cloud": {
+     "params": {
+      "b": 0.9128
+     },
+     "train_fitness": 0.9574134684966428,
+     "default_fitness": 1.192002799087435
+    },
+    "candle_piercing": {
+     "params": {
+      "c": 0.8133
+     },
+     "train_fitness": 0.9442305518486294,
+     "default_fitness": 1.0327471270008788
+    },
+    "candle_bullish_engulfing": {
+     "params": {
+      "d": 0.3033,
+      "e": 0.3647
+     },
+     "train_fitness": 1.029603908251014,
+     "default_fitness": 1.1840981754943611
+    },
+    "candle_bearish_engulfing": {
+     "params": {
+      "f": 0.2718,
+      "g": 0.4675
+     },
+     "train_fitness": 1.0213737820703888,
+     "default_fitness": 1.343414811227907
+    }
+   }
+  },
+  "2018-03-08": {
+   "train": [
+    "2012-03-08",
+    "2017-03-07"
+   ],
+   "test_end": "2019-03-07",
+   "P": 0.04,
+   "T": 8,
+   "rules": {
+    "rsi": {
+     "params": {
+      "window": 18,
+      "lower": 38.2164,
+      "upper": 69.5694
+     },
+     "train_fitness": 0.371867983318552,
+     "default_fitness": 0.6414111227873976
+    },
+    "stoch": {
+     "params": {
+      "window": 21,
+      "smooth": 9,
+      "lower": 15.7539,
+      "upper": 95.0
+     },
+     "train_fitness": 0.6156626524750699,
+     "default_fitness": 1.2673515769909067
+    },
+    "stochrsi": {
+     "params": {
+      "window": 27,
+      "smooth1": 9,
+      "smooth2": 5,
+      "lower": 0.0766,
+      "upper": 0.9272
+     },
+     "train_fitness": 0.5868811789106642,
+     "default_fitness": 1.4644207962547138
+    },
+    "williams_r": {
+     "params": {
+      "window": 29,
+      "lower": -93.8245,
+      "upper": -13.1553
+     },
+     "train_fitness": 0.6897713520114718,
+     "default_fitness": 1.214716621044276
+    },
+    "roc": {
+     "params": {
+      "window": 21,
+      "lower": -4.8179,
+      "upper": 7.4521
+     },
+     "train_fitness": 0.4108484230538383,
+     "default_fitness": 0.9021546116429688
+    },
+    "ultimate": {
+     "params": {
+      "window1": 12,
+      "window2": 28,
+      "window3": 47,
+      "lower": 43.6979,
+      "upper": 69.8337
+     },
+     "train_fitness": 0.4805855256934939,
+     "default_fitness": 1.0247962784527422
+    },
+    "adx": {
+     "params": {
+      "window": 11,
+      "adx_min": 31.1079
+     },
+     "train_fitness": 0.675280273347726,
+     "default_fitness": 1.3178155342459146
+    },
+    "cci": {
+     "params": {
+      "window": 44,
+      "lower": -125.1833,
+      "upper": 181.0266
+     },
+     "train_fitness": 0.5782290181216229,
+     "default_fitness": 1.2008055424061006
+    },
+    "trix": {
+     "params": {
+      "window": 15,
+      "lower": -0.0611,
+      "upper": 0.2018
+     },
+     "train_fitness": 0.4750199659382174,
+     "default_fitness": 0.8647358649507503
+    },
+    "aroon": {
+     "params": {
+      "window": 24,
+      "lower": -87.6772,
+      "upper": 95.0
+     },
+     "train_fitness": 0.5652609427965674,
+     "default_fitness": 0.9514206011347112
+    },
+    "bollinger": {
+     "params": {
+      "window": 44,
+      "dev": 2.8273,
+      "lower": 0.2,
+      "upper": 0.875
+     },
+     "train_fitness": 0.5280152887646617,
+     "default_fitness": 1.0275735274165088
+    },
+    "keltner": {
+     "params": {
+      "window": 47,
+      "lower": -0.3,
+      "upper": 1.0991
+     },
+     "train_fitness": 0.8426750744513231,
+     "default_fitness": 1.3354818457853028
+    },
+    "mfi": {
+     "params": {
+      "window": 19,
+      "lower": 28.5416,
+      "upper": 66.8289
+     },
+     "train_fitness": 0.4327393568628685,
+     "default_fitness": 0.8798027209400673
+    },
+    "cmf": {
+     "params": {
+      "window": 25,
+      "lower": -0.1137,
+      "upper": 0.2841
+     },
+     "train_fitness": 0.4278244565391187,
+     "default_fitness": 1.129744800465263
+    },
+    "candle_hammer": {
+     "params": {
+      "a": 3.4645
+     },
+     "train_fitness": 1.6772971374775991,
+     "default_fitness": 1.7068083688793136
+    },
+    "candle_dark_cloud": {
+     "params": {
+      "b": 0.9351
+     },
+     "train_fitness": 1.0,
+     "default_fitness": 1.3141326789930594
+    },
+    "candle_piercing": {
+     "params": {
+      "c": 0.8133
+     },
+     "train_fitness": 0.9454929666122248,
+     "default_fitness": 1.1763181439056145
+    },
+    "candle_bullish_engulfing": {
+     "params": {
+      "d": 0.3033,
+      "e": 0.3647
+     },
+     "train_fitness": 1.1083097312213643,
+     "default_fitness": 1.223821966446615
+    },
+    "candle_bearish_engulfing": {
+     "params": {
+      "f": 0.1138,
+      "g": 0.3982
+     },
+     "train_fitness": 1.0795683564404974,
+     "default_fitness": 1.4066252392780123
+    }
+   }
+  },
+  "2019-03-08": {
+   "train": [
+    "2013-03-08",
+    "2018-03-07"
+   ],
+   "test_end": "2020-03-06",
+   "P": 0.07,
+   "T": 2,
+   "rules": {
+    "rsi": {
+     "params": {
+      "window": 16,
+      "lower": 36.6859,
+      "upper": 90.0
+     },
+     "train_fitness": 0.4313898929356639,
+     "default_fitness": 0.9124378959655116
+    },
+    "stoch": {
+     "params": {
+      "window": 22,
+      "smooth": 8,
+      "lower": 15.5729,
+      "upper": 94.1013
+     },
+     "train_fitness": 0.938592092294126,
+     "default_fitness": 1.4897575426295804
+    },
+    "stochrsi": {
+     "params": {
+      "window": 27,
+      "smooth1": 5,
+      "smooth2": 8,
+      "lower": 0.0186,
+      "upper": 1.0
+     },
+     "train_fitness": 0.636361444358115,
+     "default_fitness": 1.5978165975816316
+    },
+    "williams_r": {
+     "params": {
+      "window": 29,
+      "lower": -94.8782,
+      "upper": -13.1844
+     },
+     "train_fitness": 1.052445082826046,
+     "default_fitness": 1.4303716426053923
+    },
+    "roc": {
+     "params": {
+      "window": 7,
+      "lower": -5.0,
+      "upper": 14.5995
+     },
+     "train_fitness": 0.4307162525626627,
+     "default_fitness": 1.0066030855251111
+    },
+    "ultimate": {
+     "params": {
+      "window1": 15,
+      "window2": 21,
+      "window3": 59,
+      "lower": 42.7632,
+      "upper": 80.0
+     },
+     "train_fitness": 0.4196968886315463,
+     "default_fitness": 1.4202171222432305
+    },
+    "adx": {
+     "params": {
+      "window": 12,
+      "adx_min": 30.524
+     },
+     "train_fitness": 0.9522720876176732,
+     "default_fitness": 1.5319524474080377
+    },
+    "cci": {
+     "params": {
+      "window": 43,
+      "lower": -177.5043,
+      "upper": 191.9714
+     },
+     "train_fitness": 0.3953783196448737,
+     "default_fitness": 1.523894533466308
+    },
+    "trix": {
+     "params": {
+      "window": 14,
+      "lower": -0.0919,
+      "upper": 0.311
+     },
+     "train_fitness": 0.510537717522151,
+     "default_fitness": 1.0119789820259126
+    },
+    "aroon": {
+     "params": {
+      "window": 46,
+      "lower": -49.7582,
+      "upper": 73.1881
+     },
+     "train_fitness": 0.6755572571672497,
+     "default_fitness": 1.1302716200234122
+    },
+    "bollinger": {
+     "params": {
+      "window": 48,
+      "dev": 3.0,
+      "lower": 0.093,
+      "upper": 0.9193
+     },
+     "train_fitness": 0.3188586918937451,
+     "default_fitness": 1.3511944441761927
+    },
+    "keltner": {
+     "params": {
+      "window": 49,
+      "lower": -0.2956,
+      "upper": 1.0024
+     },
+     "train_fitness": 1.3006664167549085,
+     "default_fitness": 1.6482266083128694
+    },
+    "mfi": {
+     "params": {
+      "window": 16,
+      "lower": 25.1354,
+      "upper": 94.8284
+     },
+     "train_fitness": 0.5518774971793086,
+     "default_fitness": 1.19324509541403
+    },
+    "cmf": {
+     "params": {
+      "window": 23,
+      "lower": -0.1395,
+      "upper": 0.3491
+     },
+     "train_fitness": 0.6939723696186744,
+     "default_fitness": 1.3291938610629508
+    },
+    "candle_hammer": {
+     "params": {
+      "a": 1.6588
+     },
+     "train_fitness": 1.6919379385519122,
+     "default_fitness": 1.7482656659534952
+    },
+    "candle_dark_cloud": {
+     "params": {
+      "b": 0.9972
+     },
+     "train_fitness": 1.0,
+     "default_fitness": 1.4692710831357607
+    },
+    "candle_piercing": {
+     "params": {
+      "c": 0.9351
+     },
+     "train_fitness": 1.0,
+     "default_fitness": 1.1163412338195016
+    },
+    "candle_bullish_engulfing": {
+     "params": {
+      "d": 0.0,
+      "e": 0.0
+     },
+     "train_fitness": 0.9804583518415289,
+     "default_fitness": 0.9804583518415289
+    },
+    "candle_bearish_engulfing": {
+     "params": {
+      "f": 0.1417,
+      "g": 0.4011
+     },
+     "train_fitness": 1.3904815102351615,
+     "default_fitness": 1.6454494928818777
+    }
+   }
+  },
+  "2020-03-09": {
+   "train": [
+    "2014-03-10",
+    "2019-03-07"
+   ],
+   "test_end": "2021-03-05",
+   "P": 0.06,
+   "T": 6,
+   "rules": {
+    "rsi": {
+     "params": {
+      "window": 15,
+      "lower": 35.7069,
+      "upper": 86.8136
+     },
+     "train_fitness": 0.4637007601296886,
+     "default_fitness": 0.8585580162364904
+    },
+    "stoch": {
+     "params": {
+      "window": 20,
+      "smooth": 8,
+      "lower": 13.5199,
+      "upper": 94.3027
+     },
+     "train_fitness": 0.8952587498610053,
+     "default_fitness": 1.2337620615565192
+    },
+    "stochrsi": {
+     "params": {
+      "window": 28,
+      "smooth1": 4,
+      "smooth2": 7,
+      "lower": 0.0266,
+      "upper": 0.7726
+     },
+     "train_fitness": 0.752643979498902,
+     "default_fitness": 1.4366537199886935
+    },
+    "williams_r": {
+     "params": {
+      "window": 29,
+      "lower": -93.192,
+      "upper": -13.0884
+     },
+     "train_fitness": 0.9028542980030586,
+     "default_fitness": 1.2419893288210164
+    },
+    "roc": {
+     "params": {
+      "window": 21,
+      "lower": -5.4279,
+      "upper": 12.4806
+     },
+     "train_fitness": 0.4672652286674493,
+     "default_fitness": 0.8875699409435204
+    },
+    "ultimate": {
+     "params": {
+      "window1": 8,
+      "window2": 24,
+      "window3": 58,
+      "lower": 40.7557,
+      "upper": 77.9528
+     },
+     "train_fitness": 0.4436992814495933,
+     "default_fitness": 1.224977361048763
+    },
+    "adx": {
+     "params": {
+      "window": 20,
+      "adx_min": 31.8849
+     },
+     "train_fitness": 0.9419960520846816,
+     "default_fitness": 1.4306596115260022
+    },
+    "cci": {
+     "params": {
+      "window": 50,
+      "lower": -152.1003,
+      "upper": 212.0912
+     },
+     "train_fitness": 0.4097887516141765,
+     "default_fitness": 1.283074379722409
+    },
+    "trix": {
+     "params": {
+      "window": 9,
+      "lower": -0.1914,
+      "upper": 0.3568
+     },
+     "train_fitness": 0.5879086183344201,
+     "default_fitness": 1.0382776483346856
+    },
+    "aroon": {
+     "params": {
+      "window": 48,
+      "lower": -48.1496,
+      "upper": 79.8203
+     },
+     "train_fitness": 0.7640550886496009,
+     "default_fitness": 1.2756861057111282
+    },
+    "bollinger": {
+     "params": {
+      "window": 50,
+      "dev": 2.0205,
+      "lower": 0.054,
+      "upper": 1.0943
+     },
+     "train_fitness": 0.4028263974048955,
+     "default_fitness": 1.1338823415011956
+    },
+    "keltner": {
+     "params": {
+      "window": 45,
+      "lower": 0.2625,
+      "upper": 1.1956
+     },
+     "train_fitness": 1.157838183077302,
+     "default_fitness": 1.4877669360683454
+    },
+    "mfi": {
+     "params": {
+      "window": 16,
+      "lower": 29.6134,
+      "upper": 87.9456
+     },
+     "train_fitness": 0.5456984187210953,
+     "default_fitness": 1.0291443721466722
+    },
+    "cmf": {
+     "params": {
+      "window": 25,
+      "lower": -0.1221,
+      "upper": 0.336
+     },
+     "train_fitness": 0.5979583859924379,
+     "default_fitness": 1.1765607049050173
+    },
+    "candle_hammer": {
+     "params": {
+      "a": 1.6524
+     },
+     "train_fitness": 1.6020917189398531,
+     "default_fitness": 1.6379361843336728
+    },
+    "candle_dark_cloud": {
+     "params": {
+      "b": 0.9972
+     },
+     "train_fitness": 1.0,
+     "default_fitness": 1.396139899450582
+    },
+    "candle_piercing": {
+     "params": {
+      "c": 0.5436
+     },
+     "train_fitness": 0.9826704954685964,
+     "default_fitness": 1.0143866328030755
+    },
+    "candle_bullish_engulfing": {
+     "params": {
+      "d": 0.0,
+      "e": 0.0
+     },
+     "train_fitness": 1.0632096009677034,
+     "default_fitness": 1.0632096009677034
+    },
+    "candle_bearish_engulfing": {
+     "params": {
+      "f": 0.4986,
+      "g": 0.4904
+     },
+     "train_fitness": 1.31558508576682,
+     "default_fitness": 1.5289262221016569
+    }
+   }
+  },
+  "2021-03-08": {
+   "train": [
+    "2015-03-09",
+    "2020-03-06"
+   ],
+   "test_end": "2022-03-07",
+   "P": 0.06,
+   "T": 6,
+   "rules": {
+    "rsi": {
+     "params": {
+      "window": 14,
+      "lower": 34.5426,
+      "upper": 69.3383
+     },
+     "train_fitness": 0.5454002260027419,
+     "default_fitness": 0.6567126445782931
+    },
+    "stoch": {
+     "params": {
+      "window": 15,
+      "smooth": 10,
+      "lower": 15.8586,
+      "upper": 95.0
+     },
+     "train_fitness": 0.913362587188323,
+     "default_fitness": 1.2075392803441416
+    },
+    "stochrsi": {
+     "params": {
+      "window": 27,
+      "smooth1": 4,
+      "smooth2": 8,
+      "lower": 0.0235,
+      "upper": 0.7684
+     },
+     "train_fitness": 0.8491335257422019,
+     "default_fitness": 1.4124574328160704
+    },
+    "williams_r": {
+     "params": {
+      "window": 28,
+      "lower": -89.0499,
+      "upper": -23.9196
+     },
+     "train_fitness": 0.957931710334762,
+     "default_fitness": 1.214252998781626
+    },
+    "roc": {
+     "params": {
+      "window": 14,
+      "lower": -6.4288,
+      "upper": 14.9455
+     },
+     "train_fitness": 0.5325273376973308,
+     "default_fitness": 1.160953259128264
+    },
+    "ultimate": {
+     "params": {
+      "window1": 8,
+      "window2": 21,
+      "window3": 60,
+      "lower": 41.5715,
+      "upper": 79.0052
+     },
+     "train_fitness": 0.4623569823920838,
+     "default_fitness": 1.1672457001395151
+    },
+    "adx": {
+     "params": {
+      "window": 20,
+      "adx_min": 31.8849
+     },
+     "train_fitness": 0.9504497357086796,
+     "default_fitness": 1.2921923697290794
+    },
+    "cci": {
+     "params": {
+      "window": 50,
+      "lower": -152.6534,
+      "upper": 211.908
+     },
+     "train_fitness": 0.483895214340039,
+     "default_fitness": 1.256916341513549
+    },
+    "trix": {
+     "params": {
+      "window": 12,
+      "lower": -0.0873,
+      "upper": 0.3103
+     },
+     "train_fitness": 0.5380084453990439,
+     "default_fitness": 1.158481779454957
+    },
+    "aroon": {
+     "params": {
+      "window": 48,
+      "lower": -93.3754,
+      "upper": 95.0
+     },
+     "train_fitness": 0.8014559993459595,
+     "default_fitness": 1.2379535997803013
+    },
+    "bollinger": {
+     "params": {
+      "window": 49,
+      "dev": 1.9345,
+      "lower": 0.0456,
+      "upper": 1.1397
+     },
+     "train_fitness": 0.3900450407766411,
+     "default_fitness": 1.1404629958289083
+    },
+    "keltner": {
+     "params": {
+      "window": 18,
+      "lower": -0.3,
+      "upper": 1.0263
+     },
+     "train_fitness": 1.153427553461718,
+     "default_fitness": 1.4363356945335335
+    },
+    "mfi": {
+     "params": {
+      "window": 17,
+      "lower": 29.8034,
+      "upper": 87.2302
+     },
+     "train_fitness": 0.5179984845793799,
+     "default_fitness": 0.8301980706180714
+    },
+    "cmf": {
+     "params": {
+      "window": 19,
+      "lower": -0.1371,
+      "upper": 0.379
+     },
+     "train_fitness": 0.6042850176350513,
+     "default_fitness": 1.1111906438862995
+    },
+    "candle_hammer": {
+     "params": {
+      "a": 3.3626
+     },
+     "train_fitness": 1.6368447649390088,
+     "default_fitness": 1.6815722562244175
+    },
+    "candle_dark_cloud": {
+     "params": {
+      "b": 0.9972
+     },
+     "train_fitness": 1.0,
+     "default_fitness": 1.3935843015954437
+    },
+    "candle_piercing": {
+     "params": {
+      "c": 0.5436
+     },
+     "train_fitness": 0.8574468919219684,
+     "default_fitness": 0.884540616464953
+    },
+    "candle_bullish_engulfing": {
+     "params": {
+      "d": 0.0,
+      "e": 0.1855
+     },
+     "train_fitness": 1.057906236881097,
+     "default_fitness": 1.05936512220895
+    },
+    "candle_bearish_engulfing": {
+     "params": {
+      "f": 0.4986,
+      "g": 0.4904
+     },
+     "train_fitness": 1.4064501323470733,
+     "default_fitness": 1.516050464174661
+    }
+   }
+  },
+  "2022-03-08": {
+   "train": [
+    "2016-03-08",
+    "2021-03-05"
+   ],
+   "test_end": "2023-03-07",
+   "P": 0.06,
+   "T": 4,
+   "rules": {
+    "rsi": {
+     "params": {
+      "window": 22,
+      "lower": 40.7888,
+      "upper": 71.3078
+     },
+     "train_fitness": 0.5115843705291884,
+     "default_fitness": 0.6381718604669646
+    },
+    "stoch": {
+     "params": {
+      "window": 14,
+      "smooth": 5,
+      "lower": 12.092,
+      "upper": 90.2348
+     },
+     "train_fitness": 0.864981059675194,
+     "default_fitness": 1.2385842838894132
+    },
+    "stochrsi": {
+     "params": {
+      "window": 29,
+      "smooth1": 7,
+      "smooth2": 2,
+      "lower": 0.1617,
+      "upper": 1.0
+     },
+     "train_fitness": 0.7076283562844472,
+     "default_fitness": 1.6763566563162329
+    },
+    "williams_r": {
+     "params": {
+      "window": 29,
+      "lower": -89.0136,
+      "upper": -23.8356
+     },
+     "train_fitness": 0.6586857734550687,
+     "default_fitness": 1.3689414954643229
+    },
+    "roc": {
+     "params": {
+      "window": 16,
+      "lower": -5.7562,
+      "upper": 14.1352
+     },
+     "train_fitness": 0.6843738109509152,
+     "default_fitness": 1.1499287679926569
+    },
+    "ultimate": {
+     "params": {
+      "window1": 14,
+      "window2": 26,
+      "window3": 39,
+      "lower": 41.591,
+      "upper": 80.0
+     },
+     "train_fitness": 0.5556598035595174,
+     "default_fitness": 1.0027367447958315
+    },
+    "adx": {
+     "params": {
+      "window": 20,
+      "adx_min": 25.0827
+     },
+     "train_fitness": 0.7994642833163144,
+     "default_fitness": 1.036695954773104
+    },
+    "cci": {
+     "params": {
+      "window": 44,
+      "lower": -207.5197,
+      "upper": 200.3962
+     },
+     "train_fitness": 0.5434227305714171,
+     "default_fitness": 1.1853745356053331
+    },
+    "trix": {
+     "params": {
+      "window": 10,
+      "lower": -0.133,
+      "upper": 0.3374
+     },
+     "train_fitness": 0.5088038870144059,
+     "default_fitness": 1.098178020907106
+    },
+    "aroon": {
+     "params": {
+      "window": 49,
+      "lower": -43.1158,
+      "upper": 90.8656
+     },
+     "train_fitness": 0.8386621123934525,
+     "default_fitness": 1.07366777334232
+    },
+    "bollinger": {
+     "params": {
+      "window": 27,
+      "dev": 2.6528,
+      "lower": 0.0242,
+      "upper": 0.9599
+     },
+     "train_fitness": 0.3906691186637202,
+     "default_fitness": 1.1105773852677632
+    },
+    "keltner": {
+     "params": {
+      "window": 30,
+      "lower": -0.3,
+      "upper": 0.9825
+     },
+     "train_fitness": 0.9346792746746592,
+     "default_fitness": 1.3357465251920504
+    },
+    "mfi": {
+     "params": {
+      "window": 16,
+      "lower": 29.6496,
+      "upper": 88.2393
+     },
+     "train_fitness": 0.4288516608459998,
+     "default_fitness": 0.9271195279125816
+    },
+    "cmf": {
+     "params": {
+      "window": 18,
+      "lower": -0.1195,
+      "upper": 0.3759
+     },
+     "train_fitness": 0.5119966340666406,
+     "default_fitness": 1.1786121072275688
+    },
+    "candle_hammer": {
+     "params": {
+      "a": 1.1639
+     },
+     "train_fitness": 1.7326281883456902,
+     "default_fitness": 1.7866350010561616
+    },
+    "candle_dark_cloud": {
+     "params": {
+      "b": 0.9972
+     },
+     "train_fitness": 1.0,
+     "default_fitness": 1.3749164867891757
+    },
+    "candle_piercing": {
+     "params": {
+      "c": 0.5436
+     },
+     "train_fitness": 0.9383031085763942,
+     "default_fitness": 0.9601386368438122
+    },
+    "candle_bullish_engulfing": {
+     "params": {
+      "d": 0.042,
+      "e": 0.4163
+     },
+     "train_fitness": 1.1342104018026282,
+     "default_fitness": 1.1465526486922306
+    },
+    "candle_bearish_engulfing": {
+     "params": {
+      "f": 0.467,
+      "g": 0.1789
+     },
+     "train_fitness": 1.515856842698957,
+     "default_fitness": 1.578448253024237
+    }
+   }
+  },
+  "2023-03-08": {
+   "train": [
+    "2017-03-08",
+    "2022-03-07"
+   ],
+   "test_end": "2024-03-07",
+   "P": 0.05,
+   "T": 4,
+   "rules": {
+    "rsi": {
+     "params": {
+      "window": 15,
+      "lower": 41.5986,
+      "upper": 69.6502
+     },
+     "train_fitness": 0.4872135630005028,
+     "default_fitness": 0.6186634471554879
+    },
+    "stoch": {
+     "params": {
+      "window": 22,
+      "smooth": 6,
+      "lower": 13.6385,
+      "upper": 82.0105
+     },
+     "train_fitness": 0.6633038279132586,
+     "default_fitness": 1.166595276749954
+    },
+    "stochrsi": {
+     "params": {
+      "window": 30,
+      "smooth1": 7,
+      "smooth2": 10,
+      "lower": 0.1758,
+      "upper": 0.7854
+     },
+     "train_fitness": 0.6023773305438955,
+     "default_fitness": 1.5783588986777182
+    },
+    "williams_r": {
+     "params": {
+      "window": 26,
+      "lower": -88.9949,
+      "upper": -27.7413
+     },
+     "train_fitness": 0.5587313604062615,
+     "default_fitness": 1.2739790708034504
+    },
+    "roc": {
+     "params": {
+      "window": 9,
+      "lower": -5.8974,
+      "upper": 6.1641
+     },
+     "train_fitness": 0.7697489509493545,
+     "default_fitness": 1.0854887423280284
+    },
+    "ultimate": {
+     "params": {
+      "window1": 8,
+      "window2": 27,
+      "window3": 58,
+      "lower": 40.6844,
+      "upper": 71.3144
+     },
+     "train_fitness": 0.5078431110881905,
+     "default_fitness": 0.8954256456044627
+    },
+    "adx": {
+     "params": {
+      "window": 20,
+      "adx_min": 20.6023
+     },
+     "train_fitness": 0.7979113195640549,
+     "default_fitness": 0.9252421680339185
+    },
+    "cci": {
+     "params": {
+      "window": 21,
+      "lower": -137.9588,
+      "upper": 189.7273
+     },
+     "train_fitness": 0.4234890906193552,
+     "default_fitness": 1.0483971401223244
+    },
+    "trix": {
+     "params": {
+      "window": 11,
+      "lower": -0.0878,
+      "upper": 0.3212
+     },
+     "train_fitness": 0.5591027224067328,
+     "default_fitness": 1.1806197061853256
+    },
+    "aroon": {
+     "params": {
+      "window": 25,
+      "lower": -51.9912,
+      "upper": 74.3087
+     },
+     "train_fitness": 0.7400066367145091,
+     "default_fitness": 1.007206620512694
+    },
+    "bollinger": {
+     "params": {
+      "window": 24,
+      "dev": 2.856,
+      "lower": 0.2114,
+      "upper": 0.9189
+     },
+     "train_fitness": 0.406791289362132,
+     "default_fitness": 0.8763655346669921
+    },
+    "keltner": {
+     "params": {
+      "window": 30,
+      "lower": -0.3,
+      "upper": 0.9973
+     },
+     "train_fitness": 0.7879523381841322,
+     "default_fitness": 1.204291061884394
+    },
+    "mfi": {
+     "params": {
+      "window": 11,
+      "lower": 30.5133,
+      "upper": 89.1649
+     },
+     "train_fitness": 0.4985646697447936,
+     "default_fitness": 0.8806551087364625
+    },
+    "cmf": {
+     "params": {
+      "window": 19,
+      "lower": -0.1139,
+      "upper": 0.3779
+     },
+     "train_fitness": 0.4797213758080746,
+     "default_fitness": 1.135006112043471
+    },
+    "candle_hammer": {
+     "params": {
+      "a": 2.4702
+     },
+     "train_fitness": 1.6004728781444904,
+     "default_fitness": 1.6556367284316682
+    },
+    "candle_dark_cloud": {
+     "params": {
+      "b": 0.9972
+     },
+     "train_fitness": 1.0,
+     "default_fitness": 1.195532488544891
+    },
+    "candle_piercing": {
+     "params": {
+      "c": 0.9869
+     },
+     "train_fitness": 0.9937295628854836,
+     "default_fitness": 1.1287523952751448
+    },
+    "candle_bullish_engulfing": {
+     "params": {
+      "d": 0.042,
+      "e": 0.4163
+     },
+     "train_fitness": 1.0684405485925423,
+     "default_fitness": 1.093424467621065
+    },
+    "candle_bearish_engulfing": {
+     "params": {
+      "f": 0.5,
+      "g": 0.2462
+     },
+     "train_fitness": 1.402239015713418,
+     "default_fitness": 1.4514015174440191
+    }
+   }
+  },
+  "2024-03-08": {
+   "train": [
+    "2018-03-08",
+    "2023-03-07"
+   ],
+   "test_end": "2025-03-07",
+   "P": 0.06,
+   "T": 2,
+   "rules": {
+    "rsi": {
+     "params": {
+      "window": 20,
+      "lower": 36.8483,
+      "upper": 64.557
+     },
+     "train_fitness": 0.5269856489362656,
+     "default_fitness": 0.6886854564205874
+    },
+    "stoch": {
+     "params": {
+      "window": 26,
+      "smooth": 4,
+      "lower": 16.4669,
+      "upper": 94.3674
+     },
+     "train_fitness": 0.6645467649871388,
+     "default_fitness": 1.1354386176317768
+    },
+    "stochrsi": {
+     "params": {
+      "window": 30,
+      "smooth1": 9,
+      "smooth2": 10,
+      "lower": 0.1716,
+      "upper": 0.8444
+     },
+     "train_fitness": 0.6377792946431952,
+     "default_fitness": 1.445684695518711
+    },
+    "williams_r": {
+     "params": {
+      "window": 29,
+      "lower": -88.1131,
+      "upper": -23.7138
+     },
+     "train_fitness": 0.5105830178490252,
+     "default_fitness": 1.1709281961378102
+    },
+    "roc": {
+     "params": {
+      "window": 24,
+      "lower": -8.437,
+      "upper": 6.1113
+     },
+     "train_fitness": 0.6545582506948084,
+     "default_fitness": 1.0651891889115257
+    },
+    "ultimate": {
+     "params": {
+      "window1": 15,
+      "window2": 16,
+      "window3": 54,
+      "lower": 40.7243,
+      "upper": 69.4536
+     },
+     "train_fitness": 0.4527551776065218,
+     "default_fitness": 0.8690512784832584
+    },
+    "adx": {
+     "params": {
+      "window": 6,
+      "adx_min": 34.2427
+     },
+     "train_fitness": 0.8101781620547113,
+     "default_fitness": 0.9992096161039564
+    },
+    "cci": {
+     "params": {
+      "window": 26,
+      "lower": -138.2494,
+      "upper": 183.7545
+     },
+     "train_fitness": 0.4665030941384809,
+     "default_fitness": 1.0211270027663308
+    },
+    "trix": {
+     "params": {
+      "window": 11,
+      "lower": -0.0629,
+      "upper": 0.3145
+     },
+     "train_fitness": 0.6714281372251851,
+     "default_fitness": 1.1606158543121083
+    },
+    "aroon": {
+     "params": {
+      "window": 25,
+      "lower": -47.0032,
+      "upper": 72.8503
+     },
+     "train_fitness": 0.7962798310541414,
+     "default_fitness": 1.0125634230234763
+    },
+    "bollinger": {
+     "params": {
+      "window": 25,
+      "dev": 1.3901,
+      "lower": -0.0841,
+      "upper": 1.2975
+     },
+     "train_fitness": 0.4395600485874373,
+     "default_fitness": 0.870165524934059
+    },
+    "keltner": {
+     "params": {
+      "window": 29,
+      "lower": -0.3,
+      "upper": 1.0283
+     },
+     "train_fitness": 0.7707518524212668,
+     "default_fitness": 1.1266486063146135
+    },
+    "mfi": {
+     "params": {
+      "window": 11,
+      "lower": 32.3635,
+      "upper": 87.39
+     },
+     "train_fitness": 0.5622434430332114,
+     "default_fitness": 0.8518544843819701
+    },
+    "cmf": {
+     "params": {
+      "window": 19,
+      "lower": -0.1139,
+      "upper": 0.3429
+     },
+     "train_fitness": 0.4867357885304566,
+     "default_fitness": 1.1112262013375502
+    },
+    "candle_hammer": {
+     "params": {
+      "a": 2.4172
+     },
+     "train_fitness": 1.6409764260613426,
+     "default_fitness": 1.668995985235889
+    },
+    "candle_dark_cloud": {
+     "params": {
+      "b": 0.9128
+     },
+     "train_fitness": 0.9622029979692396,
+     "default_fitness": 1.1227644328248472
+    },
+    "candle_piercing": {
+     "params": {
+      "c": 0.9841
+     },
+     "train_fitness": 0.9945828771915944,
+     "default_fitness": 1.0999846710212895
+    },
+    "candle_bullish_engulfing": {
+     "params": {
+      "d": 0.4626,
+      "e": 0.3787
+     },
+     "train_fitness": 1.003586674592855,
+     "default_fitness": 1.188393772535463
+    },
+    "candle_bearish_engulfing": {
+     "params": {
+      "f": 0.467,
+      "g": 0.1789
+     },
+     "train_fitness": 1.4481661653026552,
+     "default_fitness": 1.5040160109171463
+    }
+   }
+  },
+  "2025-03-10": {
+   "train": [
+    "2019-03-08",
+    "2024-03-07"
+   ],
+   "test_end": "2026-03-06",
+   "P": 0.06,
+   "T": 2,
+   "rules": {
+    "rsi": {
+     "params": {
+      "window": 15,
+      "lower": 35.2894,
+      "upper": 69.972
+     },
+     "train_fitness": 0.5152940636299308,
+     "default_fitness": 0.7151747784225734
+    },
+    "stoch": {
+     "params": {
+      "window": 14,
+      "smooth": 9,
+      "lower": 13.8389,
+      "upper": 91.5212
+     },
+     "train_fitness": 0.6201729370115974,
+     "default_fitness": 1.122532508582703
+    },
+    "stochrsi": {
+     "params": {
+      "window": 18,
+      "smooth1": 10,
+      "smooth2": 8,
+      "lower": 0.2521,
+      "upper": 0.9967
+     },
+     "train_fitness": 0.6538414121946697,
+     "default_fitness": 1.4391843332809335
+    },
+    "williams_r": {
+     "params": {
+      "window": 27,
+      "lower": -82.4776,
+      "upper": -25.3673
+     },
+     "train_fitness": 0.5788330618240158,
+     "default_fitness": 1.155588826412706
+    },
+    "roc": {
+     "params": {
+      "window": 14,
+      "lower": -5.2399,
+      "upper": 10.8931
+     },
+     "train_fitness": 0.6356512608099697,
+     "default_fitness": 0.9647256621750848
+    },
+    "ultimate": {
+     "params": {
+      "window1": 11,
+      "window2": 12,
+      "window3": 34,
+      "lower": 44.8905,
+      "upper": 68.9529
+     },
+     "train_fitness": 0.4733370058316448,
+     "default_fitness": 0.9198343538068572
+    },
+    "adx": {
+     "params": {
+      "window": 7,
+      "adx_min": 34.9793
+     },
+     "train_fitness": 0.7603558448823806,
+     "default_fitness": 1.0763893542229004
+    },
+    "cci": {
+     "params": {
+      "window": 26,
+      "lower": -130.7538,
+      "upper": 182.4865
+     },
+     "train_fitness": 0.4403349331219015,
+     "default_fitness": 0.9752001846790492
+    },
+    "trix": {
+     "params": {
+      "window": 9,
+      "lower": -0.1348,
+      "upper": 0.3655
+     },
+     "train_fitness": 0.6435309097134552,
+     "default_fitness": 1.3539597037000346
+    },
+    "aroon": {
+     "params": {
+      "window": 32,
+      "lower": -57.4119,
+      "upper": 84.1391
+     },
+     "train_fitness": 0.8181127686960611,
+     "default_fitness": 1.0680441016225073
+    },
+    "bollinger": {
+     "params": {
+      "window": 25,
+      "dev": 2.9313,
+      "lower": 0.2338,
+      "upper": 0.8831
+     },
+     "train_fitness": 0.4086941926956823,
+     "default_fitness": 0.9057559620151632
+    },
+    "keltner": {
+     "params": {
+      "window": 30,
+      "lower": -0.3,
+      "upper": 1.2056
+     },
+     "train_fitness": 0.7792471329241545,
+     "default_fitness": 1.0466190529929429
+    },
+    "mfi": {
+     "params": {
+      "window": 11,
+      "lower": 32.3736,
+      "upper": 87.8314
+     },
+     "train_fitness": 0.5155302871991853,
+     "default_fitness": 0.8856862116581575
+    },
+    "cmf": {
+     "params": {
+      "window": 18,
+      "lower": -0.124,
+      "upper": 0.3686
+     },
+     "train_fitness": 0.4835145077474564,
+     "default_fitness": 1.301522026120128
+    },
+    "candle_hammer": {
+     "params": {
+      "a": 4.9476
+     },
+     "train_fitness": 1.612754320309001,
+     "default_fitness": 1.715772088033482
+    },
+    "candle_dark_cloud": {
+     "params": {
+      "b": 0.8498
+     },
+     "train_fitness": 0.9506435495911838,
+     "default_fitness": 1.2367029247546322
+    },
+    "candle_piercing": {
+     "params": {
+      "c": 0.9128
+     },
+     "train_fitness": 0.9547418562986838,
+     "default_fitness": 1.0510177115215134
+    },
+    "candle_bullish_engulfing": {
+     "params": {
+      "d": 0.2858,
+      "e": 0.1609
+     },
+     "train_fitness": 0.989259157320456,
+     "default_fitness": 1.1228873059828754
+    },
+    "candle_bearish_engulfing": {
+     "params": {
+      "f": 0.5,
+      "g": 0.1867
+     },
+     "train_fitness": 1.4186757241366668,
+     "default_fitness": 1.5232817747241068
+    }
+   }
+  },
+  "2026-03-09": {
+   "train": [
+    "2020-03-09",
+    "2025-03-07"
+   ],
+   "test_end": "2026-08-11",
+   "P": 0.07,
+   "T": 2,
+   "rules": {
+    "rsi": {
+     "params": {
+      "window": 20,
+      "lower": 36.8307,
+      "upper": 65.8478
+     },
+     "train_fitness": 0.4652325336254944,
+     "default_fitness": 0.7142385840576083
+    },
+    "stoch": {
+     "params": {
+      "window": 21,
+      "smooth": 9,
+      "lower": 26.7723,
+      "upper": 93.136
+     },
+     "train_fitness": 0.6261580434100521,
+     "default_fitness": 1.1924753213242127
+    },
+    "stochrsi": {
+     "params": {
+      "window": 25,
+      "smooth1": 8,
+      "smooth2": 8,
+      "lower": 0.1095,
+      "upper": 0.7651
+     },
+     "train_fitness": 0.7126415341767124,
+     "default_fitness": 1.4007579307202538
+    },
+    "williams_r": {
+     "params": {
+      "window": 30,
+      "lower": -95.0,
+      "upper": -22.7269
+     },
+     "train_fitness": 0.5466732746887192,
+     "default_fitness": 1.2054375322898851
+    },
+    "roc": {
+     "params": {
+      "window": 14,
+      "lower": -5.1322,
+      "upper": 10.8232
+     },
+     "train_fitness": 0.7061253205338974,
+     "default_fitness": 0.9087625281013574
+    },
+    "ultimate": {
+     "params": {
+      "window1": 11,
+      "window2": 23,
+      "window3": 55,
+      "lower": 43.9166,
+      "upper": 69.8076
+     },
+     "train_fitness": 0.4621614130871377,
+     "default_fitness": 0.9226069658365696
+    },
+    "adx": {
+     "params": {
+      "window": 7,
+      "adx_min": 34.9793
+     },
+     "train_fitness": 0.693725869691153,
+     "default_fitness": 1.0606171695069435
+    },
+    "cci": {
+     "params": {
+      "window": 26,
+      "lower": -130.3838,
+      "upper": 183.4902
+     },
+     "train_fitness": 0.4196115597284808,
+     "default_fitness": 0.8680555860028718
+    },
+    "trix": {
+     "params": {
+      "window": 8,
+      "lower": -0.0921,
+      "upper": 0.2432
+     },
+     "train_fitness": 0.7161433203411611,
+     "default_fitness": 1.196509495422294
+    },
+    "aroon": {
+     "params": {
+      "window": 18,
+      "lower": -81.7448,
+      "upper": 60.0246
+     },
+     "train_fitness": 0.6318359327559857,
+     "default_fitness": 0.8898863875959048
+    },
+    "bollinger": {
+     "params": {
+      "window": 26,
+      "dev": 2.6495,
+      "lower": 0.2047,
+      "upper": 0.9242
+     },
+     "train_fitness": 0.3416053466353139,
+     "default_fitness": 0.8345416927872206
+    },
+    "keltner": {
+     "params": {
+      "window": 30,
+      "lower": -0.243,
+      "upper": 1.2072
+     },
+     "train_fitness": 0.602740228580124,
+     "default_fitness": 1.1268502981237882
+    },
+    "mfi": {
+     "params": {
+      "window": 12,
+      "lower": 31.1634,
+      "upper": 81.0284
+     },
+     "train_fitness": 0.495288958920944,
+     "default_fitness": 0.8758566492662465
+    },
+    "cmf": {
+     "params": {
+      "window": 13,
+      "lower": -0.1376,
+      "upper": 0.3724
+     },
+     "train_fitness": 0.5115777446963764,
+     "default_fitness": 1.181084410488969
+    },
+    "candle_hammer": {
+     "params": {
+      "a": 4.9233
+     },
+     "train_fitness": 1.6714377901023465,
+     "default_fitness": 1.7671813482636216
+    },
+    "candle_dark_cloud": {
+     "params": {
+      "b": 0.8133
+     },
+     "train_fitness": 0.941571567337984,
+     "default_fitness": 1.245695085758763
+    },
+    "candle_piercing": {
+     "params": {
+      "c": 0.9128
+     },
+     "train_fitness": 0.9180866342164348,
+     "default_fitness": 1.059352773522086
+    },
+    "candle_bullish_engulfing": {
+     "params": {
+      "d": 0.2858,
+      "e": 0.1609
+     },
+     "train_fitness": 0.9455434151051528,
+     "default_fitness": 1.0974447630013004
+    },
+    "candle_bearish_engulfing": {
+     "params": {
+      "f": 0.5,
+      "g": 0.2914
+     },
+     "train_fitness": 1.480948659629079,
+     "default_fitness": 1.5879210066459435
+    }
+   }
+  }
+ },
+ "live": {
+  "from_fold": "2026-03-09",
+  "train": [
+   "2020-03-09",
+   "2025-03-07"
+  ],
+  "test_end": "2026-08-11",
+  "P": 0.07,
+  "T": 2,
+  "rules": {
+   "rsi": {
+    "params": {
+     "window": 20,
+     "lower": 36.8307,
+     "upper": 65.8478
+    },
+    "train_fitness": 0.4652325336254944,
+    "default_fitness": 0.7142385840576083
+   },
+   "stoch": {
+    "params": {
+     "window": 21,
+     "smooth": 9,
+     "lower": 26.7723,
+     "upper": 93.136
+    },
+    "train_fitness": 0.6261580434100521,
+    "default_fitness": 1.1924753213242127
+   },
+   "stochrsi": {
+    "params": {
+     "window": 25,
+     "smooth1": 8,
+     "smooth2": 8,
+     "lower": 0.1095,
+     "upper": 0.7651
+    },
+    "train_fitness": 0.7126415341767124,
+    "default_fitness": 1.4007579307202538
+   },
+   "williams_r": {
+    "params": {
+     "window": 30,
+     "lower": -95.0,
+     "upper": -22.7269
+    },
+    "train_fitness": 0.5466732746887192,
+    "default_fitness": 1.2054375322898851
+   },
+   "roc": {
+    "params": {
+     "window": 14,
+     "lower": -5.1322,
+     "upper": 10.8232
+    },
+    "train_fitness": 0.7061253205338974,
+    "default_fitness": 0.9087625281013574
+   },
+   "ultimate": {
+    "params": {
+     "window1": 11,
+     "window2": 23,
+     "window3": 55,
+     "lower": 43.9166,
+     "upper": 69.8076
+    },
+    "train_fitness": 0.4621614130871377,
+    "default_fitness": 0.9226069658365696
+   },
+   "adx": {
+    "params": {
+     "window": 7,
+     "adx_min": 34.9793
+    },
+    "train_fitness": 0.693725869691153,
+    "default_fitness": 1.0606171695069435
+   },
+   "cci": {
+    "params": {
+     "window": 26,
+     "lower": -130.3838,
+     "upper": 183.4902
+    },
+    "train_fitness": 0.4196115597284808,
+    "default_fitness": 0.8680555860028718
+   },
+   "trix": {
+    "params": {
+     "window": 8,
+     "lower": -0.0921,
+     "upper": 0.2432
+    },
+    "train_fitness": 0.7161433203411611,
+    "default_fitness": 1.196509495422294
+   },
+   "aroon": {
+    "params": {
+     "window": 18,
+     "lower": -81.7448,
+     "upper": 60.0246
+    },
+    "train_fitness": 0.6318359327559857,
+    "default_fitness": 0.8898863875959048
+   },
+   "bollinger": {
+    "params": {
+     "window": 26,
+     "dev": 2.6495,
+     "lower": 0.2047,
+     "upper": 0.9242
+    },
+    "train_fitness": 0.3416053466353139,
+    "default_fitness": 0.8345416927872206
+   },
+   "keltner": {
+    "params": {
+     "window": 30,
+     "lower": -0.243,
+     "upper": 1.2072
+    },
+    "train_fitness": 0.602740228580124,
+    "default_fitness": 1.1268502981237882
+   },
+   "mfi": {
+    "params": {
+     "window": 12,
+     "lower": 31.1634,
+     "upper": 81.0284
+    },
+    "train_fitness": 0.495288958920944,
+    "default_fitness": 0.8758566492662465
+   },
+   "cmf": {
+    "params": {
+     "window": 13,
+     "lower": -0.1376,
+     "upper": 0.3724
+    },
+    "train_fitness": 0.5115777446963764,
+    "default_fitness": 1.181084410488969
+   },
+   "candle_hammer": {
+    "params": {
+     "a": 4.9233
+    },
+    "train_fitness": 1.6714377901023465,
+    "default_fitness": 1.7671813482636216
+   },
+   "candle_dark_cloud": {
+    "params": {
+     "b": 0.8133
+    },
+    "train_fitness": 0.941571567337984,
+    "default_fitness": 1.245695085758763
+   },
+   "candle_piercing": {
+    "params": {
+     "c": 0.9128
+    },
+    "train_fitness": 0.9180866342164348,
+    "default_fitness": 1.059352773522086
+   },
+   "candle_bullish_engulfing": {
+    "params": {
+     "d": 0.2858,
+     "e": 0.1609
+    },
+    "train_fitness": 0.9455434151051528,
+    "default_fitness": 1.0974447630013004
+   },
+   "candle_bearish_engulfing": {
+    "params": {
+     "f": 0.5,
+     "g": 0.2914
+    },
+    "train_fitness": 1.480948659629079,
+    "default_fitness": 1.5879210066459435
+   }
+  },
+  "note": "most recent training window; for trading from now on, never for backtesting earlier years"
+ }
+}

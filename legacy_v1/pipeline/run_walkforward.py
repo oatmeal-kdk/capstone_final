@@ -13,14 +13,19 @@ run_esn_full_walkforward.py this does not need to recompute anything
 data-dependent per fold except the scaler, the ESN, and the threshold
 selection.
 
+Inputs (--inputs, since 2026-11-08 the default is ga_ta_candle): the 20 ta indicators computed with the indicator parameters
+(windows etc.) the GA found, plus the 5 candle patterns with the GA's parameters. The GA (legacy_v1/ga/) tunes each rule against
+the CPM turning points of a fold's training window by the turning-point fitness; the parameters are read per fold from
+data/params/<ticker>.json (pipeline/save_ga_params.py), so the inputs are rebuilt per fold.
+
 The training/eval target is pluggable via --target-method:
-- "cpm" (default): triangle_target built from CPM turning points, the
+- "cpm": triangle_target built from CPM turning points, the
   single global run (same known lookahead caveat as the rest of this
   project's walk-forward work).
 - "cpm_global" (added 2026-11-01): the same triangle target, but CPM's P and T are chosen here by the Pareto knee of the
   P x T grid (as prepare_ticker_data.py / run_cpm.py did) and CPM is run on the whole series, so any ticker works. Like "cpm",
   every label sees the whole history: a look-ahead reference, not a tradable result.
-- "cpm_causal" (added 2026-11-01): per fold, P and T are chosen by the Pareto knee on the training rows only; training targets
+- "cpm_causal" (added 2026-11-01, the default since 2026-11-08): per fold, P and T are chosen by the Pareto knee on the training rows only; training targets
   come from a CPM run on the training rows, validation targets from a CPM run ending at the validation end. The last turning
   point CPM reports is not final, so it and every row after it are dropped instead of being extrapolated.
 - "triple_barrier": ATR-scaled triple-barrier label (src/cpm/triple_barrier.py).
@@ -32,6 +37,7 @@ The training/eval target is pluggable via --target-method:
 from __future__ import annotations
 
 import argparse
+import json
 from pathlib import Path
 from typing import Any
 
@@ -45,7 +51,10 @@ from legacy_v1.labels.cpm_target import build_triangle_target
 from legacy_v1.model.metrics import score_to_signal
 from legacy_v1.model.esn import EchoStateNetwork
 from legacy_v1.features.ohlcv_features import build_ohlcv_features
+from legacy_v1.features.candle_features import CANDLE_COLUMNS, build_candle_features
 from legacy_v1.features.ta_features import TA_FEATURE_COLUMNS, build_ta_features
+from legacy_v1.ga.features import signals_from_params, ta_values_from_params
+from legacy_v1.ga.rules import ALL_RULES, CANDLE_RULES
 from legacy_v1.model.thresholds import _select_thresholds
 from legacy_v1.utils.io import save_dataframe, save_json
 from legacy_v1.model.scaling import MinMaxUnitScaler
@@ -61,6 +70,36 @@ ESN_CONFIG = {
     "random_state": 42,
     "threshold_values": [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9],
 }
+
+
+class InputScaler:
+    """Min-max scale the first `n_scaled` columns (the ta indicators) to [-1, 1] on the training rows; pass the rest (the candle
+    patterns, already -1/0/+1) through unchanged, since scaling a 0/+1 column would turn its 0 into -1."""
+
+    def __init__(self, n_scaled: int) -> None:
+        self.n_scaled = n_scaled
+        self.scaler = MinMaxUnitScaler()
+
+    def fit_transform(self, X: np.ndarray) -> np.ndarray:
+        X = np.asarray(X, dtype=float)
+        if self.n_scaled == 0:
+            return X
+        return np.hstack([self.scaler.fit_transform(X[:, :self.n_scaled]), X[:, self.n_scaled:]])
+
+    def transform(self, X: np.ndarray) -> np.ndarray:
+        X = np.asarray(X, dtype=float)
+        if self.n_scaled == 0:
+            return X
+        return np.hstack([self.scaler.transform(X[:, :self.n_scaled]), X[:, self.n_scaled:]])
+
+
+def _load_ga_params(path: Path) -> dict[str, dict]:
+    """The per-fold GA rule parameters of data/params/<ticker>.json (pipeline/save_ga_params.py), keyed by test start date."""
+    if not path.exists():
+        raise SystemExit(f"{path} not found. Tune and save the GA parameters first "
+                         f"(python -m legacy_v1.pipeline.save_ga_params --tickers <ticker>, about 1 hour per stock), "
+                         f"or run with --inputs ta_candle / ta.")
+    return json.loads(path.read_text(encoding="utf-8"))["folds"]
 
 
 class EnsembleESN:
@@ -155,7 +194,7 @@ def main() -> None:
     parser.add_argument("--initial-cash", type=float, default=10000.0)
     parser.add_argument("--fee-rate", type=float, default=0.0)
     parser.add_argument("--slippage-rate", type=float, default=0.0)
-    parser.add_argument("--target-method", default="cpm", choices=["cpm", "cpm_global", "cpm_causal", "triple_barrier"])
+    parser.add_argument("--target-method", default="cpm_causal", choices=["cpm", "cpm_global", "cpm_causal", "triple_barrier"])
     parser.add_argument("--tb-atr-mult", type=float, default=2.0)
     parser.add_argument("--tb-max-holding", type=int, default=10)
     parser.add_argument("--random-state", type=int, default=None, help="Override ESN_CONFIG's fixed random_state (for seed-sensitivity checks).")
@@ -174,8 +213,18 @@ def main() -> None:
     parser.add_argument("--train-window", choices=["rolling", "expanding"], default="rolling",
                         help="rolling = train on only the last --train-years before validation (the default since 2026-11-04); "
                              "expanding = every row since the start of the data (the original v1 window, needed to reproduce the v1 numbers).")
+    parser.add_argument("--inputs", choices=["ga_ta_candle", "ga", "ta_candle", "ta"], default="ga_ta_candle",
+                        help="ga_ta_candle = the 20 ta indicators computed with each fold's GA indicator parameters (min-max scaled) + "
+                             "the 5 candle patterns with each fold's GA parameters (-1/0/+1, unscaled), from --ga-params, the default "
+                             "since 2026-11-08; ga = the -1/0/+1 signals of the 19 GA-tuned rules (the paper's input); ta_candle = "
+                             "the 20 ta indicators + the 5 candle patterns, all at default parameters; ta = the 20 ta indicators at "
+                             "default parameters only (the v1 input).")
+    parser.add_argument("--ga-params", default=None,
+                        help="GA parameter file for --inputs ga_ta_candle / ga (pipeline/save_ga_params.py). Default: data/params/<ticker>.json, "
+                             "the ticker taken from the --tp-path file name (<ticker>_with_tp.csv). Its folds must be the folds of this run "
+                             "(rolling 5y training, 1y validation, 1y steps).")
     parser.add_argument("--readout", choices=["input_state", "state"], default="input_state",
-                        help="input_state = ridge on [1, 20 inputs, 100 states] (the v1 readout, default); state = ridge on [1, 100 states] only. "
+                        help="input_state = ridge on [1, inputs, 100 states] (the v1 readout, default); state = ridge on [1, 100 states] only. "
                              "Added 2026-11-07.")
     parser.add_argument("--threshold-rule", choices=["accuracy", "quantile", "zero"], default="accuracy",
                         help="accuracy = the grid value with the best 3-class validation accuracy (v1, default); quantile = the "
@@ -192,6 +241,18 @@ def main() -> None:
 
     df = pd.read_csv(args.tp_path)
     df = build_ta_features(df)
+    input_columns = [*TA_FEATURE_COLUMNS] if args.inputs in ("ta_candle", "ta") else []     # inputs that do not change between folds
+    if args.inputs == "ta_candle":
+        df = build_candle_features(df)
+        input_columns += CANDLE_COLUMNS
+    ga_folds, ga_path = None, None
+    if args.inputs in ("ga_ta_candle", "ga"):
+        ticker = Path(args.tp_path).name.removesuffix(".csv").removesuffix("_with_tp")
+        ga_path = Path(args.ga_params or f"data/params/{ticker}.json")
+        ga_folds = _load_ga_params(ga_path)
+    # inputs rebuilt per fold from the fold's GA parameters
+    ga_columns = ([*TA_FEATURE_COLUMNS, *CANDLE_RULES] if args.inputs == "ga_ta_candle"
+                  else [f"ga_{name}" for name in ALL_RULES] if args.inputs == "ga" else [])
 
     global_cpm = None
     if args.target_method == "cpm":
@@ -221,7 +282,9 @@ def main() -> None:
     def idx_for(ts: pd.Timestamp) -> int:
         return int(np.searchsorted(dates_np, np.datetime64(ts)))
 
-    X_full = df[TA_FEATURE_COLUMNS].astype(float).to_numpy()
+    X_static = df[input_columns].astype(float).to_numpy()           # the columns that do not change between folds
+    X_full = X_static
+    n_scaled = len(TA_FEATURE_COLUMNS) if args.inputs in ("ga_ta_candle", "ta_candle", "ta") else 0     # ta values first, then signals
     y_full = df["target"].astype(float).to_numpy() if args.target_method in ("cpm", "cpm_global") else None
     close_series = df["Close"].astype(float)
     price_full = df["Close"].astype(float).to_numpy()
@@ -252,7 +315,25 @@ def main() -> None:
         if fold_test_end <= fold_test_start:
             break
 
-        scaler = MinMaxUnitScaler()
+        ga_fold, warmup = None, np.zeros(train_fit_end - train_start, dtype=bool)
+        if ga_folds is not None:          # this fold's GA parameters (tuned on its training window only) -> signals up to the test end
+            key = str(dates_ts.iloc[fold_test_start].date())
+            ga_fold = ga_folds.get(key)
+            if ga_fold is None or ga_fold["train"][0] != str(dates_ts.iloc[train_start].date()):
+                raise SystemExit(f"{ga_path} has no fold with test start {key} and training start {dates_ts.iloc[train_start].date()}; "
+                                 "the GA parameters were saved for rolling 5y / 1y / 1y folds of the same data.")
+            rule_params = {name: r["params"] for name, r in ga_fold["rules"].items()}
+            if args.inputs == "ga_ta_candle":
+                fold_X = np.hstack([ta_values_from_params(df, train_start, fold_test_end, rule_params),
+                                    signals_from_params(df, train_start, fold_test_end, rule_params, rules=list(CANDLE_RULES))])
+            else:
+                fold_X = signals_from_params(df, train_start, fold_test_end, rule_params)
+            X_full = np.full((n_rows, len(ga_columns)), np.nan)
+            X_full[train_start:fold_test_end] = fold_X
+            warmup = np.isnan(X_full[train_start:train_fit_end]).any(axis=1)     # long GA windows: first rows of the data only
+            if np.isnan(X_full[fold_val_start:fold_test_end]).any():
+                raise ValueError(f"Fold {fold_idx}: GA inputs are NaN in the validation or test rows")
+        scaler = InputScaler(n_scaled)          # ta columns scaled; candle / GA signal columns (-1/0/+1) as they are
         if args.target_method == "triple_barrier":
             train_target = label_triple_barrier(       # labelled on every row up to the training end (ATR needs no warm-up), then cut
                 df.iloc[:train_fit_end],
@@ -266,7 +347,7 @@ def main() -> None:
             )
             train_mask = train_target.notna().to_numpy() & _full_horizon_mask(
                 len(train_target), args.tb_max_holding
-            )
+            ) & ~warmup
             val_target_slice = val_target.iloc[fold_val_start:fold_test_start]
             val_positions = np.arange(fold_val_start, fold_test_start)
             val_mask = (
@@ -296,7 +377,7 @@ def main() -> None:
             p_value, t_value = _pareto_knee_params(close_series.iloc[train_start:train_fit_end])
             train_target = _known_triangle(close_series.iloc[train_start:train_fit_end], p_value, t_value)
             val_slice = _known_triangle(close_series.iloc[train_start:fold_test_start], p_value, t_value)[fold_val_start - train_start:]
-            train_mask, val_mask = ~np.isnan(train_target), ~np.isnan(val_slice)
+            train_mask, val_mask = ~np.isnan(train_target) & ~warmup, ~np.isnan(val_slice)
             if int(train_mask.sum()) <= washout:
                 raise ValueError(f"Fold {fold_idx}: only {int(train_mask.sum())} training rows have a determined CPM target.")
             X_train = scaler.fit_transform(X_full[train_start:train_fit_end][train_mask])
@@ -305,6 +386,8 @@ def main() -> None:
             y_val = val_slice[val_mask]                                                                              # point is settled yet
             target_for_output = _known_triangle(close_series.iloc[train_start:fold_test_end], p_value, t_value)[fold_test_start - train_start:]
         else:
+            if warmup.any():
+                raise ValueError(f"Fold {fold_idx}: {int(warmup.sum())} training rows are in the GA indicators' warm-up")
             X_train = scaler.fit_transform(X_full[train_start:train_fit_end])
             y_train = y_full[train_start:train_fit_end]
             X_val = scaler.transform(X_full[fold_val_start:fold_test_start])
@@ -362,6 +445,8 @@ def main() -> None:
             fold_summary["purged_val_rows"] = int(val_mask.sum())
         if args.target_method == "cpm_causal":
             fold_summary["cpm"] = {"P": p_value, "T": t_value}
+        if ga_fold is not None:
+            fold_summary["ga_params"] = {"file": str(ga_path), "fold": str(dates_ts.iloc[fold_test_start].date()), "train": ga_fold["train"], "warmup_rows_dropped": int(warmup.sum())}
         fold_summaries.append(fold_summary)
         accuracy = (f"n/a (--threshold-rule {args.threshold_rule})" if args.threshold_rule != "accuracy"
                     else "n/a (no settled validation target)" if selected["validation_accuracy"] is None else f"{selected['validation_accuracy']:.4f}")
@@ -402,6 +487,9 @@ def main() -> None:
         "test_rows": int(len(predictions_df)),
         "execution": args.execution,
         "train_window": args.train_window,
+        "inputs": args.inputs,
+        "input_columns": input_columns + ga_columns,
+        "ga_params": str(ga_path) if ga_path else None,
         "readout": args.readout,
         "threshold_rule": args.threshold_rule,
         "signal_share": args.signal_share if args.threshold_rule == "quantile" else None,

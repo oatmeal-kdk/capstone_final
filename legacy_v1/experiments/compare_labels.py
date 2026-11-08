@@ -40,7 +40,7 @@ def stats(returns: pd.Series) -> dict:
 
 def run(symbol: str, target: str, overlay: bool) -> dict:
     out = OUT / f"{symbol}_{target}{'_overlay' if overlay else ''}"
-    cmd = [sys.executable, "-W", "ignore", "-m", "legacy_v1.pipeline.run_walkforward", "--tp-path", f"data/processed/{symbol}/1d/{symbol}_with_tp.csv",
+    cmd = [sys.executable, "-W", "ignore", "-m", "legacy_v1.pipeline.run_walkforward", "--inputs", "ta", "--tp-path", f"data/processed/{symbol}/1d/{symbol}_with_tp.csv",
            "--target-method", target, "--train-years", str(cfg.TRAIN_YEARS), "--fee-rate", str(cfg.FEE_RATE), "--slippage-rate", str(cfg.SLIPPAGE_RATE),
            "--execution", "next_open", "--output-dir", str(out),
            "--train-window", "expanding"]                 # run with the v1 window; the CLI default became rolling on 2026-11-04

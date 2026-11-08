@@ -32,7 +32,7 @@ LISTS = {"US": ["sp500", "sp400"], "KR": ["kospi", "kosdaq"]}
 def run(symbol: str, execution: str, overlay: bool) -> dict:
     path = Path(f"data/processed/{symbol}/1d/{symbol}_with_tp.csv")
     out = OUT / f"{symbol}_{execution}{'_overlay' if overlay else ''}"
-    cmd = [sys.executable, "-W", "ignore", "-m", "legacy_v1.pipeline.run_walkforward", "--tp-path", str(path), "--target-method", "triple_barrier",
+    cmd = [sys.executable, "-W", "ignore", "-m", "legacy_v1.pipeline.run_walkforward", "--inputs", "ta", "--tp-path", str(path), "--target-method", "triple_barrier",
            "--train-years", str(cfg.TRAIN_YEARS), "--fee-rate", str(cfg.FEE_RATE), "--slippage-rate", str(cfg.SLIPPAGE_RATE), "--execution", execution,
            "--output-dir", str(out),
            "--train-window", "expanding"]                 # run with the v1 window; the CLI default became rolling on 2026-11-04

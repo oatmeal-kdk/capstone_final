@@ -57,7 +57,8 @@ def screen_one(symbol: str, start: str = "2010-01-01", ensemble_size: int = 1) -
     cmd = [
         sys.executable, "-m", "legacy_v1.pipeline.run_walkforward",
         "--tp-path", str(tp_path),
-        "--target-method", "triple_barrier",
+        "--target-method", cfg.TARGET_METHOD,
+        "--inputs", "ta",                    # screening runs on stocks without data/params GA files
         "--train-years", str(cfg.TRAIN_YEARS),
         "--fee-rate", str(cfg.FEE_RATE),
         "--slippage-rate", str(cfg.SLIPPAGE_RATE),

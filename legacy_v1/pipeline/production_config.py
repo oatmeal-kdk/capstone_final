@@ -41,7 +41,7 @@ TRAIN_YEARS = 5
 VAL_YEARS = 1
 STEP_YEARS = 1
 
-TARGET_METHOD = "triple_barrier"
+TARGET_METHOD = "cpm_causal"  # since 2026-11-08 (was "triple_barrier"); P, T by the Pareto knee on each fold's training rows
 TRIPLE_BARRIER_K = 2.0
 TRIPLE_BARRIER_MAX_HOLDING = 10
 WINDOW_SCALE = 1.0  # ta_features.py default window sizes, unscaled

@@ -39,7 +39,7 @@ RULES = ("accuracy", "quantile", "zero")
 
 def run(symbol: str, rule: str, label: str, root: Path) -> dict:
     out = root / f"{symbol}_{rule}"
-    cmd = [sys.executable, "-W", "ignore", "-m", "legacy_v1.pipeline.run_walkforward", "--tp-path", f"data/processed/{symbol}/1d/{symbol}_with_tp.csv",
+    cmd = [sys.executable, "-W", "ignore", "-m", "legacy_v1.pipeline.run_walkforward", "--inputs", "ta", "--tp-path", f"data/processed/{symbol}/1d/{symbol}_with_tp.csv",
            "--target-method", label, "--train-years", str(cfg.TRAIN_YEARS), "--train-window", "rolling", "--fee-rate", str(cfg.FEE_RATE),
            "--slippage-rate", str(cfg.SLIPPAGE_RATE), "--execution", "next_open", "--threshold-rule", rule, "--signal-share", "0.2", "--output-dir", str(out)]
     result = subprocess.run(cmd, capture_output=True, text=True, timeout=3600)

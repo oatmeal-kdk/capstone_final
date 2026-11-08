@@ -33,7 +33,7 @@ WINDOWS = ("expanding", "rolling")
 
 def run(symbol: str, window: str, overlay: bool) -> dict:
     out = OUT / f"{symbol}_{window}{'_overlay' if overlay else ''}"
-    cmd = [sys.executable, "-W", "ignore", "-m", "legacy_v1.pipeline.run_walkforward", "--tp-path", f"data/processed/{symbol}/1d/{symbol}_with_tp.csv",
+    cmd = [sys.executable, "-W", "ignore", "-m", "legacy_v1.pipeline.run_walkforward", "--inputs", "ta", "--tp-path", f"data/processed/{symbol}/1d/{symbol}_with_tp.csv",
            "--target-method", "triple_barrier", "--train-years", str(cfg.TRAIN_YEARS), "--fee-rate", str(cfg.FEE_RATE),
            "--slippage-rate", str(cfg.SLIPPAGE_RATE), "--execution", "next_open", "--output-dir", str(out)]
     cmd += ["--train-window", window]                              # explicit: the CLI default changed to rolling on 2026-11-04
