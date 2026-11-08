@@ -28,6 +28,11 @@ Inputs (--inputs, added 2026-11-08 before any ga run; the rest of the design is 
       Saved in results/legacy_v1/esn_backtest_ga/, with the GA parameters of every fold in ga_params.csv.
       --ga-params data/params (added 2026-11-08): read each fold's parameters from legacy_v1/pipeline/save_ga_params.py files
       instead of running the GA (the same parameters, without the hour of tuning).
+  ga_ta_candle (added 2026-11-09, the default input of run_walkforward.py since 2026-11-08): per fold, the 20 ta indicators
+      computed with the fold's stored GA indicator parameters (min-max scaled on the training window) + the 5 candle patterns
+      with the fold's GA parameters (-1/0/+1, unscaled), read from --ga-params (default data/params). Rows where a long GA
+      window leaves an indicator undefined (the first rows of the data, first fold only) are fed as 0 and never fitted on.
+      Saved in results/legacy_v1/esn_backtest_ga_ta_candle/.
 Saved in results/legacy_v1/esn_backtest/: folds.csv (per stock and fold: P, T, selected parameters, selection Sharpe of the
 selected and the default, the Spearman correlation), compare.csv (per stock Sharpe), verdicts.csv, daily returns per stock.
 """
@@ -50,7 +55,8 @@ from legacy_v1.experiments.ga_indicator_params import folds
 from legacy_v1.experiments.judge import judge
 from legacy_v1.experiments.ga_indicator_params import _points
 from legacy_v1.features.ta_features import TA_FEATURE_COLUMNS, build_ta_features
-from legacy_v1.ga.features import ga_signal_inputs, signals_from_params
+from legacy_v1.ga.features import ga_signal_inputs, signals_from_params, ta_values_from_params
+from legacy_v1.ga.rules import CANDLE_RULES
 from legacy_v1.ga.optimizer import GAConfig
 from legacy_v1.model.esn_readout import WASHOUT, esn_states, fit_readout, inner_folds, scores, to_signal
 from legacy_v1.model.scaling import MinMaxUnitScaler
@@ -137,12 +143,27 @@ def run_stock(ticker: str, seeds: list[int], inputs: str = "ta", ga_config: GACo
             X, ga_info = ga_signal_inputs(df, a, te, _points(pd.Series(close), a, b, p_value, t_value), ga_config)
             ga_rows += [{"ticker": ticker, "fold": f["fold"], "rule": k, **{n: v for n, v in g.items() if n != "params"},
                          "params": json.dumps(g["params"])} for k, g in ga_info.items()]
+        elif inputs == "ga_ta_candle":
+            entry = stored["folds"].get(f["test_year"])
+            if entry is None:
+                raise KeyError(f"{ticker}: no stored parameters for the fold starting {f['test_year']}")
+            rule_params = {k: v["params"] for k, v in entry["rules"].items()}
+            ta_raw = ta_values_from_params(df, a, te, rule_params)
+            defined = ~np.isnan(ta_raw).any(axis=1)
+            if not defined[b - a:].all():
+                raise ValueError(f"{ticker} fold {f['fold']}: GA indicators undefined after the training window")
+            scaler = MinMaxUnitScaler()
+            scaler.fit_transform(ta_raw[:b - a][defined[:b - a]])
+            ta_scaled = np.nan_to_num(scaler.transform(ta_raw), nan=0.0)                        # warm-up rows as 0, never fitted
+            X = np.hstack([ta_scaled, signals_from_params(df, a, te, rule_params, rules=list(CANDLE_RULES))])
         else:
             scaler = MinMaxUnitScaler()
             X = np.vstack([scaler.fit_transform(X_full[a:b]), scaler.transform(X_full[b:te])])   # training start .. test end
         y_train = _known_triangle(pd.Series(close[a:b]), p_value, t_value)
         y = np.concatenate([y_train, np.full(te - b, np.nan)])                                  # targets only inside training
         known = ~np.isnan(y) & (np.arange(len(y)) >= WASHOUT)
+        if inputs == "ga_ta_candle":
+            known &= defined
         n_train = b - a
         selection_years = inner_folds(dates.iloc[a:b].reset_index(drop=True)) + [(n_train, ts - a)]   # years 3-5 + validation
         test_rows = np.arange(ts - a, te - a)
@@ -188,15 +209,17 @@ def main() -> None:
     parser.add_argument("--per-market", type=int, default=0, help="If > 0: the 64-stock set of compare_labels.py (core + random US/KR).")
     parser.add_argument("--seeds", nargs="+", type=int, default=[0, 1])
     parser.add_argument("--jobs", type=int, default=6)
-    parser.add_argument("--inputs", choices=["ta", "ga"], default="ta")
+    parser.add_argument("--inputs", choices=["ta", "ga", "ga_ta_candle"], default="ta")
     parser.add_argument("--population", type=int, default=30, help="GA population for --inputs ga.")
     parser.add_argument("--generations", type=int, default=20, help="GA generations for --inputs ga.")
     parser.add_argument("--ga-params", default=None, help="For --inputs ga: folder of save_ga_params.py files (data/params); each fold "
                         "uses its stored parameters instead of running the GA.")
     args = parser.parse_args()
     global OUT
-    if args.inputs == "ga":
-        OUT = OUT.with_name(OUT.name + "_ga")
+    if args.inputs in ("ga", "ga_ta_candle"):
+        OUT = OUT.with_name(f"{OUT.name}_{args.inputs}")
+    if args.inputs == "ga_ta_candle" and args.ga_params is None:
+        args.ga_params = "data/params"
     ga_config = GAConfig(population=args.population, generations=args.generations)
     _check()
     if args.per_market:
