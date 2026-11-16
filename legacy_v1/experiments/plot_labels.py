@@ -8,6 +8,9 @@ CPM is run on prices up to the end of the year; its last reported point is not f
 barrier (ATR x 2, 10 days) is computed on the same prices. Bottom panel: the two training targets the ESN would regress on
 (sign convention of the code: -1 = buy, +1 = sell); --no-targets leaves it out. Output: results/legacy_v1/figures/
 <ticker>_cpm_vs_tb_<year>[_marks].png (--out-dir to change the folder)
+--triangle-only (added 2026-11-09): one panel with the CPM triangle target alone, <ticker>_cpm_triangle_<year>.png
+--price-to-triangle (added 2026-11-09): price with CPM points -> arrow -> triangle target, <ticker>_cpm_price_to_triangle_<year>.png
+Both use a trading-day x axis, so the triangle's lines are straight (a date axis bends them at weekends and holidays).
 """
 
 from __future__ import annotations
@@ -95,6 +98,91 @@ def plot_year(ticker: str, year: int, targets: bool = True, out: Path = OUT) -> 
     return path
 
 
+def _triangle_year(ticker: str, year: int) -> dict:
+    """Prices, settled CPM points and the triangle target of one year (cpm_causal P, T as in plot_year), on a trading-day axis."""
+    data = pd.read_csv(f"data/processed/{ticker}/1d/{ticker}_with_tp.csv", parse_dates=["Date"]).sort_values("Date").reset_index(drop=True)
+    end = data.index[data["Date"] <= f"{year}-12-31"][-1]
+    start = data.index[data["Date"] >= f"{year}-01-01"][0]
+    train_end = data.index[data["Date"] >= f"{year - 1}-01-01"][0]
+    upto = data.iloc[: end + 1].reset_index(drop=True)
+    close = upto["Close"].astype(float)
+    p_value, t_value = _pareto_knee_params(close.iloc[:train_end])
+    points = [p for p in detect_turning_points(close, P=p_value, T=t_value)[:-1] if start <= int(p["index"]) <= end]
+    return {"x": np.arange(end + 1 - start), "dates": upto["Date"].iloc[start:end + 1].reset_index(drop=True),
+            "price": close.iloc[start:end + 1].to_numpy(), "triangle": _known_triangle(close, p_value, t_value)[start:end + 1],
+            "points": [(int(p["index"]) - start, p["type"] == "bottom") for p in points], "P": p_value, "T": t_value}
+
+
+def _month_ticks(ax, dates: pd.Series, every: int = 1) -> None:
+    """Trading-day x axis labelled with the first trading day of each month (a date axis would bend the straight lines at weekends)."""
+    first = np.flatnonzero(dates.dt.month.diff().fillna(1).to_numpy() != 0)[::every]
+    ax.set_xticks(first, [d.strftime("%Y-%m") for d in dates.iloc[first]])
+    ax.set_xlim(-3, len(dates) + 2)
+
+
+def _draw_triangle(ax, d: dict) -> None:
+    ax.plot(d["x"], d["triangle"], color="#2b6ea8", linewidth=1.8)
+    for i, bottom in d["points"]:
+        ax.scatter(i, -1.0 if bottom else 1.0, marker="^" if bottom else "v", s=60, color=BUY if bottom else SELL, zorder=3,
+                   edgecolor="white", linewidth=0.8)
+    ax.axhline(0, color="#8a94a3", linewidth=0.8)
+    ax.set_ylim(-1.2, 1.2)
+    ax.set_yticks([-1, 0, 1], ["−1 (매수)", "0", "+1 (매도)"])
+
+
+def plot_triangle(ticker: str, year: int, out: Path = OUT) -> Path:
+    """The CPM triangle target of one year alone, turning points marked at +-1."""
+    d = _triangle_year(ticker, year)
+    fig, ax = plt.subplots(figsize=(11, 3.6))
+    _draw_triangle(ax, d)
+    _month_ticks(ax, d["dates"])
+    ax.scatter([], [], marker="^", color=BUY, label="CPM 저점 (−1, 매수)")
+    ax.scatter([], [], marker="v", color=SELL, label="CPM 고점 (+1, 매도)")
+    ax.legend(loc="lower center", bbox_to_anchor=(0.5, 1.07), ncol=2, fontsize=9)
+    fig.suptitle(f"{ticker} {year}년 CPM 삼각파 목표 — 전환점 사이를 직선으로 이음 (P={d['P']:.0%}, T={d['T']}, 확정되지 않은 끝부분은 비워 둠)",
+                 x=0.01, ha="left", fontsize=10.5)
+    fig.tight_layout()
+    out.mkdir(parents=True, exist_ok=True)
+    path = out / f"{ticker}_cpm_triangle_{year}.png"
+    fig.savefig(path)
+    plt.close(fig)
+    return path
+
+
+def plot_price_to_triangle(ticker: str, year: int, out: Path = OUT) -> Path:
+    """Left: the price with its CPM turning points; arrow; right: the triangle target the ESN is trained on."""
+    d = _triangle_year(ticker, year)
+    fig = plt.figure(figsize=(14, 4.4))
+    grid = fig.add_gridspec(1, 3, width_ratios=[10, 1.6, 10], wspace=0.05)
+    left, mid, right = fig.add_subplot(grid[0]), fig.add_subplot(grid[1]), fig.add_subplot(grid[2])
+
+    left.plot(d["x"], d["price"], color=INK, linewidth=1.2)
+    for i, bottom in d["points"]:
+        left.scatter(i, d["price"][i], marker="^" if bottom else "v", s=60, color=BUY if bottom else SELL, zorder=3,
+                     edgecolor="white", linewidth=0.8)
+    left.scatter([], [], marker="^", color=BUY, label="저점")
+    left.scatter([], [], marker="v", color=SELL, label="고점")
+    left.legend(loc="lower right", ncol=2, fontsize=9)
+    left.set_title(f"① 종가와 CPM 전환점 (P={d['P']:.0%}, T={d['T']})", loc="left", fontsize=11)
+    _month_ticks(left, d["dates"], every=2)
+
+    mid.axis("off")
+    mid.annotate("", xy=(0.95, 0.5), xytext=(0.05, 0.5), xycoords="axes fraction",
+                 arrowprops={"arrowstyle": "-|>,head_width=0.5,head_length=0.9", "color": "#555c66", "linewidth": 2.2})
+
+    _draw_triangle(right, d)
+    right.set_title("② ESN 학습 목표 (삼각파)", loc="left", fontsize=11)
+    _month_ticks(right, d["dates"], every=2)
+
+    fig.suptitle(f"{ticker} {year}년: CPM 전환점을 삼각파 목표로 바꾸기", x=0.01, ha="left", fontsize=12)
+    fig.subplots_adjust(left=0.05, right=0.97, top=0.82, bottom=0.12)
+    out.mkdir(parents=True, exist_ok=True)
+    path = out / f"{ticker}_cpm_price_to_triangle_{year}.png"
+    fig.savefig(path)
+    plt.close(fig)
+    return path
+
+
 def _plot_targets(ax, dates, triangle, labels) -> None:
     ax.plot(dates, triangle, color="#2b6ea8", linewidth=1.6, label="CPM 삼각파 목표")
     ax.step(dates, labels, where="mid", color="#c27c00", linewidth=1.0, alpha=0.9, label="트리플배리어 라벨")
@@ -110,10 +198,17 @@ def main() -> None:
     parser.add_argument("--ticker", default="SPY")
     parser.add_argument("--years", type=int, nargs="+", default=[2018, 2020])
     parser.add_argument("--no-targets", action="store_true", help="leave out the bottom panel (the ESN targets); file name gets _marks")
+    parser.add_argument("--triangle-only", action="store_true", help="one panel with the CPM triangle target alone")
+    parser.add_argument("--price-to-triangle", action="store_true", help="price with CPM points -> arrow -> triangle target, side by side")
     parser.add_argument("--out-dir", type=Path, default=OUT)
     args = parser.parse_args()
     for year in args.years:
-        print(plot_year(args.ticker, year, targets=not args.no_targets, out=args.out_dir))
+        if args.price_to_triangle:
+            print(plot_price_to_triangle(args.ticker, year, out=args.out_dir))
+        elif args.triangle_only:
+            print(plot_triangle(args.ticker, year, out=args.out_dir))
+        else:
+            print(plot_year(args.ticker, year, targets=not args.no_targets, out=args.out_dir))
 
 
 if __name__ == "__main__":

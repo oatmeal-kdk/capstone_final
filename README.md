@@ -20,70 +20,73 @@
 
 ## 2. 입력
 
-
 | `--inputs` | 입력 | 열 수 |
 |---|---|---|
-| **`ga_ta_candle`** (기본) | GA 파라미터로 계산한 ta 20개 + GA 파라미터 캔들 5개 | 25 |
-| `ga` | GA 규칙 신호 19개 (ta 규칙 14개 + 캔들 5개, 논문 입력) | 19 |
-| `ta_candle` | ta 20개 + 캔들 5개, 모두 기본 파라미터 | 25 |
-| `ta` | ta 20개, 기본 파라미터 (v1 원래 입력) | 20 |
+| **`ga2_ta_candle`** | 규칙 v2의 GA 기간으로 계산한 지표 23개(학습 구간 min/max 스케일링) + 캔들 시스템 신호 1개(−1/0/+1) | 24 |
 
+[select_esn_backtest.py](legacy_v1/experiments/select_esn_backtest.py)에서 `--inputs ga2_ta_candle`로 쓰고, 폴드별 파라미터는 `data/params_v2/<종목>.json`에서 읽습니다.
 
-### ta 지표 20개
+### 지표 23개 ([features.py](legacy_v1/ga/features.py)의 `TA_V2_COLUMNS`)
 
-**모멘텀 (7)**  
+임계값은 쓰지 않고, 각 규칙에서 GA가 찾은 기간만 씁니다.
 
-| 열 | 지표 | 기간 | 범위 | 의미 |
-|---|---|---|---|---|
-| `ta_rsi` | RSI | 14 | 0~100 | 최근 상승폭과 하락폭의 비율 |
-| `ta_stoch_k` | 스토캐스틱 %K | 14 | 0~100 | 최근 14일 고저 범위 안에서 종가의 위치 |
-| `ta_stoch_d` | 스토캐스틱 %D | 14, 평활 3 | 0~100 | %K의 3일 단순평균 |
-| `ta_stochrsi_k` | 스토캐스틱 RSI %K | 14, 평활 3 | 0~1 | RSI에 스토캐스틱을 적용한 값의 3일 단순평균 |
-| `ta_williams_r` | Williams %R | 14 | −100~0 | %K − 100 (%K와 같은 정보) |
-| `ta_roc` | 변화율 | 12 | % | 12일 전 대비 종가 변화율 |
-| `ta_ultimate_osc` | Ultimate Oscillator | 7·14·28 | 0~100 | 세 기간 매수 압력의 가중 평균 |
+| 분류 | 열 | 기간을 가져오는 규칙 |
+|---|---|---|
+| 모멘텀 (8) | `ta_rsi` | rsi |
+| | `ta_stoch_k`, `ta_stoch_d` | stoch |
+| | `ta_stochrsi_k` | stochrsi |
+| | `ta_williams_r` | williams_r |
+| | `ta_roc_short`, `ta_roc_long` | roc (짧은·긴 ROC) |
+| | `ta_ultimate_osc` | ultimate |
+| 추세 (8) | `ta_adx`, `ta_adx_pos`, `ta_adx_neg` | adx |
+| | `ta_cci` | cci |
+| | `ta_trix` | trix |
+| | `ta_aroon_osc` | aroon |
+| | `ta_ma_gap` | ma_cross: (MA(long) − MA(short)) ÷ MA(long) × 100 |
+| | `ta_ma_dev` | ma_envelope: (종가 ÷ MA − 1) × 100 |
+| 변동성 (4) | `ta_bb_pband`, `ta_bb_wband` | bollinger |
+| | `ta_atr_pct`, `ta_keltner_pband` | squeeze (ATR 기반 켈트너 채널) |
+| 거래량 (3) | `ta_mfi` | mfi |
+| | `ta_cmf` | cmf |
+| | `ta_pvo` | 고정 12·26, 신호선 9 |
 
-**추세 (6)**
+### 규칙 v2 17개 ([rules_v2.py](legacy_v1/ga/rules_v2.py))
 
-| 열 | 지표 | 기간 | 범위 | 의미 |
-|---|---|---|---|---|
-| `ta_adx` | ADX | 14 | 0~100 | 추세의 강도 (방향 없음) |
-| `ta_adx_pos` | +DI | 14 | 0~100 | 상승 방향 움직임의 강도 |
-| `ta_adx_neg` | −DI | 14 | 0~100 | 하락 방향 움직임의 강도 |
-| `ta_cci` | CCI | 20 | 상한 없음 | 평균 가격에서 벗어난 정도 |
-| `ta_trix` | TRIX | 15 | % | 3중 지수이동평균의 변화율 |
-| `ta_aroon_osc` | Aroon 오실레이터 | 25 | −100~100 | Aroon Up − Aroon Down |
+각 규칙은 가격을 −1(매수) / 0 / +1(매도) 신호로 바꾸고, GA가 전환점 fitness로 파라미터를 고릅니다. 상태에서 나오는 신호(roc, aroon, mfi, ma_cross)는 상태가 시작된 첫날에만 냅니다.
 
-**변동성 (4)**
+**논문 규칙 (Lin, Yang & Song 2011, 2절)**
 
-| 열 | 지표 | 기간 | 범위 | 의미 |
-|---|---|---|---|---|
-| `ta_bb_pband` | 볼린저 %B | 20, 2σ | 보통 0~1 | 볼린저 밴드 안에서 종가의 위치 |
-| `ta_bb_wband` | 볼린저 밴드 폭 | 20, 2σ | % | 밴드 폭 ÷ 중심선 |
-| `ta_atr_pct` | ATR ÷ 종가 | 14 | % | 하루 평균 변동폭의 가격 대비 비율 |
-| `ta_keltner_pband` | 켈트너 %B | 20, ATR 10 | 보통 0~1 | 켈트너 채널 안에서 종가의 위치 |
+| 규칙 | 매수 / 매도 조건 | 파라미터 |
+|---|---|---|
+| ma_cross | z = (MA(long) − MA(short)) ÷ MA(long) × 100. z > 0 구간의 최대 간격 M이 b × c를 넘은 뒤 z < min(M ÷ a, c)로 좁혀지면 매수(골든크로스 직전). 매도는 −z에 a′, b′, c′로 대칭 | short, long, a, b, c, sa, sb, sc |
+| ma_envelope | MA(window) ± p1 % / p2 % 밴드. MA가 하락 중일 때 종가가 위 밴드를 상향 돌파하면 매수, MA가 상승 중일 때 아래 밴드를 하향 돌파하면 매도 | window, p1, p2 |
+| rsi | RSI가 upper를 넘은 날부터 하루 기울기 p의 사선을 긋고, RSI가 그 아래로 내려오면 매도. lower 아래로 내려간 날부터 기울기 −q의 사선, RSI가 그 위로 올라오면 매수 | window, lower, upper, p, q |
+| roc | 긴 ROC > upper이고 짧은 ROC가 균형선 근처(−band_down ~ band_up)면 매도, 긴 ROC < lower이고 짧은 ROC가 근처면 매수 | short, long, upper, lower, band_up, band_down |
+| stoch | %K가 %D를 상향 돌파하고 %K < a, %K − %D < b면 매수. 하향 돌파하고 %K > c, %D − %K < d면 매도 | window, smooth, a, b, c, d |
+| candle | 해머/행잉맨, 먹구름, 관통형, 장악형을 한 시스템으로. 하락 추세 뒤 상승 패턴이면 매수, 상승 추세 뒤 하락 패턴이면 매도. 추세 = 전날 종가와 MA(trend) 비교 | a, b, c, d, e, f, g, trend |
 
-**거래량 (3)**
+**캔들 패턴** (candle 규칙 안)
 
-| 열 | 지표 | 기간 | 범위 | 의미 |
-|---|---|---|---|---|
-| `ta_mfi` | MFI | 14 | 0~100 | 거래량을 반영한 RSI |
-| `ta_cmf` | Chaikin Money Flow | 20 | −1~1 | 종가가 하루 범위 위쪽에서 마감한 날의 거래량 비중 |
-| `ta_pvo` | PVO | 12·26, 신호선 9 | % | 거래량 단기·장기 지수이동평균의 차이 비율 |
+| 패턴 | 조건 | 방향 |
+|---|---|---|
+| 해머 / 행잉맨 | 아래 꼬리 ≥ a × 몸통, 아래 꼬리 > 위 꼬리. 하락 추세 뒤면 해머, 상승 추세 뒤면 행잉맨 | 추세로 결정 |
+| 관통형 | 음봉 다음 양봉, 시가 ≤ 전날 종가, 종가 < 전날 시가, \|전날 시가 − 종가\| < c × 전날 몸통 | 상승 |
+| 먹구름 | 양봉 다음 음봉, 시가 ≥ 전날 종가, 종가 > 전날 시가, \|종가 − 전날 시가\| < b × 전날 몸통 | 하락 |
+| 상승 장악형 | 음봉 다음 양봉, 시가 ≤ 전날 종가 − d × 전날 몸통, 종가 ≥ 전날 시가 + e × 전날 몸통 | 상승 |
+| 하락 장악형 | 양봉 다음 음봉, 시가 ≥ 전날 종가 + f × 전날 몸통, 종가 ≤ 전날 시가 − g × 전날 몸통 | 하락 |
 
-### 캔들 패턴 5개
+**두 조건 규칙 (논문에 없는 지표)**
 
+| 규칙 | 매수 / 매도 조건 | 파라미터 |
+|---|---|---|
+| trix | TRIX가 신호선(TRIX의 EMA)을 상향 돌파하고 TRIX ≤ lower면 매수, 하향 돌파하고 ≥ upper면 매도 | window, signal, lower, upper |
+| aroon | Aroon Up이 Down을 상향 돌파하고 전날 Down ≥ strong이면 매수(바닥 직후). 매도는 대칭 | window, strong |
+| bollinger | %B가 lower/upper를 다시 넘을 때 신호, 밴드 폭 ≥ w_min일 때만 | window, dev, lower, upper, w_min |
+| squeeze | 볼린저 밴드가 켈트너 채널 안에 min_days일 이상 있다가 빠져나올 때 종가가 중심선 위면 매수, 아래면 매도 | window, dev, atr_window, mult, min_days |
+| mfi | 종가가 lookback일 신저가인데 MFI는 자기 저점보다 gap 이상 높고 그 저점이 lower 이하면 매수(다이버전스). 매도는 대칭 | window, lookback, lower, upper, gap |
+| cmf | CMF가 buy_level을 상향 돌파하면 매수, sell_level을 하향 돌파하면 매도. PVO ≥ pvo_min(거래량 증가)일 때만 | window, buy_level, sell_level, pvo_min |
 
-| 패턴 | 파라미터 (범위, 기본값) | 조건 | 신호 |
-|---|---|---|---|
-| 해머 / 행잉맨 | a (1~5, 2) | 아래 꼬리 ≥ a × 몸통, 아래 꼬리 > 위 꼬리 | 양봉 −1, 음봉 +1 |
-| 먹구름 | b (0~1, 0.5) | 양봉 다음 음봉, 시가 ≥ 전날 종가, 종가 ≤ 전날 종가 − b × 전날 몸통, 종가 > 전날 시가 | +1 |
-| 관통형 | c (0~1, 0.5) | 음봉 다음 양봉, 시가 ≤ 전날 종가, 종가 ≥ 전날 종가 + c × 전날 몸통, 종가 < 전날 시가 | −1 |
-| 상승 장악형 | d, e (0~0.5, 0) | 음봉 다음 양봉, 시가 ≤ 전날 종가 − d × 전날 몸통, 종가 ≥ 전날 시가 + e × 전날 몸통 | −1 |
-| 하락 장악형 | f, g (0~0.5, 0) | 양봉 다음 음봉, 시가 ≥ 전날 종가 + f × 전날 몸통, 종가 ≤ 전날 시가 − g × 전날 몸통 | +1 |
-
-
-**지표 규칙 14개** ([rules.py](legacy_v1/ga/rules.py))
+**한 지표 규칙**: adx, williams_r, cci, stochrsi, ultimate (수준 돌파형, [rules.py](legacy_v1/ga/rules.py)와 같음)
 
 **fitness** ([fitness.py](legacy_v1/ga/fitness.py))
 
@@ -109,11 +112,11 @@
 | 보정 | 범위로 자르기, 기간은 정수로 반올림, Ultimate는 짧은 순서 유지 |
 | 엘리트 | 상위 2개는 그대로 다음 세대로 |
 
-**저장된 파라미터** (`data/params/<종목>.json`, [save_ga_params.py](legacy_v1/pipeline/save_ga_params.py))
+**저장된 파라미터** (`data/params_v2/<종목>.json`, `python -m legacy_v1.pipeline.save_ga_params --rules v2`)
 
 | 키 | 내용 | 용도 |
 |---|---|---|
-| `folds` | 폴드마다(테스트 시작일 기준) 학습 구간, P·T, 규칙 19개의 파라미터와 학습·기본값 fitness | 기본 파이프라인과 백테스트. 폴드 k의 테스트에는 폴드 k의 값만 쓰므로 미래 정보 없음 (`run_walkforward.py` 기본 입력, `select_esn_backtest.py --inputs ga --ga-params data/params`) |
+| `folds` | 폴드마다(테스트 시작일 기준) 학습 구간, P·T, 규칙 17개의 파라미터와 학습·기본값 fitness | 백테스트. 폴드 k의 테스트에는 폴드 k의 값만 쓰므로 미래 정보 없음 (`select_esn_backtest.py --inputs ga2_ta_candle`) |
 | `live` | 마지막 폴드(가장 최근 학습 5년)의 값 | 앞으로의 매매. 과거 연도 백테스트에는 쓰지 않음 |
 
 
@@ -178,7 +181,7 @@ Sharpe를 평균하는 것이 아니라 점수를 평균합니다. 시드 운에
 | 후보 | 243개: reservoir 50 / 100 / 200, spectral radius 0.5 / 0.9 / 1.1, input scale 0.1 / 0.3 / 0.7, leak 0.1 / 0.3 / 0.7, ridge alpha 20 / 200 / 2000 (sparsity 0.15 고정, 기본값 포함) |
 | 선택 기준 | 폴드마다 학습 3·4·5년차와 검증 연도의 백테스트 Sharpe가 가장 높은 후보. 테스트 연도는 보지 않음 |
 | 공통 조건 | 시드 0, 1 앙상블, threshold = 학습 \|점수\| 상위 20%, 다음 날 시가 체결, 비용 0.05% + 0.05% |
-| 입력 | `--inputs ta` / `ga` / `ga_ta_candle` (`--ga-params data/params`로 저장된 GA 값 사용) |
+| 입력 | `--inputs ga2_ta_candle` (`data/params_v2`의 저장된 GA 값 사용) |
 | 비교 | 고른 후보 vs 기본값 vs 보유, [judge.py](legacy_v1/experiments/judge.py)의 월 블록 부트스트랩 |
 
 선택 기준 Sharpe와 다음 해 Sharpe가 거의 무관해서(입력 세 가지 모두 Spearman 약 0), 기본 파이프라인은 ESN 탐색 없이 `ESN_CONFIG`를 그대로 씁니다.

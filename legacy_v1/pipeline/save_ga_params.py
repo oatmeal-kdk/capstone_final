@@ -2,6 +2,7 @@
 
     python -m legacy_v1.pipeline.save_ga_params [--tickers SPY QQQ AAPL GLD] [--population 30] [--generations 20] [--jobs 4]
     python -m legacy_v1.pipeline.save_ga_params --from-run results/legacy_v1/esn_backtest_ga     # reuse a finished GA run
+    python -m legacy_v1.pipeline.save_ga_params --rules v2       # the 17 rules of legacy_v1/ga/rules_v2.py, to data/params_v2
 
 File layout:
   folds  one entry per walk-forward fold, keyed by its test start date: the training window, CPM P and T, and for each of the
@@ -27,10 +28,12 @@ from legacy_v1.experiments.ga_indicator_params import _points, folds
 from legacy_v1.features.ta_features import TA_FEATURE_COLUMNS, build_ta_features
 from legacy_v1.ga.features import tune_rule
 from legacy_v1.ga.optimizer import GAConfig
-from legacy_v1.ga.rules import ALL_RULES
+from legacy_v1.ga.rules import ALL_RULES, Rule
+from legacy_v1.ga.rules_v2 import RULES_V2
 from legacy_v1.pipeline.run_walkforward import _pareto_knee_params
 
 OUT = Path("data/params")
+RULE_SETS = {"v1": (ALL_RULES, Path("data/params")), "v2": (RULES_V2, Path("data/params_v2"))}     # --rules (added 2026-11-16)
 
 
 def _frame(ticker: str) -> pd.DataFrame:
@@ -46,7 +49,7 @@ def _fold_entry(df: pd.DataFrame, f: dict, p_value: float, t_value: int, rules: 
         "test_end": str(dates.iloc[f["test_end"] - 1].date()), "P": p_value, "T": t_value, "rules": rules}
 
 
-def tune_stock(ticker: str, config: GAConfig) -> dict:
+def tune_stock(ticker: str, config: GAConfig, rule_set: dict[str, Rule] = ALL_RULES) -> dict:
     df = _frame(ticker)
     close = df["Close"].astype(float)
     out = {}
@@ -55,7 +58,7 @@ def tune_stock(ticker: str, config: GAConfig) -> dict:
         points = _points(close, f["train_start"], f["train_end"], p_value, t_value)
         frame, close_np = df.iloc[:f["test_end"]], close.to_numpy()[:f["test_end"]]
         rules = {}
-        for name, rule in ALL_RULES.items():
+        for name, rule in rule_set.items():
             result, _ = tune_rule(rule, frame, close_np, points, config)
             rules[name] = {"params": result["params"], "train_fitness": result["objective"], "default_fitness": result["default_objective"]}
         key, entry = _fold_entry(df, f, p_value, t_value, rules)
@@ -95,21 +98,25 @@ def main() -> None:
     parser.add_argument("--generations", type=int, default=20)
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--jobs", type=int, default=4)
-    parser.add_argument("--out", default=str(OUT))
+    parser.add_argument("--rules", choices=list(RULE_SETS), default="v1", help="v1: rules.py ALL_RULES; v2: rules_v2.py RULES_V2.")
+    parser.add_argument("--out", default=None, help="Default data/params (v1) or data/params_v2 (v2).")
     args = parser.parse_args()
     config = GAConfig(population=args.population, generations=args.generations, seed=args.seed)
-    out = Path(args.out)
+    rule_set, default_out = RULE_SETS[args.rules]
+    out = Path(args.out) if args.out else default_out
+    if args.from_run and args.rules != "v1":
+        parser.error("--from-run copies v1 runs only")
     out.mkdir(parents=True, exist_ok=True)
 
     if args.from_run:
         fold_sets = [from_run(t, Path(args.from_run)) for t in args.tickers]
         source = f"copied from {args.from_run}"
     else:
-        fold_sets = Parallel(n_jobs=args.jobs)(delayed(tune_stock)(t, config) for t in args.tickers)
+        fold_sets = Parallel(n_jobs=args.jobs)(delayed(tune_stock)(t, config, rule_set) for t in args.tickers)
         source = "tuned by legacy_v1.pipeline.save_ga_params"
     for ticker, fold_set in zip(args.tickers, fold_sets):
         last = list(fold_set)[-1]
-        payload = {"ticker": ticker, "saved": str(date.today()), "source": source,
+        payload = {"ticker": ticker, "saved": str(date.today()), "source": source, "rules": args.rules,
                    "ga": {"population": config.population, "generations": config.generations, "seed": config.seed},
                    "fitness": "legacy_v1/ga/fitness.py normalized turning-point fitness on the training window's CPM turning points",
                    "folds": fold_set,
