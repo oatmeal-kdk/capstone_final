@@ -1,0 +1,2320 @@
+{
+ "ticker": "GLD",
+ "saved": "2026-11-16",
+ "source": "tuned by legacy_v1.pipeline.save_ga_params",
+ "rules": "v2",
+ "ga": {
+  "population": 30,
+  "generations": 20,
+  "seed": 0
+ },
+ "fitness": "legacy_v1/ga/fitness.py normalized turning-point fitness on the training window's CPM turning points",
+ "folds": {
+  "2016-03-08": {
+   "train": [
+    "2010-03-08",
+    "2015-03-06"
+   ],
+   "test_end": "2017-03-07",
+   "P": 0.05,
+   "T": 2,
+   "rules": {
+    "ma_cross": {
+     "params": {
+      "short": 3,
+      "long": 46,
+      "a": 1.0,
+      "b": 0.8814,
+      "c": 3.8188,
+      "sa": 1.0,
+      "sb": 0.7038,
+      "sc": 9.5454
+     },
+     "train_fitness": 0.6564621098764669,
+     "default_fitness": 0.9514317695938621
+    },
+    "ma_envelope": {
+     "params": {
+      "window": 18,
+      "p1": 0.9146,
+      "p2": 0.734
+     },
+     "train_fitness": 0.7064783070162994,
+     "default_fitness": 0.9559227934804524
+    },
+    "rsi": {
+     "params": {
+      "window": 14,
+      "lower": 32.9213,
+      "upper": 70.8095,
+      "p": 1.3242,
+      "q": 2.3723
+     },
+     "train_fitness": 0.5821823932091837,
+     "default_fitness": 0.6624937419234397
+    },
+    "roc": {
+     "params": {
+      "short": 10,
+      "long": 20,
+      "upper": 5.1701,
+      "lower": -5.1374,
+      "band_up": 1.6775,
+      "band_down": 2.8987
+     },
+     "train_fitness": 0.5648274746212638,
+     "default_fitness": 1.0442418394129838
+    },
+    "stoch": {
+     "params": {
+      "window": 30,
+      "smooth": 10,
+      "a": 21.118,
+      "b": 19.8424,
+      "c": 70.0655,
+      "d": 8.9867
+     },
+     "train_fitness": 0.42611628441827915,
+     "default_fitness": 1.0697869411504541
+    },
+    "candle": {
+     "params": {
+      "a": 9.5144,
+      "b": 0.5027,
+      "c": 0.3897,
+      "d": 1.0018,
+      "e": 1.3202,
+      "f": 0.1528,
+      "g": 0.9148,
+      "trend": 30
+     },
+     "train_fitness": 0.944548845253924,
+     "default_fitness": 1.5699164720541527
+    },
+    "trix": {
+     "params": {
+      "window": 5,
+      "signal": 6,
+      "lower": -0.0471,
+      "upper": 0.3492
+     },
+     "train_fitness": 0.6471363155415066,
+     "default_fitness": 0.9422800515182276
+    },
+    "aroon": {
+     "params": {
+      "window": 26,
+      "strong": 56.148
+     },
+     "train_fitness": 0.9199064680712483,
+     "default_fitness": 1.0872606305407388
+    },
+    "bollinger": {
+     "params": {
+      "window": 33,
+      "dev": 1.5837,
+      "lower": -0.1351,
+      "upper": 1.1283,
+      "w_min": 5.7384
+     },
+     "train_fitness": 0.4425075984437643,
+     "default_fitness": 0.8091434435255679
+    },
+    "squeeze": {
+     "params": {
+      "window": 35,
+      "dev": 1.5396,
+      "atr_window": 6,
+      "mult": 1.0331,
+      "min_days": 16
+     },
+     "train_fitness": 1.0,
+     "default_fitness": 1.4211729641798752
+    },
+    "mfi": {
+     "params": {
+      "window": 22,
+      "lookback": 25,
+      "lower": 42.6845,
+      "upper": 67.6028,
+      "gap": 2.1099
+     },
+     "train_fitness": 0.47953204310703734,
+     "default_fitness": 0.86233536313876
+    },
+    "cmf": {
+     "params": {
+      "window": 36,
+      "buy_level": -0.102,
+      "sell_level": 0.2129,
+      "pvo_min": -2.5565
+     },
+     "train_fitness": 0.6132299820662956,
+     "default_fitness": 1.1727820917247211
+    },
+    "adx": {
+     "params": {
+      "window": 10,
+      "adx_min": 37.1006
+     },
+     "train_fitness": 0.9667909541898226,
+     "default_fitness": 1.3630125663411394
+    },
+    "williams_r": {
+     "params": {
+      "window": 30,
+      "lower": -94.6996,
+      "upper": -7.0314
+     },
+     "train_fitness": 0.6226013539306245,
+     "default_fitness": 1.2484786119716877
+    },
+    "cci": {
+     "params": {
+      "window": 19,
+      "lower": -250.0,
+      "upper": 176.0525
+     },
+     "train_fitness": 0.44320160304403855,
+     "default_fitness": 1.1232938381149997
+    },
+    "stochrsi": {
+     "params": {
+      "window": 29,
+      "smooth1": 2,
+      "smooth2": 8,
+      "lower": 0.0209,
+      "upper": 0.8994
+     },
+     "train_fitness": 0.6731599513559545,
+     "default_fitness": 1.314881993858174
+    },
+    "ultimate": {
+     "params": {
+      "window1": 6,
+      "window2": 18,
+      "window3": 33,
+      "lower": 29.5162,
+      "upper": 69.897
+     },
+     "train_fitness": 0.4937087827966114,
+     "default_fitness": 0.7886291001343345
+    }
+   }
+  },
+  "2017-03-08": {
+   "train": [
+    "2011-03-08",
+    "2016-03-07"
+   ],
+   "test_end": "2018-03-07",
+   "P": 0.05,
+   "T": 2,
+   "rules": {
+    "ma_cross": {
+     "params": {
+      "short": 4,
+      "long": 24,
+      "a": 2.0061,
+      "b": 0.8814,
+      "c": 3.8914,
+      "sa": 1.7078,
+      "sb": 2.9591,
+      "sc": 1.5181
+     },
+     "train_fitness": 0.5980464306773124,
+     "default_fitness": 0.9398253615865233
+    },
+    "ma_envelope": {
+     "params": {
+      "window": 23,
+      "p1": 1.3894,
+      "p2": 1.7053
+     },
+     "train_fitness": 0.7316656929809343,
+     "default_fitness": 0.952531729030215
+    },
+    "rsi": {
+     "params": {
+      "window": 14,
+      "lower": 26.8898,
+      "upper": 65.6192,
+      "p": 3.5525,
+      "q": 2.8376
+     },
+     "train_fitness": 0.4366119038622759,
+     "default_fitness": 0.5271348116386387
+    },
+    "roc": {
+     "params": {
+      "short": 10,
+      "long": 20,
+      "upper": 5.1662,
+      "lower": -5.9163,
+      "band_up": 1.7177,
+      "band_down": 3.2931
+     },
+     "train_fitness": 0.5008008336549438,
+     "default_fitness": 1.0380731454908885
+    },
+    "stoch": {
+     "params": {
+      "window": 29,
+      "smooth": 9,
+      "a": 19.5871,
+      "b": 19.9667,
+      "c": 73.2864,
+      "d": 28.0057
+     },
+     "train_fitness": 0.33654799615895514,
+     "default_fitness": 1.1832051735287479
+    },
+    "candle": {
+     "params": {
+      "a": 9.6739,
+      "b": 0.7631,
+      "c": 1.0,
+      "d": 0.0896,
+      "e": 0.4385,
+      "f": 0.6163,
+      "g": 1.5,
+      "trend": 13
+     },
+     "train_fitness": 0.9572329701438028,
+     "default_fitness": 1.5643109293798787
+    },
+    "trix": {
+     "params": {
+      "window": 7,
+      "signal": 16,
+      "lower": -0.1549,
+      "upper": 0.2521
+     },
+     "train_fitness": 0.6055864720087679,
+     "default_fitness": 0.9037301389555839
+    },
+    "aroon": {
+     "params": {
+      "window": 38,
+      "strong": 54.4016
+     },
+     "train_fitness": 0.9462475389794455,
+     "default_fitness": 1.252215334400893
+    },
+    "bollinger": {
+     "params": {
+      "window": 29,
+      "dev": 2.0949,
+      "lower": 0.0623,
+      "upper": 0.9663,
+      "w_min": 9.2058
+     },
+     "train_fitness": 0.36067412759355266,
+     "default_fitness": 0.7959054409850825
+    },
+    "squeeze": {
+     "params": {
+      "window": 37,
+      "dev": 1.0353,
+      "atr_window": 23,
+      "mult": 1.032,
+      "min_days": 17
+     },
+     "train_fitness": 0.9774781861200299,
+     "default_fitness": 1.471656879640839
+    },
+    "mfi": {
+     "params": {
+      "window": 8,
+      "lookback": 60,
+      "lower": 15.7369,
+      "upper": 60.6863,
+      "gap": 5.8887
+     },
+     "train_fitness": 0.37362027466789566,
+     "default_fitness": 0.7771271168530084
+    },
+    "cmf": {
+     "params": {
+      "window": 37,
+      "buy_level": -0.1237,
+      "sell_level": 0.2161,
+      "pvo_min": -6.1158
+     },
+     "train_fitness": 0.6047111887023316,
+     "default_fitness": 1.2985441495005223
+    },
+    "adx": {
+     "params": {
+      "window": 11,
+      "adx_min": 28.6956
+     },
+     "train_fitness": 0.9165292636507092,
+     "default_fitness": 1.4347659020542924
+    },
+    "williams_r": {
+     "params": {
+      "window": 30,
+      "lower": -94.7263,
+      "upper": -5.6404
+     },
+     "train_fitness": 0.5412330590515896,
+     "default_fitness": 1.2901251309574966
+    },
+    "cci": {
+     "params": {
+      "window": 23,
+      "lower": -209.903,
+      "upper": 174.9338
+     },
+     "train_fitness": 0.32405556499360255,
+     "default_fitness": 1.2411092470255052
+    },
+    "stochrsi": {
+     "params": {
+      "window": 30,
+      "smooth1": 5,
+      "smooth2": 8,
+      "lower": 0.0573,
+      "upper": 0.9722
+     },
+     "train_fitness": 0.6437940402525593,
+     "default_fitness": 1.3222044594977027
+    },
+    "ultimate": {
+     "params": {
+      "window1": 6,
+      "window2": 25,
+      "window3": 27,
+      "lower": 29.9278,
+      "upper": 69.3462
+     },
+     "train_fitness": 0.4338306910146597,
+     "default_fitness": 0.7404776103456597
+    }
+   }
+  },
+  "2018-03-08": {
+   "train": [
+    "2012-03-08",
+    "2017-03-07"
+   ],
+   "test_end": "2019-03-07",
+   "P": 0.05,
+   "T": 4,
+   "rules": {
+    "ma_cross": {
+     "params": {
+      "short": 5,
+      "long": 50,
+      "a": 1.0,
+      "b": 1.0687,
+      "c": 3.6867,
+      "sa": 1.0,
+      "sb": 0.9833,
+      "sc": 1.9993
+     },
+     "train_fitness": 0.4035162426582137,
+     "default_fitness": 0.6156445668685198
+    },
+    "ma_envelope": {
+     "params": {
+      "window": 40,
+      "p1": 1.6699,
+      "p2": 0.5
+     },
+     "train_fitness": 0.6593395811709801,
+     "default_fitness": 0.9640771127571016
+    },
+    "rsi": {
+     "params": {
+      "window": 15,
+      "lower": 26.891,
+      "upper": 67.9258,
+      "p": 2.316,
+      "q": 3.2308
+     },
+     "train_fitness": 0.3434780992964199,
+     "default_fitness": 0.5623777882162401
+    },
+    "roc": {
+     "params": {
+      "short": 11,
+      "long": 50,
+      "upper": 5.3305,
+      "lower": -7.5845,
+      "band_up": 2.8428,
+      "band_down": 5.0
+     },
+     "train_fitness": 0.4732706231592634,
+     "default_fitness": 0.8087075032548958
+    },
+    "stoch": {
+     "params": {
+      "window": 24,
+      "smooth": 6,
+      "a": 20.6023,
+      "b": 27.3467,
+      "c": 81.0519,
+      "d": 14.0545
+     },
+     "train_fitness": 0.35598962505024145,
+     "default_fitness": 1.3008248796997823
+    },
+    "candle": {
+     "params": {
+      "a": 9.5209,
+      "b": 0.6841,
+      "c": 0.9045,
+      "d": 0.9668,
+      "e": 1.1297,
+      "f": 0.1867,
+      "g": 1.4252,
+      "trend": 29
+     },
+     "train_fitness": 0.9606336139682983,
+     "default_fitness": 1.6936712796911018
+    },
+    "trix": {
+     "params": {
+      "window": 5,
+      "signal": 14,
+      "lower": -0.1869,
+      "upper": 0.1714
+     },
+     "train_fitness": 0.41714687895861824,
+     "default_fitness": 0.7412276413689212
+    },
+    "aroon": {
+     "params": {
+      "window": 38,
+      "strong": 51.6793
+     },
+     "train_fitness": 0.875415892652553,
+     "default_fitness": 1.164964411873
+    },
+    "bollinger": {
+     "params": {
+      "window": 36,
+      "dev": 2.8228,
+      "lower": 0.192,
+      "upper": 0.7723,
+      "w_min": 10.4599
+     },
+     "train_fitness": 0.28066830857972125,
+     "default_fitness": 0.8847709123891815
+    },
+    "squeeze": {
+     "params": {
+      "window": 35,
+      "dev": 1.5396,
+      "atr_window": 6,
+      "mult": 1.0331,
+      "min_days": 16
+     },
+     "train_fitness": 1.0,
+     "default_fitness": 1.4113075863220965
+    },
+    "mfi": {
+     "params": {
+      "window": 8,
+      "lookback": 60,
+      "lower": 16.1684,
+      "upper": 60.6863,
+      "gap": 9.3679
+     },
+     "train_fitness": 0.2926702209040085,
+     "default_fitness": 0.6446042618602544
+    },
+    "cmf": {
+     "params": {
+      "window": 31,
+      "buy_level": -0.1695,
+      "sell_level": 0.1584,
+      "pvo_min": -4.8827
+     },
+     "train_fitness": 0.6658640088317213,
+     "default_fitness": 1.3858548235179493
+    },
+    "adx": {
+     "params": {
+      "window": 12,
+      "adx_min": 30.5702
+     },
+     "train_fitness": 0.7508541031979064,
+     "default_fitness": 1.310776852679471
+    },
+    "williams_r": {
+     "params": {
+      "window": 30,
+      "lower": -92.5983,
+      "upper": -5.0
+     },
+     "train_fitness": 0.6475101712754414,
+     "default_fitness": 1.4707273739439577
+    },
+    "cci": {
+     "params": {
+      "window": 50,
+      "lower": -250.0,
+      "upper": 132.629
+     },
+     "train_fitness": 0.4530359422514443,
+     "default_fitness": 1.310166674271727
+    },
+    "stochrsi": {
+     "params": {
+      "window": 28,
+      "smooth1": 7,
+      "smooth2": 8,
+      "lower": 0.0391,
+      "upper": 0.9583
+     },
+     "train_fitness": 0.6691664778511638,
+     "default_fitness": 1.3988511840611098
+    },
+    "ultimate": {
+     "params": {
+      "window1": 9,
+      "window2": 21,
+      "window3": 39,
+      "lower": 27.6564,
+      "upper": 65.1825
+     },
+     "train_fitness": 0.5923482313203966,
+     "default_fitness": 1.0807755394996394
+    }
+   }
+  },
+  "2019-03-08": {
+   "train": [
+    "2013-03-08",
+    "2018-03-07"
+   ],
+   "test_end": "2020-03-06",
+   "P": 0.05,
+   "T": 4,
+   "rules": {
+    "ma_cross": {
+     "params": {
+      "short": 3,
+      "long": 50,
+      "a": 1.4743,
+      "b": 0.6052,
+      "c": 4.1517,
+      "sa": 1.7254,
+      "sb": 0.8978,
+      "sc": 3.0268
+     },
+     "train_fitness": 0.3491509972568103,
+     "default_fitness": 0.6536158321270417
+    },
+    "ma_envelope": {
+     "params": {
+      "window": 25,
+      "p1": 1.3289,
+      "p2": 1.3998
+     },
+     "train_fitness": 0.6181187281967054,
+     "default_fitness": 0.9668441015944643
+    },
+    "rsi": {
+     "params": {
+      "window": 14,
+      "lower": 32.6652,
+      "upper": 69.7755,
+      "p": 1.9501,
+      "q": 0.0145
+     },
+     "train_fitness": 0.3737660723445295,
+     "default_fitness": 0.5049589709440327
+    },
+    "roc": {
+     "params": {
+      "short": 11,
+      "long": 47,
+      "upper": 4.5271,
+      "lower": -8.4161,
+      "band_up": 1.547,
+      "band_down": 1.3861
+     },
+     "train_fitness": 0.4688873042704484,
+     "default_fitness": 0.7823236916618095
+    },
+    "stoch": {
+     "params": {
+      "window": 30,
+      "smooth": 10,
+      "a": 19.5871,
+      "b": 20.8074,
+      "c": 79.7166,
+      "d": 22.2638
+     },
+     "train_fitness": 0.40030646084292754,
+     "default_fitness": 1.2318609295406706
+    },
+    "candle": {
+     "params": {
+      "a": 9.54,
+      "b": 0.7039,
+      "c": 0.3701,
+      "d": 1.0495,
+      "e": 1.1307,
+      "f": 1.0251,
+      "g": 0.8026,
+      "trend": 30
+     },
+     "train_fitness": 0.9171064633085045,
+     "default_fitness": 1.6336258775378645
+    },
+    "trix": {
+     "params": {
+      "window": 8,
+      "signal": 17,
+      "lower": -0.1103,
+      "upper": 0.1514
+     },
+     "train_fitness": 0.4488552749753827,
+     "default_fitness": 0.7703039708194667
+    },
+    "aroon": {
+     "params": {
+      "window": 38,
+      "strong": 63.0015
+     },
+     "train_fitness": 0.887846932011491,
+     "default_fitness": 1.2233030153139934
+    },
+    "bollinger": {
+     "params": {
+      "window": 37,
+      "dev": 2.2458,
+      "lower": 0.0976,
+      "upper": 0.9847,
+      "w_min": 6.408
+     },
+     "train_fitness": 0.3488492794841508,
+     "default_fitness": 0.8637456928195308
+    },
+    "squeeze": {
+     "params": {
+      "window": 32,
+      "dev": 1.542,
+      "atr_window": 29,
+      "mult": 1.0584,
+      "min_days": 1
+     },
+     "train_fitness": 0.9229101106390737,
+     "default_fitness": 1.2537033113617462
+    },
+    "mfi": {
+     "params": {
+      "window": 8,
+      "lookback": 60,
+      "lower": 29.2198,
+      "upper": 57.1536,
+      "gap": 9.6732
+     },
+     "train_fitness": 0.28368869085715703,
+     "default_fitness": 0.8098232857010541
+    },
+    "cmf": {
+     "params": {
+      "window": 35,
+      "buy_level": -0.1258,
+      "sell_level": 0.0814,
+      "pvo_min": -5.6244
+     },
+     "train_fitness": 0.44479988065355036,
+     "default_fitness": 1.2873278246602613
+    },
+    "adx": {
+     "params": {
+      "window": 11,
+      "adx_min": 28.5467
+     },
+     "train_fitness": 0.7052900952251847,
+     "default_fitness": 1.2065507039841292
+    },
+    "williams_r": {
+     "params": {
+      "window": 30,
+      "lower": -93.8245,
+      "upper": -5.0
+     },
+     "train_fitness": 0.7683629341917086,
+     "default_fitness": 1.4205751109044786
+    },
+    "cci": {
+     "params": {
+      "window": 48,
+      "lower": -250.0,
+      "upper": 135.0731
+     },
+     "train_fitness": 0.517195858590217,
+     "default_fitness": 1.2395516425396633
+    },
+    "stochrsi": {
+     "params": {
+      "window": 30,
+      "smooth1": 7,
+      "smooth2": 8,
+      "lower": 0.0442,
+      "upper": 0.7491
+     },
+     "train_fitness": 0.6940065157670218,
+     "default_fitness": 1.3140414320403089
+    },
+    "ultimate": {
+     "params": {
+      "window1": 10,
+      "window2": 24,
+      "window3": 41,
+      "lower": 28.1688,
+      "upper": 64.5571
+     },
+     "train_fitness": 0.6478291784603332,
+     "default_fitness": 0.9561316758318757
+    }
+   }
+  },
+  "2020-03-09": {
+   "train": [
+    "2014-03-10",
+    "2019-03-07"
+   ],
+   "test_end": "2021-03-05",
+   "P": 0.04,
+   "T": 18,
+   "rules": {
+    "ma_cross": {
+     "params": {
+      "short": 5,
+      "long": 50,
+      "a": 1.3787,
+      "b": 0.9913,
+      "c": 1.9878,
+      "sa": 1.7278,
+      "sb": 1.9452,
+      "sc": 0.5
+     },
+     "train_fitness": 0.2919828334311404,
+     "default_fitness": 0.5705211510648721
+    },
+    "ma_envelope": {
+     "params": {
+      "window": 54,
+      "p1": 3.0137,
+      "p2": 0.506
+     },
+     "train_fitness": 0.6632508585786089,
+     "default_fitness": 1.0
+    },
+    "rsi": {
+     "params": {
+      "window": 14,
+      "lower": 31.2874,
+      "upper": 71.1876,
+      "p": 1.735,
+      "q": 0.0
+     },
+     "train_fitness": 0.2995112691598683,
+     "default_fitness": 0.4831551428351991
+    },
+    "roc": {
+     "params": {
+      "short": 10,
+      "long": 50,
+      "upper": 3.1105,
+      "lower": -6.3274,
+      "band_up": 2.2277,
+      "band_down": 3.3861
+     },
+     "train_fitness": 0.30307311057862807,
+     "default_fitness": 0.5889685324196238
+    },
+    "stoch": {
+     "params": {
+      "window": 30,
+      "smooth": 10,
+      "a": 13.2189,
+      "b": 22.5627,
+      "c": 78.9739,
+      "d": 29.2744
+     },
+     "train_fitness": 0.4309284914109175,
+     "default_fitness": 1.3644427863707353
+    },
+    "candle": {
+     "params": {
+      "a": 10.0,
+      "b": 0.7427,
+      "c": 0.0525,
+      "d": 0.8614,
+      "e": 0.6938,
+      "f": 1.1133,
+      "g": 0.8568,
+      "trend": 21
+     },
+     "train_fitness": 0.8639784352047123,
+     "default_fitness": 1.806769678123422
+    },
+    "trix": {
+     "params": {
+      "window": 10,
+      "signal": 15,
+      "lower": -0.1082,
+      "upper": 0.1209
+     },
+     "train_fitness": 0.37737847710227923,
+     "default_fitness": 0.8122491307902936
+    },
+    "aroon": {
+     "params": {
+      "window": 38,
+      "strong": 63.0015
+     },
+     "train_fitness": 0.7868255942517881,
+     "default_fitness": 1.4016731250156405
+    },
+    "bollinger": {
+     "params": {
+      "window": 49,
+      "dev": 1.463,
+      "lower": -0.0009,
+      "upper": 1.147,
+      "w_min": 3.6412
+     },
+     "train_fitness": 0.2414229699505743,
+     "default_fitness": 0.9015575836942139
+    },
+    "squeeze": {
+     "params": {
+      "window": 43,
+      "dev": 2.0723,
+      "atr_window": 23,
+      "mult": 2.3465,
+      "min_days": 20
+     },
+     "train_fitness": 0.9257345689172255,
+     "default_fitness": 1.3544465625439353
+    },
+    "mfi": {
+     "params": {
+      "window": 15,
+      "lookback": 53,
+      "lower": 32.7174,
+      "upper": 63.8397,
+      "gap": 11.9337
+     },
+     "train_fitness": 0.25124707057707346,
+     "default_fitness": 0.7871354736069945
+    },
+    "cmf": {
+     "params": {
+      "window": 31,
+      "buy_level": -0.1972,
+      "sell_level": 0.1971,
+      "pvo_min": 0.2455
+     },
+     "train_fitness": 0.6271995657094532,
+     "default_fitness": 1.3328274073551234
+    },
+    "adx": {
+     "params": {
+      "window": 9,
+      "adx_min": 34.9793
+     },
+     "train_fitness": 0.5996653000933809,
+     "default_fitness": 1.32982700133536
+    },
+    "williams_r": {
+     "params": {
+      "window": 30,
+      "lower": -92.3822,
+      "upper": -5.0
+     },
+     "train_fitness": 0.8128553119899327,
+     "default_fitness": 1.598571689611765
+    },
+    "cci": {
+     "params": {
+      "window": 49,
+      "lower": -218.3405,
+      "upper": 131.3226
+     },
+     "train_fitness": 0.45125459331419726,
+     "default_fitness": 1.4537847816737421
+    },
+    "stochrsi": {
+     "params": {
+      "window": 17,
+      "smooth1": 6,
+      "smooth2": 9,
+      "lower": 0.0161,
+      "upper": 0.8202
+     },
+     "train_fitness": 0.7077257552224178,
+     "default_fitness": 1.532510052091579
+    },
+    "ultimate": {
+     "params": {
+      "window1": 11,
+      "window2": 27,
+      "window3": 60,
+      "lower": 35.5218,
+      "upper": 64.7183
+     },
+     "train_fitness": 0.5539381127061297,
+     "default_fitness": 0.9885674953130389
+    }
+   }
+  },
+  "2021-03-08": {
+   "train": [
+    "2015-03-09",
+    "2020-03-06"
+   ],
+   "test_end": "2022-03-07",
+   "P": 0.03,
+   "T": 18,
+   "rules": {
+    "ma_cross": {
+     "params": {
+      "short": 3,
+      "long": 50,
+      "a": 1.0,
+      "b": 0.9922,
+      "c": 2.1442,
+      "sa": 1.7634,
+      "sb": 1.3259,
+      "sc": 2.3982
+     },
+     "train_fitness": 0.28706479879211877,
+     "default_fitness": 0.5959174699345037
+    },
+    "ma_envelope": {
+     "params": {
+      "window": 49,
+      "p1": 1.0894,
+      "p2": 0.9083
+     },
+     "train_fitness": 0.5973096012689827,
+     "default_fitness": 1.0
+    },
+    "rsi": {
+     "params": {
+      "window": 14,
+      "lower": 35.4835,
+      "upper": 71.2995,
+      "p": 1.7459,
+      "q": 0.2718
+     },
+     "train_fitness": 0.4389325048697247,
+     "default_fitness": 0.6889582220599358
+    },
+    "roc": {
+     "params": {
+      "short": 11,
+      "long": 60,
+      "upper": 5.9482,
+      "lower": -2.0,
+      "band_up": 2.3599,
+      "band_down": 2.0699
+     },
+     "train_fitness": 0.2641470377061678,
+     "default_fitness": 0.537734723780052
+    },
+    "stoch": {
+     "params": {
+      "window": 30,
+      "smooth": 5,
+      "a": 10.4225,
+      "b": 19.4309,
+      "c": 88.1734,
+      "d": 5.5197
+     },
+     "train_fitness": 0.33333173223927204,
+     "default_fitness": 1.4858743113640036
+    },
+    "candle": {
+     "params": {
+      "a": 10.0,
+      "b": 0.2585,
+      "c": 0.1075,
+      "d": 0.4573,
+      "e": 0.0963,
+      "f": 0.2127,
+      "g": 0.8772,
+      "trend": 12
+     },
+     "train_fitness": 0.9293658813818962,
+     "default_fitness": 1.7906311687720318
+    },
+    "trix": {
+     "params": {
+      "window": 29,
+      "signal": 5,
+      "lower": 0.0053,
+      "upper": 0.0191
+     },
+     "train_fitness": 0.30521869362031523,
+     "default_fitness": 0.8994332613974584
+    },
+    "aroon": {
+     "params": {
+      "window": 38,
+      "strong": 62.6101
+     },
+     "train_fitness": 0.8051743474518516,
+     "default_fitness": 1.2069304399638834
+    },
+    "bollinger": {
+     "params": {
+      "window": 50,
+      "dev": 1.9979,
+      "lower": 0.1281,
+      "upper": 0.8336,
+      "w_min": 5.1891
+     },
+     "train_fitness": 0.25648610255854876,
+     "default_fitness": 1.146158057595253
+    },
+    "squeeze": {
+     "params": {
+      "window": 42,
+      "dev": 1.7559,
+      "atr_window": 5,
+      "mult": 2.4395,
+      "min_days": 10
+     },
+     "train_fitness": 0.8168799475112216,
+     "default_fitness": 1.2287707107010601
+    },
+    "mfi": {
+     "params": {
+      "window": 12,
+      "lookback": 60,
+      "lower": 42.1162,
+      "upper": 80.7343,
+      "gap": 14.0349
+     },
+     "train_fitness": 0.14048296708757307,
+     "default_fitness": 0.8175018248962364
+    },
+    "cmf": {
+     "params": {
+      "window": 31,
+      "buy_level": -0.1557,
+      "sell_level": 0.1985,
+      "pvo_min": -10.0
+     },
+     "train_fitness": 0.5629383454726311,
+     "default_fitness": 1.4916579504831264
+    },
+    "adx": {
+     "params": {
+      "window": 8,
+      "adx_min": 32.0306
+     },
+     "train_fitness": 0.6429339340148622,
+     "default_fitness": 1.3405663377056896
+    },
+    "williams_r": {
+     "params": {
+      "window": 29,
+      "lower": -92.4817,
+      "upper": -5.0
+     },
+     "train_fitness": 0.8516034554152664,
+     "default_fitness": 1.649877862181123
+    },
+    "cci": {
+     "params": {
+      "window": 50,
+      "lower": -142.0529,
+      "upper": 106.8441
+     },
+     "train_fitness": 0.46734088795210743,
+     "default_fitness": 1.5104697522229535
+    },
+    "stochrsi": {
+     "params": {
+      "window": 29,
+      "smooth1": 9,
+      "smooth2": 6,
+      "lower": 0.0198,
+      "upper": 0.6671
+     },
+     "train_fitness": 0.7158424631023302,
+     "default_fitness": 1.659853283238617
+    },
+    "ultimate": {
+     "params": {
+      "window1": 14,
+      "window2": 29,
+      "window3": 44,
+      "lower": 35.789,
+      "upper": 80.0
+     },
+     "train_fitness": 0.6923435339876617,
+     "default_fitness": 1.317080976596203
+    }
+   }
+  },
+  "2022-03-08": {
+   "train": [
+    "2016-03-08",
+    "2021-03-05"
+   ],
+   "test_end": "2023-03-07",
+   "P": 0.05,
+   "T": 8,
+   "rules": {
+    "ma_cross": {
+     "params": {
+      "short": 5,
+      "long": 46,
+      "a": 1.0,
+      "b": 0.8914,
+      "c": 2.0369,
+      "sa": 2.5086,
+      "sb": 4.4131,
+      "sc": 0.7649
+     },
+     "train_fitness": 0.31388831322446087,
+     "default_fitness": 0.7981174601120893
+    },
+    "ma_envelope": {
+     "params": {
+      "window": 20,
+      "p1": 1.6781,
+      "p2": 1.0212
+     },
+     "train_fitness": 0.6354709505539765,
+     "default_fitness": 0.8889911817576478
+    },
+    "rsi": {
+     "params": {
+      "window": 14,
+      "lower": 32.7697,
+      "upper": 69.337,
+      "p": 1.1292,
+      "q": 0.0
+     },
+     "train_fitness": 0.3775899310104124,
+     "default_fitness": 0.6470526853121737
+    },
+    "roc": {
+     "params": {
+      "short": 8,
+      "long": 59,
+      "upper": 11.2857,
+      "lower": -2.0,
+      "band_up": 3.231,
+      "band_down": 0.9136
+     },
+     "train_fitness": 0.418510294268845,
+     "default_fitness": 0.7285679920479798
+    },
+    "stoch": {
+     "params": {
+      "window": 27,
+      "smooth": 4,
+      "a": 10.2792,
+      "b": 2.7396,
+      "c": 93.8852,
+      "d": 19.1622
+     },
+     "train_fitness": 0.4756477621262091,
+     "default_fitness": 1.3167790646692985
+    },
+    "candle": {
+     "params": {
+      "a": 8.0634,
+      "b": 0.0889,
+      "c": 0.8945,
+      "d": 0.7616,
+      "e": 0.0134,
+      "f": 1.159,
+      "g": 1.5,
+      "trend": 29
+     },
+     "train_fitness": 1.316485101250663,
+     "default_fitness": 1.6318007810117852
+    },
+    "trix": {
+     "params": {
+      "window": 15,
+      "signal": 4,
+      "lower": -0.0628,
+      "upper": 0.1151
+     },
+     "train_fitness": 0.3765923576082656,
+     "default_fitness": 0.939547984134961
+    },
+    "aroon": {
+     "params": {
+      "window": 24,
+      "strong": 88.9337
+     },
+     "train_fitness": 0.9771569332072269,
+     "default_fitness": 1.351816845119799
+    },
+    "bollinger": {
+     "params": {
+      "window": 50,
+      "dev": 1.7781,
+      "lower": 0.0147,
+      "upper": 1.1796,
+      "w_min": 3.4226
+     },
+     "train_fitness": 0.3455627091209902,
+     "default_fitness": 0.9869357757779261
+    },
+    "squeeze": {
+     "params": {
+      "window": 14,
+      "dev": 2.171,
+      "atr_window": 30,
+      "mult": 1.1962,
+      "min_days": 11
+     },
+     "train_fitness": 0.7998919556800138,
+     "default_fitness": 1.1107266838557768
+    },
+    "mfi": {
+     "params": {
+      "window": 15,
+      "lookback": 59,
+      "lower": 43.296,
+      "upper": 79.4503,
+      "gap": 0.0
+     },
+     "train_fitness": 0.2553277671700983,
+     "default_fitness": 1.0111918397350204
+    },
+    "cmf": {
+     "params": {
+      "window": 31,
+      "buy_level": -0.2027,
+      "sell_level": 0.1978,
+      "pvo_min": -2.9777
+     },
+     "train_fitness": 0.43120836964097004,
+     "default_fitness": 1.440174156681784
+    },
+    "adx": {
+     "params": {
+      "window": 15,
+      "adx_min": 24.6492
+     },
+     "train_fitness": 0.7074451126049077,
+     "default_fitness": 1.2016020910113676
+    },
+    "williams_r": {
+     "params": {
+      "window": 30,
+      "lower": -91.4016,
+      "upper": -5.6038
+     },
+     "train_fitness": 0.9564523496462736,
+     "default_fitness": 1.616956301958119
+    },
+    "cci": {
+     "params": {
+      "window": 50,
+      "lower": -160.3637,
+      "upper": 193.1477
+     },
+     "train_fitness": 0.4915624788292367,
+     "default_fitness": 1.3776415146791539
+    },
+    "stochrsi": {
+     "params": {
+      "window": 29,
+      "smooth1": 10,
+      "smooth2": 9,
+      "lower": 0.0329,
+      "upper": 0.8616
+     },
+     "train_fitness": 0.750782619783859,
+     "default_fitness": 1.609046209488948
+    },
+    "ultimate": {
+     "params": {
+      "window1": 14,
+      "window2": 23,
+      "window3": 50,
+      "lower": 39.9485,
+      "upper": 71.2996
+     },
+     "train_fitness": 0.5739021424156568,
+     "default_fitness": 1.1974398468743925
+    }
+   }
+  },
+  "2023-03-08": {
+   "train": [
+    "2017-03-08",
+    "2022-03-07"
+   ],
+   "test_end": "2024-03-07",
+   "P": 0.05,
+   "T": 6,
+   "rules": {
+    "ma_cross": {
+     "params": {
+      "short": 3,
+      "long": 49,
+      "a": 1.0,
+      "b": 1.0,
+      "c": 1.9883,
+      "sa": 1.3157,
+      "sb": 1.5371,
+      "sc": 1.8301
+     },
+     "train_fitness": 0.2655914313226319,
+     "default_fitness": 0.8715867567235983
+    },
+    "ma_envelope": {
+     "params": {
+      "window": 20,
+      "p1": 1.6737,
+      "p2": 1.065
+     },
+     "train_fitness": 0.5990085445911935,
+     "default_fitness": 0.8941975314746564
+    },
+    "rsi": {
+     "params": {
+      "window": 12,
+      "lower": 34.1406,
+      "upper": 70.2527,
+      "p": 1.3609,
+      "q": 5.0
+     },
+     "train_fitness": 0.4128066451056787,
+     "default_fitness": 0.6884970045522009
+    },
+    "roc": {
+     "params": {
+      "short": 16,
+      "long": 49,
+      "upper": 5.2998,
+      "lower": -2.9829,
+      "band_up": 3.0944,
+      "band_down": 3.0003
+     },
+     "train_fitness": 0.5057218650128107,
+     "default_fitness": 0.7802133472902794
+    },
+    "stoch": {
+     "params": {
+      "window": 30,
+      "smooth": 4,
+      "a": 14.6057,
+      "b": 16.418,
+      "c": 93.8208,
+      "d": 29.5515
+     },
+     "train_fitness": 0.4537237990261354,
+     "default_fitness": 1.1388015141129761
+    },
+    "candle": {
+     "params": {
+      "a": 6.0091,
+      "b": 0.0889,
+      "c": 0.9819,
+      "d": 1.4772,
+      "e": 0.0,
+      "f": 1.1471,
+      "g": 1.3136,
+      "trend": 30
+     },
+     "train_fitness": 1.334581113647248,
+     "default_fitness": 1.6173325009573853
+    },
+    "trix": {
+     "params": {
+      "window": 12,
+      "signal": 5,
+      "lower": -0.0757,
+      "upper": 0.1053
+     },
+     "train_fitness": 0.43300162930463615,
+     "default_fitness": 0.850311863167014
+    },
+    "aroon": {
+     "params": {
+      "window": 43,
+      "strong": 95.6378
+     },
+     "train_fitness": 1.0,
+     "default_fitness": 1.355407882832681
+    },
+    "bollinger": {
+     "params": {
+      "window": 42,
+      "dev": 1.3659,
+      "lower": 0.1726,
+      "upper": 0.9745,
+      "w_min": 3.9759
+     },
+     "train_fitness": 0.5539232484039275,
+     "default_fitness": 0.9921772999950424
+    },
+    "squeeze": {
+     "params": {
+      "window": 10,
+      "dev": 1.6164,
+      "atr_window": 8,
+      "mult": 1.0,
+      "min_days": 16
+     },
+     "train_fitness": 0.8144155035490179,
+     "default_fitness": 1.119045987365028
+    },
+    "mfi": {
+     "params": {
+      "window": 15,
+      "lookback": 55,
+      "lower": 43.0634,
+      "upper": 79.1974,
+      "gap": 0.0
+     },
+     "train_fitness": 0.30096106488223373,
+     "default_fitness": 0.9474479375059616
+    },
+    "cmf": {
+     "params": {
+      "window": 31,
+      "buy_level": -0.1804,
+      "sell_level": 0.1752,
+      "pvo_min": -7.8077
+     },
+     "train_fitness": 0.43869428047227793,
+     "default_fitness": 1.5363750056650598
+    },
+    "adx": {
+     "params": {
+      "window": 26,
+      "adx_min": 18.243
+     },
+     "train_fitness": 0.7364347441406426,
+     "default_fitness": 1.0907761568139474
+    },
+    "williams_r": {
+     "params": {
+      "window": 30,
+      "lower": -90.9265,
+      "upper": -5.5337
+     },
+     "train_fitness": 0.9030791909811232,
+     "default_fitness": 1.5947500195318778
+    },
+    "cci": {
+     "params": {
+      "window": 50,
+      "lower": -161.0847,
+      "upper": 114.5185
+     },
+     "train_fitness": 0.45001154205016713,
+     "default_fitness": 1.4027539140705205
+    },
+    "stochrsi": {
+     "params": {
+      "window": 30,
+      "smooth1": 9,
+      "smooth2": 2,
+      "lower": 0.3708,
+      "upper": 0.8519
+     },
+     "train_fitness": 0.7820074655618462,
+     "default_fitness": 1.6455245980798028
+    },
+    "ultimate": {
+     "params": {
+      "window1": 15,
+      "window2": 16,
+      "window3": 54,
+      "lower": 37.7947,
+      "upper": 74.0385
+     },
+     "train_fitness": 0.47140598030475883,
+     "default_fitness": 1.1015376366635368
+    }
+   }
+  },
+  "2024-03-08": {
+   "train": [
+    "2018-03-08",
+    "2023-03-07"
+   ],
+   "test_end": "2025-03-07",
+   "P": 0.06,
+   "T": 4,
+   "rules": {
+    "ma_cross": {
+     "params": {
+      "short": 7,
+      "long": 45,
+      "a": 2.2188,
+      "b": 1.1888,
+      "c": 1.5541,
+      "sa": 1.0,
+      "sb": 4.0527,
+      "sc": 1.2385
+     },
+     "train_fitness": 0.4492432063785049,
+     "default_fitness": 0.9531349468810157
+    },
+    "ma_envelope": {
+     "params": {
+      "window": 12,
+      "p1": 1.3052,
+      "p2": 0.8595
+     },
+     "train_fitness": 0.5134432331605059,
+     "default_fitness": 0.8799408167433028
+    },
+    "rsi": {
+     "params": {
+      "window": 22,
+      "lower": 36.1165,
+      "upper": 75.42,
+      "p": 0.0,
+      "q": 3.2019
+     },
+     "train_fitness": 0.28213052880922973,
+     "default_fitness": 0.7135462181284561
+    },
+    "roc": {
+     "params": {
+      "short": 8,
+      "long": 64,
+      "upper": 12.1901,
+      "lower": -5.3315,
+      "band_up": 3.1371,
+      "band_down": 2.5824
+     },
+     "train_fitness": 0.40530452317777177,
+     "default_fitness": 0.750932281879571
+    },
+    "stoch": {
+     "params": {
+      "window": 27,
+      "smooth": 4,
+      "a": 10.2029,
+      "b": 22.9846,
+      "c": 94.5003,
+      "d": 23.991
+     },
+     "train_fitness": 0.4732719586464628,
+     "default_fitness": 1.1945943421972318
+    },
+    "candle": {
+     "params": {
+      "a": 9.4494,
+      "b": 0.3016,
+      "c": 0.5549,
+      "d": 1.4516,
+      "e": 0.3026,
+      "f": 0.3995,
+      "g": 1.283,
+      "trend": 29
+     },
+     "train_fitness": 1.1100931316270157,
+     "default_fitness": 1.634047193816701
+    },
+    "trix": {
+     "params": {
+      "window": 22,
+      "signal": 3,
+      "lower": -0.0497,
+      "upper": 0.1862
+     },
+     "train_fitness": 0.43487820853703857,
+     "default_fitness": 0.9867561680973523
+    },
+    "aroon": {
+     "params": {
+      "window": 43,
+      "strong": 95.6378
+     },
+     "train_fitness": 1.0,
+     "default_fitness": 1.4352268220844107
+    },
+    "bollinger": {
+     "params": {
+      "window": 48,
+      "dev": 1.7064,
+      "lower": -0.0821,
+      "upper": 1.1363,
+      "w_min": 7.8803
+     },
+     "train_fitness": 0.25939111032901835,
+     "default_fitness": 0.9439170283251364
+    },
+    "squeeze": {
+     "params": {
+      "window": 20,
+      "dev": 1.7784,
+      "atr_window": 30,
+      "mult": 1.2158,
+      "min_days": 14
+     },
+     "train_fitness": 0.7479198017026712,
+     "default_fitness": 1.1732711737935784
+    },
+    "mfi": {
+     "params": {
+      "window": 15,
+      "lookback": 53,
+      "lower": 43.8236,
+      "upper": 83.5904,
+      "gap": 5.8588
+     },
+     "train_fitness": 0.35251225080902565,
+     "default_fitness": 0.9254810447374682
+    },
+    "cmf": {
+     "params": {
+      "window": 27,
+      "buy_level": -0.2128,
+      "sell_level": 0.2506,
+      "pvo_min": -0.8741
+     },
+     "train_fitness": 0.3883704596576623,
+     "default_fitness": 1.4041201896562874
+    },
+    "adx": {
+     "params": {
+      "window": 26,
+      "adx_min": 18.0936
+     },
+     "train_fitness": 0.6791982173833365,
+     "default_fitness": 1.159495307569707
+    },
+    "williams_r": {
+     "params": {
+      "window": 30,
+      "lower": -90.99,
+      "upper": -10.0013
+     },
+     "train_fitness": 1.0441634930478239,
+     "default_fitness": 1.6726555639673553
+    },
+    "cci": {
+     "params": {
+      "window": 50,
+      "lower": -172.9387,
+      "upper": 250.0
+     },
+     "train_fitness": 0.40159099633202977,
+     "default_fitness": 1.396444077263149
+    },
+    "stochrsi": {
+     "params": {
+      "window": 28,
+      "smooth1": 8,
+      "smooth2": 5,
+      "lower": 0.1543,
+      "upper": 0.9891
+     },
+     "train_fitness": 0.7928985947557674,
+     "default_fitness": 1.7457721769002539
+    },
+    "ultimate": {
+     "params": {
+      "window1": 14,
+      "window2": 19,
+      "window3": 41,
+      "lower": 38.0735,
+      "upper": 68.737
+     },
+     "train_fitness": 0.4229789138832751,
+     "default_fitness": 1.1310819210428873
+    }
+   }
+  },
+  "2025-03-10": {
+   "train": [
+    "2019-03-08",
+    "2024-03-07"
+   ],
+   "test_end": "2026-03-06",
+   "P": 0.06,
+   "T": 4,
+   "rules": {
+    "ma_cross": {
+     "params": {
+      "short": 34,
+      "long": 48,
+      "a": 1.0,
+      "b": 0.0,
+      "c": 4.4855,
+      "sa": 7.258,
+      "sb": 3.1028,
+      "sc": 0.5
+     },
+     "train_fitness": 0.6041614282755738,
+     "default_fitness": 1.062564310980443
+    },
+    "ma_envelope": {
+     "params": {
+      "window": 12,
+      "p1": 1.2177,
+      "p2": 2.2271
+     },
+     "train_fitness": 0.6465057426321394,
+     "default_fitness": 0.8853326437937576
+    },
+    "rsi": {
+     "params": {
+      "window": 13,
+      "lower": 30.9643,
+      "upper": 73.174,
+      "p": 0.7827,
+      "q": 3.4898
+     },
+     "train_fitness": 0.3444587494072427,
+     "default_fitness": 0.694483290542137
+    },
+    "roc": {
+     "params": {
+      "short": 3,
+      "long": 65,
+      "upper": 11.7072,
+      "lower": -5.505,
+      "band_up": 3.8555,
+      "band_down": 2.8585
+     },
+     "train_fitness": 0.36139528652379704,
+     "default_fitness": 0.6235961063007488
+    },
+    "stoch": {
+     "params": {
+      "window": 28,
+      "smooth": 3,
+      "a": 10.289,
+      "b": 26.3592,
+      "c": 93.8805,
+      "d": 29.1616
+     },
+     "train_fitness": 0.5460247709186522,
+     "default_fitness": 1.1553633019261067
+    },
+    "candle": {
+     "params": {
+      "a": 9.3779,
+      "b": 0.2102,
+      "c": 0.4453,
+      "d": 1.4703,
+      "e": 0.6024,
+      "f": 0.689,
+      "g": 0.1963,
+      "trend": 29
+     },
+     "train_fitness": 0.8653591367038509,
+     "default_fitness": 1.5670644516170547
+    },
+    "trix": {
+     "params": {
+      "window": 17,
+      "signal": 4,
+      "lower": -0.0067,
+      "upper": 0.2337
+     },
+     "train_fitness": 0.4162725956528739,
+     "default_fitness": 0.7005741306022296
+    },
+    "aroon": {
+     "params": {
+      "window": 43,
+      "strong": 95.6378
+     },
+     "train_fitness": 1.0,
+     "default_fitness": 1.3851651050790934
+    },
+    "bollinger": {
+     "params": {
+      "window": 26,
+      "dev": 1.6343,
+      "lower": 0.141,
+      "upper": 1.1278,
+      "w_min": 5.8303
+     },
+     "train_fitness": 0.41095572020091403,
+     "default_fitness": 0.8244522512575443
+    },
+    "squeeze": {
+     "params": {
+      "window": 15,
+      "dev": 2.4668,
+      "atr_window": 19,
+      "mult": 1.3751,
+      "min_days": 9
+     },
+     "train_fitness": 0.8118827816963817,
+     "default_fitness": 1.1242726291070397
+    },
+    "mfi": {
+     "params": {
+      "window": 14,
+      "lookback": 55,
+      "lower": 45.0,
+      "upper": 85.4462,
+      "gap": 0.0
+     },
+     "train_fitness": 0.33300286464858186,
+     "default_fitness": 0.7374123610926872
+    },
+    "cmf": {
+     "params": {
+      "window": 28,
+      "buy_level": -0.2166,
+      "sell_level": 0.2001,
+      "pvo_min": -2.9448
+     },
+     "train_fitness": 0.39724527734350784,
+     "default_fitness": 1.2657934952174468
+    },
+    "adx": {
+     "params": {
+      "window": 18,
+      "adx_min": 18.6994
+     },
+     "train_fitness": 0.7940465165577432,
+     "default_fitness": 1.0470325964156009
+    },
+    "williams_r": {
+     "params": {
+      "window": 30,
+      "lower": -90.6906,
+      "upper": -10.4445
+     },
+     "train_fitness": 0.8814255991977739,
+     "default_fitness": 1.5467305519686925
+    },
+    "cci": {
+     "params": {
+      "window": 49,
+      "lower": -176.6598,
+      "upper": 198.4755
+     },
+     "train_fitness": 0.4757710428702112,
+     "default_fitness": 1.2349978216808564
+    },
+    "stochrsi": {
+     "params": {
+      "window": 26,
+      "smooth1": 6,
+      "smooth2": 7,
+      "lower": 0.0244,
+      "upper": 0.8771
+     },
+     "train_fitness": 0.5871764966169253,
+     "default_fitness": 1.7721634431429119
+    },
+    "ultimate": {
+     "params": {
+      "window1": 15,
+      "window2": 19,
+      "window3": 29,
+      "lower": 38.0372,
+      "upper": 67.9327
+     },
+     "train_fitness": 0.3918990464299907,
+     "default_fitness": 1.0405275884969776
+    }
+   }
+  },
+  "2026-03-09": {
+   "train": [
+    "2020-03-09",
+    "2025-03-07"
+   ],
+   "test_end": "2026-08-11",
+   "P": 0.07,
+   "T": 8,
+   "rules": {
+    "ma_cross": {
+     "params": {
+      "short": 24,
+      "long": 97,
+      "a": 1.0,
+      "b": 0.0969,
+      "c": 4.3432,
+      "sa": 9.1216,
+      "sb": 3.2936,
+      "sc": 5.3232
+     },
+     "train_fitness": 0.6186007077001541,
+     "default_fitness": 1.3018674656696436
+    },
+    "ma_envelope": {
+     "params": {
+      "window": 12,
+      "p1": 0.7169,
+      "p2": 2.3237
+     },
+     "train_fitness": 0.47066583774351634,
+     "default_fitness": 0.9079867789985784
+    },
+    "rsi": {
+     "params": {
+      "window": 13,
+      "lower": 30.9212,
+      "upper": 86.8275,
+      "p": 4.7213,
+      "q": 2.2796
+     },
+     "train_fitness": 0.399034082352373,
+     "default_fitness": 0.9654865153473289
+    },
+    "roc": {
+     "params": {
+      "short": 13,
+      "long": 76,
+      "upper": 12.0295,
+      "lower": -6.2574,
+      "band_up": 3.9892,
+      "band_down": 5.0
+     },
+     "train_fitness": 0.4365154813018828,
+     "default_fitness": 1.0193581505007965
+    },
+    "stoch": {
+     "params": {
+      "window": 22,
+      "smooth": 8,
+      "a": 25.1657,
+      "b": 27.6457,
+      "c": 92.9612,
+      "d": 1.656
+     },
+     "train_fitness": 0.5484242734819316,
+     "default_fitness": 1.372628449004689
+    },
+    "candle": {
+     "params": {
+      "a": 9.4079,
+      "b": 0.6622,
+      "c": 0.4198,
+      "d": 1.5,
+      "e": 0.1159,
+      "f": 0.3882,
+      "g": 1.2772,
+      "trend": 29
+     },
+     "train_fitness": 1.2452842364567256,
+     "default_fitness": 1.634247979288236
+    },
+    "trix": {
+     "params": {
+      "window": 9,
+      "signal": 17,
+      "lower": -0.0267,
+      "upper": 0.2705
+     },
+     "train_fitness": 0.4631960652289463,
+     "default_fitness": 1.0759092667361922
+    },
+    "aroon": {
+     "params": {
+      "window": 15,
+      "strong": 64.6443
+     },
+     "train_fitness": 0.7733796581730107,
+     "default_fitness": 1.6802495338062966
+    },
+    "bollinger": {
+     "params": {
+      "window": 36,
+      "dev": 2.9318,
+      "lower": 0.0973,
+      "upper": 1.1788,
+      "w_min": 10.0244
+     },
+     "train_fitness": 0.5060280582859867,
+     "default_fitness": 1.1493145039385335
+    },
+    "squeeze": {
+     "params": {
+      "window": 15,
+      "dev": 2.3938,
+      "atr_window": 19,
+      "mult": 1.3192,
+      "min_days": 9
+     },
+     "train_fitness": 0.850252149122428,
+     "default_fitness": 1.499107596580402
+    },
+    "mfi": {
+     "params": {
+      "window": 13,
+      "lookback": 55,
+      "lower": 25.6731,
+      "upper": 95.0,
+      "gap": 0.0
+     },
+     "train_fitness": 0.5514086351851928,
+     "default_fitness": 1.3150281492057398
+    },
+    "cmf": {
+     "params": {
+      "window": 13,
+      "buy_level": -0.1542,
+      "sell_level": 0.3959,
+      "pvo_min": 2.7698
+     },
+     "train_fitness": 0.19629282144010984,
+     "default_fitness": 1.2869157428154252
+    },
+    "adx": {
+     "params": {
+      "window": 26,
+      "adx_min": 14.5754
+     },
+     "train_fitness": 0.6525492163612809,
+     "default_fitness": 1.2326754201497332
+    },
+    "williams_r": {
+     "params": {
+      "window": 30,
+      "lower": -90.3738,
+      "upper": -9.6497
+     },
+     "train_fitness": 1.2474646290345042,
+     "default_fitness": 1.6011824108882986
+    },
+    "cci": {
+     "params": {
+      "window": 50,
+      "lower": -171.537,
+      "upper": 248.8624
+     },
+     "train_fitness": 0.6459199822574052,
+     "default_fitness": 1.4231918757098496
+    },
+    "stochrsi": {
+     "params": {
+      "window": 28,
+      "smooth1": 8,
+      "smooth2": 8,
+      "lower": 0.1627,
+      "upper": 0.9907
+     },
+     "train_fitness": 0.5838547477988992,
+     "default_fitness": 1.8172022252173736
+    },
+    "ultimate": {
+     "params": {
+      "window1": 15,
+      "window2": 18,
+      "window3": 26,
+      "lower": 37.3184,
+      "upper": 70.6765
+     },
+     "train_fitness": 0.3480835881255962,
+     "default_fitness": 1.1046836291054654
+    }
+   }
+  }
+ },
+ "live": {
+  "from_fold": "2026-03-09",
+  "train": [
+   "2020-03-09",
+   "2025-03-07"
+  ],
+  "test_end": "2026-08-11",
+  "P": 0.07,
+  "T": 8,
+  "rules": {
+   "ma_cross": {
+    "params": {
+     "short": 24,
+     "long": 97,
+     "a": 1.0,
+     "b": 0.0969,
+     "c": 4.3432,
+     "sa": 9.1216,
+     "sb": 3.2936,
+     "sc": 5.3232
+    },
+    "train_fitness": 0.6186007077001541,
+    "default_fitness": 1.3018674656696436
+   },
+   "ma_envelope": {
+    "params": {
+     "window": 12,
+     "p1": 0.7169,
+     "p2": 2.3237
+    },
+    "train_fitness": 0.47066583774351634,
+    "default_fitness": 0.9079867789985784
+   },
+   "rsi": {
+    "params": {
+     "window": 13,
+     "lower": 30.9212,
+     "upper": 86.8275,
+     "p": 4.7213,
+     "q": 2.2796
+    },
+    "train_fitness": 0.399034082352373,
+    "default_fitness": 0.9654865153473289
+   },
+   "roc": {
+    "params": {
+     "short": 13,
+     "long": 76,
+     "upper": 12.0295,
+     "lower": -6.2574,
+     "band_up": 3.9892,
+     "band_down": 5.0
+    },
+    "train_fitness": 0.4365154813018828,
+    "default_fitness": 1.0193581505007965
+   },
+   "stoch": {
+    "params": {
+     "window": 22,
+     "smooth": 8,
+     "a": 25.1657,
+     "b": 27.6457,
+     "c": 92.9612,
+     "d": 1.656
+    },
+    "train_fitness": 0.5484242734819316,
+    "default_fitness": 1.372628449004689
+   },
+   "candle": {
+    "params": {
+     "a": 9.4079,
+     "b": 0.6622,
+     "c": 0.4198,
+     "d": 1.5,
+     "e": 0.1159,
+     "f": 0.3882,
+     "g": 1.2772,
+     "trend": 29
+    },
+    "train_fitness": 1.2452842364567256,
+    "default_fitness": 1.634247979288236
+   },
+   "trix": {
+    "params": {
+     "window": 9,
+     "signal": 17,
+     "lower": -0.0267,
+     "upper": 0.2705
+    },
+    "train_fitness": 0.4631960652289463,
+    "default_fitness": 1.0759092667361922
+   },
+   "aroon": {
+    "params": {
+     "window": 15,
+     "strong": 64.6443
+    },
+    "train_fitness": 0.7733796581730107,
+    "default_fitness": 1.6802495338062966
+   },
+   "bollinger": {
+    "params": {
+     "window": 36,
+     "dev": 2.9318,
+     "lower": 0.0973,
+     "upper": 1.1788,
+     "w_min": 10.0244
+    },
+    "train_fitness": 0.5060280582859867,
+    "default_fitness": 1.1493145039385335
+   },
+   "squeeze": {
+    "params": {
+     "window": 15,
+     "dev": 2.3938,
+     "atr_window": 19,
+     "mult": 1.3192,
+     "min_days": 9
+    },
+    "train_fitness": 0.850252149122428,
+    "default_fitness": 1.499107596580402
+   },
+   "mfi": {
+    "params": {
+     "window": 13,
+     "lookback": 55,
+     "lower": 25.6731,
+     "upper": 95.0,
+     "gap": 0.0
+    },
+    "train_fitness": 0.5514086351851928,
+    "default_fitness": 1.3150281492057398
+   },
+   "cmf": {
+    "params": {
+     "window": 13,
+     "buy_level": -0.1542,
+     "sell_level": 0.3959,
+     "pvo_min": 2.7698
+    },
+    "train_fitness": 0.19629282144010984,
+    "default_fitness": 1.2869157428154252
+   },
+   "adx": {
+    "params": {
+     "window": 26,
+     "adx_min": 14.5754
+    },
+    "train_fitness": 0.6525492163612809,
+    "default_fitness": 1.2326754201497332
+   },
+   "williams_r": {
+    "params": {
+     "window": 30,
+     "lower": -90.3738,
+     "upper": -9.6497
+    },
+    "train_fitness": 1.2474646290345042,
+    "default_fitness": 1.6011824108882986
+   },
+   "cci": {
+    "params": {
+     "window": 50,
+     "lower": -171.537,
+     "upper": 248.8624
+    },
+    "train_fitness": 0.6459199822574052,
+    "default_fitness": 1.4231918757098496
+   },
+   "stochrsi": {
+    "params": {
+     "window": 28,
+     "smooth1": 8,
+     "smooth2": 8,
+     "lower": 0.1627,
+     "upper": 0.9907
+    },
+    "train_fitness": 0.5838547477988992,
+    "default_fitness": 1.8172022252173736
+   },
+   "ultimate": {
+    "params": {
+     "window1": 15,
+     "window2": 18,
+     "window3": 26,
+     "lower": 37.3184,
+     "upper": 70.6765
+    },
+    "train_fitness": 0.3480835881255962,
+    "default_fitness": 1.1046836291054654
+   }
+  },
+  "note": "most recent training window; for trading from now on, never for backtesting earlier years"
+ }
+}
