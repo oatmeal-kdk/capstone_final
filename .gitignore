@@ -1,11 +1,14 @@
-# data (copied from capstone2/data) and results are not tracked; anchored to the repo root so the
-# legacy_v1/data/ code package is not caught. data/universe (screening lists read by production_config) and data/params (GA rule parameters, save_ga_params.py) are tracked.
+# data (prices: legacy_v1/data/fetch_prices.py) and results are not tracked; anchored to the repo root so the
+# legacy_v1/data/ code package is not caught. Tracked: data/universe (screening lists read by production_config),
+# data/params (GA rule parameters v1, save_ga_params.py) and data/params_v2 (rules v2, save_ga_params.py --rules v2).
 /data/*
 !/data/universe/
 !/data/params/
+!/data/params_v2/
 /results/
 __pycache__/
 *.pyc
+.pytest_cache/
 .ipynb_checkpoints/
 .vscode/
 .idea/

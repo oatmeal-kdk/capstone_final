@@ -1,5 +1,7 @@
+# Python 3.10+. Versions were not pinned during the project; see README "설치".
 numpy
 pandas
+scipy
 scikit-learn
 joblib
 matplotlib
