@@ -1,29 +1,20 @@
 # legacy_v1 copy of src/pipeline/production_config.py (frozen v1 recipe). Only import paths were changed.
-"""Locked production configuration.
+"""Fixed recipe shared by every ticker: walk-forward folds, label, costs, overlay, and the ticker universe.
 
-The original design (Phase 9, see capstone_full_summary_v2.md artifact) had
-each ticker auto-calibrate its own (window_scale, k, max_holding) via a
-27-combo per-fold grid search, with a ticker-specific selection method
-(single_fold / expanding_aggregate / expanding_aggregate_calmar). That
-approach did not survive multi-seed robustness testing done in this
-session: a plain fixed-parameter baseline beat the auto-calibrated version
-in 0/6 SPY+GLD x 3-seed trials. The only change that reliably won (6/6,
-later confirmed on 10/12 tickers total) was adding the volatility-targeted
-risk overlay on top of the fixed-parameter baseline.
+History (capstone2, kept for context): an earlier design let each ticker auto-calibrate its own (window_scale, k,
+max_holding) by a per-fold grid search. A plain fixed-parameter baseline beat it in 0/6 SPY+GLD x 3-seed trials, so every
+ticker now shares the recipe below; the one change that reliably helped there was the volatility-targeted risk overlay.
+ESN architecture hyperparameters (reservoir_size, spectral_radius, ...) are not set here: they live in ESN_CONFIG in
+legacy_v1/pipeline/run_walkforward.py.
 
-So every ticker below shares the exact same recipe -- there is no per-ticker
-tuning left. ESN architecture hyperparameters (reservoir_size, spectral_radius,
-etc.) were never part of the tuning question and still live in ESN_CONFIG in
-run_esn_ta_walkforward.py / run_esn_ta_walkforward_auto.py.
+Ticker universe: loaded from every data/universe/*_screening_results*.csv (written by legacy_v1/pipeline/screen_universe.py,
+one file per index: S&P 500, S&P 400, KOSPI, KOSDAQ). Each row has a status: "active" (Sharpe >= 0.40 on the fixed recipe,
+no overlay), "weak" (0.20 - 0.40) or "excluded" (below 0.20), exposed as ACTIVE_TICKERS, WEAK_TICKERS and EXCLUDED_TICKERS.
+To add an index, run screen_universe.py on its ticker list and put the resulting *_screening_results.csv in data/universe/;
+no code change is needed here.
 
-Ticker universe (2026-09 revision): auto-loaded from every
-data/universe/*_active.csv, each produced by a src/pipeline/screen_universe.py
-run against one index (S&P 500, S&P 400 MidCap, ...). Only status=="active"
-(Sharpe >= 0.40 on the fixed recipe, no overlay) ships -- "weak" (0.20-0.40)
-tickers were dropped from the live universe entirely: only tickers with a
-clearly meaningful signal are surfaced, not "thin but technically positive"
-ones. To grow the universe, run screen_universe.py against a new ticker list
-and drop its *_active.csv into data/universe/ -- no code change needed here.
+The experiment scripts take most settings from their own command-line options; they read this module for the fee and
+slippage rates (FEE_RATE, SLIPPAGE_RATE), TRAIN_YEARS, the risk-overlay settings and the label settings.
 """
 
 from __future__ import annotations
@@ -55,7 +46,7 @@ FEE_RATE = 0.0005
 SLIPPAGE_RATE = 0.0005
 
 # Relative-strength (vs a benchmark, usually SPY) robustness for the handful
-# of tickers actually run through src/indicators/relative_series.py -- not
+# of tickers actually run through legacy_v1/relative/relative_series.py -- not
 # derivable from the active-ticker screening CSVs, so tracked here by hand.
 # Anything not listed is simply untested, not confirmed absent.
 RELATIVE_STRENGTH_STATUS: dict[str, str] = {
