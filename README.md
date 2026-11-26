@@ -93,20 +93,24 @@ python -m pytest
 
 테스트 구간은 2016-03부터 각 종목 데이터 끝까지, 4종목(SPY, QQQ, AAPL, GLD), 다음 날 시가 체결, 비용 포함입니다. 숫자는 `report_tables combos`의 "4종목 평균" 표에서 옮깁니다.
 
-<!-- TODO(제출 전): results/legacy_v1/tables_combos.md의 "4종목 평균" 표에서 값을 옮겨 적기 -->
-
 | 입력 | ESN 기본값 | ESN 탐색 | ESN 앙상블 10 |
 |---|---|---|---|
-| ta (기본 기간) | | | |
-| ta + 캔들 | | | |
-| **ta_ga + 캔들 (최종)** | | | |
-| ta_ga v2 + 캔들 (부록) | | | |
-| 보유 | | | |
+| ta (기본 기간) | 0.695 / 11.5% / −28.0% | 0.644 / 11.3% / −27.2% | 0.704 / 10.8% / −25.7% |
+| ta + 캔들 | 0.735 / 12.6% / −28.0% | 0.681 / 11.9% / −26.9% | 0.730 / 11.6% / −25.7% |
+| **ta_ga + 캔들 (최종)** | **0.760 / 13.1% / −28.9%** | 0.572 / 9.4% / −28.9% | 0.761 / 12.9% / −27.0% |
+| ta_ga v2 + 캔들 (부록) | 0.730 / 12.3% / −27.0% | 0.705 / 12.0% / −26.3% | 0.720 / 12.3% / −27.0% |
+| 보유 | 0.890 / 18.6% / −33.7% (ESN 무관) | | |
 
-셀 = Sharpe / 연수익률 / MDD.
+셀 = 4종목 평균 Sharpe / 연수익률 / MDD.
+
+- 최종 설정(ta_ga + 캔들, ESN 기본값)은 네 입력 중 Sharpe가 가장 높지만(0.760), **보유(0.890)보다 Sharpe와 연수익률이 낮습니다.** 대신 MDD는 보유보다 작습니다(−28.9% vs −33.7%).
+- GA 기간(ta_ga)과 캔들 입력은 기본 기간 ta보다 Sharpe를 조금 올렸습니다(0.695 → 0.735 → 0.760, ESN 기본값 기준).
+- ESN 탐색은 모든 입력에서 기본값보다 Sharpe가 낮고, ta_ga + 캔들에서 가장 크게 떨어졌습니다(0.760 → 0.572). 앙상블 10은 기본값과 Sharpe가 거의 같고, MDD는 v2를 빼면 약간 줄였습니다.
+- 규칙 v2는 v1보다 Sharpe가 낮았습니다(0.730 vs 0.760). 통계적 판정(월 블록 부트스트랩 구간)은 `tables_combos.md`의 "규칙 v2 vs v1" 표에 있습니다.
 
 ## 한계
 
+- **보유를 이기지 못했습니다.** 4종목 평균 Sharpe 0.760 vs 0.890, 연수익률 13.1% vs 18.6%로 보유가 높습니다. 보유보다 나은 점은 낙폭이 작다는 것(MDD −28.9% vs −33.7%)뿐입니다.
 - **ESN 하이퍼파라미터 탐색이 다음 해로 이어지지 않습니다.** 폴드마다 후보 243개의 "선택 연도 Sharpe"와 "다음 테스트 연도 Sharpe"의 순위 상관(Spearman)이 세 입력 모두 약 0입니다. 과거 성과로 고른 설정이 다음 해에도 낫다는 근거가 없어서, 최종 설정은 탐색 없이 고정된 `ESN_CONFIG`를 씁니다.
 - **종목 수가 적습니다.** 최종 비교는 4종목입니다. 라벨·threshold·readout 비교만 64종목(SPY, QQQ, AAPL, GLD + 미국·한국 무작위 각 30)으로 했습니다.
 - **시드에 민감합니다.** reservoir의 무작위 연결에 따라 신호가 달라집니다. 앙상블 10은 흔들림을 줄일 뿐, 기대 성능을 올린다는 보장은 없습니다.
@@ -174,7 +178,6 @@ python -m pytest
 | 전환점 점수 | (맞는 신호 오차 또는 Aᵢ) + 틀린 신호 벌점, 전환점 가격으로 나눈 비율 |
 | 합계 | 모든 전환점 점수의 합 ÷ 신호가 하나도 없을 때의 점수(Σ Aᵢ / 가격) |
 
-
 **GA** ([optimizer.py](legacy_v1/ga/optimizer.py))
 
 | 항목 | 설정 |
@@ -187,7 +190,6 @@ python -m pytest
 | 보정 | 범위로 자르기, 기간은 정수로 반올림, Ultimate는 짧은 순서 유지 |
 | 엘리트 | 상위 2개는 그대로 다음 세대로 |
 
-
 **저장된 파라미터** (`data/params/<종목>.json`: `python -m legacy_v1.pipeline.save_ga_params`. v2는 `data/params_v2/`: `--rules v2`)
 
 | 키 | 내용 | 용도 |
@@ -197,14 +199,12 @@ python -m pytest
 
 ### 3. 라벨
 
-
 | 선택지 | 내용 | 미래 정보 |
 |---|---|---|
 | triple_barrier | 종가 ± k×ATR(14) 배리어 중 max_holding일 안에 먼저 닿는 쪽: 위 −1(매수), 아래 +1(매도), 둘 다 아니면 0. **k = 2.0, 10일** (`--tb-atr-mult`, `--tb-max-holding`) | 없음. 학습·검증 끝 10일은 라벨을 버림 |
 | **cpm_causal** | 폴드마다 학습 구간 가격만으로 CPM의 P·T를 파레토 무릎으로 고르고, 전환점 사이를 −1~+1 삼각파로 이은 연속값. 확정되지 않은 마지막 전환점 이후는 버림 | 없음 |
 | cpm | 가격 파일의 `cpm_point_type` 열 (전체 기간으로 만든 전환점) | **있음.** `--allow-lookahead` 없이는 실행 거부 |
 | cpm_global | P·T를 전체 기간으로 고른 CPM | **있음.** 위와 같음 |
-
 
 두 라벨이 SPY 2020년에 찍히는 위치
 ![SPY 2020년 CPM 전환점과 트리플배리어 라벨](docs/figures/SPY_cpm_vs_tb_2020_marks.png)
@@ -226,8 +226,6 @@ python -m pytest
 |---|---|---|
 | **Rolling window** | 검증 직전 `--train-years`년(5년)만. 폴드마다 window 전체가 1년씩 뒤로 이동 | `--train-window rolling` (기본값) |
 | Expanding window | 데이터 시작부터 검증 직전까지. 시작점은 고정되고 window 끝만 1년씩 뒤로 감 (첫 폴드 5년). v1 원래 값 | `--train-window expanding` |
-
-
 
 **모델**
 
@@ -268,8 +266,6 @@ Sharpe를 평균하는 것이 아니라 점수를 평균합니다. 시드 운에
 | **검증 정확도 최대** | {0.1, …, 0.9} 중 선택. 점수 < −thr 매수, > thr 매도, 그 사이 보유 | [thresholds.py](legacy_v1/model/thresholds.py) |
 | 학습 점수 상위 20% | 학습 기간의 약 20%에서 신호가 켜지도록 고정 | [pooled_classifier.py](legacy_v1/experiments/pooled_classifier.py) |
 
-
-
 ### 6. 백테스트
 
 모든 폴드의 테스트 구간 신호를 이어 붙여 한 번에 실행합니다 ([simple_backtest.py](legacy_v1/backtest/simple_backtest.py)).
@@ -287,7 +283,6 @@ Sharpe를 평균하는 것이 아니라 점수를 평균합니다. 시드 운에
 | 단일 종목 요약 | Sharpe, 연수익, 최대 낙폭, 같은 기간 보유 성과 | 출력 폴더의 `summary.json` |
 | 스크리닝 | Sharpe ≥ 0.40 active, 0.20~0.40 weak, 그 아래 excluded | [screen_universe.py](legacy_v1/pipeline/screen_universe.py) |
 | 여러 종목 비교 | 종목별 Sharpe 차이의 중앙값 + 월 단위 블록 부트스트랩 95% 구간 → 이김 / 짐 / 구분 안 됨 | [judge.py](legacy_v1/experiments/judge.py) |
-
 
 ## 실험 목록
 
